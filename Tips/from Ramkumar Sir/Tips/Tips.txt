@@ -1,0 +1,27 @@
+===> Hide Grid Column:
+//permanately 
+myGrid.getColumnModel().setHidden(0, true);
+
+//very first time in the browser
+	var cm = new Ext.grid.ColumnModel([
+            {header: 'Customer Id', width: 50, sortable: true, dataIndex: 'customer_id', hidden: false },
+
+
+
+===> Get column name from rowselection in an grid
+var fieldName = grid.getColumnModel().getDataIndex(columnIndex);
+
+
+
+===> Key listener
+this.map = new Ext.KeyMap("login-win", [{
+	key : [10, 13],
+	scope : this,
+	fn : this.doLoginForm
+}]);  
+
+
+
+==> Sources
+SuperBoxSelect:  http://www.sencha.com/forum/showthread.php?69307-3.x-Ext.ux.form.SuperBoxSelect
+FileUploader:	http://filetree.extjs.eu/	Paypal Donate; diret download link

@@ -1,0 +1,639 @@
+
+
+-- 2018-07-23
+# to backup files, from command prompt to tries 
+
+------ [ `2018-08-22`; modified on `2018-08-23`
+- To Backup files adds, the commands available in the place, to add in below file path, as the commands to add backup to get easy; the file notes to adds, thinks 
+`D:\Learn\Tips\backup_commands.txt`
+------ ]
+ 
+TODO:
+- to add, backup files command to add, thinks 	/
+
+TODO:
+- to backup files, to add in `OneDrive`, thinks adds in internet, thinks 	/
+
+
+-- 2018-07-24
+
+# backup folders creates, from below command results, adds in winmerge checking tried; of available folders in `D:\Learn`, of backup folder creates `E:\Backup\Learn`, of respective folders available in backup, winmerge, checking tried, thinks 
+D:\Learn>dir . /b sortorder:N
+D:\Learn>dir E:\Backup\Learn /b sortorder:N
+
+
+# to create folder in `workspace`, of projects folder to creates, thinks 
+# to list available folders in `workspace`
+D:\Learn>dir .\workspace /b sortorder:N
+
+------ [ `2018-08-22`; modified on `2018-08-23`
+- To Backup files adds, the commands available in the place, to add in below file path, as the commands to add backup to get easy; the file notes to adds, thinks 
+`D:\Learn\Tips\backup_commands.txt`
+------ ]
+
+
+
+# to backup files `rar`, command to adds, to tries, of `Softwares` folder dir to list files to write in file, to try, 
+> rar a -r -ep1 -agYYYY-MM-DD "E:\Backup\Learn\Books\Books_.rar" "D:\Learn\Books"
+> rar a -r -ep1 -agYYYY-MM-DD "E:\Backup\Learn\Curriculum Vitae (CV)\Curriculum Vitae (CV)_.rar" "D:\Learn\Curriculum Vitae (CV)"
+> rar a -r -ep1 -agYYYY-MM-DD "E:\Backup\Learn\Daily Works\Daily Works_.rar" "D:\Learn\Daily Works"
+> rar a -r -ep1 -agYYYY-MM-DD "E:\Backup\Learn\from Mobile\from Mobile_.rar" "D:\Learn\from Mobile"
+> rar a -r -ep1 -agYYYY-MM-DD "E:\Backup\Learn\from Office\from Office_.rar" "D:\Learn\from Office"
+> rar a -r -ep1 -agYYYY-MM-DD "E:\Backup\Learn\Tips\Tips_.rar" "D:\Learn\Tips"
+> rar a -r -ep1 -agYYYY-MM-DD "E:\Backup\Learn\Tried\Tried_.rar" "D:\Learn\Tried"
+> rar a -r -ep1 -agYYYY-MM-DD "E:\Backup\Learn\Tried Programms\Tried Programms_.rar" "D:\Learn\Tried Programms"
+> rar a -r -ep1 -agYYYY-MM-DD "E:\Backup\Learn\workspace\LearnUI\LearnUI_.rar" "D:\Learn\workspace\LearnUI"
+> rar a -r -ep1 -agYYYY-MM-DD "E:\Backup\Learn\workspace\Test\Test_.rar" "D:\Learn\workspace\Test"
+
+# Note: of `Sotwares` folder, to list files; option `/s` in command, commented of list subdirectories, thinks, of `eclipse-jee-photon-R-win32-x86_64`, `OpenOffice 4.1.5 (en-US) Installation Files` subfolders many files would available, thinks commented `/s` in option, to try, thinks 
+> dir D:\Learn\Softwares /b sortorder:N > E:\Backup\Learn\Softwares\Softwares_%date:~6,4%-%date:~3,2%-%date:~0,2%.txt
+
+
+-- > rar a -r -ep1 -agYYYY-MM-DD E:\Backup\Learn\Softwares 
+-- > rar a -r -ep1 -agYYYY-MM-DD E:\Backup\Learn\workspace D:\Learn\workspace
+
+TODO:
+- thinks, `rar` silent adds, to checking, tries, thinks, of log prints more in command prompt thinks 	/ from command prompt, `winrar` command working, thinks, below marks on `2018-07-26`, thinks 
+- files copy to `OneDrive`, from notes written to try thinks 
+- think filter command daily backup, weekly, monthly backup, to filter commands to tries, thinks 	/
+
+
+-- 2018-07-25
+
+TODO:
+- `OneDrive` to seeing, to try, thinks test file to add in `OneDrive`, from mobile to get the file, to checking to try, thinks; Note: computer to disconnect from internet to try, thinks 	/ 
+- Backup files to add `OneDrive`, to try, thinks, to copy files from local Backup folder to add in the folder (i.e. adds in internet, thinks, to cehking to try), of copy files `DATE` value in file name to set in variable, to try, thinks, below thinks 	/ tried, below available, thinks 
+> set BKP_FILES_DATE = <CURRENT_DATE_FORMATTED_STRING> OR <MANUAL_ENTER_DATE>
+> cp E:\Backup\Learn\...\<SOURCE_FILE>_BKP_FILES_DATE.rar <DESTINATION_ONEDRIVE_PATH>
+>> Note: in file name path command, variable to print to try, thinks 
+
+
+-- 2018-07-26
+
+TODO:
+- `rar` command, to try, percentage of adds to archive, to show adds to try, 
+>> thinks link seeing, not knows properly 
+- `rar` command enters background to runs add to archive, to try, (i.e. command enters background to runs, to add to archive, of next prompt command, to enters, to show, to try), thinks 	\ from command prompt, `winrar` command background runs thinks, of enters GUI opens while adding to archive, next command runs, command below available, tried 
+- marks notes of `OneDrive` to try, 
+- above backup files notes to try, 
+- command `winrar <COMMAND_PATH_ADD_ARCHIVE>`, enters to try, of GUI opens to cehcking to try, 	/ 
+- option `-idq` to checking, to try of error message prints, to checking to try 	/ thinks, in `Rar.txt` the option notes seeing 
+
+
+-- 2018-07-27
+
+TODO:
+- WIP backup files, from `winrar <OPTIONS> <ARCHIVE_FILE_PATH> <SOURCE>` command, to adds, to backup files to try, 	/ below adds 
+- backup files above marks notes to try, 
+
+-- 2018-07-28 
+
+TODO:
+- to Backup files, marks notes to try 
+- `OneDrive` to seeing, tutorial to seeing, to try, thinks 	/ thinks 
+- `OneDrive` marks notes to try 
+- `rar` command to add to archive multiple files, to try, (i.e. `winrar <OPTIONS> <ARCHIVE_FILE_NAME_FULL_PATH> <FILE_1_TO_ADD_ARCHIVE> <FILE_2_TO_ADD_ARCHIVE>`), to try thinks 	/
+>> (i.e. multiple files add to archive to try, of exclude `WEB-INF\lib` folder, the folder's jar files list files write in file of `dir` command, thinks to add to archive the folder, the `lib` folder's list files, after adds to archive, the text file to file to delete, thinks option of `df`, thinks), to try 
+>> of above multiple files to add to archive, sample `Test Backup` folder, `Softwares` folder's list files to add to archive, of after to delete the txt file to try, thinks) 
+
+
+-- 2018-07-29
+
+TODO:
+- to Backup files, marks notes to try 
+- `OneDrive` tutorial to seeing, to try 	/ 
+- `OneDrive` marks notes to try 
+
+Note:
+- `OneDrive` logins from Skype account `navin.pkb`, the account's email `pkrnavin@gmail.com` configured thinks, logins from the email thinks 
+- Sample backup file, adds to `OneDrive` adds to internet, from link mobile downloads gets tried, `OneDrive` app installed in mobile thinks, login tried thinks 	/ 
+
+TODO:
+- From command copy files to `OneDrive` add to internet, of `Free Space` (i.e. to stores in internet, in local not to adds), to try thinks 
+>> Note: of large files size adding, while uploading disconnect, below to try think, 	/ tried, below notes marks, thinks 
+	- internet disconnect, after few minutes to connect internet, to resume upload from before uploads point, to seeing, to try, thinks 
+	- while uploading, computer shut down, after `on` to resume upload from before uploads point, to cheking to try thinks 
+- From command line, to copy files to add, to internet, `Free Space` option, above to checking to try, thinks, 	\ thinks `OneDrive` automatically free up space option, in windows 10 build 1809 to release, so after releases update install to try, below notes marks 
+>> thinks from link, `mklink` command to try, to searching `mklink adds file onedrive free space in local disk`, to try thinks 
+
+- onedrive tutorial link
+https://www.windowscentral.com/how-get-started-onedrive-windows-10
+
+
+- onedrive disk cleacn up 
+https://www.windowscentral.com/9-tips-help-you-fix-onedrive-sync-problems-windows-10
+https://www.komando.com/tips/431156/5-ways-to-free-up-space-on-windows
+https://www.windowscentral.com/best-7-ways-free-hard-drive-space-windows-10#onedrive_files_ondemand_windows10
+
+
+-- from below link, to try command prompt, `mklink` to add files to internet, to try thinks  
+https://www.tenforums.com/tutorials/92892-sync-any-folder-onedrive-windows-10-a.html
+https://www.tenforums.com/tutorials/86869-free-up-space-locally-available-onedrive-files-windows-10-a.html
+http://www.dropboxwiki.com/tips-and-tricks/sync-game-saves-across-multiple-computers
+https://superuser.com/questions/1020821/how-to-create-a-symbolic-link-on-windows-10
+https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/
+
+
+thinks:
+- Blue border, cloud icon denotes, of files available in internet (i.e. local spaces not uses, thinks)
+
+# below to try, symbolic 
+> mklink /D "E:\Backup\TestBackup\SymbolicLink" "D:\Learn\zTestBackupFilesFromCommandPrompt"
+>> thinks option `/D` of directory; of `/D` not available for file thinks 
+
+
+TODO:
+- to try, from link symbolic link, copy files to onedrive, of online backup to try thinks 	/ 
+
+
+-- 2018-07-30
+
+-- symbolic link tutorial 
+https://www.logicbig.com/how-to/windows/windows-symbolic-links.html
+>> thinks, `mklink` adds, `dir` disk space usage of file adds, in the link given thinks 
+https://superuser.com/questions/1214539/create-a-relative-symbolic-link-in-windows-10-for-file-copies
+
+TODO:
+- `OneDrive` symbolic link file backup to try, thinks; 	/ tried 
+>> thinks google to search `symbolic link windows 10 onedrive`, to try backup file uploads, to checking while uploads disconnect internet, after computer turn on to resume from before uploads pints to checking to try thinks	/ thinks tried, below notes marks 
+
+
+-- 2018-07-31
+
+TODO:
+- `OneDrive` to backup file, symbolic link, to try thinks 
+
+# below tries, backup file, to upload in OneDrive from command prompt, below of file not copies thinks; below symbolic link, to upload file in `OneDrive`, below working thinks; Note: below of symbolic link, hard link file uploads in `OneDrive` thinks (i.e. in `mklink /h` of hard link of file thinks), of file default `mklink` (i.e. softlink), file not uploads to `OneDrive`, thinks; thinks folder to upload `mklink /J` to adds thinks, to upload in OneDrive thinks, 
+> winrar a -r -ep1 -agYYYY-MM-DD -idq E:\Backup\TestBackup\zTestBackupFilesFromCommandPrompt_background_.rar D:\Learn\zTestBackupFilesFromCommandPrompt
+> SET "BKP_FILES_DATE=%date:~6,4%-%date:~3,2%-%date:~0,2%"
+> echo %BKP_FILES_DATE%
+
+# below file upload to OneDrive
+> mklink /h "E:\OneDrive\TestBackup OneDrive\SymbolicLink\zTestBackupFilesFromCommandPrompt_background_%BKP_FILES_DATE%.rar" "E:\Backup\TestBackup\zTestBackupFilesFromCommandPrompt_background_%BKP_FILES_DATE%.rar"
+Hardlink created for E:\OneDrive\TestBackup OneDrive\SymbolicLink\zTestBackupFilesFromCommandPrompt_background_2018-07-31.rar <<===>> E:\Backup\TestBackup\zTestBackupFilesFromCommandPrompt_background_2018-07-31.rar
+
+# below command working thinks 
+> mklink /D "E:\OneDrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload" "D:\Learn\zOneDriveFolderUpload"
+>> thinks, from internet deletes files, in `D:\` file delete thinks, to chceking to try thinks 
+> mklink /J "E:\OneDrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload" "D:\Learn\zOneDriveFolderUpload"
+
+
+Note: 
+- thinks, mklink to upload `OneDrive` 	/ 
+	- of file to upload `mklink /h "E:\OneDrive\<FOLDER_FILE_PATH>" "<SOURCE_FOLDER_FILE_PATH>"` (i.e. hard link, of file thinks)
+	- of folder to upload `mklink /J "E:\OneDrive\<FOLDER_PATH>" "<SOURCE_FOLDER_PATH>" (i.e. hard link, junction link, of folder, thinks)
+	>> above to try, 
+	
+-- from link, mklink thinks 
+https://forums.windowscentral.com/onedrive/473128-2-way-sync-doesnt-work-onedrive-when-using-symbolic-links-junctions-windows-10-a.html
+https://answers.microsoft.com/en-us/msoffice/forum/msoffice_onedrivefb-mso_o365app-mso_o365b/sync-onedrive-business-with-mklink/6c973d7f-aabb-4077-88d5-8ff19fe9fca1
+https://techcommunity.microsoft.com/t5/OneDrive-for-Business/Include-files-in-OneDrive-sync-without-copying-them/td-p/74119
+https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/
+https://www.howtogeek.com/194431/how-to-sync-any-folder-to-the-cloud-with-symbolic-links/
+https://answers.microsoft.com/en-us/windows/forum/windows_10-files-winpc/onedrive-on-windows-10-and-symbolichard-links/9003d014-bb3f-4069-a3e9-fe387aeb748d
+
+TODO:
+- to cehking, to try file, folder delete from internet refelcts in Orginal to chgchink, above `2-way-sync` link to seeing thinks, of hard link, soft link, to cehcking to try 	/ checking tried, below notes marks, thinks
+- while uplaoding in to disconnect ineternet, computer turn to resume from before uploads point to cheking to try 	/ checking tried, below notes marks, thinks 
+
+
+-- 2018-08-01
+
+TODO:
+- of `mklink` add in `OneDrive`, from internet delete of file reflects in saved location drive, thinks, marks notes to try, belwo to try	/ below notes marks, thinks 
+	- soft link, to add in `OneDrive`, 
+		- file
+		- folder 
+	- hard link, to add in `OneDrive`,
+		- file
+		- folder
+>> of delete file internet, in saved drive refelcts to checking thinks	/ below notes marks, thinks  
+- of delete from saved location, reflects in internet to checking to try, thinks 	/ below notes marks, thinks 
+- thinks to seeing, to try, of `OneDrive` after file uploads mark `Free space` automatically to try 	/ thinks, option available in windows 10 build 1809 to release, so after release update, install, to try 
+- from link, of before day to seeing 	\ thinks 
+>> P1
+- backup files marks notes to try 
+- to cheking, file add in `OneDrive` from `mklink`, while uploads internet disconnects, computer Turnon to resume from before to try 	/ thinks, below notes marks 
+
+# below command to add to checking, to try of delete reflects in save location, to try 
+
+> SET "BKP_FILES_DATE=%date:~6,4%-%date:~3,2%-%date:~0,2%"
+> echo %BKP_FILES_DATE%
+
+> winrar a -r -ep1 -agYYYY-MM-DD -idq E:\Backup\TestBackup\zTestBackupFilesFromCommandPrompt_background_.rar D:\Learn\zTestBackupFilesFromCommandPrompt
+
+## softlink to add in oneDrive 
+# file 
+> mklink "E:\OneDrive\TestBackup OneDrive\SymbolicLink\zTestBackupFilesFromCommandPrompt_background_%BKP_FILES_DATE%.rar" "E:\Backup\TestBackup\zTestBackupFilesFromCommandPrompt_background_%BKP_FILES_DATE%.rar"
+# folder  
+> mklink /D "E:\OneDrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload_softlink_%BKP_FILES_DATE%" "D:\Learn\zOneDriveFolderUpload"
+
+
+## hardlink, to add in `OneDrive`,
+# file 
+> mklink /H "E:\OneDrive\TestBackup OneDrive\SymbolicLink\zTestBackupFilesFromCommandPrompt_background_%BKP_FILES_DATE%.rar" "E:\Backup\TestBackup\zTestBackupFilesFromCommandPrompt_background_%BKP_FILES_DATE%.rar"
+# folder  
+> mklink /J "E:\OneDrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload_hardlink_%BKP_FILES_DATE%" "D:\Learn\zOneDriveFolderUpload"
+
+>> Note: both softlink, hardlink thinks after file adds to `OneDrive`, from internet delete of file, below thinks 
+	- delete of FILE, in orginal file AVAILABLE, thinks; 
+	- delete of FOLDER, in orginal folder inside files also DELETES, thinks 
+
+>> Note: after file uploads, delete from orginal folder, in below thinks 
+	- softlink, below thinks 
+		- orginal FILE delete, thinks from ineternet file downloads of `rar`, file not opens thinks of damaged shows thinks; 
+		- orginal FOLDER delete, reflects in OneDrive DELETES files inside folder, thinks 
+	- hardlink, below thinks
+		- orginal FILE delete, internet showing `rar` downlaods opens thinks 
+		- orginal FOLDER delete, internet AVAILABLE of files inside folder, thinks, in local not opens, thinks ineternet available thinks 
+
+	
+>> thinks file available also, downloads `rar`, shows damages thinks 
+	
+	
+- thinks below link, file automatically Free Up Space in `OneDrive`, thinks 
+https://www.tenforums.com/tutorials/112382-automatically-make-onedrive-files-demand-online-only-windows-10-a.html
+https://pureinfotech.com/onedrive-files-online-only-automatically-free-up-space-windows-10/
+>> thinks google search `windows 10 onedrive automatically free space`, `windows 10 onedrive after file upload automatically ree up space` 
+https://www.groovypost.com/howto/make-onedrive-files-on-demand-online-only-in-windows-10-automatically/
+>> google search `windows 10 onedrive free up space automatically`; above link (added on `2018-08-04`)
+
+-- 2018-08-02
+
+TODO:
+- `OneDrive` auto free space, from link to seeing, to try 
+>> thinks, in Settings storage, free up space option of `OneDrive`, not showing thinks, to checking after adds options lists OR `OneDrive` add in `C:\` the option shows to cheking to try thinks 	\ thinks tried, in `C:\` adds `OneDrive`, in `Settings` -> `Storage` option not lists, of OneDrive automatically Free Up Space, below marks the option available in windows 10 build 1809 to release, so after releases to try 
+- to cheking, while upload, to `OneDrive` disconnect and connect from internet, after computer turn on to resume from before point, to checking to try thinks 	\ below marks thinks 
+>> thinks, after computer turn on, before close seeing uploaded ~ 11.7 MB, after turn on upload starts from ~ 9.7 MB, thinks 
+- marks notes of backup to seeing, to try 
+- to backup files, add to `OneDrive`, after backup from `winrar` command, add to `OneDrive` from `mklink` command to try, 	/ tried, below available 
+
+
+-- 2018-08-04
+
+TODO:
+- To Backup files, of `OneDrive` of automatically FreeUpSpace, in `Settings` -> `Storage` -> ~ `Change Free Up Space`, option not list of `OneDrive`, below to try
+	- thinks, search `OneDrive`, in settings storage automatically `Free Up Space` not listing 
+	- to checking `OneDrive`, to add in `C:\` change location, in `Settings` -> `Storage` in option lists of `OneDrive` of Free Up Space automatically, to try 
+	>> Note: currently available in `OneDrive` to backup, to try 	/ tried; automatically `Free Up Space` option in windows 10 build 1809, to release, thinks, so after release to update, install to try, 
+- To Backup files, marks notes to seeing to try 
+- To Backup files, command to add `WinRar` to add in `OneDrive` of internet backup of `mklink` to try 	/ tried, below available 
+
+
+-- `OneDrive` issues, workaround 
+https://support.office.com/en-us/article/fixes-or-workarounds-for-recent-issues-in-onedrive-36110213-f3f6-490d-8cb7-3833539def0b
+
+
+TODO:
+- thinks, to update `windows 10 1809 version 17692`, from the link given, `OneDrive` of Free Up Space automatically, option available in the version given thinks, 
+>> thinks, currenltly available to update; to cehck update; manually download and install of the version to try, 
+- to save space, hibernet off, from below link, to try 	/
+https://www.laptopmag.com/articles/save-space-windows-10
+
+
+TODO:
+- Note: `OneDrive` automatically free up space, option in `Settings` -> `Storage` -> ~ `Change Free Up Space`, available in `windows 10 1809` build, thinks, the build is yet to release, so after releases to update install, to try, to configure in settings, 
+
+
+TODO:
+- `OneDrive` to change location, to add in `E:\`	/
+- Free up space, of hibernet file folder to seeing, turn off option 	/ 
+
+
+TODO:
+- to backup files, from command prompt, of `winrar` command to add, `mklink` to add files to `OneDrive`, files to add in internet, to try 	/
+- to backup files, marks notes to seeing 
+
+
+-- 2018-08-05, 2018-08-07 (i.e. commands filter, of frequency to take backup to try)
+
+TODO:
+- to Backup files, command to add, to try, `winrar` to backup files, of backup files to add in `OneDrive` `mklink` command to try, steps written in notebook, to try 	\
+
+-- [ `Onedrive` list files write in file, added on `2018-08-06` 
+
+## to add backup files, in `Backups` respective folder file to add, of folders available to cheking to try; from below command of folder lists, winmerge to cehking thinks
+# below in `Learn` 
+> dir D:\Learn /b sortorder:N > "D:\Learn\Tried\2018\August\Aug 5\D_Learn.txt"
+> dir E:\Backup\Learn /b sortorder:N > "D:\Learn\Tried\2018\August\Aug 5\E_Backup_Learn.txt"
+> dir %OneDrive%\Backup\Learn /b sortorder:N > "D:\Learn\Tried\2018\August\Aug 6\OneDrive_Backup_Learn.txt"
+
+
+# below `Learn\workspace`, 
+> dir D:\Learn\workspace /b sortorder:N > "D:\Learn\Tried\2018\August\Aug 5\D_Learn_workspace.txt"
+> dir E:\Backup\Learn\workspace /b sortorder:N > "D:\Learn\Tried\2018\August\Aug 5\E_Backup_Learn_workspace.txt"
+> dir %OneDrive%\Backup\Learn\workspace /b sortorder:N > "D:\Learn\Tried\2018\August\Aug 6\OneDrive_Backup_Learn_workspace.txt"
+
+-- ]
+
+
+TODO:
+- to backup files, command to add to run think, to try, 	/
+
+
+------ [ `2018-08-22`; modified on `2018-08-23`
+- To Backup files adds, the commands available in the place, to add in below file path, as the commands to add backup to get easy; the file notes to adds, thinks 
+`D:\Learn\Tips\backup_commands.txt`
+------ ]
+
+
+
+TODO:
+- above command, to cehcking to verfication, to try, command runs of backup files to try 	/ thinks
+
+TODO:
+- WIP file uploads in `OneDrive`, to checking to try, of after computer on, to resume, before point, to cheking try, currently upoloads point in the screenshot of following file `D:\Learn\Tried\2018\August\Aug 5\WIP_OneDrive_File_Uploads.png`; Note: above command runs, thinks; 	/
+- to cehking back files adds 	/ thinks
+- marks notes to cheking 
+
+
+-- 2018-08-06
+
+- WIP checking tries, marks in status 
+
+TODO:
+- to backup files to filter command daily, weekly, monthly, yearly to try 	/
+- marks notes to seeing 
+
+
+-- 2018-08-07
+
+TODO:
+- to cehking, filter command, of frequency to backup to try 	/
+- marks notes to seeing 
+
+
+-- 2018-08-08
+
+TODO:
+- to backup files, filter commands tried, to checking, comands available of `winrar`, `mklink` to checking  	/
+- to backup files, marks notes in notebook, in computer `backup_tips.txt`, `rar_tips.txt` to seeing, to marks 
+- `OneDrive` from `mklink` softlink adds, manually marks `Free Up Space`, to checking to try, thinks, hardlink adds of `mklink`, to cehcking to try 
+>> Note: thinks, `OneDrive` of `mklink` softlink of file, not uploads thinks, `hardlink` file uploads thinks; thinks `E:\OneDrive\TestBackup OneDrive\SymbolicLink\zTestBackupFilesFromCommandPrompt_background_2018-08-02.rar` of hardlink file adds `Free Up Space` manually adds, working thinks, to try thinks 
+>>>> below notes marks in `2018-08-11`, thinks, of OneDrive marks `Free up space`, of `mklink` adds file 
+
+TODO:
+- `OneDrive` from `mklink` hardlink before added file marks `Free Up Space` working thinks, currently added file not working thinks, below to try 
+	- thinks file large size adds, tried, not working thinks 
+	- file name varies adds in `OneDrive`, to cehking to try 
+	>> thinks, not working 
+	- in settings login, of OneDrive account, to checking to try 
+	>> thinks tried, of laptop to login from Microsoft account password, so switches to local account 
+	- to reset `OneDrive`, command to try 
+	>> thinks, tried not working 
+	- to restart computer to try 
+	>> thinks, tried not working 
+TODO:
+- `OneDrive` backup adds files marks `Free Up Space`, not working thinks, of before file added of above file fullpath, working of `Free Up Space` thinks, to cehchking to try 
+>> Note: below marks, of `OneDrive` `mklink` adds file, marks `Free Up Space`, not working thinks; before adds working, as `OneDrive` location change tried, thinks, so working, thinks, below notes marks in `2018-08-11`, thinks 
+
+
+TODO:
+- to backup files, marks notes, in `backup_tips.txt`, `rar_tips.txt` to marks to seeing 	/ tried
+
+
+-- 2018-08-09
+
+TODO:
+- to backup files, marks notes in `backup_tips.txt`, `rar_tips.txt` to marks, to seeing 	/ tried 
+
+TODO:
+- `OneDrive` backup files adds `Free Up Space` clicks, not working thinks, to checing to try 
+- `OneDrive` free up space automatically, from Settings -> Storage, option available in `windows 10 build 1809` to release, so after build releases, to update install, to configure to try, 
+
+
+-- 2018-08-11
+
+tried:
+- `OneDrive` backup files from `mklink` adds, `Free up space` not working, thinks 
+Note: 
+- in `OneDrive` adds files, manually copy files OR from `copy` command, adds, marks `Free Up Space` working thinks; 
+- thinks `mklink` adds file marks `Free up space` not working thinks; 
+>> Note: thinks above from `mklink` adds files `Free up space` working, as `OneDrive` location tried on `4-8-2018`, of adds in `C:\`, `E:\` adds, files downloads from internet thinks, so `Free up space` working for the file thinks (i.e. `OneDrive` change location, tried thinks, from link, automatically free up space of OneDrive in Settings -> Storage option to list, of change location tried, thinks the option available in `windows 10 1809` build to release, so after releases to update install, configure to try, thinks, above marks) 
+- before adds file marks `Free up space`, from `mklink` adds files thinks, working thinks, of file `E:\OneDrive\TestBackup OneDrive\SymbolicLink\zTestBackupFilesFromCommandPrompt_background_2018-08-02.rar`, (i.e. `mklink` command tried, in log available in `D:\Learn\Tried\2018\August\Aug 2\oneDrive_mklink_command_prompt_log.txt`), thinks 	\ thinks, OneDrive location change tried, of after marks `Free up space`, working, thinks, above notes, thinks 
+
+TODO:
+- `OneDrive` in computer, how much disk space occupy to get, thinks, (i.e. `mklink` adds files, disk space to get to try thinks), as `mklink` adds file path refers original file storage, so in `OneDrive` space occupy, to checking to try 	\ thinks, `mklink` adds file `Free up space`, not working, of `Size On Disk` file size count, of mklink file available thinks, of cheking tried thinks in `D:\Learn\`, of folders `zHardlinkSource` (i.e. source), `\zHardlinkTarget` (i.e. hardlink file has, thinks), in `Size On Disk` size counts, from `du` size counts, of source, hardlink files in separate folder thinks, of source, hardlink files in same folder, size not counts, thinks, of file change in source OR hardlink reflects in both place thinks; of `OneDrive` change location, again adds in `E:\`, of mklink files, of `copy` files adds, marks `Free up space` adds working thinks, `Size on disk` not counts thinks, below notes available, thinks 
+- `OneDrive` from mklink adds file `Free up space` not working, to search, thinks 
+- thinks `dir` file space occupy, of `OneDrive` folder, to try thinks, before link of mklink softlink, hardlink space occupy checking of `dir`, from link showing to checking, to try `OneDrive` folder thinks 	/ thinks tried, below notes thinks 
+
+
+TODO:
+- `OneDrive` disk space occupy, of mklink file adds, to get to try, from `du` command to cheking to try; 	/ command runs, seeing, thinks 
+>> `du` command install tried 
+
+
+-- 2018-08-12
+
+TODO:
+- to chccking, to try, `mklink` file add in `OneDrive`, orginal file delete, mark `free up space` of file checking to try, 	\ thinks, below marks 
+
+# below command, of above to try 
+> mklink /H "E:\OneDrive\TestBackup OneDrive\SymbolicLink\zTestBackupFilesFromCommandPrompt_%BKP_FILES_DATE%.rar" "E:\Backup\TestBackup\CheckingTried\zTestBackupFilesFromCommandPrompt_%BKP_FILES_DATE%.rar"
+
+>> thinks, `Free Up Space` not working, of original file delete thinks 
+
+- to checking to try, hardlink file, copy file of before, after `Free Up Space` to cheking to try 	/ thinks below marks 
+> mklink /H "E:\OneDrive\TestBackup OneDrive\SymbolicLink\zHardlink\zTestBackupFilesFromCommandPrompt_%BKP_FILES_DATE%.rar" "E:\Backup\TestBackup\CheckingTried\zTestBackupFilesFromCommandPrompt_%BKP_FILES_DATE%.rar"
+
+# disk space occupies, checking to tries 
+> du -v E:\OneDrive\TestBackup OneDrive\SymbolicLink\zHardlink
+> dir "E:\OneDrive\TestBackup OneDrive\SymbolicLink\zHardlink"
+
+
+>> thinks, disk space, to checking; command checking tries, to add in log 
+- `du` command, file size counts, of both files (i.e. from `hardlink`, `copy` file adds), of before, after `Free Up Space`, file size counts thinks 
+- `dir` command, hardlink, of copy file before free up space, file size counts, thinks, thinks the copy file adds marks `Free up space`, in the command file size showing bracket thinks 
+
+TODO:
+- `OneDrive` disk space to checking, 	/ thinks, `dir`, `du` command runs seeing tried, folder Properties `Size On Disk` to seeing, thinks 
+- thinks, copy file adds to `OneDrive`, mark free up space thinks 	/ tried, below notes marks available, thinks 
+
+
+-- 2018-08-14
+
+TODO:
+- `OneDrive` diskspace `du`, `dir` command to try, 	/ command runs, seeing tried thinks 
+- To backup files, copy command to add, of file 	/ tried, below notes available, thinks 
+- Notes to mark of `mklink` folder (i.e. in original folder, file add, refelects in `OneDrive` thinks), of file mark `Free up space` not working thinks 	/ 
+- marks notes, written in notebook, file, to seeing, to marks, to cheking verfication from command prompt log, to marks 
+- OneDrive folder harddisk space usage space to get, from link, to seeing 	\ thinks, below notes `Size on disk` to seeing, in `Properties` 
+
+
+------ [ `2018-08-22`; modified on `2018-08-23`
+- To Backup files adds, the commands available in the place, to add in below file path, as the commands to add backup to get easy; the file notes to adds, thinks 
+`D:\Learn\Tips\backup_commands.txt`
+------ ]
+
+
+TODO:
+- Copy command to run, to marks `Free Up Space`, above marks to try 	/ thinks, copy command runs, `file access in another place` message, thinks; of `mklink` adds file, copy of orginal file adds in folder, note working, thinks, below notes available thinks; `OneDrive` marks `Free up space` working of after location change adds, in the folder, below tried, notes marks available, thinks 
+
+
+-- 2018-08-15
+
+TODO:
+- OneDrive `copy` command to run, to mark `Free Up Space` 	/ thinks, below notes of `mklink` adds file, of orginal file copy adds, below notes available, thinks; `OneDrive` marks `Free up space` working, of after location change, adds thinks, below notes available, thinks 
+>> thinks, before added file, of copy overwrite not working, message shows `The process cannot access the file because it is being used by another process.`,  thinks, checking tried `OneDrive` close, reset from command, restart computer, not working, thinks 
+- OneDrive diskspace occupy `dir`, `du` command to seeing, thinks 	/ command runs, log seeing thinks 
+- marks notes to seeing 
+- oneDrive harddisk space occupy, to get, from link to seeing, to try 	\ below marks 
+>> from below link, thinks `Size On Disk` of `OneDrive` to take, thinks 
+
+# thinks, `OneDrive` folder Right click -> Properties, available `Size`, `Size On Disk`; thinks `Size On Disk` to take of `OneDrive` folder, thinks, below link thinks, 
+http://www.rawinfopages.com/tips/2017/09/how-to-save-disk-space-with-files-on-demand-in-windows-10/
+https://superuser.com/questions/66825/what-is-the-difference-between-size-and-size-on-disk
+
+TODO:
+- marks notes to seeing, 
+
+TODO:
+- copy of file already adds `mklink` link file not working, thinks, below try thinks 
+	- `mklink` hardlink file add in folder, orginal file copy add in the folder, to chekcing to try, of file overwrites 	/ below marks, thinks 
+	- of above working, thinks, `oneDrive` copy file adds, of unlink, to try thinks 	/ thinks, location change marks `Free up space`, tried thinks 
+	>> thinks above, of `mklink` hardlink file, copy of original file add in the folder, not working, thinks 
+- to checking, `D:\zHardlinkSource` (i.e. orginal files), `D:\zHardlinkTarget` (i.e. hardlink files, thinks), `Size on disk` to cheking to try, thinks 	/
+>> thinks, `Size on disk` of both folder in `Properties`, count adds thinks; in `D:\Learn\zHardlink`, `source.txt`, `sourceHardlink.txt` also count adds thinks 
+
+# below, `mklink` hardlink file adds, from copy command of original file, overwrite `mklink` adds file, to checking, to try
+> mklink /H "E:\Backup\TestBackup\CheckingTried\zTestBackupFilesFromCommandPrompt_background_%BKP_FILES_DATE%.rar" "E:\Backup\TestBackup\zTestBackupFilesFromCommandPrompt_background_%BKP_FILES_DATE%.rar"
+
+# of copy command, 
+> copy /Y "E:\Backup\TestBackup\zTestBackupFilesFromCommandPrompt_background_%BKP_FILES_DATE%.rar" "E:\Backup\TestBackup\CheckingTried\zTestBackupFilesFromCommandPrompt_background_%BKP_FILES_DATE%.rar"
+
+> copy /Y "E:\Backup\TestBackup\zTestBackupFilesFromCommandPrompt_background_%BKP_FILES_DATE%.rar" "E:\Backup\TestBackup\CheckingTried\"
+
+>> thinks, `mklink` hardlink adds file, copy of original file adds in the folder, not working thinks, `file access from other` message shows thinks
+
+TODO:
+- OneDrive to `Free Up Space`, change location add in `C:\` again add in `E:\`, below to try 	/
+	- to mark `Size on Disk` from `Properties`, from `du`, `dir` command to add thinks, of below thinks 	/
+		- before location change 	/
+		- after location change 	/
+>> `OneDrive` after location change, again adds in `E:\`, marks `Free Up Space` of `mklink` adds file working, thinks; below size marks of before, after location change tries 
+-- [ in notebook notes written, added on `2018-08-16` 
+- OneDrive location change, notes in `windows_tips.txt`, to adds 	/
+- copy command to run, to mark `Free up space`, thinks 	/
+- marks notes to seeing, to marks 
+-- ]
+
+
+Note: 
+- OneDrive, before location change
+	- from Properties, Size `364 MB`, Size on disk `307 MB`; screenshot in `D:\Learn\Tried\2018\August\Aug 15\OneDriveSize.png` 
+	- from `du` command, below thinks 
+	>du %OneDrive%
+	DU v1.61 - Directory disk usage reporter
+	Copyright (C) 2005-2016 Mark Russinovich
+	Sysinternals - www.sysinternals.com
+
+	Files:        29
+	Directories:  27
+	Size:         38,24,45,457 bytes
+	Size on disk: 32,22,21,472 bytes
+	- from `dir` command, below thinks; 
+	>dir %OneDrive%
+	 Volume in drive E has no label.
+	 Volume Serial Number is 9A25-873C
+
+	 Directory of E:\OneDrive
+
+	15-08-2018  15:50    <DIR>          .
+	15-08-2018  15:50    <DIR>          ..
+	29-07-2018  13:20    <DIR>          Attachments
+	05-08-2018  20:57    <DIR>          Backup
+	29-07-2018  11:50    <DIR>          Documents
+	06-08-2018  19:05    <DIR>          Pictures
+	11-08-2018  18:26    <DIR>          TestBackup OneDrive
+				   0 File(s)              0 bytes
+				   7 Dir(s)  390,973,923,328 bytes free
+- OneDrive, after location change, marks `Free Up Space`
+	- from Properties, Size `364 MB`, Size on disk `12 KB`; screenshot in `D:\Learn\Tried\2018\August\Aug 15\OneDriveSizeAfterLocationChangeMarkFreeUpSpace.png` 
+	- from `du` command, below thinks 
+	>du %OneDrive%
+	DU v1.61 - Directory disk usage reporter
+	Copyright (C) 2005-2016 Mark Russinovich
+	Sysinternals - www.sysinternals.com
+
+	Files:        30
+	Directories:  27
+	Size:         38,24,46,940 bytes
+	Size on disk: 2,29,376 bytes
+	- from `dir` command, below thinks; 
+	>dir %OneDrive%
+	 Volume in drive E has no label.
+	 Volume Serial Number is 9A25-873C
+
+	 Directory of E:\OneDrive
+
+	15-08-2018  17:53    <DIR>          .
+	15-08-2018  17:53    <DIR>          ..
+	29-07-2018  13:20    <DIR>          Attachments
+	15-08-2018  17:50    <DIR>          Backup
+	29-07-2018  11:50    <DIR>          Documents
+	15-08-2018  17:50    <DIR>          Pictures
+	15-08-2018  17:50    <DIR>          TestBackup OneDrive
+				   0 File(s)              0 bytes
+				   7 Dir(s)  390,973,394,944 bytes free
+>> Note: size, command of `dir` `/s` option, in command prompt log available of size occupies, thinks 
+
+
+-- 2018-08-16
+
+TODO:
+- marks notes, to backup files notes written in `notebook`, `backup_tips.txt`, to seeing, to marks 
+
+TODO:
+- WIP notes to marks, to backup files, before `2018-08-12` to marks, before tried, marks thinks 
+- TODO: to try to add 
+
+
+-- 2018-08-18
+
+TODO:
+- `OneDrive`, automatically marks `Free up space` configure, of `windows 10 build 1809`, build releases, to update install, to configure thinks 
+- `OneDrive`, automatically marks `Free up space`, adds, below to cheking, to try 
+	- of copy file adds 
+	- `mklink` adds file, to checking, 
+- backup, of `Daily Works` folder, mail to send, from java, winrar command mail send, to try 
+
+
+-- 2018-08-22
+
+TODO:
+- To backup files, `Major Tried` to add 
+
+
+-- 2018-08-23
+
+TODO:
+- To backup files, to add `Major Updates`, to add 
+
+Major Updates:
+- To backup files, to add from command prompt, `rar` command tried; thinks, in command prompt to run the command, the path to add in environment variable, added 
+- The `rar` command options, in archive adds from parent directory, relative path; date to add in file name; exlude folder, file; message log not prints; command tried 
+- Backup file command enters, background to runs (i.e. while adding to archive, able to run next command, prompts of next command to enters); of which `winrar` command from link, tried, GUI opens of adds to archive, background runs, while adding to archive, next command able to runs 
+- To backup files, folder create, `rar` commands added
+- To backup project folder, of `lib` folder to exlude, the files in the folder to write in file adds to archive, after adds to delete the file, command tried 	(modified on `2018-08-24`)
+- The backup files, to add `OneDrive` (i.e. in internet adds), skype account's emaild configure, sample file uploads, get in mobile, tried 
+- `OneDrive` marks `Free up space`, of disk space not occupy, marks folders, files, thinks 
+- `OneDrive` of while uploads, of internet disconnect, after computer turn on, to resume from before uploads point, checking tried 
+- `OneDrive` from command prompt, files add, to upload in internet, from link, `mklink` command came, thinks 
+- `mklink` command (i.e. shortuct of folder, files; the reference points to original folder, files), the command softlink, hardlink of folders, files command tried; the command adds in `OneDrive` uploads checking, tried 
+- `OneDrive` `mklink` folders files adds, of delete from internet, in local original folder also deletes thinks, to refer notes on `2018-08-01` tried marks, thinks 
+>> Note: In `OneDrive`, of `mklink` folders files to adds, the above of OneDrive from link delete of file, reflects in original to checking to verification to try
+- `OneDrive` automatically `Free up space`, from link searches thinks, the option available in `Windows 10 build 1809`, which is to release, so after releases to update, install, to try, to configure 
+- To Backup files to add, in local, OneDrive, the command folder creates, `winrar`, `mklink` files adds tried 
+- In OneDrive `Free Up space`, of `mklink` adds files marks not working, thinks; of copy files adds working, thinks 
+- From link of `mklink` tutorial, disk space occupy of `du` (i.e. the command folder's space occupy, displays, thinks) command adds install tried 
+- Disk space of `mklink` adds folders, files `dir`, `du` command tried 
+- `OneDrive` disk space of `dir`, `du` command tried 
+- `OneDrive` location change, of `mklink` adds files, to `Free up sapce`, tried 
+- `OneDrive` from `copy` command to adds files, command adds 
+- To backup files, folder creates, `rar`, `winrar`; in `OneDrive` to add the file `mklink`, `copy` command adds, tried 
+- The commands available in the file, to backup files adds in `D:\Learn\Tips\backup_commands.txt` 
+- The file renames `backup_tips.txt` to `backup_tips_files_notes.txt` 
+
+Known TODOs:
+- Above marks on `2018-08-18` 
+

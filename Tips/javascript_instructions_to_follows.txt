@@ -1,0 +1,74 @@
+
+
+-- 2018-08-27
+- Javascript instructions to follows, 
+
+- Javascript, of error occurs to see place, in firefox firebug, to seeing, to add addon firebug in the browser firefox 
+- Javascript, of multiple ajax call loads, of all loads to call the function; 
+  of variable to add, in each ajax call, to increment of before ajax call goes, of  `- 1` in response, of the `variable === 0` to call the function, in each ajax call response to adds, below 
+	(i.e. following, 
+			var nLoading = 0;
+			// all ajax call loads, of after loads to call the function 
+			loadAjaxCall_1();
+			loadAjaxCall_2();
+			loadAjaxCall_3();
+
+			
+			// after ajax call, all loaded to call the function 
+			function showAfterAllAjaxCallLoaded() {
+				if ( nLoading === 0 ) {
+					// do action 
+				}
+				// above OR below, 
+				if ( nLoading !== 0 ) return;
+				// do action 
+			}
+			// loads ajax call 1 
+			function loadAjaxCall_1() {
+				nLoading = nLoading + 1;
+				
+				// ajax call sends 
+				send({
+					url: <URL_1>,
+					success: function(response) {
+						nLoading = nLoading - 1;
+						// of all ajax call loads, the function action to runs 
+						showAfterAllAjaxCallLoaded();
+					}
+				});
+			}
+			// loads ajax call 2 
+			function loadAjaxCall_2() {
+				nLoading = nLoading + 1;
+				
+				// ajax call sends 
+				send({
+					url: <URL_2>,
+					success: function(response) {
+						nLoading = nLoading - 1;
+						showAfterAllAjaxCallLoaded();
+					}
+				});
+			}
+			// loads ajax call 3 
+			function loadAjaxCall_3() {
+				nLoading = nLoading + 1;
+				
+				// ajax call sends 
+				send({
+					url: <URL_3>,
+					success: function(response) {
+						nLoading = nLoading - 1;
+						showAfterAllAjaxCallLoaded();
+					}
+				});
+			}
+- javascript variable naming prefix 
+	<VALUE_TYPE>	prefix variable name
+	array 			`ary`
+	JSONObject		`jo`
+	number			`n`
+	decimal			`d` OR `f`
+>> of array variable name, must ends with `s` OR `ies` (i.e. must ends with plural) 
+- delete value from UI, alert to ask `Are you sure want to delete?` confirm box, to ask  
+

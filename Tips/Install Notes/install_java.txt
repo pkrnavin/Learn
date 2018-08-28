@@ -1,0 +1,510 @@
+
+
+-- 2018-06-21
+- To download, install java, of java 32bit OR 64bit to install in computer, below links thinks 
+https://java.com/en/download/faq/java_win64bit.xml#Java%20for%2032-bit
+https://howtodoinjava.com/core-java/basics/difference-between-32-bit-java-vs-64-bit-java/
+http://techidiocy.com/difference-between-32-bit-and-64-bit-jvm-choose-wisely/
+https://blogs.oracle.com/java-platform-group/choosing-64-andor-32-bit-java
+
+Note:
+- Thinks from link, 32bit of windows 4GB RAM, thinks windows uses 2GB RAM, remaining of users softwares, thinks, so from reamining 2GB uses of java (i.e. < 2GB RAM uses of java, thinks), others, 
+- of 64bit memory increase, performance < 32bit, thinks 
+- thinks, 64 bit memory increase, performance minimizes; of 32bit memory minimizes, performance increases thinks 
+- thinks 32bit memory, is within limit, HeapMemory error occurs, thinks 
+
+TODO:
+- thinks to download, of java 64bit, JDK to install of develop to try, thinks; JRE runs java program thinks; JDK to develop java programm thinks, thinks JDK install JRE also install, thinks, to checking; 
+- thinks from NIIT book seeing, java to download, install of JDK, JRE install to try, marks steps in notebook, to install to try, thinks 
+
+TODO:
+- Marks steps to add, to download install java, thinks 
+
+-- 2018-06-22
+
+TODO:
+- from NIIT java book seeing, to download and install java to try 
+>> thinks to download, java 1.8 latest 64bit, JDK to download thinks (i.e. JDK installs, JDK of develop + JRE to run java programm, thinks), 
+- install java 
+- Sample Programm, main class `sysout` to adds, compile file run from command prompt; thinks set path command to runs, after compile and runs from command prompt thinks 
+>> Note: Environment variable, not sets above to tries, thinks; thinks from NIIT book available of set path command, compile, run java programm, would available in the book, thinks 
+- java environment variable to adds, 
+- after environment variable adds, sample programm, to run to try, 
+- install steps, sample programm runs steps, to add in notes, 
+- to add environment variable `JAVA_HOME`, of uses in Tomcat, from link given 	(added on `2018-06-23`)
+
+
+Steps:
+- From below link, java download, thinks downloads `java 10 version 64 bit` 
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html
+>> (i.e. `jdk-10.0.1_windows-x64_bin.exe` downloaded, after Accept License Terms, clicks downloads, thinks), 
+
+- Below link available, of how to install java, steps available, thinks 
+https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html
+
+- Install java double clicks `D:\Learn\Softwares\jdk-10.0.1_windows-x64_bin.exe`, usual normal steps, of clicks Next installs; 
+>> installed in the path `C:\Program Files\Java`, thinks 
+
+- after install, in the java install window, button clicks of `Next Step`, below link opens, thinks 
+https://docs.oracle.com/javase/10/docs/api/overview-summary.html
+
+- thinks verify, from command prompt of java installed, below command thinks; command prompt log below available; thinks `C:`, `D:` below command adds returns version, below log available, thinks 
+> java -version
+
+-- [ below from command prompt runs, java installs, verify thinks; command prompt log 
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Users\DELL>java -version
+java version "10.0.1" 2018-04-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.1+10)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.1+10, mixed mode)
+
+# Note: below command prompt opens, of goes inside folder `D:\Learn\Softwares`, in AddressBar enter `cmd`, command prompt opens with the folder path, 
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+D:\Learn\Softwares>java -version
+java version "10.0.1" 2018-04-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.1+10)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.1+10, mixed mode)
+-- ]
+
+TODO:
+- Sample programm, to run from command prompt to tries, 
+>> Note: java environment variable, not adds, above to try, thinks 
+- java environment variable adds, to run java program, thinks 
+- Steps to add, 
+Note: 
+- From above link, of how to install java, from step 3, to add, thinks 
+
+
+-- 2018-06-23
+
+TODO:
+- command to run `path` (i.e. list environment variables, thinks), `javac -version` (i.e. to Display the JDK version); `java -version` (i.e. to Display the JRE version)
+- Sample program, to run, of environment variable not adds, to run to tries 
+- environment variable adds, to run the programm 
+- steps to add 
+- to add environment variable `JAVA_HOME`, of uses in Tomcat, from link given 
+
+
+
+Environment Variable to add, below tried, thinks:
+- Right Click `This PC` (i.e. My Computer) -> `Properties` -> `Advanced system settings` on the left pane
+- In `System Properties` window, click `Advanced` tab, in the click `Environment Variables...` button 
+- Under `System variables` bottom pane, 
+	# Below in `Path` variable name, JDK bin path to adds, 
+	- selects `Path` click `Edit`, window opens 
+	- In the window, `Edit Text...` button clicks, backup available value, after jdk bin value added, backup available value added, 
+	- In the window, to add jdk bin folder path, for `javac ...` command to run, 
+	- clicks `New` in the grid inline edit added jdk path `C:\Program Files\Java\jdk-10.0.1\bin`, selects JDK bin path `Move Up` clicks move to first added, thinks 
+	- After added, `Edit Text...` button clicks, button clicks, backup available value, below added, thinks 
+	# Below new variable name `JAVA_HOME`, to adds of uses in `Tomcat`, of many java application uses the variable name, so to adds, below tried, thinks 
+	- Click `New`, Variable Name: `JAVA_HOME`, Variable Value: `C:\Program Files\Java\jdk-10.0.1\bin`, to adds, thinks 
+	>> Note: To verify already `JAVA_HOME`, added in grid the variable name displays, edit if requires, thinks; 
+		- from command prompt run `SET JAVA_HOME` command, of result returns `Environment variable JAVA_HOME not defined`, so adds the variable name, thinks 
+		  of added `SET JAVA_HOME` runs below result returns `JAVA_HOME=C:\Program Files\Java\jdk-10.0.1\bin`, thinks 
+
+
+# Below available in Environment Variables, `System variables` pane, in the `Path` `variable_name`, below value available; 
+# Backup available value; before jdk bin folder adds, for `javac ...` command to runs 
+C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT
+
+# After jdk bin value added, for `javac ...` command to run, environment variable, adds; thinks 
+C:\Program Files\Java\jdk-10.0.1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;
+
+Note:
+- Installation environment variable adds, in the `Path` vaiable adds `C:\Program Files (x86)\Common Files\Oracle\Java\javapath`, of added default JRE commands `(i.e. from link JRE executables (java.exe, javaw.exe, and javaws.exe))` runs in command prompt thinks, 
+- for `javac ...` command to run, JDK bin folder to add in the environment variable, `Path` vaiable (i.e. above steps added, thinks), 
+
+Note: Verification of JDK bin path adds, `javac ...` command to runs, sample program to run in command prompt, `JAVA_HOME` variable name to adds, below command prompt log added, of jdk bin folder path, for `javac ...` command to run in command prompt default, to compile and run java program, below log added, thinks 
+
+Note:
+- Major Commands from command prompt, of java install, below thinks 
+# verfication java installs 
+# JDK bin path, to add in `Environment Variable`, of added all folder places below command result returns, else in folder path `C:\Program Files\Java\jdk-10.0.1\bin`, result returns thinks 
+> javac -version
+# JRE bin 
+> java -version
+# List environment variable, 
+> path
+# JDK bin path added in below variable name, of variable available path returns, of not available `Environment variable JAVA_HOME not defined` returns thinks, below log available, thinks 
+> SET JAVA_HOME
+
+# after install, first programm to runs in Laptop, to run java programm, before `javac` JDK environment variable adds, from the folder `D:\Learn\Tried Programms\Java` in command prompt, below command tried, to run java program, thinks; 
+# Note: each time to add, set path of JDK bin of `javac ...` command to runs, 
+> set path="C:\Program Files\Java\jdk-10.0.1\bin"
+> javac FirstProgrammInLaptop.java
+> java FirstProgrammInLaptop
+>> Note: of JDK environment variable added, above two command, to run java programm in command prompt, thinks 
+
+
+Note: Java install tried, from above how to install java link, above tried, steps adds thinks 
+
+
+
+-- [ below command prompt logs, of below commands, 
+> path
+> javac -version
+> java -version
+Note: from how to install java link, available of, command `java ...` runs as JRE executable added in `path` (i.e. environment variable, thinks) in the our computer path `C:\Program Files (x86)\Common Files\Oracle\Java\javapath`, thinks, 
+  so JRE commands `from link (java.exe, javaw.exe, and javaws.exe)` runs; 
+  so to compile java program to run `javac ...` command, the command `javac -version` enters result returns, of folder path in `C:\Program Files\Java\jdk-10.0.1\bin`, the jdk installed bin path to add in envrionment variable, of compile java programm command to run `javac ...`, thinks 
+  thinks, JRE installed, compiled java programms (i.e. java class files) runs, thinks, to checking in `HOME Computer` JRE only installed thinks; TODO: java programm `HOME Computer` to add, to try from internet time to set, after internet connects, to try, thinks, as after computer ons time resets, so try after internet connects, from internet time to set, to try, thinks 
+
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Users\DELL>path
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;
+
+C:\Users\DELL>javac -version
+'javac' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\DELL>java -version
+java version "10.0.1" 2018-04-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.1+10)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.1+10, mixed mode)
+
+C:\Users\DELL>cd "C:\Program Files\Java\jdk-10.0.1"
+
+C:\Program Files\Java\jdk-10.0.1>javac -version
+'javac' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Program Files\Java\jdk-10.0.1>path
+
+C:\Program Files\Java\jdk-10.0.1>cd ./bin
+
+C:\Program Files\Java\jdk-10.0.1\bin>javac -version
+javac 10.0.1
+
+C:\Program Files\Java\jdk-10.0.1\bin>
+
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+D:\Learn\Softwares>path
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;
+
+D:\Learn\Softwares>java -version
+
+D:\Learn\Softwares>path
+
+D:\Learn\Softwares>java -version
+java version "10.0.1" 2018-04-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.1+10)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.1+10, mixed mode)
+
+D:\Learn\Softwares>javac -version
+'javac' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Learn\Softwares>cd javac -version
+
+D:\Learn\Softwares>cd C:\Program Files\Java\jdk-10.0.1\bin
+
+D:\Learn\Softwares>C:
+
+C:\Program Files\Java\jdk-10.0.1\bin>javac -version
+javac 10.0.1
+
+C:\Program Files\Java\jdk-10.0.1\bin>
+-- ]
+
+
+-- [ below command prompt log, of first programm to runs in Laptop, to run java programm, from the folder below command tried, thinks 
+> set path="C:\Program Files\Java\jdk-10.0.1\bin"
+> javac FirstProgrammInLaptop.java
+> java FirstProgrammInLaptop
+Note: JDK `javac` environment variable, before to adds, java programm, to run from command prompt, above command tried, thinks 
+Note: after command prompt close, again runs, below log available thinks (i.e. to add javac envrionment variable, of each time thinks), 
+        below log available, of after set path `javac` to run in `D:\Learn\Tried Programms\Java`, in other the command prompt, from before opens command prompt, `javac -version` runs result not returns, thinks 
+
+
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+D:\Learn\Tried Programms\Java>javac FirstProgrammInLaptop.java
+'javac' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Learn\Tried Programms\Java>set path "C:\Program Files\Java\jdk-10.0.1\bin"
+Environment variable path "C:\Program Files\Java\jdk-10.0.1\bin" not defined
+
+D:\Learn\Tried Programms\Java>set path="C:\Program Files\Java\jdk-10.0.1\bin"
+
+D:\Learn\Tried Programms\Java>javac -version
+javac 10.0.1
+
+D:\Learn\Tried Programms\Java>cd ..
+
+D:\Learn\Tried Programms>javac -version
+javac 10.0.1
+
+D:\Learn\Tried Programms>cd ../Sof
+The system cannot find the path specified.
+
+D:\Learn\Tried Programms>cd ..
+
+D:\Learn>cd ./Softwares
+
+D:\Learn\Softwares>javac -version
+javac 10.0.1
+
+D:\Learn\Softwares>cd D:\Learn\Tried Programms\Java
+
+D:\Learn\Tried Programms\Java>javac FirstProgrammInLaptop.java
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop.class
+Error: Could not find or load main class FirstProgrammInLaptop.class
+Caused by: java.lang.ClassNotFoundException: FirstProgrammInLaptop.class
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop
+First Programm In Laptop
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop
+First Programm In Laptop
+
+D:\Learn\Tried Programms\Java>javac FirstProgrammInLaptop.java
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop
+First Programm In Laptop, tried
+
+D:\Learn\Tried Programms\Java>D:\Learn\Tried Programms\Java
+
+D:\Learn\Tried Programms\Java>
+
+# after command prompt close, again runs, below log (i.e. to add javac envrionment variable, of each time thinks)
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+D:\Learn\Tried Programms\Java>javac -version
+'javac' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Learn\Tried Programms\Java>javac FirstProgrammInLaptop.java
+'javac' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop
+First Programm In Laptop, tried
+
+D:\Learn\Tried Programms\Java>set path="C:\Program Files\Java\jdk-10.0.1\bin"
+
+D:\Learn\Tried Programms\Java>javac FirstProgrammInLaptop.java
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop
+First Programm In Laptop, tried
+
+D:\Learn\Tried Programms\Java>
+
+# below log available, of after set path `javac` to run in `D:\Learn\Tried Programms\Java`, in the command prompt, from before opens command prompt, `javac -version` runs result not returns, thinks 
+C:\Users\DELL>javac -version
+'javac' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\DELL>#
+-- ]
+
+-- [ Verification of JDK bin path adds, `javac ...` command to runs, sample program to run in command prompt, `JAVA_HOME` variable adds as uses in `Tomcat` link given to adds the variable, below command prompt log, 
+after JDK bin path added in `Environment Variables`, for `javac ...` command to run in command prompt 
+Note: set path of jdk bin folder path, not added; `javac -version` command runs result returns 
+
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+D:\Learn\Tried Programms\Java>javac -version
+javac 10.0.1
+
+D:\Learn\Tried Programms\Java>java -version
+java version "10.0.1" 2018-04-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.1+10)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.1+10, mixed mode)
+
+D:\Learn\Tried Programms\Java>javac -version
+javac 10.0.1
+
+D:\Learn\Tried Programms\Java>javac FirstProgrammInLaptop.java
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop
+First Programm In Laptop, tried
+
+D:\Learn\Tried Programms\Java>
+
+D:\Learn\Tried Programms\Java>path
+PATH=C:\Program Files\Java\jdk-10.0.1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;
+
+D:\Learn\Tried Programms\Java>
+
+D:\Learn\Tried Programms\Java>SET JAVA_HOME
+Environment variable JAVA_HOME not defined
+
+D:\Learn\Tried Programms\Java>SET JAVA_HOME
+Environment variable JAVA_HOME not defined
+
+D:\Learn\Tried Programms\Java>
+
+# After `JAVA_HOME` environment variable adds, in new command prompt, below log 
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+D:\Learn\Tried Programms\Java>SET JAVA_HOME
+JAVA_HOME=C:\Program Files\Java\jdk-10.0.1\bin
+
+D:\Learn\Tried Programms\Java>
+
+
+
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Users\DELL>javac -version
+javac 10.0.1
+
+C:\Users\DELL>java -version
+java version "10.0.1" 2018-04-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.1+10)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.1+10, mixed mode)
+
+C:\Users\DELL>javac -version
+javac 10.0.1
+
+C:\Users\DELL>
+C:\Users\DELL>SET JAVA_HOME
+Environment variable JAVA_HOME not defined
+
+C:\Users\DELL>
+
+# After `JAVA_HOME` environment variable adds, in new command prompt, below log 
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Users\DELL>SET JAVA_HOME
+JAVA_HOME=C:\Program Files\Java\jdk-10.0.1\bin
+
+C:\Users\DELL>
+-- ]
+
+-- [ below log, of sample program runs, `java -version`, `javac -version`, `SET JAVA_HOME`, `path` runs in command prompt, 
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+D:\Learn\Tried Programms\Java>SET JAVA_HOME
+JAVA_HOME=C:\Program Files\Java\jdk-10.0.1\bin
+
+D:\Learn\Tried Programms\Java>SET JAVA_HOME
+
+D:\Learn\Tried Programms\Java>javac FirstProgrammInLaptop.java
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop
+First Programm In Laptop, tried
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop
+First Programm In Laptop, tried
+
+D:\Learn\Tried Programms\Java>javac FirstProgrammInLaptop.java
+
+D:\Learn\Tried Programms\Java>SET JAVA_HOME
+JAVA_HOME=C:\Program Files\Java\jdk-10.0.1\bin
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop
+First Programm In Laptop, `23-Jun-2018`, tried
+
+D:\Learn\Tried Programms\Java>
+D:\Learn\Tried Programms\Java>java -version
+java version "10.0.1" 2018-04-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.1+10)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.1+10, mixed mode)
+
+D:\Learn\Tried Programms\Java>javac -version
+javac 10.0.1
+
+D:\Learn\Tried Programms\Java>
+D:\Learn\Tried Programms\Java>SET JAVA_HOME
+JAVA_HOME=C:\Program Files\Java\jdk-10.0.1\bin
+
+D:\Learn\Tried Programms\Java>
+D:\Learn\Tried Programms\Java>path
+PATH=C:\Program Files\Java\jdk-10.0.1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;
+
+D:\Learn\Tried Programms\Java>
+
+-- ]
+
+-- [ below log, verfication tried, after closes, tried, Major commands of install, runs, below log, thinks tried 
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+D:\Learn\Tried Programms\Java>javac -version
+javac 10.0.1
+
+D:\Learn\Tried Programms\Java>java -version
+java version "10.0.1" 2018-04-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.1+10)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.1+10, mixed mode)
+
+D:\Learn\Tried Programms\Java>path
+PATH=C:\Program Files\Java\jdk-10.0.1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;
+
+D:\Learn\Tried Programms\Java>SET JAVA_HOME
+JAVA_HOME=C:\Program Files\Java\jdk-10.0.1\bin
+
+D:\Learn\Tried Programms\Java>javac FirstProgrammInLaptop.java
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop
+First Programm In Laptop, `23-Jun-2018`, tried
+
+D:\Learn\Tried Programms\Java>
+-- ]
+
+-- 2018-06-26
+
+-- [ below log, verfication tried, of java install major command runs, tried, (i.e. java install verification, first programm runs in laptop, `path` environment variable value returns, `JAVA_HOME` environment variable command runs value returns, checking tried) 
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+D:\Learn\Tried Programms\Java>javac -version
+javac 10.0.1
+
+D:\Learn\Tried Programms\Java>java -version
+java version "10.0.1" 2018-04-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.1+10)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.1+10, mixed mode)
+
+D:\Learn\Tried Programms\Java>path
+PATH=C:\Program Files\Java\jdk-10.0.1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;
+
+D:\Learn\Tried Programms\Java>SET JAVA_HOME
+JAVA_HOME=C:\Program Files\Java\jdk-10.0.1\bin
+
+D:\Learn\Tried Programms\Java>javac FirstProgrammInLaptop.java
+
+D:\Learn\Tried Programms\Java>java FirstProgrammInLaptop
+First Programm In Laptop, `23-Jun-2018`, tried
+
+D:\Learn\Tried Programms\Java>
+-- ]
+
+
+-- 2018-07-08
+
+Note: 
+- for java, programs to try, MyEclipse downloaded, thinks MyEclipse is cost, also many features available, also installable, thinks; 
+- Eclipse is simple thinks, of features requires able to add plugin, thinks, so eclipse zip downloads (i.e. portable install, thinks), downloads extracts opens, thinks 
+
+
+Below, of tomcat to downloads, install tried, thinks 
+- Tomcat `9.0.10` downloads, installer, portable installs; from installer (i.e. `exe`), installs thinks 
+- Tomcat credentials:
+Username: admin
+Password: admin
+
+
+Note:
+- Eclipse `Dynamic Web Project` create, `java` output folder, to add `WebRoot\WEB-INF\classes`, Content directory to add `WebRoot`, 
+- Eclipse, project to run in Tomcat, in `Servers` tab, click add, from the list, `Apache` -> `Tomcat v9.0 Server` of installed, to selects, add Projects to deploy in Tomcat thinks, 
+

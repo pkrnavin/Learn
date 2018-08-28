@@ -1,0 +1,219 @@
+<% System.out.println(request.getRemoteHost()+" <> "+request.getRemoteAddr()); %>
+
+
+--find text in file with line number
+nl /etc/httpd/conf/httpd.conf | grep expires
+
+-- find text in all files of a directory
+grep -R "word" /path
+
+--Disk info:
+df -h
+
+--CPU info:
+cat /proc/cpuinfo
+
+--Memory Info:
+cat /proc/meminfo
+--print all system information:
+uname -a
+
+--Multiple commands
+locate "catalina.out" ; echo "574"
+
+--OS detail:
+cat /proc/version
+
+--Prompt:
+export PS1="[\\u@$(tput setaf 1)\\]test\\[$(tput sgr0)\\]@\\h: \\W]# "
+
+--Prompt permanent change:
+http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html
+-------------------Place this in above file--------------------------------
+Open /etc/bashrc (Redhat and friends) / or /etc/bash.bashrc (Debian/Ubuntu) or /etc/bash.bashrc.local (Suse and others) file and append following code:
+# If id command returns zero, you.ve root access.
+if [ $(id -u) -eq 0 ];
+then # you are root, set red colour prompt
+  PS1="[\\u@$(tput setaf 1)\\]test\\[$(tput sgr0)\\]@\\h: \\W]# "
+else # normal
+  PS1="[\\u@\\h:\\w] $"
+fi
+
+
+
+yum install java 1.6
+rpm -qa |grep jdk
+
+
+#### To see Dist-Usage directory-wise ####
+du -sh /mnt/*
+
+#### To see size of each folder in the directory  #####
+du -h /mnt/appedo/logs/
+
+
+#### install font ####
+yum install xorg-x11-fonts*
+
+
+#### run myxenzo service on reboot ####
+-- make file executable
+chmod +x /root/service......./run.sh
+
+-- crontb entry
+crontab -e
+# start MyXenzo services
+@reboot cd /root/services/fitwits-engine/; ./run.sh
+
+
+
+#### All environmental varaibles ####
+> env
+
+> echo $PATH
+
+
+#### find security key in amazon ####
+find / -name "authorized_keys" -print -exec cat {} \;
+file will be in /root/.ssh/authorized_keys
+
+
+
+#### crontab tips ####
+-- to execute java command. As crontab ll run from a user rights, set the java path.
+export JAVA_HOME=/java/jdk1.7.0/bin
+export PATH=${PATH}:${JAVA_HOME}
+java -jar QAMonitorDailyDigest.jar
+
+
+
+netstat -lpn | grep java
+netstat -tulpn | less
+
+ps -ef | grep java
+
+
+
+
+
+root@ec2-174-129-13-164.compute-1.amazonaws.com 	- Annavas-MYXenzo Live DB
+root@ec2-67-202-2-41.compute-1.amazonaws.com -  Annavas-MYXenzo Live Tomcat
+root@ec2-50-16-90-194.compute-1.amazonaws.com	 -  Annavas-Test instance
+ec2-67-202-41-180.compute-1.amazonaws.com	 - CL-prodbox
+ec2-174-129-11-103.compute-1.amazonaws.com	 - Tomcat deploy
+root@50.17.223.240	 - CRM Test
+root@174.129.196.39	 - QAM LIVE
+root@50.17.230.203		 - QAM test
+192.168.1.16 	- ss local Linux 16
+root@ec2-184-73-168-130.compute-1.amazonaws.com	 - om Large instance
+
+
+
+
+service mysqld start
+mv /var/lib/apache-tomcat-6.0.29/logs/catalina.out /var/lib/apache-tomcat-6.0.29/logs/catalina.out.$(date +%Y-%m-%d_%H%M)
+/var/lib/apache-tomcat-6.0.29/bin/startup.sh
+
+
+
+
+-- move file to folder(tar) & zip it(gz)
+tar -zcvf catalina.2010-12.tar.gz catalina.out_2010-12-*
+
+unzip
+tar -xvf file.tar
+
+
+
+--VI editor tips:
+yy - to copy a line
+p - to paste the copied line
+6p - to paste the copied line 6 times, as 6 rows
+dd - deletea  line
+6dd - delete 6 lines
+/text - to search a text
+n - to find next search occurance
+N - to find previous occurance of search word
+?text - to find previous occurance of search word
+ctrl+g - current line no.
+0 - go to first char of the line
+$ - go to last char of the line
+A - go to one char after last char. & start typing
+:0 - go to last char of the file
+:$ - go to last char of the file
+:23 - go to 23rd line
+ctrl+u - pgup
+ctrl+d - pgdn
+ctrl+f - scroll down 1 full page(page - screen hieght)
+ctrl+b - scroll up 1 full page(page - screen hieght)
+w - next word
+W - next line
+b - previous word
+u - undo
+Find & Replace: http://www.thegeekstuff.com/2009/04/vi-vim-editor-search-and-replace-examples/
+				http://www.cyberciti.biz/faq/linux-unix-vim-find-replace-text-string-words/
+
+
+
+
+
+--machine wake-up status
+uptime
+
+--last reboot
+who -b
+
+-- disable selinux
+sudo setenforce 0
+
+-- disable iptables
+sudo service iptables stop
+
+
+-- redirect port 80's request to 8080, as Fedora 19 locks port 80, so tomcat is unable to start in port 80
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+sudo service iptables restart
+
+iptables -L -n
+
+
+
+
+sudo systemctl start mysqld.service
+sudo systemctl stop mysqld.service
+sudo systemctl status mysqld.service
+sudo systemctl restart mysqld.service
+
+
+-- command to set date and time in linux 
+# date
+# date +%Y%m%d -s "20141226"
+# date +%T -s "17:10:00"
+
+-- thinks, time in sec
+# date -u +%s
+1433745005
+
+
+#### To see size of each folder in the directory  #####
+du -h /mnt/appedo/logs/
+
+
+
+## Remove file
+# -I, prompts one time permission to delete all files (delete multiple files)
+# -i, prompts each time permission to delete all files (multiple files)
+# -R, thinks remove directory
+> rm -I /mnt/appedo/logs/scheduler/info.log_*
+
+
+## Root user
+sudo -i
+
+
+## unzip command
+> sudo unzip file.zip -d /somedir
+> unzip file.zip -d <destination_folder>
+
+## thinks, JAVA installation directory
+> echo $JAVA_HOME

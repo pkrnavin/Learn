@@ -1,0 +1,25 @@
+		Open Office tips
+		
+## Line space/gap between title and paragraph
+- Select a title and paragraph text; (also thinks place the cursor in the title; and below thinks 	(added on `2018-07-16`))
+- right click Select `Paragraph`->`Indent & Spacing`
+- In `Spacing` fieldset, alter `Below Paragraph` options
+- In `Line Spacing` fieldset, of combo box `Proportional (100% OR 115%)`, sets thinks, optional thinks 	(added on `2018-07-16`)
+>> Note: of first and second step, clicks in the `Paragraph` window, `Indent & Spacing` tab select, to know available spacing, thinks 	(added on `2018-07-16`)
+
+## To reduce gap between bullet and text
+- Move the cursor point; in above page, scale toolbar, move the marker points.
+
+
+-- 2018-07-15
+
+## To adjust spacing between letter (i.e. characters), below thinks 
+- Select the word, `Right Click` -> `Character` OR in menu `Format` -> `Character` 
+- In the window (i.e. `Character` window), click `Position` tab, 
+- In `Spacing` fieldset, in the combo box select `Expanded` by field `1.0 pt` select `Pair Kerning` thinks 
+>> Note: before tried thinks; from link  `https://wiki.openoffice.org/wiki/Documentation/FAQ/Writer/FormattingText/The_space_between_the_letters_in_a_word_seems_just_a_bit_too_wide._It_would_look_better_if_that_space_is_being_reduced._How_can_I_achieve_this%3F`, given thinks to adjust spacing between letters, thinks 
+
+
+-- 2018-07-20
+
+# Note: BEWTWEEN paragraphs lines spacing, size varies based on font selected, `font-size`, thinks; so same font to sets in BETWEEN lines spacing (i.e. blank line), thinks, tries thinks 

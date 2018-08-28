@@ -1,0 +1,354 @@
+		Windows Tips
+
+-- 2018-06-17
+
+# Battery Saver, options tried, below stpes, thinks:
+	- from Right side of task bar battery clicks, in popup `Batter Settings` clicks (i.e. thinks opens, of Start button clicks -> Settings -> System -> Battery), 
+	- in the window `Battery saving tips` clicks, 
+	- Battery Save options modify tried, tried, from the link `https://support.microsoft.com/en-us/help/20443/windows-10-battery-saving-tips`, 
+
+
+# Function Key Toogle (i.e. selects `F2` key press, to rename folder), in laptop Function Keys + Multimedia Key, of respective to access, based on `Fn` key (i.e. clicks `Fn + <FUNCTION_KEYS>` OR `<FUNCTION_KEYS>`)
+- to swap Function Key press operation, below tried, 
+	- opens `Control Panel` -> `Hardware and Sound` -> `Window Mobilty Center` click `Adjust commonly used mobility settings`, window opens 
+	- in the window, `Customized by Dell Inc` below `Function Key Row` from combo box selects `Function Key`, thinks working of selects file OR folder `F2` key press rename working, thinks 
+Funciton key swap, from below link tried, 
+http://www.thewindowsclub.com/change-function-key-behavior-windows-laptops
+https://www.howtogeek.com/235351/how-to-choose-whether-your-function-keys-are-f1-f12-keys-or-special-keys/
+
+- Note: Function Key operation swap, from System On of pressing `F2`, from BIOS settings, Function Key operation swap change, available thinks, from above link given, 
+>> thinks, of computer while turn on, `F2` OR `F10` key press, BIOS settings, `Function Key` operations swap, not available thinks, seeing tried, thinks; Note: after `Function Key` swap operation swap from `Control Panel`, from BIOS settings option available, seeing tried, thinks 
+
+
+-- 2018-06-27
+
+# from below steps of `System information`, to check computer is 32bit OR 64bit, other information of the computer, 
+To check which type of processor (not operating system) your computer has, you can use the System Information utility. Just search for either "System Information" or "msinfo32" from the Start menu or in Windows search. Under System Summary, you'll see your type of system listed next to System Type. If you see "x64-based PC," you have a 64-bit processor. If you see "x86-based PC," you have a 32-bit processor
+
+
+-- 2018-07-01
+
+# Laptop password to modify, below steps thinks, 
+- `Start` -> `Settings` -> `Accounts` -> `Sign-in options`, below `Password` title `Change` button to click, current password to enter, after to set new password, password hint, to saves, thinks
+
+# Account name to modify, below steps thinks, 
+- `Control Panel` -> `User Accounts` -> in the screen below `User Accounts` to select `Change account type` -> Select the user displaying to modify Account details -> in the screen available of `Change the account name`, `Change the password`, `Change the account type` 
+	- click `Change the account name`, to change the Account Name
+	- click `Change the password`, to change the Account's Password 
+	- click `Change the account type`, to change the account type (i.e. thinks to set Account's user `Administrator`, `Standard` rights, thinks)
+OR to `Change Account Name`, `Control Panel` -> `User Accounts` -> `User Accounts` -> `Change your account name` to select, to change the account name, enter `New account name`, click `Change name`, to save the account name, modifies, thinks 
+
+
+-- 2018-07-09
+
+# To hide recent files, folders below tried thinks; from following link, thinks `https://winaero.com/blog/clear-recent-folders-files-windows-10/` 
+- Go to `Settings` -> `Personalization` -> `Start`, 
+	- Turn Off `Show recently opened items in Jump List on Start or the taskbar`, 
+	>> thinks in `MyComputer` OR `ThisPc` Recent Files, Folder not showing, thinks; 
+	- Note: Turn Off and Turn On, clear Recent files, folder lists items thinks 
+OR Below step, also thinks, 
+- Open `MyComputer` OR `ThisPc`, in menu `View` -> click `Options`, 
+- In the `Folder Options` window, `General` tab, in Privacy fieldset, below thinks 
+	- Uncheck `Show recently used files in Quick Access`, `Show frequently used folders in Quick Access`, to hide recent files, folders in `Quick Access`, thinks; 
+	- to clear recent files, folders, to click `Clear` button thinks 
+
+
+-- 2018-07-14
+
+# to list folder files recursively write in the file, go to respective folder, in address bar enter `cmd`, in command prompt, below command to try, thinks; Note: below tried, of `from Softsmith` folder in laptop, home computer available of all files, cehcking verification tried thinks; also uses, of from pendrive OR other folder, copies to the location, of all files copied, to cehking verification, of below command to list folder files, write in the file below thinks  
+
+# full description, of folders files prints thinks, (i.e. `/s` is from given, folder and all sub folders, thinks) (modified on `2018-07-24`)
+> dir /s
+
+# displays only folder files, in full path, (i.e. `/b` is bare format thinks)	(modified on `2018-07-24`)
+> dir /s /b
+
+# below of sorted order, bare format, of folder files full path prints, thinks; Note: below `.` BETWEEN `dir` AND `/s`, denotes current directory, thinks (i.e. `dir` command is `dir <PATH> <OPTIONS>`, thinks, `<PATH> <OPTIONS>` optional thinks; )
+> dir . /s /b sortorder:N
+
+# below output writes, in the given file thinks 
+> dir . /s /b sortorder:N > ./<FILE_NAME>.txt
+
+# below output files, writes from current directory, one folder up, writes dir output in the file, thinks 
+> dir . /s /b sortorder:N > ../inLaptopFolderFiles.txt
+
+# `dir` command, help description lists, thinks 
+> dir /?
+
+
+-- 2018-07-15
+
+# Computer ask to update Windows, of Pickup time to restart OR Restart later selects, thinks; of manually to update of `Restart` computer, following thinks,  `Settings` -> `Update & Security` `Restart` button clicks, thinks update starts, thinks 
+
+
+-- 2018-07-23
+
+# to format date `yyyy-mm-dd`, in command prompt (i.e. substring's date, thinks) 
+> echo %date:~6,4%-%date:~3,2%-%date:~0,2%
+2018-07-23
+
+- formate date in command prompt, from below link thinks 
+https://stackoverflow.com/questions/11083366/format-file-date-yyyymmdd-in-batch
+https://stackoverflow.com/questions/14810544/get-date-in-yyyymmdd-format-in-windows-batch-file
+
+
+# to create directory; Note: parent directory not exists, creates thinks (i.e. thinks `mkdir E:\Backup\Learn\Books`, of command `Backup`, `Learn` folders of not exists, thinks) 
+> mkdir <PATH>
+
+# to create multiple folders, thinks 
+# below to goto directory, to creates folders, thinks 
+> cd /d <PATH>
+> md <FOLDER_1> <FOLDER_2> <FOLDER_3>
+
+# below with full path, folder name thinks 
+> md <PATH_1> <PATH_2> <PATH_3>
+
+# thinks `mkdir` also works of multiple folders thinks  
+> mkdir <PATH_1> <PATH_2> <PATH_3>
+
+# below from link, example 
+> md data\rs1 data\rs2 data\rs3
+
+- from below link, to create folder, multiple folder thinks 
+http://www.tech-recipes.com/rx/57409/create-folder-using-cmd-windows/
+https://superuser.com/questions/1002348/how-to-create-multiple-sub-directories-in-one-command-from-windows-command-promp
+https://www.instructables.com/id/How-to-Create-Multiple-Folders-at-the-Same-Time/
+https://www.addictivetips.com/windows-tips/how-to-create-multiple-folders-and-sub-folders-in-one-go/
+
+- Note: below path log available thinks, to create folder, multiple folders thinks, cehcking tried thinks 
+D:\Learn\Tried\2018\July\Jul 23\command_prompt_log.txt
+
+
+# to goto directory, thinks given path changes, of next prompt; (i.e. `cd <PATH>` given, in next to enter drive `D:`, to change directory thinks), below changes of given path thinks 
+> cd /d <PATH>
+
+
+-- 2018-07-29
+
+- to add `mklink`, command tries tips to adds thinks 
+
+
+-- 2018-07-30
+
+# symbolic link, to create shortcut of folder OR file 
+(i.e. folder in `D:\Learn\zTestBackupFilesFromCommandPrompt` to show the folder in `E:\Backup\TestBackup\SymbolicLinkTest` symbolic link to creates, thinks not copies file thinks, points OR refers the file location to orginal folder, so file size space not occupies, thinks); 
+Note: 
+- thinks, in disk space of file size not adds in symbolic link folder file, thinks; 
+- thinks refers the path orginal folder, shortcut of orginal folder, thinks;  
+- thinks, from link of backup files to add in `OneDrive`, `mklink` available in the link, thinks, so to tries `mklink` usage tries thinks 
+- thinks soft link, hard link, junction available thinks 
+- thinks of `mklink` folder to usage of option `mklink /J` thinks, as the symbolic link's presents drive file path shows in URL, also available of other adavantages thinks 
+- `dir <LINK_FOLDER_PATH>` file size space occupies of files shows thinks, from link thinks symbolic link folder disk space not occupies thinks, 
+-- [ added on `2018-08-12`
+- thinks, `hard link` for file (i.e. `mklink /H <LINK_FILE_PATH> <SOURCE_FILE_PATH>`), thinks hardlink works file adds in same drive (i.e. thinks, `D:\` file, hardlink for the file, to add in same drive `D:\`), thinks; 
+- thinks, `junction` for folder (i.e. `mklink` option `/J`), junction works folder adds, from `C:\` folder adds in `D:\` works (i.e. folder from one drive, refers in other drive, thinks), thinks 
+-- ]
+- thinks, `mklink` adds file, folder in orginal file change, reflects in `mklink` adds places, thinks; of orginal folder delete, in `mklink` adds `missing path` showing thinks, of file exists thinks 
+>> added on `2018-08-15` 
+- thinks `mklink` adds file, of orginal file of same file name, copy adds in the folder, message `file access in another place`, thinks; of `OneDrive` marks `Free up space`, of `mklink` adds file not working, thinks, so tried thinks, of `OneDrive` marks `Free Up Space` working, of location change file adds, thinks, in `backup_tips.txt`, tried notes available thinks 
+>> added on `2018-08-16` 
+
+
+
+- from below link, symbolic tutorial thinks 
+https://www.logicbig.com/how-to/windows/windows-symbolic-links.html
+>> thinks, `mklink` adds, `dir` disk space usage of file adds, in the link given thinks 
+https://www.techrepublic.com/article/how-to-take-advantage-of-symbolic-links-in-window-10/
+https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/
+https://superuser.com/questions/1214539/create-a-relative-symbolic-link-in-windows-10-for-file-copies
+https://www.techrepublic.com/blog/windows-and-office/be-more-efficient-and-better-organized-with-the-mklink-symbolic-link-tool/
+>> above link added on `2018-08-08` 
+
+Symbolic link tried in folder path available of `E:\Backup\TestBackup\SymbolicLinkTest` (i.e. symbolic folder to checking tried, thinks), from source folder path of `D:\Learn\zTestBackupFilesFromCommandPrompt`, tried thinks 
+
+# command prompt to open as `Administrator`, of `mklink` command to add thinks 
+
+# help of command, options shows 
+> mklink /?
+
+# thinks below command, of FILE thinks, shorcut in `<LINK_PATH_FILE>` path file refers from `<SOURCE_ORIGINAL_PATH_FILE>`, thinks; thinks below SOFT LINK refers file thinks  
+> mklink "<LINK_PATH_FILE>" "<SOURCE_ORIGINAL_PATH_FILE>"
+
+# below sample command tried, of `mklink`, FILE thinks  
+> mklink "E:\Backup\TestBackup\SymbolicLinkTest\test5_fileRefer_inSymbolicLink_symbolickFile.txt" "D:\Learn\zTestBackupFilesFromCommandPrompt\test5_fileRefer_inSymbolicLink.txt"
+symbolic link created for E:\Backup\TestBackup\SymbolicLinkTest\test5_fileRefer_inSymbolicLink_symbolickFile.txt <<===>> D:\Learn\zTestBackupFilesFromCommandPrompt\test5_fileRefer_inSymbolicLink.txt
+
+
+
+# below for FOLDER shortcut, (i.e. `<LINK_FOLDER_PATH>` is shortcut refers `<SOURCE_ORIGINAL_FOLDER>` path, thinks), file size diskspace not occupies of mklink folder thinks; Note: below in address bar URL folder file path of `<LINK_FOLDER_PATH>` shows `<SOURCE_ORIGINAL_FOLDER>` path, thinks, of link `<LINK_FOLDER_PATH>` in other drive (i.e. symbolic link, shortcut folder) in address bar URL shows `<SOURCE_ORIGINAL_FOLDER>`, thinks, below is SOFT LINK thinks 
+> mklink /D `<LINK_FOLDER_PATH>` `<SOURCE_ORIGINAL_FOLDER>`
+
+# below sample command tried, of `mklink`, FOLDER SOFT LINK, thinks 
+> mklink /D "E:\Backup\TestBackup\SymbolicLinkTest\zTestBackupFiles_symboliclink" "D:\Learn\zTestBackupFilesFromCommandPrompt"
+symbolic link created for E:\Backup\TestBackup\SymbolicLinkTest\zTestBackupFiles_symboliclink <<===>> D:\Learn\zTestBackupFilesFromCommandPrompt
+
+
+## Note: below `/J` option of symbolic FOLDER to create, below to usage thinks  
+# thinks below JUNCTION, of HARD LINK thinks, of `<LINK_FOLDER_PATH>` (i.e. symbolic link, shortcut folder) in address bar URL shows the symbolic folder in present drive path shows thinks, also available of other adavantages thinks 
+> mklink /J `<LINK_FOLDER_PATH>` `<SOURCE_ORIGINAL_FOLDER>`
+
+# below sample command tried, of `mklink`, FOLDER JUNCTION, thinks 
+> mklink /J "E:\Backup\TestBackup\SymbolicLinkTest\zTestBackupFiles_symboliclink" "D:\Learn\zTestBackupFilesFromCommandPrompt"
+Junction created for E:\Backup\TestBackup\SymbolicLinkTest\zTestBackupFiles_symboliclink <<===>> D:\Learn\zTestBackupFilesFromCommandPrompt
+
+
+
+# thinks, below HARDLINK FILE thinks, below not working, thinks command prompt error occurs thinks 
+> mklink /h "<LINK_PATH_FILE>" "<SOURCE_ORIGINAL_PATH_FILE>"
+
+# below sample command tried, of `mklink`, FILE HARD LINK, tried, below not working thinks, error occurs thinks 
+> mklink /h "E:\Backup\TestBackup\SymbolicLinkTest\test5_fileRefer_inSymbolicLink_symbolickFile.txt" "D:\Learn\zTestBackupFilesFromCommandPrompt\test5_fileRefer_inSymbolicLink.txt"
+The system cannot move the file to a different disk drive.
+
+>> Note: thinks, `mklink` hardlink of single file refers more than one path (i.e. only on NTFS partition), so any change reflects in all hardlink, of file name different, given in the link `https://answers.microsoft.com/en-us/msoffice/forum/msoffice_word-mso_winother-mso_2007/hard-links-created-in-windows-not-updated-after/659de19b-596b-49b6-b83b-cbfe15c4c27f`	(added on `2018-08-08`)
+
+-- [ added on `2018-08-12`
+>> Note: hardlink space occupy, below links thinks, 
+https://unix.stackexchange.com/questions/345867/do-hard-links-really-take-up-so-much-disk-space
+https://docs.microsoft.com/en-us/windows/desktop/fileio/hard-links-and-junctions
+https://superuser.com/questions/413328/windows-hard-link-taking-up-space
+>> google search `windows 10 hard link file does occupy space` 
+-- ]
+
+-- 2018-08-04
+
+# Windows 10, to know current version 
+- Open `Run` prompt (i.e. to key press `Win + R`) OR in Search bar near `Windows Start` button, type `winver` enter, in the window `Windows` version details shows, 
+>> current version `Windows 10 pro version 1803 (OS Build 17134.165)`, 2018 Microsoft Corporation. All rights reserved 
+>> in `System Information` (i.e. to in the Search bar, enter), following available thinks, `Version 10.0.17134 Build 17134` 
+>> thinks version available, in command prompt (i.e. normal, run as administrator) opens, version number available, thinks 
+
+
+			windows 10 current version to get 
+https://www.ilicomm.com/how-to-find-out-which-build-and-version-of-windows-10-you-have/
+https://www.windowscentral.com/how-check-your-windows-10-build
+>> google search `windows 10 how to check version`
+
+
+			thinks, below link manually download update of windows 
+https://www.groovypost.com/howto/download-install-windows-10-1803-april-2018-update-manually/
+https://www.microsoft.com/en-us/software-download/windows10
+
+			windows 10 to update 1809, (i.e. `onedrive automatically free up space`, to add), to update windows
+https://thewincentral.com/windows-10-version-1809-1903-follow-version-1803-redstone-4-confirms-official-slides/
+
+			windows 10 free up space
+https://www.windowscentral.com/best-7-ways-free-hard-drive-space-windows-10
+
+
+# below commands, of hibernet on, off, in command prompt to runs as administrator, below command to run, thinks 
+# to save space, in the above link given, turn off hibernet, below command 
+> powercfg /hibernate off
+
+# below, turn on hibernate
+> powercfg /hibernate on
+
+
+-- 2018-08-05
+
+## in command prompt to add, date variable, prints value, tried 
+# date variable sets; Note: BETWEEN variable AND `=` space available not working, thinks;  
+> SET "BKP_FILES_DATE=%date:~6,4%-%date:~3,2%-%date:~0,2%"
+
+# prints value, of variable usage `%<VARIABLE_NAME>%` to adds (i.e. `%` to add in front, rear of variable name, to adds, thinks), 
+> echo %BKP_FILES_DATE%
+
+
+-- 2018-08-08
+
+# To SignIn Microsoft account, in laptop, below steps thinks 
+- `Settings` -> `Accounts` `Sign in with Microsoft account`, 
+Credentials: 
+EmailId: `pkrnavin@gmail.com`
+Password: <SKYPE_PASSWORD>
+>> thinks, the emailid uses of Microsoft account Skype, OneDrive 
+
+Note:
+- Logins with Microsoft account in laptop, after computer turnOn to enter from the Microsoft account's password, thinks 
+
+
+# To switch to local account (i.e. to signout Microsoft account in computer), below steps thinks 
+- `Settings` -> `Accounts` `Switch to local account`
+- Enter Microsoft account password 
+- In next window, to enter local account details, to set, below values to give for local account 
+Name: B Navin
+Password: smith
+Re-TypePassword: smith
+Password Hint: Stone craftsman
+
+Note:
+- Default account name `DELL` sets thinks, after login, name modified thinks 
+
+
+# To reset `OneDrive`, thinks in link given after few minutes `OneDrive` restarts automatically OR manually enter `OneDrive` in search bar to opens, thinks  
+> %localappdata%\Microsoft\OneDrive\onedrive.exe /reset
+
+
+-- 2018-08-11
+
+# `temp` folder file, delete 
+- Temp folder files, to delete, two types files thinks; to open the folder, from `Run` prompt (i.e. to key press `Win + R`), below to type, opens files to delete, thinks 
+	- type `Temp` enter, 
+	- type `%temp%` enter, 
+	>> Note: of above, in Search bar (i.e. near `Windows Start` button), in Address bar `temp` folder openss, from `Run` prompt showing `\B Navin\...\Temp`, from search bar showing `C:\Users\DELL\...\Temp`, copy of URL both same thinks 
+>> Note: temp two types, given in below link `Hard drive free spaced ...`, thinks  
+
+
+# To free up space automatically, thinks deletes temporary, Recycle Bin files, below thinks 
+- `Settings` -> `Storage`, Turn On `Storage Sense`, in `Change how we free up space automatically` configure to delete files, thinks 
+
+
+# `Hard drive free spaced does not match with used space`, below link thinks, 
+https://answers.microsoft.com/en-us/windows/forum/windows_10-hardware/hard-drive-free-spaced-does-not-match-with-used/193d2516-7605-42b2-a8b2-e60264ede444
+>> from the link, below given thinks; 
+Note: 
+- Temp folder delete, of two types 
+- thinks disk space occupies more, of usage space of file not lists thinks, thinks `Dell Backup and Recovery` problem occurs, 
+- `Windirstat` uses to find unknown space occupies, thinks 
+>> thinks google search `onedrive how to get hard disk space occupied`, of `OneDrive` folder in harddisk space occupy to get, above link came thinks 
+
+
+-- [ modified on `2018-08-12`
+# Windows commands `UtilsFactory`, of available in `Windows Sysinternals` below link, thinks, 
+https://docs.microsoft.com/en-us/sysinternals/
+Note:
+- `du` command (i.e. disk usage space for the directory) to install to try, steps to add, command tries, description in below file path, of `OneDrive` disk space to get to try (i.e. from `mklink` file adds, disk space to get, to checking to try), above `mklink` notes from the link disk space occupy, in the link `dir`, `du` command given, to get disk space thinks 
+`D:\Learn\Tips\Install Notes\WindowsSysinternals\du_command_install_tips.txt` 
+- `UtilsFactory`, of commands available in `Windows Sysinternals` to adds, in the computer, below steps thinks 
+	- Downloads the command file, the zip file to adds in `D:\Learn\Softwares\Windows Sysinternals`
+	- Extract the file to `C:\Sysinternals`, so command files adds in the folder; as the folder path adds in environment variable in command prompt to work adds, so other command files to add in the folder from command prompt to works, 
+	>> `du` command file added in the folder 
+- below to command to run, in command prompt, of varies from environment variable adds, thinks 
+	- before adds 
+	> C:\Sysinternals\du.exe -v <FOLDER_PATH>
+	- after adds 
+	> du -V <FOLDER_PATH>
+-- ]
+
+-- 2018-08-15
+
+# copy command 
+
+# below copy files, prompt of same file name exists in destination, thinks 
+> copy <SOURCE> <DESTINATION>
+
+# overwrites of same exists, thinks 
+> copy /Y <SOURCE> <DESTINATION>
+
+
+-- below link, Folder Right click -> Properties,  available `Size`, `Size On Disk`, differences below links thinks, 
+https://superuser.com/questions/66825/what-is-the-difference-between-size-and-size-on-disk
+
+
+# OneDrive location change, below steps 
+- `OneDrive` from task bar, `More` -> `Settings`, 
+- In the window `Account` tab, `Unlink this PC` to click thinks 
+- Go to `OneDrive` location `E:\OneDrive`, in explorer `Alt + H` (i.e. `Home` menu) `Move To` choose folder `C:\Users\DELL`, thinks (i.e. `OneDrive` folder files moves to `C:\`), 
+- Click `OneDrive`, enter `Email`, `Password` 
+- `Change Location`, select the respective folder of `OneDrive`, in prompt window `Use this location` select thinks 
+- thinks, `OneDrive` location changes, of before available files the folder, thinks 
+
+-- below link, OneDrive location change 
+https://www.groovypost.com/howto/protect-mac-os-x-against-adobe-flash-vulnerabilities/
+https://support.microsoft.com/en-in/help/4028633/windows-10-change-the-location-of-your-onedrive-folder
+

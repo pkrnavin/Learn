@@ -1,0 +1,17 @@
+
+## start glassfish
+> cd <glassfish_home>/bin
+> sudo ./asadmin start-domain
+
+## stop glassfish
+> cd <glassfish_home>/bin
+> sudo ./asadmin stop-domain
+
+## restart glassfish
+> cd <glassfish_home>/bin
+> sudo ./asadmin restart-domain
+
+
+## deploy war file in linux
+> cd <glassfish_home>/bin
+> ./asadmin deploy --contextroot "appedo_velocityui" /home/fedora/20160511/appedo_velocityui.war

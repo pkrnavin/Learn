@@ -1,0 +1,137 @@
+
+
+-- 2018-06-06
+- Airtel 4G Hotspot, internet tips 
+
+
+AirtelHotspotInternet MobileNumber: 7338848013
+>> Note: SMS inbox of the mobile number, available in above URL SMS tab, to login with above credentials
+
+Me Airtel Hotspot Internet; URL: http://192.168.1.1/, below `AirtelHotspotInternet credentials` 
+Username: admin
+Password: 12345
+
+AirtelHotspotInternet Wifi:
+Username: Airtel-E5573-DC1A-bnavin
+Password: pkrnavin
+>> Wifi Username/Password, configure from AirtelHotspotInternet above URL, thinks steps available in mobile notes, notebook written thinks
+
+Airtel Login:
+https://www.airtel.in/s/selfcare?normalLogin
+MobileNumber: 7338848013
+Password: welcomenavin30
+>> Note: above password thinks; of not login, generate OTP, from AirtelHotspotInternet above URL, from SMS tab login, OTP gets login, thinks
+
+
+To check internet usage balance, from below link, thinks:
+https://www.quora.com/How-can-I-check-my-daily-data-usage-on-my-Airtel-4G-SIM-using-my-mobile
+https://www.youtube.com/watch?v=5aRJM_Kgevc
+>> in comments, `*121*512# . then type 4?` code given, thinks 
+
+To check internet usage balance, from link, below thinks 
+- Connect Airtel Hotspot Internet, 
+- URL: http://192.168.1.1/
+- USSD tab, enter above `AirtelHotspotInternet credentials` 
+- To check internet balance, from below types 
+	- enter `*125*1541#` code, below result available, thinks 
+	>> Note: thinks, above of respective recharge type, recharge from Rs. 399, Rs. 448, Rs. 494, ..., thinks (i.e. daily plans of 1.4GB OR 2GB of <DAYS> day, thinks) 
+	- enter `*121*512#` from results type `2` Balance, from Balance results type `1` Current Pack Info, thinks usage returns 
+>> Note: PF below, of sample results from code enters, results returns, to check internet balance, 
+
+
+- To check, internet balance from, MyAirtelApp from mobile
+
+TODO:
+- Mobile AirtelHotspotInternet tips added, from mobile gets below to adds, thinks 
+
+
+
+-- 2018-06-08
+
+-- [ below from mobile airtel hotspot internet tips, adds in laptop, thinks; Note: before day, adds not available, adds thinks 
+
+Below wifi details: 
+SSID or Username: 
+Airtel-E5573-DC1A-bnavin
+Password: pkrnavin
+
+Wifi on, URL enter http://192.168.1.1/
+Link's credentials:
+Username: admin
+Password: admin
+Password: 12345
+
+Wifi Username/Password, to change:
+Above link, to enter, after wifi on,
+Settings -> enter `Link's credentials` -> Configure profile settings -> click Next button -> Configure WLAN Settings, enter new `Username/Password` for wifi thinks 
+
+To reset default, Settings -> Left tab System -> Restore defaults; thinks, hotspot cover open back side `Username/Password` sets, thinks
+
+Thinks, to change `Link's credentials` Settings -> Left tab System -> Modify password, thinks, not tried 
+
+To check netusage balance: 
+  - from above link, `Statstics` -> `Total Volume` or 
+  - my Airtel app, My account -> Data Balance
+
+Thinks, Airtel app slow or crash, to clear app data or phone's cache 
+  - to clear app data; from Phone `Settings` -> Storage & USB -> Internal Storage -> Apps -> My Airtel -> clear data or clear cache, thinks 
+   - to clear phone's cache; from Phone `Settings` -> Storage & USB -> Internal Storage -> Cached data (i.e. phone cache,  thinks), 
+
+-- ]
+
+
+
+
+
+
+- Below to check internet balance, from link, code enters below results returns, thinks 
+Sent:	
+*121*512#
+Received:	
+
+Invalid request.
+Mob#917338848013
+1 Change Language
+2 Balance
+3 New Offers
+4 My Offer
+5 My Account Info
+6 Coupon Recharge
+7 Other Services
+0 Next
+
+Sent:	
+2
+Received:	
+
+7338848013
+Bal:Rs0.00
+UL Pack Valid till:17-07-18
+Reply with
+1 Current Pack Info
+2 Other
+22 Back
+
+Sent:	
+1
+Received:	
+
+Unlimited Calling,daily 1.4GB & 100 SMS
+Pack Valid till 17-07-2018
+
+1434 MB left from Daily limit of 1434 MB.
+
+* for back
+22 Back
+
+Sent:	
+*125*1541#
+Received:	
+
+Invalid Option
+
+Sent:	
+*125*1541#
+Received:	
+
+You have used 0MB from your Daily limit of 1.4GB.Pack validity expires on 18-07-2018

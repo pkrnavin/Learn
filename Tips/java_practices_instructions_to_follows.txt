@@ -1,0 +1,93 @@
+
+
+-- 2018-08-26
+- java practices instructions, notes to adds 
+
+- in java class, `Database` Connection gets to adds (i.e. `DatabaseMaster.java` java class to adds; the database Connection properties, of IP Address DatabaseName, Password, ..., are to add in `properties` files, to load from the file, method `loadDatabaseProperties` to load from the file in static variable sets, to adds, the database driver of `com.mysql...` for mysql, `com.postgres...` for postgres to add in the class, to get `getDatabaseConnection`; Database connection related are to add in the class, `loadDatabaseProperties`, `getConnection`, `commit`, `rollback`, close of `Connection`, `Statement`, `PreparedStatement`, `ResultSet`, to add in the class), 
+- java of application same values are to LOADS ONE TIME, 
+	- `OpenMentor`, of `Vocabulary Check Game`, the words from the file are loads one time of Tomcat starting, in static variable sets; of user enters words are valid to verify, from the variable to verify of exists; of one time to load words from the file, sets in static variable; in `InitServlet.java`, the words to load from the file, method adds, below the class notes adds 
+	- `InitServlet.java`, servlet in `init` method to adds to loads one time of Config properties, Database properties, Mail properties, ..., are to adds; the java class in `web.xml`, `load-on-startup` to add, of Tomcat startup, the class servlet `init` method calls, loads sets in static variable 
+	- `Appedo`, of values `counter_types`, agent downloads file full path, to load from database, of application same values, are to loads one time, in `InitServlet` the method calls 
+	- `/reloadVocabularyCheckWords` `/reloadProperties`, `/reloadAgentDownloadsFilePath` servlet URL adds, of value change in the file, properties file, database, in application to set the change values, in the request, reloads calls of words to reloads, properties, database values, in `firefox` the URL to enters, in the application changes value sets 
+- in java, from UI values enters, to gets 
+	- in controller (i.e. servlet), from the request values to gets in `Bean` class to set, the values, to calls manager class function 
+	- manager class, to add; business logic to add in the class in method add; from manager DBI class method to calls 
+	- DBI class, of database query `SELECT`, `INSERT`, `UPDATE`, `DELETE`, ..., query to add in the class method to add; from Bean, the values get add in database 
+>> (i.e. from UI `form` values to insert in database; in controller the request to handles to adds, from request the values get to set in Bean class, manager class method to calls to insert the values, the Bean to pass to manager class the method, business logic to add in the method of manager class, from manager class DBI class's insert method to calls, the Bean to pass to DBI class insert method, in the method from Bean values get, to `INSERT INTO <TABLE>` DATABASE, to adds)
+Note: in `Manager`, `DBI`, `Bean` classes, NOT TO ADD STATIC METHODS, VARIABLES; the classes methods are calls of to create object (i.e. <CLASS_NAME> obj = new `CLASS_CONSTRUCTOR`(), of object create, to calls); of respective requires static methods, variable to adds, of `static` in application same value sets 
+- An action to does, to add in function, of each actions each method to adds 	(added on `2018-08-27`)
+- `UtilsFactory.java` class, static methods, variables of commons to adds (i.e. `replaceNull`, `clearCollectionHierarchy`, `DateFormat` methods, close file Input, OutPut Stream Writer, ..., to adds), in static methods, variables of common to adds 
+- `HashMap`, `LinkedHashMap`, `ArrayList`, `HashSet` to adds, of data to adds  
+- Close resources of `Database`, `File` in respective order, in `finally` block, to call close 
+	- of Database, to close of first to calls `ResultSet`, (`Statement` | `PreparedStatement`), `Connection`, in the respective order to call close 
+	- of File, to close of first to calls `Buffered` Input|Output Stream|Writer, Input|Output to close 
+	>> (i.e. variable value sets, from bottom to top to close) 
+- SingleTone class, in RESETLet, the application same values are adds, thinks; in `OpenMentor` index page, 3rd slide, of get user registrations, recorded webinar videos, in SingleTone class values gets from database, of sets in variable, of `TimerClass` the value change reset, of 2 hrs OR 1 day, adds thinks, so for all users accessing the application, in the slide same values shows for all users, thinks, 
+- java method name to starts with verb, variable name adjective prefix `dataType in short`, class name noun, thinks 
+	- method name, of verb to starts with, common method names starts with are `get`, `set`, `load`, `is`, `has`, `do`, `create`, `insert`, `update`, `delete`, `search`, 
+	- variable names of adjective thinks, of prefix datatype, below thinks 
+		<DATA_TYPE>	<PERFIX_DATA_TYPE_VARIABLE_NAME> prefix, below starts with 
+		String				str
+		String[]			sa
+		int, Integer		n
+		long, Long			l
+		double				d
+		float				f
+		HashMap				hm
+		HashSet				hs
+		LinkedHashMap		lhm
+		ArrayList			al
+		JSONObject			jo
+		JSONArray			ja
+		Connection			con
+		Statement			stmt
+		PreparedStatement	pstmt
+		ResultSet			rst
+	- variable name, full capital, of static constant values, to sets to adds 
+	- the variable of array, must ends with `s` OR `ies` (i.e. must ends with plural) 	(added on `2018-08-27`)
+>> respective to add of Input, Output stream writer to adds 
+- Package name `com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.<FOLDRE_NAME>`, below package names 
+	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.database - DataBaseMaster.java
+	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.controller - Request servlet class to adds 
+	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.manager - Manager class to adds 
+	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.dbi - Database operation (i.e. `SELECT`, `INSERT`, `UPDATE`, `DELETE`) of the request to add 
+	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.utils - UtilsFactory.java
+	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.constants - Constants.java
+	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.resource - properties files to adds 
+	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.servlet - InitServlet, ImageCaptchSrvlet, ... to adds 
+	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.listeners - HttpSessionListener.java
+- in `Constants.java`, static variables, loadConfigProperties, load computer's ConfigProperties to adds 
+- in `finally` block to call `clearCollectionHierarchy` of variable, the variable to set to null, to adds 
+
+
+TODO:
+- above point, in brief of single line to adds, 
+
+
+-- 2018-08-27
+
+TODO:
+- above point, in brief of single line to adds, 
+
+PF, below above java instructions to practices, in brief to add in single line, below to adds 
+- java class to adds, Database Connection to gets, load database properties, connection related operation to does, method to adds in the class 
+- ONE TIME LOADS to adds, of application same values, loads, in static variable to sets, to adds, of below 
+	- `OpenMentor` of `Vocabulary Check Game`, the words from the file are loads one time, 
+	- `InitServlet.java` to add to load functions to calls, of `Config`, `Database`, `Mail` properties, from the file to load, to add to call in class `init` method, of Tomcat start the class calls 
+	- `Appedo` of `counter_types`, agent downloads file path of same values, are to loads one time, 
+	- `./reload<VALUES>`, of value change in the file OR properties file OR database, in application the latest values to set, `reload` request to adds, to loads to call the respective function, of the request 
+- from UI form values sends to request, of below 
+	- in controller (i.e. servlet), from request to get value to set `Bean`, manager calls to calls, 
+	- manager class, business logic to adds, to call DBI class 
+	- DBI class, database operations to adds in the class 
+>> Note: in manager, DBI class static variable, method not to adds; of respective requires to add, static variable, method 
+- an action method to adds, of each action each method to adds 
+- `UtilsFactory.java` to adds, common functions, variable to adds, static variables, methods to adds 
+- `HashMap`, `LinkedHashMap`, `ArrayList`, `HashSet` of data to adds 
+- Close resources of `Database`, `File` in respective order, in `finally` block, to call close; of variable value sets, from bottom to top to close 
+- Singleton class, in RESTLet of same values in application of all users gets from database sets in variable, TimerClass to adds to reloads 
+- java naming conventions, of package, class, method, variable names above to refer, 
+- in `Constants.java`, static variables, loadConfigProperties, load computer's ConfigProperties to adds, of Constant values to add in the variable 
+- in `finally` block, to call `clearCollectionHeirarchy` of variable, the variable to set to null, to adds 
+
+>> of above instructions, to follows, brief adds, tries 

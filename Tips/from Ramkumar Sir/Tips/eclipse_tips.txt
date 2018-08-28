@@ -1,0 +1,105 @@
+############ find trailing whitespace in last ############
+\S[ 	]+$
+
+############ find , and ] } ) ############
+,\s*\n\s*[\]|}|\)\\]
+
+
+############ To find: a stringbuffer append sequence without white-space in end of the line ############
+\S"\)\s\n\s*\w*.app
+
+Eg: 
+rpf_stepsDetailsQry.append("SELECT * FROM testcasesteps")
+rpf_stepsDetailsQry	.append("where projectcode='").append(manualTestRunPassFailAllBean.getProjectcode()).append("' AND ")
+
+o/p: FROM testcasestepswhere projectcode='
+
+
+
+
+"E:\Program Files\eclipse\eclipse.exe" -vmargs -Duser.language=en -Xms128M -Xmx512M -XX:PermSize=64M -XX:MaxPermSize=128M -Dosgi.splashLocation="E:\Program Files\MyEclipse\eclipse\MyEclipseSplash.bmp"
+
+
+-- 2016-08-01
+
+Eclipse kepler hangs, for javascript large files, corrections done 
+- Un-selected, Window>Preferences>JavaScript>Editor>Mark Occurrences 
+- Un-selected, Window/Preferences/JavaScript/Editor/Typing{When pasting}/Update imports
+- Right click project, un-selected Properties/Builder/Javascript Validator
+
+
+
+-- 2018-08-19
+
+Steps, eclipse dynamic web project, to create 
+- File -> New -> Dynamic web project
+- Project Name add
+- In Java window, of java classes, Output folder to add `WebRoot\WEB-INF\classes`
+- In Web module window, of `Content Directory: WebRoot`, to add 
+
+
+#### In Eclipse, from git single repository of multiple projects available, to include the respective project folder, files; below steps, thinks ####
+- In Eclipse, project type `Java` OR `Dynamic web project` to create, of respective folder, files to include in the project, from repository has multiple projects 
+- In the created project folder, of `.project` file, to add `linkedResources` below tag inside `projectDescription` tag; `linkedResources` folder OR file reference from original folder adds; `linkedResources` for folder tried, thinks 
+<projectDescription>
+	...
+	<linkedResources>
+		<link>
+			<name><FOLDER_NAME_IN_WORKSPACE></name>
+			<type><VALUE (i.e. either to give `1` for file OR `2` for folder)></type>
+			<location><FOLDER_FULL_PATH></location>
+		</link>
+	</linkedResources>
+</projectDescription>
+>> thinks `mklink`, of same folder, file reference adds in multiple places, thinks; of change in folder OR file reflects in other places thinks, 
+
+
+>> below link, given of `.project` file, tag description, thinks 
+https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fmisc%2Fproject_description_file.html
+>> below link, `linkedResources` thinks 
+https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Fconcepts%2Fconcepts-13.htm
+https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Ftasks%2Ftasks-45.htm
+
+
+
+Note:
+- In workspace, of git single repository multiple projects adds in `D:\Learn\workspace\Learn`, in eclipse to include the content, for below tried, thinks 
+- From below link, in eclipse from UI linked folder creates tried, 
+    Right click on project -> New -> Folder -> `Advanced >>` -> Link to alternative location select, from `Browse` select respective folder to include, 
+	of link folder adds, checking tried in `.project` file content available of `linkedResources` tag, of before adds, thinks 
+	so from before adds, of manually `linkedResources` tag folder path adds, tried; the tag description available in above link, thinks 
+- to checking tried, in `Learn` folder, of sample projects `Test_1_SingleRepository_ImportMultipleProjects`, `Test_2_SingleRepository_ImportMultipleProjects` adds, of content in `src` a java file, in `WebRoot` a html file added, to include in eclipse, the project's `.project` file to refer thinks; below `linkedResources` adds, thinks 
+<linkedResources>
+	<link>
+		<name>src</name>
+		<type>2</type>
+		<location>D:/Learn/workspace/Learn/Test_1_SingleRepository_ImportMultipleProjects/src</location>
+	</link>
+	<link>
+		<name>WebRoot</name>
+		<type>2</type>
+		<location>D:/Learn/workspace/Learn/Test_1_SingleRepository_ImportMultipleProjects/WebRoot</location>
+	</link>
+</linkedResources>
+- of backup file sample project adds, `rar` file backup adds, linked folder files not available in backup thinks, so to backup from sample project in the file path `D:\Learn\workspace\Learn`, thinks 
+- after `linkedResource` adds, `src` folder shows, after the `Right Click` -> Properties -> Java Build Path, in the window of `source` tab `Apply & Close` button clikcs, `src` folder showing thinks 
+>> above point, added on `2018-08-20` 
+
+
+- below link, in eclipse project to include folder OR file from other folder, thinks,  
+https://stackoverflow.com/questions/18492293/eclipse-and-external-src-and-web-content-folder-linking-or-mapping
+https://dzone.com/articles/link-files-and-folders-eclipse
+
+
+- below `linkedResources` tag description, from link, adds 
+<!ELEMENT linkedResources (link)*>
+<!ELEMENT link (name, type, location)>
+<!ELEMENT name EMPTY>
+<!ELEMENT type EMPTY>
+<!ELEMENT location EMPTY>
+linkedResources - the list of linked resources for this project.
+link - the definition of a single linked resource.
+name - the project-relative path of the linked resource as it appears in the workspace.
+type - the resource type. Value values are: "1" for a file, or "2" for a folder.
+location - the local file system path of the target of the linked resource. Either an absolute path, or a relative path whose first segment is the name of a workspace path variable.
+locationURI - if the file is not in the local file system, this attribute contains the absolute URI of the resource in some backing file system.

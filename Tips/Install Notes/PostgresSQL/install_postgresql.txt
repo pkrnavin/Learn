@@ -1,0 +1,726 @@
+
+
+-- 2018-07-01
+-- to download, install postgresql, to try 
+
+TODO: 
+- PostgresSQL to download, to install, to try 
+- to install postgresql, after seeing from link `how to install postgresql`, to install, to try thinks 
+- query runs, to try, CREATE DATABASE, CREATE TABLE, SELECT query runs, to try, thinks 
+- pgAdmin, to download, install, query runs to try, thinks 
+>> Note: `pgAdmin` install from Postgresql 10.4 installation, opens in browser, thinks 	(added on `2018-07-07`)
+
+
+
+from below link postgresql, downloads, tried, thinks 
+https://www.postgresql.org/download/
+>> from the above link, selects `Windows`, below link opens thinks 
+https://www.postgresql.org/download/windows/
+>> from the above link, in below heading `Interactive installer by EnterpriseDB`, selects `Download the installer`, below link opens thinks 
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+>> Selects Postgresql_10.4 version, Windows 64bit, selects downloads, thinks 
+
+
+Password: postgres
+Port: 5432
+Select Locale: [Default locale]
+
+- to install postgres, from below links, instructions seeing, installs, tried thinks 
+www.techken.in/linux/install-postgresql-10-windows-10-linux/
+http://get.enterprisedb.com/docs/PostgreSQL_Installation_Guide_v9.6.pdf
+http://www.postgresqltutorial.com/install-postgresql/
+
+tried:
+- WIP postgres installs tried; after installation completes opens Postgresql `Stackbuilder` installs, selects `postgres 64bit odbc drivers` thinks, of auto Restart System, cancel of applications, to checking, thinks after in `Stackbuilder` install `Next` clicks, thinks installation is donw, of required respective manually to download and install, thinks, Restart System, thinks 
+- Postgresql `Stackbuilder`, available in `Start` -> `PostgreSQL 10` -> `Application Stackbuilder`, thinks `Stackbuilder` install window opens (i.e. after postgresql install, stackbuilder window opens, the respective window opens, thinks)
+- `pgAdmin` selects, opens in browser thinks, to try connect in `pgAdmin`
+- thinks, command prompt connects open database as mysql, opens tried, not opens, thinks 
+
+to try:
+- query runs, to try, CREATE DATABASE, CREATE TABLE, SELECT query runs, to try, thinks, thinks from command prompt, to run, to try, thinks 
+- pgAdmin, to download, install, query runs to try, thinks 
+ 
+
+-- 2018-07-02
+
+- After potgresql install, database to connect, query runs to checking, Start -> PostgreSQL 10 -> SQL Shell (psql), window opens, below value enters, database connects, thinks 
+
+# below value, enters in postgresql `SQL Shell (psql)`, connects database, thinks 
+Server [localhost]: localhost
+Database [postgres]: postgres
+Port [5432]: 5432
+Username [postgres]: postgres
+Password for user postgres: postgres
+
+
+# commands, in `SQL Shell (psql)`, from below link, to list databases, switch database, show tables 
+https://chartio.com/resources/tutorials/how-to-list-databases-and-tables-in-postgresql-using-psql/
+
+# to list all databases 
+> \l
+
+# to switch database 
+> \c <DATABASE_NAME>
+
+# to list tables 
+> \dt
+
+# to DESCRIBE TABLE 
+> \d <TABLE_NAME>
+> \d+ <TABLE_NAME>
+
+# Connect to PostgreSQL database
+
+The following command connects to a database under a specific user. After pressing Enter PostgreSQL will ask for the password of the user.
+> psql -d database -U  user -W
+
+For example, to connect to dvdrental database under postgres user, you use the following command:
+> C:\Program Files\PostgreSQL\9.5\bin>psql -d dvdrental -U postgres -W
+> Password for user postgres:
+> dvdrental=#
+
+# If you want to connect to a database that resides on another host, you add the -h option as follows:
+> psql -h host -d database -U user -W
+
+# In case you want to use SSL mode for the connection, just specify it in the command as the following command:
+> psql -U user -h host "dbname=db sslmode=require"
+
+
+# To list all schema of the currently connected database
+> \dn
+
+# To list available functions in the current database
+> \df
+
+# To list available views in the current database
+> \dv
+
+# To list all users and their assign roles, 
+> \du
+
+# To retrieve the current version of PostgreSQL server
+> SELECT version();
+
+# command to execute the previous command
+> \g
+
+# To display command history
+> \s
+
+# to save the command history to a file, 
+> \s <FILE_NAME>
+
+# to execute psql commands from a file
+> \i <FILE_NAME>
+
+# To know all available psql commands 
+> \?
+
+# To get help on specific PostgreSQL statement, you use the \h command.
+# For example, if you want to know detailed information on ALTER TABLE statement, you use the following command:
+> \h ALTER TABLE
+
+# To turn on query execution time; You use the same command, to turn it off
+> \timing 
+
+# Switch output options
+psql supports some types of output format and allows you to customize how the output is formatted on fly.
+\a command switches from aligned to non-aligned column output.
+\H command formats the output to HTML format.
+
+# exit, command prompt 
+> \q
+
+
+
+# postgresql commands 
+http://www.postgresqltutorial.com/psql-commands/
+
+# postgres load sample database 
+http://www.postgresqltutorial.com/postgresql-sample-database/
+# postgres sample database ER diagram 
+http://www.postgresqltutorial.com/wp-content/uploads/2018/03/printable-postgresql-sample-database-diagram.pdf
+
+# sample database, zip, tar file in the below path 
+D:\Learn\Tips\Install Notes\PostgresSQL\SampleDatabase
+
+# sample database, ER diagram, available in the below path 
+D:\Learn\Tips\Install Notes\PostgresSQL\SampleDatabase\printable-postgresql-sample-database-diagram.pdf
+
+>> Note: sample database is mysql's sample database of `sakila`, thinks; both mysql, postgresql sample database is same thinks, 	(added on `2018-07-07`)
+
+
+# to load sample database, below tried, thinks 
+
+# from postgresql `SQL Shell (psql)` command prompt, below runs 
+postgres=# CREATE DATABASE dvdrental;
+
+# sample database `D:\Learn\Tips\Install Notes\PostgresSQL\SampleDatabase\dvdrental.zip`, to extract tar file, `D:\Learn\Tips\Install Notes\PostgresSQL\SampleDatabase\dvdrental.tar` 
+
+# explorer go to the path `C:\Program Files\PostgreSQL\10\bin`, in address bar enter `cmd`, the opens, below enters, loads database thinks 
+> C:\Program Files\PostgreSQL\10\bin>pg_restore -U postgres -d dvdrental "D:\Learn\Tips\Install Notes\PostgresSQL\SampleDatabase\dvdrental.tar"
+Password: postgres
+
+# after above runs, in postgresql `SQL Shell (psql)`
+# to change database, to `dvdrental` 
+> \c dvdrental
+# to list tables in the database, 
+> \dt
+
+
+-- [ SQL, below to checking, CREATE DATABASE, CREATE TABLE, INSERT data, SELECT query runs, to checking try 
+
+CREATE DATABASE test;
+
+> \c test
+
+CREATE TABLE user_master_test (
+  user_id SERIAL PRIMARY KEY, 
+  first_name varchar(150) NOT NULL, 
+  last_name varchar(150) NOT NULL,
+  created_on TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  created_by integer NOT NULL,
+  modified_on TIMESTAMP WITHOUT TIME ZONE, 
+  modified_by integer 
+);
+
+INSERT INTO user_master_test (first_name, last_name, created_on, created_by) VALUES ('Navin', 'Bhaskaran', now(), 1), ('admin', 'admin', now(), 1);
+
+SELECT * FROM user_master_test; 
+
+SELECT * 
+FROM user_master_test 
+WHERE user_id = 1;
+
+SELECT * 
+FROM user_master_test 
+WHERE user_id = 2;
+
+-- ]
+
+Note: 
+- Postgresql pgAdmin4 opens, in browser, SELECT query runs, checking verification tried, from Menu `Tools` -> `Query Tool`, SELECT query runs, saves file, tried, 
+
+
+-- [ below log, to load sample sample database 
+
+# below log, in postgresql `SQL Shell (psql)`,  
+Server [localhost]: localhost
+Database [postgres]: postgres
+Port [5432]: 5432
+Username [postgres]: postgres
+Password for user postgres:
+psql (10.4)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# \l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+(3 rows)
+
+
+postgres=# \dt
+Did not find any relations.
+postgres=# CREATE DATABASE dvdrental;
+CREATE DATABASE
+postgres=# \l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ dvdrental | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+(4 rows)
+
+
+postgres=# \c dvdrental
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+You are now connected to database "dvdrental" as user "postgres".
+dvdrental=# \dt
+             List of relations
+ Schema |     Name      | Type  |  Owner
+--------+---------------+-------+----------
+ public | actor         | table | postgres
+ public | address       | table | postgres
+ public | category      | table | postgres
+ public | city          | table | postgres
+ public | country       | table | postgres
+ public | customer      | table | postgres
+ public | film          | table | postgres
+ public | film_actor    | table | postgres
+ public | film_category | table | postgres
+ public | inventory     | table | postgres
+ public | language      | table | postgres
+ public | payment       | table | postgres
+ public | rental        | table | postgres
+ public | staff         | table | postgres
+ public | store         | table | postgres
+(15 rows)
+
+
+dvdrental=# \dcity
+               List of conversions
+ Schema | Name | Source | Destination | Default?
+--------+------+--------+-------------+----------
+(0 rows)
+
+
+dvdrental=# \d city
+                                           Table "public.city"
+   Column    |            Type             | Collation | Nullable |                Default
+-------------+-----------------------------+-----------+----------+---------------------------------------
+ city_id     | integer                     |           | not null | nextval('city_city_id_seq'::regclass)
+ city        | character varying(50)       |           | not null |
+ country_id  | smallint                    |           | not null |
+ last_update | timestamp without time zone |           | not null | now()
+Indexes:
+    "city_pkey" PRIMARY KEY, btree (city_id)
+    "idx_fk_country_id" btree (country_id)
+Foreign-key constraints:
+    "fk_city" FOREIGN KEY (country_id) REFERENCES country(country_id)
+Referenced by:
+    TABLE "address" CONSTRAINT "fk_address_city" FOREIGN KEY (city_id) REFERENCES city(city_id)
+Triggers:
+    last_updated BEFORE UPDATE ON city FOR EACH ROW EXECUTE PROCEDURE last_updated()
+
+
+dvdrental=# \d+ city
+                                                               Table "public.city"
+   Column    |            Type             | Collation | Nullable |                Default                | Storage  | Stats target | Description
+-------------+-----------------------------+-----------+----------+---------------------------------------+----------+--------------+-------------
+ city_id     | integer                     |           | not null | nextval('city_city_id_seq'::regclass) | plain    |              |
+ city        | character varying(50)       |           | not null |                                       | extended |              |
+ country_id  | smallint                    |           | not null |                                       | plain    |              |
+ last_update | timestamp without time zone |           | not null | now()                                 | plain    |              |
+Indexes:
+    "city_pkey" PRIMARY KEY, btree (city_id)
+    "idx_fk_country_id" btree (country_id)
+Foreign-key constraints:
+    "fk_city" FOREIGN KEY (country_id) REFERENCES country(country_id)
+Referenced by:
+    TABLE "address" CONSTRAINT "fk_address_city" FOREIGN KEY (city_id) REFERENCES city(city_id)
+Triggers:
+    last_updated BEFORE UPDATE ON city FOR EACH ROW EXECUTE PROCEDURE last_updated()
+
+
+dvdrental=#
+
+# below log, in windows command prompt 
+Microsoft Windows [Version 10.0.16299.492]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Program Files\PostgreSQL\10\bin>pg_restore -U postgres -d dvdrental D:\Learn\Tips\Install Notes\PostgresSQL\SampleDatabase\dvdrental.tar
+pg_restore: too many command-line arguments (first is "Notes\PostgresSQL\SampleDatabase\dvdrental.tar")
+Try "pg_restore --help" for more information.
+
+C:\Program Files\PostgreSQL\10\bin>pg_restore -U postgres -d dvdrental "D:\Learn\Tips\Install Notes\PostgresSQL\SampleDatabase\dvdrental.tar"
+Password:
+
+C:\Program Files\PostgreSQL\10\bin>C:\Program Files\PostgreSQL\10\bin
+
+C:\Program Files\PostgreSQL\10\bin>
+
+-- ]
+
+-- [ below log, to checking CREATE DATABASE, CREATE TABLE, INSERT data, SELECT query, tried 
+
+Server [localhost]: localhost
+Database [postgres]: postgres
+Port [5432]: 5432
+Username [postgres]: postgres
+Password for user postgres:
+psql (10.4)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# CREATE DATABASE test;
+CREATE DATABASE
+postgres=# \l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ dvdrental | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ test      | postgres | UTF8     | English_India.1252 | English_India.1252 |
+(5 rows)
+
+
+postgres=# \c test
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+You are now connected to database "test" as user "postgres".
+test=# \dt
+Did not find any relations.
+test=# CREATE TABLE user_master_test (
+test(#   user_id SERIAL PRIMARY KEY,
+test(#   first_name varchar(150) NOT NULL,
+test(#   last_name varchar(150) NOT NULL,
+test(#   created_on TIMESTAMP WITHOUT TIMEZONE NOT NULL,
+test(#   created_by integer NOT NULL,
+test(#   modified_on TIMESTAMP WITHOUT TIMEZONE,
+test(#   modified_by integer
+test(# );
+ERROR:  syntax error at or near "TIMEZONE"
+LINE 5:   created_on TIMESTAMP WITHOUT TIMEZONE NOT NULL,
+                                       ^
+test=# CREATE TABLE user_master_test (
+test(#   user_id SERIAL PRIMARY KEY,
+test(#   first_name varchar(150) NOT NULL,
+test(#   last_name varchar(150) NOT NULL,
+test(#   created_on TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+test(#   created_by integer NOT NULL,
+test(#   modified_on TIMESTAMP WITHOUT TIME ZONE,
+test(#   modified_by integer
+test(# );
+CREATE TABLE
+test=# \d user_master_test
+                                           Table "public.user_master_test"
+   Column    |            Type             | Collation | Nullable |                      Default
+-------------+-----------------------------+-----------+----------+---------------------------------------------------
+ user_id     | integer                     |           | not null | nextval('user_master_test_user_id_seq'::regclass)
+ first_name  | character varying(150)      |           | not null |
+ last_name   | character varying(150)      |           | not null |
+ created_on  | timestamp without time zone |           | not null |
+ created_by  | integer                     |           | not null |
+ modified_on | timestamp without time zone |           |          |
+ modified_by | integer                     |           |          |
+Indexes:
+    "user_master_test_pkey" PRIMARY KEY, btree (user_id)
+
+
+test=# \d+ user_master_test
+                                                               Table "public.user_master_test"
+   Column    |            Type             | Collation | Nullable |                      Default                      | Storage  | Stats target | Description
+-------------+-----------------------------+-----------+----------+---------------------------------------------------+----------+--------------+-------------
+ user_id     | integer                     |           | not null | nextval('user_master_test_user_id_seq'::regclass) | plain    |              |
+ first_name  | character varying(150)      |           | not null |                                                   | extended |              |
+ last_name   | character varying(150)      |           | not null |                                                   | extended |              |
+ created_on  | timestamp without time zone |           | not null |                                                   | plain    |              |
+ created_by  | integer                     |           | not null |                                                   | plain    |              |
+ modified_on | timestamp without time zone |           |          |                                                   | plain    |              |
+ modified_by | integer                     |           |          |                                                   | plain    |              |
+Indexes:
+    "user_master_test_pkey" PRIMARY KEY, btree (user_id)
+
+
+test=# SELECT *
+test-# FROM user_master_test;
+ user_id | first_name | last_name | created_on | created_by | modified_on | modified_by
+---------+------------+-----------+------------+------------+-------------+-------------
+(0 rows)
+
+
+test=# INSERT INTO user_master_test (first_name, last_name, created_on, created_by) VALUES ('Navin', 'Bhaskaran', now(), 1), ('admin', 'admin', now(), 1);
+INSERT 0 2
+test=# SELECT * FROM user_master_test;
+ user_id | first_name | last_name |         created_on         | created_by | modified_on | modified_by
+---------+------------+-----------+----------------------------+------------+-------------+-------------
+       1 | Navin      | Bhaskaran | 2018-07-02 20:16:36.693218 |          1 |             |
+       2 | admin      | admin     | 2018-07-02 20:16:36.693218 |          1 |             |
+(2 rows)
+
+
+test=# SELECT *
+test-# FROM user_master_test
+test-# WHERE user_id = 1;
+ user_id | first_name | last_name |         created_on         | created_by | modified_on | modified_by
+---------+------------+-----------+----------------------------+------------+-------------+-------------
+       1 | Navin      | Bhaskaran | 2018-07-02 20:16:36.693218 |          1 |             |
+(1 row)
+
+
+test=# SELECT *
+test-# FROM user_master_test
+test-# WHERE user_id = 2;
+ user_id | first_name | last_name |         created_on         | created_by | modified_on | modified_by
+---------+------------+-----------+----------------------------+------------+-------------+-------------
+       2 | admin      | admin     | 2018-07-02 20:16:36.693218 |          1 |             |
+(1 row)
+
+
+test=#
+test=# SELECT version();
+                          version
+------------------------------------------------------------
+ PostgreSQL 10.4, compiled by Visual C++ build 1800, 64-bit
+(1 row)
+
+-- ]
+
+
+-- 2018-07-07
+
+Note: 
+- after postgres install, database connect of `test`, `dvdrental`, query runs checking tried, 
+	- from postgresql command prompt, below log available thinks 
+	- from pgAdmin, query runs, checking tried, sql available in below file fullpath, thinks 
+		`D:\Learn\Tips\Install Notes\PostgresSQL\sql_toCheckingTries_afterInstall_test_database_20180707.sql`
+		`D:\Learn\Tips\Install Notes\PostgresSQL\sql_toCheckingTries_afterInstall_dvdrental_database_20180707.sql`
+
+- Note: sample database of mysql is `sakila`, postgresl is `dvdrental`, thinks; both same thinks 
+
+
+-- [ below checking tries, of postgres after install, database connect, query runs, from posttgresql command prompt, below log, thinks 
+
+Server [localhost]: localhost
+Database [postgres]: postgres
+Port [5432]: 5432
+Username [postgres]: postgres
+Password for user postgres:
+psql (10.4)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# \l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ dvdrental | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ test      | postgres | UTF8     | English_India.1252 | English_India.1252 |
+(5 rows)
+
+
+postgres=# \c test
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+You are now connected to database "test" as user "postgres".
+test=# \dt
+              List of relations
+ Schema |       Name       | Type  |  Owner
+--------+------------------+-------+----------
+ public | user_master_test | table | postgres
+(1 row)
+
+
+test=# \d+ user_master_test
+                                                               Table "public.user_master_test"
+   Column    |            Type             | Collation | Nullable |                      Default                      | Storage  | Stats target | Description
+-------------+-----------------------------+-----------+----------+---------------------------------------------------+----------+--------------+-------------
+ user_id     | integer                     |           | not null | nextval('user_master_test_user_id_seq'::regclass) | plain    |              |
+ first_name  | character varying(150)      |           | not null |                                                   | extended |              |
+ last_name   | character varying(150)      |           | not null |                                                   | extended |              |
+ created_on  | timestamp without time zone |           | not null |                                                   | plain    |              |
+ created_by  | integer                     |           | not null |                                                   | plain    |              |
+ modified_on | timestamp without time zone |           |          |                                                   | plain    |              |
+ modified_by | integer                     |           |          |                                                   | plain    |              |
+Indexes:
+    "user_master_test_pkey" PRIMARY KEY, btree (user_id)
+
+
+test=# SELECT *
+test-# FROM user_master_test;
+ user_id | first_name | last_name |         created_on         | created_by | modified_on | modified_by
+---------+------------+-----------+----------------------------+------------+-------------+-------------
+       1 | Navin      | Bhaskaran | 2018-07-02 20:16:36.693218 |          1 |             |
+       2 | admin      | admin     | 2018-07-02 20:16:36.693218 |          1 |             |
+(2 rows)
+
+
+test=# SELECT *
+test-# FROM user_master_test
+test-# WHERE user_id = 1;
+ user_id | first_name | last_name |         created_on         | created_by | modified_on | modified_by
+---------+------------+-----------+----------------------------+------------+-------------+-------------
+       1 | Navin      | Bhaskaran | 2018-07-02 20:16:36.693218 |          1 |             |
+(1 row)
+
+
+test=# SELECT *
+test-# FROM user_id
+test-# ;
+ERROR:  relation "user_id" does not exist
+LINE 2: FROM user_id
+             ^
+test=# SELECT *
+test-# FROM user_master_test
+test-# WHERE user_id = 2;
+ user_id | first_name | last_name |         created_on         | created_by | modified_on | modified_by
+---------+------------+-----------+----------------------------+------------+-------------+-------------
+       2 | admin      | admin     | 2018-07-02 20:16:36.693218 |          1 |             |
+(1 row)
+
+
+test=# \c dvdrental
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+You are now connected to database "dvdrental" as user "postgres".
+dvdrental=# \dt
+             List of relations
+ Schema |     Name      | Type  |  Owner
+--------+---------------+-------+----------
+ public | actor         | table | postgres
+ public | address       | table | postgres
+ public | category      | table | postgres
+ public | city          | table | postgres
+ public | country       | table | postgres
+ public | customer      | table | postgres
+ public | film          | table | postgres
+ public | film_actor    | table | postgres
+ public | film_category | table | postgres
+ public | inventory     | table | postgres
+ public | language      | table | postgres
+ public | payment       | table | postgres
+ public | rental        | table | postgres
+ public | staff         | table | postgres
+ public | store         | table | postgres
+(15 rows)
+
+
+dvdrental=# SELECT count(*)
+dvdrental-# FROM actor;
+ count
+-------
+   200
+(1 row)
+
+
+dvdrental=# SELECT count(*)
+dvdrental-# FROM address;
+ count
+-------
+   603
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM category;
+ count
+-------
+    16
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM city;
+ count
+-------
+   600
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM ^Z
+
+dvdrental-# SELECT count(*) FROM ^Z
+;
+ERROR:  syntax error at or near ""
+LINE 1: SELECT count(*) FROM 
+                             ^
+dvdrental=# SELECT count(*) FROM country;
+ count
+-------
+   109
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM customer;
+ count
+-------
+   599
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM film;
+ count
+-------
+  1000
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM film_actor;
+ count
+-------
+  5462
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM film_category;
+ count
+-------
+  1000
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM inventory;
+ count
+-------
+  4581
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM language;
+ count
+-------
+     6
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM payment;
+ count
+-------
+ 14596
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM rental;
+ count
+-------
+ 16044
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM staff;
+ count
+-------
+     2
+(1 row)
+
+
+dvdrental=# SELECT count(*) FROM store;
+ count
+-------
+     2
+(1 row)
+
+
+dvdrental=# storestore;
+ERROR:  syntax error at or near "storestore"
+LINE 1: storestore;
+        ^
+dvdrental=#
+dvdrental=#  count
+dvdrental-# -------
+dvdrental=# SELECT version();
+                          version
+------------------------------------------------------------
+ PostgreSQL 10.4, compiled by Visual C++ build 1800, 64-bit
+(1 row)
+
+-- ]

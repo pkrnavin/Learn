@@ -1,0 +1,25 @@
+## Change Tomcat index page:	http:/localhost:8080/
+- edit %TOMCAT_HOME%/webApps/ROOT/index.jsp
+- comment /index.jsp server mapping tag in web.xml
+- Restart tomcat
+
+
+## For heap size error:
+Make following change in catalina.sh
+CATALINA_OPTS="-Xms1024m -Xmx2048m -XX:PermSize=1024m -XX:MaxPermSize=2048m -XX:+DisableExplicitGC":CATALINA_OPTS
+JAVA_OPTS="-XX:+CMSClassUnloadingEnabled -XX:+CMSPermGenSweepingEnabled"
+Linux:
+"/etc/tomcat5/tomcat5.conf"
+JAVA_OPTS="-Xms256m -Xmx256m -XX:PermSize=256m -XX:MaxPermSize=256m -XX:+DisableExplicitGC -XX:+CMSClassUnloadingEnabled -XX:+CMSPermGenSweepingEnabled"
+/*** already avail ****
+	JAVA_OPTS="$JAVA_OPTS -Dcatalina.ext.dirs=$CATALINA_HOME/shared/lib:$CATALINA_HOME/common/lib" ****/
+
+For command line execution:
+"java.lang.OutOfMemoryError: PermGen space" error
+-XX:MaxPermSize=512M or -XX:MaxPermGen=512M
+
+
+
+## Tomcat Port
+server.xml
+non-ssl conne

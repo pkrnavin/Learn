@@ -1,0 +1,264 @@
+
+
+-- 2018-08-22
+
+- To Backup files to adds, commands in `D:\Learn\Tips\backup_tips.txt`, to add in the file 
+
+# to create folders, to backup files to adds, thinks 
+
+# Note: creates directories, `Backup`, `Learn` folders not available creates, thinks 
+> mkdir E:\Backup\Learn\Books
+
+# to goto folder 
+> cd /d E:\Backup\Learn\
+
+# creates multiple folders, thinks  
+> md "Curriculum Vitae (CV)" "Daily Works" "from Mobile" "from Office" "Softwares" "Tips" "Tried" "Tried Programms" "workspace"
+
+# goto backup's workspace folder 
+> cd /d E:\Backup\Learn\workspace
+
+# to create project folders in `workspace` folders, thinks 
+> md "LearnUI" "Test"
+
+-- [ added on `2018-08-20`
+# in `workspace`, of git repository folder, project folders to creates, adds 
+
+# creates directory|folder 
+> mkdir E:\Backup\Learn\workspace\LearnRepository
+# goto the folder 
+> cd /d E:\Backup\Learn\workspace\LearnRepository
+# inside the folder, projects folders to creates 
+> md "LearnUI" "Test" "Test_1_SingleRepository_ImportMultipleProjects" "Test_2_SingleRepository_ImportMultipleProjects"
+-- ]
+
+
+
+## to backup, files command, to add, to try; Note: below commands, to run in command run administrator, to try, as backup files to add in `OneDrive` from `mklnik` command, to try, works in command prompt run administrator, thinks 
+
+
+# date variable sets, prints value 
+> SET "BKP_FILES_DATE=%date:~6,4%-%date:~3,2%-%date:~0,2%"
+> echo %BKP_FILES_DATE%
+
+# to backup files, `winrar` command, GUI background runs (i.e. while adds to archive, next command to run prompts), thinks; below filters command, of to backup based on type 
+
+---------- usually ----------
+
+# workspace to backup project folder; Note: `lib` folder to exlude, the folder's files lists to write in file in the folder, after adds to archive, delete the file, to try; 
+
+## Note: 
+- Git single repository multiple projects adds (i.e. in folder `D:\Learn\workspace\Learn\`),tried; 
+- in eclipse projects adds (i.e. in folder `D:\Learn\workspace`), from the repository linked files refers adds, of before adds; 
+- of BACKUP files adds, in ECLIPSE PROJECTS, folder `src`, `WebRoot` folder FILES NOT AVAILABLE, of link refers from the repository adds, 
+- BACKUP files to add, from the REPOSITORY FOLDER, in backup FILES AVAILABLE, 
+- so to BACKUP adds, REPOSITORY FOLDER FILES, 
+
+# to backup ECLIPSE PROJECTS adds 	(added on `2018-08-23`)
+# to backup `LearnUI`
+> dir D:\Learn\workspace\LearnUI\WebRoot\WEB-INF\lib /b sortorder:N > E:\Backup\Learn\workspace\LearnUI\libFiles_%BKP_FILES_DATE%.txt
+> winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnUI\LearnUI_.rar" "D:\Learn\workspace\LearnUI"
+> winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnUI\LearnUI_.rar" -df  "E:\Backup\Learn\workspace\LearnUI\libFiles_%BKP_FILES_DATE%.txt"
+
+# to backup `Test`
+> dir D:\Learn\workspace\Test\WebRoot\WEB-INF\lib /b sortorder:N > E:\Backup\Learn\workspace\Test\libFiles_%BKP_FILES_DATE%.txt
+> winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\Test\Test_.rar" "D:\Learn\workspace\Test"
+> winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\Test\Test_.rar" -df "E:\Backup\Learn\workspace\Test\libFiles_%BKP_FILES_DATE%.txt"
+
+-- [ added on `2018-08-21`
+
+# to backup `Test_1_SingleRepository_ImportMultipleProjects`, `Test_2_SingleRepository_ImportMultipleProjects` checking tried, of git single repository multiple projects adds, in eclipse to add, tried 
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\workspace\Test_1_SingleRepository_ImportMultipleProjects\Test_1_SingleRepository_ImportMultipleProjects_.rar" "D:\Learn\workspace\Test_1_SingleRepository_ImportMultipleProjects"
+
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\workspace\Test_2_SingleRepository_ImportMultipleProjects\Test_2_SingleRepository_ImportMultipleProjects_.rar" "D:\Learn\workspace\Test_2_SingleRepository_ImportMultipleProjects"
+
+
+# to backup, from `Learn` REPOSITORY, multiple projects available to adds, 	(modified on `2018-08-23`)
+# to backup `.\workspace\Learn\LearnUI`
+> dir D:\Learn\workspace\Learn\LearnUI\WebRoot\WEB-INF\lib /b sortorder:N > E:\Backup\Learn\workspace\LearnRepository\LearnUI\libFiles_%BKP_FILES_DATE%.txt
+> winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\LearnUI\LearnUI_.rar" "D:\Learn\workspace\Learn\LearnUI"
+> winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\LearnUI\LearnUI_.rar" -df  "E:\Backup\Learn\workspace\LearnRepository\LearnUI\libFiles_%BKP_FILES_DATE%.txt"
+
+
+# to backup `.\workspace\Learn\Test`
+> dir D:\Learn\workspace\Learn\Test\WebRoot\WEB-INF\lib /b sortorder:N > E:\Backup\Learn\workspace\LearnRepository\Test\libFiles_%BKP_FILES_DATE%.txt
+> winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\Test\Test_.rar" "D:\Learn\workspace\Learn\Test"
+> winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\Test\Test_.rar" -df "E:\Backup\Learn\workspace\LearnRepository\Test\libFiles_%BKP_FILES_DATE%.txt"
+
+# to backup from `.\workspace\Learn`, of `Test_1_SingleRepository_ImportMultipleProjects`, `Test_2_SingleRepository_ImportMultipleProjects` 
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\workspace\LearnRepository\Test_1_SingleRepository_ImportMultipleProjects\Test_1_SingleRepository_ImportMultipleProjects_.rar" "D:\Learn\workspace\Learn\Test_1_SingleRepository_ImportMultipleProjects"
+
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\workspace\LearnRepository\Test_2_SingleRepository_ImportMultipleProjects\Test_2_SingleRepository_ImportMultipleProjects_.rar" "D:\Learn\workspace\Learn\Test_2_SingleRepository_ImportMultipleProjects"
+
+-- ]
+
+
+---------- weekly ----------
+
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\Daily Works\Daily Works_.rar" "D:\Learn\Daily Works"
+
+
+---------- occasionally ----------
+
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\Curriculum Vitae (CV)\Curriculum Vitae (CV)_.rar" "D:\Learn\Curriculum Vitae (CV)"
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\Tips\Tips_.rar" "D:\Learn\Tips"
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\Tried\Tried_.rar" "D:\Learn\Tried"
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\Tried Programms\Tried Programms_.rar" "D:\Learn\Tried Programms"
+
+
+---------- rarely ----------
+
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\Books\Books_.rar" "D:\Learn\Books"
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\from Mobile\from Mobile_.rar" "D:\Learn\from Mobile"
+> winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\from Softsmith\from Softsmith FolderFiles CheckingVerificationTried" "E:\Backup\Learn\from Office\from Office_.rar" "D:\Learn\from Office" 
+
+# Softwares folder, to list files write in the file; Note: subdirectories of option `/s` not includes, as `eclipse`, `OpenOffice` of folder many files available thinks, so only the folder's files lists, to tries 
+> dir D:\Learn\Softwares /b sortorder:N > E:\Backup\Learn\Softwares\Softwares_%BKP_FILES_DATE%.txt
+
+
+
+## `OneDrive` backup files, to add, in internet to adds, thinks; Note: computer adds, `%OneDrive%` environment variable of oneDrive, thinks; `OneDrive` path in the computer `E:\OneDrive` 
+
+## to creates folder, in `OneDrive`, 
+
+# prints file path, of `OneDrive`
+> echo %OneDrive%
+
+# to backup in `Learn` folders creates 
+> mkdir %OneDrive%\Backup\Learn\Books
+> cd /d %OneDrive%\Backup\Learn\
+> md "Curriculum Vitae (CV)" "Daily Works" "from Mobile" "from Office" "Softwares" "Tips" "Tried" "Tried Programms" "workspace"
+
+# to backup in `workspace`, folder creates 
+> cd /d %OneDrive%\Backup\Learn\workspace
+> md "LearnUI" "Test"
+-- [ respective added on (`2018-08-22`),  
+> md "Test_1_SingleRepository_ImportMultipleProjects" "Test_2_SingleRepository_ImportMultipleProjects"
+
+# creates directory|folder 
+> mkdir %OneDrive%\Backup\Learn\workspace\LearnRepository
+# goto the folder 
+> cd /d %OneDrive%\Backup\Learn\workspace\LearnRepository
+# inside the folder, projects folders to creates 
+> md "LearnUI" "Test" "Test_1_SingleRepository_ImportMultipleProjects" "Test_2_SingleRepository_ImportMultipleProjects"
+
+
+
+## Note: in `OneDrive`, in folder, internet files adds to cehcking; after files uploads in internet, to mark `Free Up Space`; automatically `Free Up Space` option, available in `windows 10 version 1809`, thinks, which is to release, so after release to update & install, to configure the option, to automatically `Free Up Space` to try 
+
+## Note: below `mklink` command, to run in command prompt run as administrator, 
+# from `mklink` command (i.e. shortcut link, adds in folder, thinks), to try; 
+
+
+---------- usually ----------
+
+# workspace project backup file, to add in `OneDrive`, to try 
+> mklink /h "%OneDrive%\Backup\Learn\workspace\LearnUI\LearnUI_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\workspace\LearnUI\LearnUI_%BKP_FILES_DATE%.rar"
+> mklink /h "%OneDrive%\Backup\Learn\workspace\Test\Test_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\workspace\Test\Test_%BKP_FILES_DATE%.rar"
+
+> mklink /h "%OneDrive%\Backup\Learn\workspace\Test_1_SingleRepository_ImportMultipleProjects\Test_1_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\workspace\Test_1_SingleRepository_ImportMultipleProjects\Test_1_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar"
+> mklink /h "%OneDrive%\Backup\Learn\workspace\Test_2_SingleRepository_ImportMultipleProjects\Test_2_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\workspace\Test_2_SingleRepository_ImportMultipleProjects\Test_2_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar"
+
+
+# REPOSITORY folder, backup folder files 
+
+> mklink /h "%OneDrive%\Backup\Learn\workspace\LearnRepository\LearnUI\LearnUI_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\workspace\LearnRepository\LearnUI\LearnUI_%BKP_FILES_DATE%.rar"
+> mklink /h "%OneDrive%\Backup\Learn\workspace\LearnRepository\Test\Test_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\workspace\LearnRepository\Test\Test_%BKP_FILES_DATE%.rar"
+
+> mklink /h "%OneDrive%\Backup\Learn\workspace\LearnRepository\Test_1_SingleRepository_ImportMultipleProjects\Test_1_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\workspace\LearnRepository\Test_1_SingleRepository_ImportMultipleProjects\Test_1_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar"
+> mklink /h "%OneDrive%\Backup\Learn\workspace\LearnRepository\Test_2_SingleRepository_ImportMultipleProjects\Test_2_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\workspace\LearnRepository\Test_2_SingleRepository_ImportMultipleProjects\Test_2_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar"
+
+-- ]
+
+---------- weekly ----------
+
+> mklink /h "%OneDrive%\Backup\Learn\Daily Works\Daily Works_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Daily Works\Daily Works_%BKP_FILES_DATE%.rar"
+
+
+---------- occasionally ----------
+
+> mklink /h "%OneDrive%\Backup\Learn\Curriculum Vitae (CV)\Curriculum Vitae (CV)_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Curriculum Vitae (CV)\Curriculum Vitae (CV)_%BKP_FILES_DATE%.rar"
+> mklink /h "%OneDrive%\Backup\Learn\Tips\Tips_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Tips\Tips_%BKP_FILES_DATE%.rar"
+> mklink /h "%OneDrive%\Backup\Learn\Tried\Tried_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Tried\Tried_%BKP_FILES_DATE%.rar"
+> mklink /h "%OneDrive%\Backup\Learn\Tried Programms\Tried Programms_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Tried Programms\Tried Programms_%BKP_FILES_DATE%.rar"
+
+
+---------- rarely ----------
+
+> mklink /h "%OneDrive%\Backup\Learn\Books\Books_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Books\Books_%BKP_FILES_DATE%.rar"
+> mklink /h "%OneDrive%\Backup\Learn\from Mobile\from Mobile_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\from Mobile\from Mobile_%BKP_FILES_DATE%.rar"
+> mklink /h "%OneDrive%\Backup\Learn\from Office\from Office_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\from Office\from Office_%BKP_FILES_DATE%.rar"
+> mklink /h "%OneDrive%\Backup\Learn\Softwares\Softwares_%BKP_FILES_DATE%.txt" "E:\Backup\Learn\Softwares\Softwares_%BKP_FILES_DATE%.txt"
+
+-- [ added on `2018-08-14`, modified on `2018-08-15`
+
+Note:
+- `OneDrive`, of `mklink` below thinks, 
+	- hardlink of above adds FILES, marks `Free Up Space` not working, thinks 
+	>> TODO: of `windows 10 build 1809` releases update install, configure `Free Up Space` automatically, `mklink` adds file marks `Free Up Space`, to checking to try, thinks, 
+	- junction folder adds, thinks in original folder file adds, reflects in `OneDrive` thinks; from the folder orginal file OR internet file delete, reflects above marks, thinks 
+
+
+# below copy command, to add of file, to add in `OneDrive`, as marks `Free Up Space` manually working thinks, of file adds from `copy`; of option `/Y` overwrites file thinks 
+
+---------- usually ----------
+
+# workspace project backup file, to add in `OneDrive`, to try 
+> copy /Y "E:\Backup\Learn\workspace\LearnUI\LearnUI_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\workspace\LearnUI\"
+> copy /Y "E:\Backup\Learn\workspace\Test\Test_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\workspace\Test\"
+
+-- [ added on `2018-08-22`
+
+> copy /Y "E:\Backup\Learn\workspace\Test_1_SingleRepository_ImportMultipleProjects\Test_1_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\workspace\Test_1_SingleRepository_ImportMultipleProjects\"
+> copy /Y "E:\Backup\Learn\workspace\Test_2_SingleRepository_ImportMultipleProjects\Test_2_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\workspace\Test_2_SingleRepository_ImportMultipleProjects\"
+
+
+# REPOSITORY folder, backup folder files 
+
+> copy /Y "E:\Backup\Learn\workspace\LearnRepository\LearnUI\LearnUI_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\workspace\LearnRepository\LearnUI"
+> copy /Y "E:\Backup\Learn\workspace\LearnRepository\Test\Test_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\workspace\LearnRepository\Test\"
+> copy /Y "E:\Backup\Learn\workspace\LearnRepository\Test_1_SingleRepository_ImportMultipleProjects\Test_1_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\workspace\LearnRepository\Test_1_SingleRepository_ImportMultipleProjects\"
+> copy /Y "E:\Backup\Learn\workspace\LearnRepository\Test_2_SingleRepository_ImportMultipleProjects\Test_2_SingleRepository_ImportMultipleProjects_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\workspace\LearnRepository\Test_2_SingleRepository_ImportMultipleProjects\"
+
+-- ]
+
+
+---------- weekly ----------
+
+> copy /Y "E:\Backup\Learn\Daily Works\Daily Works_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\Daily Works\"
+
+
+---------- occasionally ----------
+
+> copy /Y "E:\Backup\Learn\Curriculum Vitae (CV)\Curriculum Vitae (CV)_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\Curriculum Vitae (CV)\"
+> copy /Y "E:\Backup\Learn\Tips\Tips_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\Tips\"
+> copy /Y "E:\Backup\Learn\Tried\Tried_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\Tried\"
+> copy /Y "E:\Backup\Learn\Tried Programms\Tried Programms_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\Tried Programms\"
+
+
+---------- rarely ----------
+
+> copy /Y "E:\Backup\Learn\Books\Books_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\Books\"
+> copy /Y "E:\Backup\Learn\from Mobile\from Mobile_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\from Mobile\"
+> copy /Y "E:\Backup\Learn\from Office\from Office_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\from Office\"
+> copy /Y "E:\Backup\Learn\Softwares\Softwares_%BKP_FILES_DATE%.txt" "%OneDrive%\Backup\Learn\Softwares\"
+
+Note:
+- `mklink` adds, file, thinks source file change, reflects in `hardlink` adds, thinks; in `OneDrive` of `mklink` adds file, marks `Free Up Space` not working thinks, harddisk size counts showing, thinks 
+- `copy` command, of mark `Free Up Space` working, thinks 
+- `mklink` to add, of source file, folder change, to reflect in `OneDrive`, to add thinks 
+
+-- ]
+
+# diskspace occup, for `OneDrive`, below tries 
+# `OneDrive` path prints 
+> echo %OneDrive%
+
+# dir command 
+> dir /s %OneDrive%
+> dir %OneDrive%
+
+# du command 
+> du -v %OneDrive%
+> du %OneDrive%
+

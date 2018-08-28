@@ -1,0 +1,113 @@
+#### Dump with procedure n functions ####
+mysqldump -u root -p spcgtest --routines --result-file=/mnt/SPCG/backup/db/spcgtest_$(date +%Y-%m-%d_%H%M).sql
+#### Dump only function and Procedure ####
+mysqldump -u root -p ann_m20 --no-create-info --skip-triggers --no-data --routines --result-file=/mnt/MyXenzoBackup_routines_only_12jan2011.sql
+#### Dump only Selected tables ####
+mysqldump -u root -p ss_osp --tables osp_exams --result-file=/mnt/openmentor/ss_osp_exams_$(date +%Y-%m-%d_%H%M).sql
+
+tar -zcvf /mnt/SPCG/backup/db/spcgtest_		.tar.gz /mnt/SPCG/backup/db/spcgtest_		
+
+
+#### vi /root/.mysql_history
+
+
+
+#### Increase connection limit ####
+For MySQL 3.x:
+$ vi /etc/my.cnf
+set-variable = max_connections = 250
+
+For MySQL 4.x and 5.x:
+$> vi /etc/my.cnf
+# maximum no. of connections created
+max_connections=250
+# recursion procedure/function call:
+max_sp_recursion_depth=1024
+
+
+# set storage engine as InnoDB. So that tables will support transactions.
+default-storage-engine=INNODB
+
+
+- Restart MySQL once you've made the changes and verify with:
+echo "show variables like 'max_connections';" | mysql -u root -p
+show variables like 'max_sp_recursion_depth'
+
+
+
+#### target directory for table to file ####
+export TMPDIR=/tmp
+echo $TMPDIR
+select * INTO OUTFILE '/tmp/filename.ext' from table;
+
+
+
+#### change root password ####
+mysqladmin -u root password "q^m0n1t0r"
+mysqladmin -u root -p'oldpassword' password newpassword
+mysql> use mysql;
+mysql> update user set password=PASSWORD("NEWPASSWORD") where User='nixcraft';
+mysql> flush privileges;
+mysql> quit
+
+
+
+#### Granting rights for root@% ####
+Checking the mysql db tables :
+use mysql;
+select user, host, password from mysql.user where user = 'root';
+Granting the rights :
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'q^m0n1t0r' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'q^m0n1t0r' WITH GRANT OPTION;
+UPDATE mysql.proc SET definer = 'root@localhost' WHERE db = 'ss_osp' AND definer = 'root@%';
+
+#### 
+INSERT INTO temp_connection_detail 
+SELECT CONNECTION_ID(), SESSION_USER(), SYSTEM_USER(), USER(), CURRENT_USER(), now();
+
+
+
+#### increase open files limits ####
+#### to avoid "java.sql.SQLException: File './spcgfisglobal/actionitem.TRG' not found (Errcode: 24)" ####
+/usr/libexec/mysqld --defaults-file=/etc/my.cnf --open-files-limit=25000 &
+
+
+
+#### Query to get Columns of particular db-table ####
+SELECT TABLE_NAME, COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH FROM information_schema.columns 
+WHERE table_schema = 'onflyapps_arvind' AND table_name = 'uniquedatamaster' 
+ORDER BY TABLE_NAME, ORDINAL_POSITION;
+
+
+#### Query to get tables of particular db ####
+SELECT TABLE_NAME FROM information_schema.tables 
+WHERE table_schema = 'onflyapps_arvind' 
+ORDER BY TABLE_NAME;
+-- limit 5 
+
+
+#### Reset auto increament value ####
+ALTER TABLE some_table AUTO_INCREMENT=10000
+
+
+#### table status; includes autoincreament value ####
+SHOW TABLE STATUS FROM `DatabaseName` LIKE 'TableName' ;
+
+SELECT `AUTO_INCREMENT` FROM  INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'DatabaseName' AND TABLE_NAME = 'TableName';
+
+
+
+#### UPDATE with JOIN ####
+UPDATE osp_users_satsun INNER JOIN (
+SELECT satsun.userid , micro.UserID as new_userid FROM osp_users_satsun satsun   
+INNER JOIN osp_users micro ON satsun.EmailID = micro.EmailID 
+)satsun USING (userid) 
+SET micro_UserID = new_userid  
+WHERE satsun.userid = osp_users_satsun.userid
+
+
+
+#### Execute sql from file ####
+> source C:/<file_name>.sql

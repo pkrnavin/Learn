@@ -1,0 +1,664 @@
+
+
+-- 2018-06-27
+-- downloads, MYSQL from below link, to install 
+https://dev.mysql.com/downloads/windows/installer/8.0.html
+>> Note: downloaded, to download `mysql-installer-community-8.0.11.0.msi`, supporting files downloaded; thinks in `mysql-installer-web-community-8.0.11.0.msi`, while installing file downloads from internet, thinks; so to download `mysql-installer-community-8.0.11.0.msi`, of files supporting files downloaded, 
+
+-- from below link, MYSQL installation instructions, thinks, for windows thinks 
+https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html
+
+Note:
+- MYSQL Installation screen, in `Check Requirements`, to install `Python 2.7 (32bit)` available, installed tried from the file `D:\Learn\Softwares\MYSQL_8.0.11.0\python-2.7.15_32bit.msi`, after installed in MYSQL installer shows Requirements available, 
+>> thinks tried of python to install; installed `python-3.6.5.exe` (i.e. latest version, thinks), after installed, MYSQL installer not shows Requirements available, uninstall `python-3.6.5` from Add OR Remove Programs thinks; so respective version of `Python 2.7 (32bit)` downloads installed tried; thinks downloaded `Python 2.7 64bit` installation cancels, then respective `Python 2.7 (32bit)` downloads installed, thinks, after installed in MYSQL installer shows Requirements available, 
+
+After Installed:
+- Selects `Standalone MYSQL`
+- Below details, in following screen 
+Port: 3306
+Pipe Name: MYSQL
+Memory Name: MYSQL
+
+Password: sa123
+>> Root account password 
+
+Windows Service Name: MySQL80
+Enables: Start MYSQL System startup 
+
+Runs Windows Service
+- Selects Standard System Account
+
+Logging Options:
+Error log: DESKTOP-DLRU1EH.err
+Slow query log: DESKTOP-DLRU1EH-slow.log
+
+User Credentials:
+User: root
+Password: sa123
+
+
+-- 2018-06-28
+
+TODO:
+- In above link of `MYSQL installation instructions`, given thinks MYSQL respective folder, to add exclusion folder in Virus Scanning software(s) installed in the computer, as folder containing spam files, so to add exclusion in Virus Scanning software(s), below folders to add thinks, 
+	- to add MYSQL's data directory folder, thinks given in the link 
+	- Temporary files of MYSQL add in `temp` folder, to exclude OR for MYSQL temp files configure separate folder in `my.ini` configuration file, exclude the folder in Virus Scanning software(s), thinks given the link 
+>> thinks of adds `how to exclude folder in mcafee`, to seeing, thinks 
+Note: above description given in the link, `MYSQL installation instructions`, thinks 
+
+Major Queries: 
+# shows databases
+> SHOW DATABASES;
+
+# shows MYSQL installed version, now() datetime 
+> SELECT version(), now();
+# user details, connects, shows thinks 
+> SELECT user();
+
+# to create database
+> CREATE DATABASE test;
+# after create database, to verify of added database showing, shows databases
+> SHOW DATABASES;
+# use <DATABASE_NAME>, to CREATE TABLE, INSERT data, SELECT query 
+> USE test;
+# shows tables in the database, 
+> SHOW TABLES;
+# create query 
+> <CREATE TABLE QUERY>
+# insert query 
+> <INSERT QUERY>
+# SELECT query 
+> <SELECT QUERY>
+
+
+MYSQL 8.0 Command Line Client :: Unicode; below query runs, thinks 
+Password: sa123
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (1.28 sec)
+mysql> SELECT version(), now();
++-----------+---------------------+
+| version() | now()               |
++-----------+---------------------+
+| 8.0.11    | 2018-06-28 11:33:33 |
++-----------+---------------------+
+1 row in set (0.00 sec)
+mysql> SELECT user();
++----------------+
+| user()         |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+mysql> CREATE DATABASE test;
+Query OK, 1 row affected (0.15 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| test               |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> USE test;
+Database changed
+mysql>
+mysql> SHOW TABLES;
+Empty set (0.08 sec)
+
+
+-- [ SQL; modifies on `2018-07-01`
+
+> CREATE DATABASE test;
+> SHOW DATABASES;
+> USE test;
+> SHOW TABLES;
+
+CREATE TABLE user_master_test (
+  -- id integer PRIMARY KEY NOT NULL AUTO_INCREMENT, -- commented on `2018-06-30`, column_name `user_id` to adds, to try 
+  user_id integer PRIMARY KEY NOT NULL AUTO_INCREMENT, -- added on `2018-06-30`, column_name modifies 
+  first_name varchar(150) NOT NULL, 
+  last_name varchar(150) NOT NULL,
+  created_on TIMESTAMP NOT NULL,
+  created_by integer NOT NULL,
+  modified_on TIMESTAMP,
+  modified_by integer 
+);
+
+INSERT INTO user_master_test (first_name, last_name, created_on, created_by) VALUES ('Navin', 'Bhaskaran', now(), 1);
+INSERT INTO user_master_test (first_name, last_name, created_on, created_by) VALUES ('admin', 'admin', now(), 1);
+
+SELECT * FROM user_master_test; 
+
+SELECT * 
+FROM user_master_test 
+-- WHERE id = 1;
+WHERE user_id = 1;
+
+SELECT * 
+FROM user_master_test 
+-- WHERE id = 2;
+WHERE user_id = 2;
+
+-- ]
+
+mysql> CREATE TABLE user_master_test (
+    ->   id integer PRIMARY KEY AUTOINCREMENT,
+    ->   first_name varchar(150) NOT NULL,
+    ->   last_name varchar(150) NOT NULL,
+    ->   created_on TIMESTAMP NOT NULL,
+    ->   created_by integer NOT NULL,
+    ->   modified_on TIMESTAMP,
+    ->   modified_by integer
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTOINCREMENT,
+  first_name varchar(150) NOT NULL,
+  last_name varchar(150) NOT' at line 2
+mysql> CREATE TABLE user_master_test (
+    ->   id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    ->   first_name varchar(150) NOT NULL,
+    ->   last_name varchar(150) NOT NULL,
+    ->   created_on TIMESTAMP NOT NULL,
+    ->   created_by integer NOT NULL,
+    ->   modified_on TIMESTAMP,
+    ->   modified_by integer
+    -> );
+Query OK, 0 rows affected (1.41 sec)
+mysql> SHOW tables;
++------------------+
+| Tables_in_test   |
++------------------+
+| user_master_test |
++------------------+
+1 row in set (0.02 sec)
+mysql> DESC user_master_test;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+| first_name  | varchar(150) | NO   |     | NULL    |                |
+| last_name   | varchar(150) | NO   |     | NULL    |                |
+| created_on  | timestamp    | NO   |     | NULL    |                |
+| created_by  | int(11)      | NO   |     | NULL    |                |
+| modified_on | timestamp    | YES  |     | NULL    |                |
+| modified_by | int(11)      | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+7 rows in set (0.19 sec)
+mysql> INSERT INTO user_master_test (first_name, last_name, created_on, created_by) VALUES ('Navin', 'Bhaskaran', now(), 1);
+Query OK, 1 row affected (0.15 sec)
+mysql> INSERT INTO user_master_test (first_name, last_name, created_on, created_by) VALUES ('admin', 'admin', now(), 1);
+Query OK, 1 row affected (0.13 sec)
+mysql> SELECT * FROM user_master_test;
++----+------------+-----------+---------------------+------------+-------------+-------------+
+| id | first_name | last_name | created_on          | created_by | modified_on | modified_by |
++----+------------+-----------+---------------------+------------+-------------+-------------+
+|  1 | Navin      | Bhaskaran | 2018-06-28 12:11:41 |          1 | NULL        |        NULL |
+|  2 | admin      | admin     | 2018-06-28 12:12:31 |          1 | NULL        |        NULL |
++----+------------+-----------+---------------------+------------+-------------+-------------+
+2 rows in set (0.00 sec)
+mysql> SELECT *
+    -> FROM user_master_test
+    -> WHERE id = 1;
++----+------------+-----------+---------------------+------------+-------------+-------------+
+| id | first_name | last_name | created_on          | created_by | modified_on | modified_by |
++----+------------+-----------+---------------------+------------+-------------+-------------+
+|  1 | Navin      | Bhaskaran | 2018-06-28 12:11:41 |          1 | NULL        |        NULL |
++----+------------+-----------+---------------------+------------+-------------+-------------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql> SELECT *
+    -> FROM user_master_test
+    -> WHERE id = 2;
++----+------------+-----------+---------------------+------------+-------------+-------------+
+| id | first_name | last_name | created_on          | created_by | modified_on | modified_by |
++----+------------+-----------+---------------------+------------+-------------+-------------+
+|  2 | admin      | admin     | 2018-06-28 12:12:31 |          1 | NULL        |        NULL |
++----+------------+-----------+---------------------+------------+-------------+-------------+
+1 row in set (0.00 sec)
+
+
+-- 2018-06-29
+
+Note:
+- MYSQL installed to connect from Nerocode MYSQL client, SQLYog community downloads install tried, 
+- Nerocode not working 
+- SQLYog community installed, below tried 
+	- to connect `Host: localhost Username: root Password: sa123`, tried; error occurs `error 2058` (i.e. `Error No. 2058 Plugin authentication_windows_client could not be loaded: The specified module could not be found.`, error occurs message taken from link, thinks), of the error occurs below tried, thinks 
+		- from the `https://stackoverflow.com/questions/49194719/authentication-plugin-caching-sha2-password-cannot-be-loaded`, tried MYSQL System preferences opens, seeing tried, from Start -> MYSQL -> `MySQL Installer Community` opens `MySQL Server` `Reconfigure` clicks, in `Authentication Method` selects `Use Legacy Authentication Method ...`, modifies, after `MYSQL Command Prompt Client` not opens of `Password: sa123` enters, also message shows in command prompt client `mysql: [Warning] C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe: ignoring option '--no-beep' due to invalid value ''`, after from `SQLYog community` of above MYSQL login credentials enters `Error No. 1045 Access denied for user 'root'@'localhost' (using password: YES)`, 
+		after again MYSQL Installer Reconfigure tried of `Authentication Method` to selects `Strong (Recommended)`, Current Root Password enters not connects 
+		not connects, 
+		- Note: MYSQL Installer `MySQL Server` Reconfigure, tried, of `CurrentPassword: ` (i.e. blank, empty) `Check` Password `Next` click, Proceeds, Reconfigure tried 
+		- In SQLYog community, of `Password: ` (i.e. blank, empty) error occurs `error 2058` 
+		- In `MYSQL Command Prompt Client`, warning message shows, `Password: ` (i.e. blank, empty), logins  
+- MYSQL Workbench working, of credentials, `Host: localhost Username: root Password: sa123` thinks 
+
+
+TODO:
+- Uninstall MYSQL, Nerocode, SQLYog community
+- Restart computer 
+- Install MYSQL, CREATE DATABASE, CREATE TABLE, SELECT query runs, to try from `MYSQL Command Prompt Client` 	/ thinks 
+- MYSQL Workbench default, available in installation, to connect to try, of SELECT query, query runs to try, thinks 	/ thinks 
+
+-- 2018-6-30
+
+TODO:
+- above marks TODO, to try, thinks 
+
+Note:
+- of MYSQL uninstalls, installs tried, above installation details, password, available, added, thinks 
+>> thinks, above added on `2018-07-01` 
+
+Note:
+- Below screenshot, thinks, after MYSQL installed, of to configure MYSQL, `MYSQL Router Configuration` details values available, in below screen shot, thinks 
+`D:\Learn\Tips\Install Notes\MYSQL\MYSQLRouterConfiguration_AfterInstalledConfiguration_thinks.png` 
+
+Note:
+- After MYSQL installed, tried, from `MYSQL 8.0 Command Line Client :: Unicode`, query runs tried (i.e. CREATE DATABASE, CREATE TABLE, SELECT query runs, thinks), 
+- After above, from MYSQL Workbench SELECT query runs tried (i.e. SELECT query runs, after SELECTs database double click in left pane SCHEMAS, thinks, SELECT query runs, thinks), SQL tried available in the file thinks `D:\Learn\Tips\Install Notes\MYSQL\sql_from_mysql_workbench_after_mysql_install_tried.sql`
+
+
+-- [ below log, MYSQL 8.0 Command Line Client :: Unicode; below query runs, thinks 
+mysql> SHOW DATA^C
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.25 sec)
+
+mysql> SELECT version(), now();
++-----------+---------------------+
+| version() | now()               |
++-----------+---------------------+
+| 8.0.11    | 2018-06-30 23:57:26 |
++-----------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT user();
++----------------+
+| user()         |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE DATABASE test;
+Query OK, 1 row affected (0.13 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| test               |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> USE test;
+Database changed
+mysql> USE test;
+Database changed
+mysql> SHOW TABLES;
+Empty set (0.06 sec)
+
+mysql> CREATE TABLE user_master_test (
+    ->   user_id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    ->   first_name varchar(150) NOT NULL,
+    ->   last_name varchar(150) NOT NULL,
+    ->   created_on TIMESTAMP NOT NULL,
+    ->   created_by integer NOT NULL,
+    ->   modified_on TIMESTAMP,
+    ->   modified_by integer
+    -> );
+Query OK, 0 rows affected (0.95 sec)
+
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_test   |
++------------------+
+| user_master_test |
++------------------+
+1 row in set (0.10 sec)
+
+mysql> INSERT INTO user_master_test (first_name, last_name, created_on, created_by) VALUES ('Navin', 'Bhaskaran', now(), 1);
+Query OK, 1 row affected (0.19 sec)
+
+mysql> INSERT INTO user_master_test (first_name, last_name, created_on, created_by) VALUES ('admin', 'admin', now(), 1);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> SELECT * FROM user_master_test;
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+| user_id | first_name | last_name | created_on          | created_by | modified_on | modified_by |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+|       1 | Navin      | Bhaskaran | 2018-07-01 00:03:12 |          1 | NULL        |        NULL |
+|       2 | admin      | admin     | 2018-07-01 00:03:12 |          1 | NULL        |        NULL |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT *
+    -> FROM user_master_test
+    -> WHERE id = 1;
+ERROR 1054 (42S22): Unknown column 'id' in 'where clause'
+mysql> SELECT *
+    -> FROM user_master_test
+    -> -- WHERE id = 1;
+    -> WHERE user_id = 1;
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+| user_id | first_name | last_name | created_on          | created_by | modified_on | modified_by |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+|       1 | Navin      | Bhaskaran | 2018-07-01 00:03:12 |          1 | NULL        |        NULL |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT *
+    -> FROM user_master_test
+    -> -- WHERE id = 2;
+    -> WHERE user_id = 2;
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+| user_id | first_name | last_name | created_on          | created_by | modified_on | modified_by |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+|       2 | admin      | admin     | 2018-07-01 00:03:12 |          1 | NULL        |        NULL |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+1 row in set (0.00 sec)
+
+-- ]
+
+
+-- 2018-07-07
+
+
+Note: 
+- after postgres install, database connect of `test`, `sakila`, query runs checking tried; below tried of mysql  
+	- from mysql command prompt, query runs, below log thinks 
+	- from mysql workbench, query runs, checking tried, sql available in below file fullpath, thinks 
+		`D:\Learn\Tips\Install Notes\MYSQL\sql_toCheckingTries_afterInstall_test_database_20180707.sql`
+		`D:\Learn\Tips\Install Notes\MYSQL\sql_toCheckingTries_afterInstall_sakila_database_20180707.sql`
+		
+- Note: sample database of mysql is `sakila`, postgresl is `dvdrental`, thinks; both same thinks 
+
+
+-- [ below log, of from mysql command prompt; checking tries, of after postgres install, query runs; of postgres, mysql checking tries thinks 
+
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.11 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATASAES;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATASAES' at line 1
+mysql> SHOW DATASAES;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATASAES' at line 1
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| test               |
+| world              |
++--------------------+
+7 rows in set (0.03 sec)
+
+mysql> USE test;
+Database changed
+mysql>
+mysql> SELECT * FROM user_master_test;
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+| user_id | first_name | last_name | created_on          | created_by | modified_on | modified_by |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+|       1 | Navin      | Bhaskaran | 2018-07-01 00:03:12 |          1 | NULL        |        NULL |
+|       2 | admin      | admin     | 2018-07-01 00:03:12 |          1 | NULL        |        NULL |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+2 rows in set (0.11 sec)
+
+mysql> SELECT *
+    -> FROM user_master_test
+    -> -- WHERE id = 1;
+    -> WHERE user_id = 1;
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+| user_id | first_name | last_name | created_on          | created_by | modified_on | modified_by |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+|       1 | Navin      | Bhaskaran | 2018-07-01 00:03:12 |          1 | NULL        |        NULL |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT *
+    -> FROM user_master_test
+    -> -- WHERE id = 2;
+    -> WHERE user_id = 2;
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+| user_id | first_name | last_name | created_on          | created_by | modified_on | modified_by |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+|       2 | admin      | admin     | 2018-07-01 00:03:12 |          1 | NULL        |        NULL |
++---------+------------+-----------+---------------------+------------+-------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> SHOW tables;
++------------------+
+| Tables_in_test   |
++------------------+
+| user_master_test |
++------------------+
+1 row in set (0.03 sec)
+
+mysql> DESC user_master_test;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| user_id     | int(11)      | NO   | PRI | NULL    | auto_increment |
+| first_name  | varchar(150) | NO   |     | NULL    |                |
+| last_name   | varchar(150) | NO   |     | NULL    |                |
+| created_on  | timestamp    | NO   |     | NULL    |                |
+| created_by  | int(11)      | NO   |     | NULL    |                |
+| modified_on | timestamp    | YES  |     | NULL    |                |
+| modified_by | int(11)      | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+7 rows in set (0.02 sec)
+
+mysql> USE sakila;
+Database changed
+mysql> SHOW TABLES;
++----------------------------+
+| Tables_in_sakila           |
++----------------------------+
+| actor                      |
+| actor_info                 |
+| address                    |
+| category                   |
+| city                       |
+| country                    |
+| customer                   |
+| customer_list              |
+| film                       |
+| film_actor                 |
+| film_category              |
+| film_list                  |
+| film_text                  |
+| inventory                  |
+| language                   |
+| nicer_but_slower_film_list |
+| payment                    |
+| rental                     |
+| sales_by_film_category     |
+| sales_by_store             |
+| staff                      |
+| staff_list                 |
+| store                      |
++----------------------------+
+23 rows in set (0.01 sec)
+
+mysql> SELECT count(*)  FROM actor;
++----------+
+| count(*) |
++----------+
+|      200 |
++----------+
+1 row in set (0.06 sec)
+
+mysql> SELECT count(*)  FROM actor_info;;
++----------+
+| count(*) |
++----------+
+|      200 |
++----------+
+1 row in set (1.08 sec)
+
+ERROR:
+No query specified
+
+mysql> SELECT count(*)
+    -> FROM address;
++----------+
+| count(*) |
++----------+
+|      603 |
++----------+
+1 row in set (0.10 sec)
+
+mysql> SELECT count(*) FROM category;
++----------+
+| count(*) |
++----------+
+|       16 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM city;
++----------+
+| count(*) |
++----------+
+|      600 |
++----------+
+1 row in set (0.13 sec)
+
+mysql> SELECT count(*) FROM country;
++----------+
+| count(*) |
++----------+
+|      109 |
++----------+
+1 row in set (0.11 sec)
+
+mysql> SELECT count(*) FROM customer;
++----------+
+| count(*) |
++----------+
+|      599 |
++----------+
+1 row in set (0.04 sec)
+
+mysql> SELECT count(*) FROM film;
++----------+
+| count(*) |
++----------+
+|     1000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM film_actor;
++----------+
+| count(*) |
++----------+
+|     5462 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM film_category;
++----------+
+| count(*) |
++----------+
+|     1000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM inventory;
++----------+
+| count(*) |
++----------+
+|     4581 |
++----------+
+1 row in set (0.08 sec)
+
+mysql> SELECT count(*) FROM language;
++----------+
+| count(*) |
++----------+
+|        6 |
++----------+
+1 row in set (0.02 sec)
+
+mysql> SELECT count(*) FROM payment;
++----------+
+| count(*) |
++----------+
+|    16049 |
++----------+
+1 row in set (0.22 sec)
+
+mysql> SELECT count(*) FROM rental;
++----------+
+| count(*) |
++----------+
+|    16044 |
++----------+
+1 row in set (0.18 sec)
+
+mysql> SELECT count(*) FROM staff;
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> SELECT count(*) FROM store;
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.02 sec)
+
+mysql> ;;;;^C
+mysql>
+
+-- ]

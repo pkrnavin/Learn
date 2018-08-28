@@ -1,0 +1,22 @@
+vi editor
+
+after `Esc`
+
+# end of file
+> G
+
+# start of file
+> gg
+
+# jump to line no.
+> 5G (ie.. <line no.>G)
+
+# Undo
+> u
+
+# find
+> /<word>
+
+
+# delete entire line  thinks,
+> dd

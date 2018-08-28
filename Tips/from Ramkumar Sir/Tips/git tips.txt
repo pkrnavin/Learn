@@ -1,0 +1,78 @@
+
+# Modifying older commits
+- Git modifying older commits, say committed from 1 through 5,  have to ignore committed after 3 through 5 (ie.. committed 1 & 2 only have to use).
+Stpes:
+Open git terminal
+> git reset hard <commit id>
+-- say git reset hard 3222213dasdasasda (3222213dasdasasda is commit id of 3)
+
+> then manually check corrections 
+> force push 
+
+
+Thinks using smart git, below link might useful
+Modifying older commit
+Splitting commit
+Reordering commits
+
+https://www.syntevo.com/smartgit/howtos/5/show?page=workflows.modify-history
+https://www.syntevo.com/doc/display/SG/Modifying+the+History
+
+------ [ 2016-09-07
+
+using smartgit below steps, thinks,
+
+branch `dev_master` has committed from 1 through 5, have to ignore committed after 3 through 5 (ie.. committed 1 & 2 only have to use).
+
+1. Take branch backup, say `dev_master_bkp_revert_<date>`
+2. Checkout `dev_master`, from Logs window, select a commit and right click -> Click Rest, 
+   Eg. say have to ignore 5th commit, right click 4th commit click reset 
+3. then manually check corrections 
+4. force push 
+ 
+Note: Step 2 thinks
+
+------- ] 
+
+
+## commit particular correction from file
+-- 2015-10-05
+
+Git commit particular correction from file
+- Open Index Editor 
+- thinks, starts from Leftmost: `Head`, center: `Index` & Rightmost: `Working tree`, move the corrections from `Working Tree` TO `Index` and save.
+- Modified file, say directive.js would be Modified and Staged, add other file to commit mark as Stage
+- Commit the corrections with Staged changes
+
+
+## TODO: how to do `Cheery pick`
+
+
+
+-- 2016-09-27 [
+## Git rebase after resolve conflict, to commit corrections, thinks TODO below
+
+- Git branch pull `rebase` is enabled; after pull conflicts occurred & resolved, 
+- Repository folder changes as `rebasing`, once comes cannot commit corrections by using `Commit` button, thinks 
+- have to click `Merge` button; thinks windows shows 3 options (`Continue`, `Skip` & `Abort`) 
+    all changes are fine correct to commit, have select `Continue` and commit 
+
+Note Thinks below:
+Branch pull has `Merge`, `Rebase`
+Merge:
+- While Pull or merge from branch to branch, `Merge` automatically add commits, if conflicted & resolved, once `Commit` clicks message comes automatically, say commit msg `Merge resolve with conflicts...`, thinks
+
+Rebase:
+- With `Rebase`, thinks not adds commits from other branch, THINKS; once conflicted & resolved; manually to click `Merge` button after commits, doesn't add msg `Merge resolve with conflicts...`, thinks, 
+
+https://nathanleclaire.com/blog/2014/09/14/dont-be-scared-of-git-rebase/
+https://help.github.com/articles/resolving-merge-conflicts-after-a-git-rebase/
+
+-- ]
+
+
+-- 2018-08-19
+
+- Smartgit is trial, thinks; from below path, to rename `settings.xml` in the folder path, of after trial, to run smartgit thinks; after the file rename, of smargit opens, to close and opens, thinks 
+`C:\Users\DELL\AppData\Roaming\syntevo\SmartGit\18.1\settings.xml` 
+>> Note: of smartgit installs, in above path to rename the file, thinks; of portable install, thinks in `settings` folder, the file to rename, 

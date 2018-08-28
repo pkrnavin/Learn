@@ -1,0 +1,314 @@
+
+
+-- 2018-08-11
+- `du` command (i.e. Disk Usage) to add, to try, thinks, the command to work as library file to add thinks, 
+>> Note: thinks, the command for directories, disk usage space 
+
+
+- `du` command, available in below link, thinks 
+https://docs.microsoft.com/en-us/sysinternals/downloads/du
+
+-- below backup, of environment variable `path`, for `du` command, in the variable 
+- before adds, 
+C:\Users\DELL>path
+PATH=C:\Program Files\Java\jdk-10.0.1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\WinRAR;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;
+
+-- after adds 
+C:\Users\DELL>path
+PATH=C:\Program Files\Java\jdk-10.0.1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\WinRAR;C:\Sysinternals\;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;
+
+Note: 
+- `du` command library file extracted, in below path, the path adds in environment variable `path`, for `du` command to work from command prompt to try 
+`C:\Sysinternals`
+
+
+-- 2018-08-12
+
+# `du` command, to run command prompt 
+
+# before environment variable adds, below 
+> C:\Sysinternals\du.exe -v <FOLDER_PATH>
+
+# after environment variable adds, below 
+> du -V <FOLDER_PATH>
+
+# thinks, hardlink files, adds in count of file size, thinks; command tried log available, in `D:\Learn\zHardlink\source.txt` path, thinks 
+> du -v -u <FOLDER_PATH>
+
+# `du` command help options 
+> du /?
+
+# command option, description 
+C:\Users\DELL>du /?
+
+DU v1.61 - Directory disk usage reporter
+Copyright (C) 2005-2016 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+usage: du [-c[t]] [-l <levels> | -n | -v] [-u] [-q] <directory>
+   -c     Print output as CSV. Use -ct for tab delimiting.
+          Use -nobanner to suppress banner.
+   -l     Specify subdirectory depth of information (default is one level).
+   -n     Do not recurse.
+   -q     Quiet.
+   -nobanner
+          Do not display the startup banner and copyright message.
+   -u     Count each instance of a hardlinked file.
+   -v     Show size (in KB) of all subdirectories.
+
+CSV output is formatted as:
+Path,CurrentFileCount,CurrentFileSize,FileCount,DirectoryCount,DirectorySize,DirectorySizeOnDisk
+
+
+
+
+-- [ added on `2018-08-11`; below command prompt log, of `du` command adds, of environment variable before, after adds, command tried, below log thinks 
+
+# environment variable before adds, below log, thinks 
+Microsoft Windows [Version 10.0.17134.191]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\DELL>C:\Dell
+
+C:\Users\DELL>C:\Sysinternals\du.exe -v %OneDrive%
+
+DU v1.61 - Directory disk usage reporter
+Copyright (C) 2005-2016 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+           0  e:\onedrive\Attachments
+    1,80,011  e:\onedrive\Backup\Learn\Books
+       1,749  e:\onedrive\Backup\Learn\Curriculum Vitae (CV)
+          12  e:\onedrive\Backup\Learn\Daily Works
+         390  e:\onedrive\Backup\Learn\from Mobile
+    1,04,263  e:\onedrive\Backup\Learn\from Office
+           0  e:\onedrive\Backup\Learn\Softwares
+       1,543  e:\onedrive\Backup\Learn\Tips
+          50  e:\onedrive\Backup\Learn\Tried
+      26,439  e:\onedrive\Backup\Learn\Tried Programms
+           4  e:\onedrive\Backup\Learn\workspace\LearnUI
+           4  e:\onedrive\Backup\Learn\workspace\Test
+           9  e:\onedrive\Backup\Learn\workspace
+    3,14,472  e:\onedrive\Backup\Learn
+    3,14,472  e:\onedrive\Backup
+           0  e:\onedrive\Documents
+           0  e:\onedrive\Pictures\Screenshots
+           0  e:\onedrive\Pictures
+           0  e:\onedrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload
+           0  e:\onedrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload_hardlink_2018-08-01
+      28,987  e:\onedrive\TestBackup OneDrive\SymbolicLink
+           0  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt\folder1
+           0  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt\folder2
+      30,015  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt
+      59,003  e:\onedrive\TestBackup OneDrive
+
+Totals:
+Files:        27
+Directories:  26
+Size:         38,24,39,515 bytes
+Size on disk: 32,22,09,088 bytes
+
+
+C:\Users\DELL>du -v %OneDrive%
+'du' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\DELL>du -v -u %OneDrive%
+'du' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\DELL>du -v -u %OneDrive%
+
+C:\Users\DELL>C:\Sysinternals\du64.exe -v %OneDrive%
+
+DU v1.61 - Directory disk usage reporter
+Copyright (C) 2005-2016 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+           0  e:\onedrive\Attachments
+    1,80,011  e:\onedrive\Backup\Learn\Books
+       1,749  e:\onedrive\Backup\Learn\Curriculum Vitae (CV)
+          12  e:\onedrive\Backup\Learn\Daily Works
+         390  e:\onedrive\Backup\Learn\from Mobile
+    1,04,263  e:\onedrive\Backup\Learn\from Office
+           0  e:\onedrive\Backup\Learn\Softwares
+       1,543  e:\onedrive\Backup\Learn\Tips
+          50  e:\onedrive\Backup\Learn\Tried
+      26,439  e:\onedrive\Backup\Learn\Tried Programms
+           4  e:\onedrive\Backup\Learn\workspace\LearnUI
+           4  e:\onedrive\Backup\Learn\workspace\Test
+           9  e:\onedrive\Backup\Learn\workspace
+    3,14,472  e:\onedrive\Backup\Learn
+    3,14,472  e:\onedrive\Backup
+           0  e:\onedrive\Documents
+           0  e:\onedrive\Pictures\Screenshots
+           0  e:\onedrive\Pictures
+           0  e:\onedrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload
+           0  e:\onedrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload_hardlink_2018-08-01
+      28,987  e:\onedrive\TestBackup OneDrive\SymbolicLink
+           0  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt\folder1
+           0  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt\folder2
+      30,015  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt
+      59,003  e:\onedrive\TestBackup OneDrive
+
+Totals:
+Files:        27
+Directories:  26
+Size:         38,24,39,515 bytes
+Size on disk: 32,22,09,088 bytes
+
+
+C:\Users\DELL>C:\Sysinternals\du64.exe -v -u %OneDrive%
+
+DU v1.61 - Directory disk usage reporter
+Copyright (C) 2005-2016 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+           0  e:\onedrive\Attachments
+    1,80,011  e:\onedrive\Backup\Learn\Books
+       1,749  e:\onedrive\Backup\Learn\Curriculum Vitae (CV)
+          12  e:\onedrive\Backup\Learn\Daily Works
+         390  e:\onedrive\Backup\Learn\from Mobile
+    1,04,263  e:\onedrive\Backup\Learn\from Office
+           0  e:\onedrive\Backup\Learn\Softwares
+       1,543  e:\onedrive\Backup\Learn\Tips
+          50  e:\onedrive\Backup\Learn\Tried
+      26,439  e:\onedrive\Backup\Learn\Tried Programms
+           4  e:\onedrive\Backup\Learn\workspace\LearnUI
+           4  e:\onedrive\Backup\Learn\workspace\Test
+           9  e:\onedrive\Backup\Learn\workspace
+    3,14,472  e:\onedrive\Backup\Learn
+    3,14,472  e:\onedrive\Backup
+           0  e:\onedrive\Documents
+           0  e:\onedrive\Pictures\Screenshots
+           0  e:\onedrive\Pictures
+           0  e:\onedrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload
+           0  e:\onedrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload_hardlink_2018-08-01
+      28,987  e:\onedrive\TestBackup OneDrive\SymbolicLink
+           0  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt\folder1
+           0  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt\folder2
+      30,015  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt
+      59,003  e:\onedrive\TestBackup OneDrive
+
+Totals:
+Files:        27
+Directories:  26
+Size:         38,24,39,515 bytes
+Size on disk: 32,22,09,088 bytes
+
+
+C:\Users\DELL>path
+PATH=C:\Program Files\Java\jdk-10.0.1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\WinRAR;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;
+
+C:\Users\DELL>path
+PATH=C:\Program Files\Java\jdk-10.0.1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\WinRAR;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;
+
+C:\Users\DELL>
+
+
+# environment variable after adds, below log, thinks 
+Microsoft Windows [Version 10.0.17134.191]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\DELL>du -V %OneDrive%
+
+DU v1.61 - Directory disk usage reporter
+Copyright (C) 2005-2016 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+           0  e:\onedrive\Attachments
+    1,80,011  e:\onedrive\Backup\Learn\Books
+       1,749  e:\onedrive\Backup\Learn\Curriculum Vitae (CV)
+          12  e:\onedrive\Backup\Learn\Daily Works
+         390  e:\onedrive\Backup\Learn\from Mobile
+    1,04,263  e:\onedrive\Backup\Learn\from Office
+           0  e:\onedrive\Backup\Learn\Softwares
+       1,543  e:\onedrive\Backup\Learn\Tips
+          50  e:\onedrive\Backup\Learn\Tried
+      26,439  e:\onedrive\Backup\Learn\Tried Programms
+           4  e:\onedrive\Backup\Learn\workspace\LearnUI
+           4  e:\onedrive\Backup\Learn\workspace\Test
+           9  e:\onedrive\Backup\Learn\workspace
+    3,14,472  e:\onedrive\Backup\Learn
+    3,14,472  e:\onedrive\Backup
+           0  e:\onedrive\Documents
+           0  e:\onedrive\Pictures\Screenshots
+           0  e:\onedrive\Pictures
+           0  e:\onedrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload
+           0  e:\onedrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload_hardlink_2018-08-01
+      28,987  e:\onedrive\TestBackup OneDrive\SymbolicLink
+           0  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt\folder1
+           0  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt\folder2
+      30,015  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt
+      59,003  e:\onedrive\TestBackup OneDrive
+
+Totals:
+Files:        27
+Directories:  26
+Size:         38,24,39,515 bytes
+Size on disk: 32,22,09,088 bytes
+
+
+C:\Users\DELL>du64V %OneDrive%
+
+DU v1.61 - Directory disk usage reporter
+Copyright (C) 2005-2016 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+usage: du64 [-c[t]] [-l <levels> | -n | -v] [-u] [-q] <directory>
+   -c     Print output as CSV. Use -ct for tab delimiting.
+          Use -nobanner to suppress banner.
+   -l     Specify subdirectory depth of information (default is one level).
+   -n     Do not recurse.
+   -q     Quiet.
+   -nobanner
+          Do not display the startup banner and copyright message.
+   -u     Count each instance of a hardlinked file.
+   -v     Show size (in KB) of all subdirectories.
+
+CSV output is formatted as:
+Path,CurrentFileCount,CurrentFileSize,FileCount,DirectoryCount,DirectorySize,DirectorySizeOnDisk
+
+
+C:\Users\DELL>du64 -V %OneDrive%
+
+DU v1.61 - Directory disk usage reporter
+Copyright (C) 2005-2016 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+           0  e:\onedrive\Attachments
+    1,80,011  e:\onedrive\Backup\Learn\Books
+       1,749  e:\onedrive\Backup\Learn\Curriculum Vitae (CV)
+          12  e:\onedrive\Backup\Learn\Daily Works
+         390  e:\onedrive\Backup\Learn\from Mobile
+    1,04,263  e:\onedrive\Backup\Learn\from Office
+           0  e:\onedrive\Backup\Learn\Softwares
+       1,543  e:\onedrive\Backup\Learn\Tips
+          50  e:\onedrive\Backup\Learn\Tried
+      26,439  e:\onedrive\Backup\Learn\Tried Programms
+           4  e:\onedrive\Backup\Learn\workspace\LearnUI
+           4  e:\onedrive\Backup\Learn\workspace\Test
+           9  e:\onedrive\Backup\Learn\workspace
+    3,14,472  e:\onedrive\Backup\Learn
+    3,14,472  e:\onedrive\Backup
+           0  e:\onedrive\Documents
+           0  e:\onedrive\Pictures\Screenshots
+           0  e:\onedrive\Pictures
+           0  e:\onedrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload
+           0  e:\onedrive\TestBackup OneDrive\SymbolicLink\zOneDriveFolderUpload_hardlink_2018-08-01
+      28,987  e:\onedrive\TestBackup OneDrive\SymbolicLink
+           0  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt\folder1
+           0  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt\folder2
+      30,015  e:\onedrive\TestBackup OneDrive\zTestBackupFilesFromCommandPrompt
+      59,003  e:\onedrive\TestBackup OneDrive
+
+Totals:
+Files:        27
+Directories:  26
+Size:         38,24,39,515 bytes
+Size on disk: 32,22,09,088 bytes
+
+
+C:\Users\DELL>
+
+-- ]

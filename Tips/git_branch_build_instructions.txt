@@ -1,0 +1,71 @@
+
+
+-- 2018-08-24
+- git branch, build instructions, of before does, to adds 
+
+- git branches, below to add, 
+	- `master` (i.e. for production)
+	- `test_mster` (i.e. for testing)
+	- `dev_master` (i.e. for developing)
+of build to release, from `dev_master` to add merge in `test_mster` for testing; of testing `OK`, from `test_mster` to add merge in `master`, to add in production 
+- of developing, from `dev_master` to create branch for build OR feature branches, to work in the branch 
+	- of build `10-Sep-2018` to release to add, branch to create `sep_10` from `dev_master` 	(modified on `2018-08-25`)
+	- of each persons, from `sep_10`, to create branch for the given works, features (i.e. say branches `work_1`, `work_2` to add), thinks 
+	- of work does, after review, to commit in the branch, to add merge in `sep_10`, to checking 
+	- of persons 1 work in `work_1`, 2 works in `work_2`; person 1 of `work_1` requires person 2's `work_2` changes; thinks do respective of from `work_2` to add merge in `work_1` OR from `sep_10` to add merge in `work_1`, of from `work_2` OR other changes in `sep_10`, thinks; of corrections to gets 
+	>> Note: before to add merge, backup to create; daily backup adds to `rar` to adds 
+	- of checking OK in `sep_10`, to add in merge in `dev_master` 
+- of build `10-Sep-2018`, in `dev_master` adds available of the changes corrections, 
+- in `web.xml`, change version, datetime, to adds 
+- in database, `build_upgrad_master` table, to INSERT `<PROJECT_NAME>`, `<VERSION>`, `<DATETIME>` 
+- build to add in `dev` environment, `Resource Fix`, `DB Fix` in `dev` available for the build to add, to checking 	(modified on `2018-08-25`)
+- of issue occurs, fix, commit, build to add in `dev`, to checking 	(modified on `2018-08-25`)
+- of checking verification `OK`; commit `web.xml` message `Version deployed <VERSION>`, 	(modified on `2018-08-25`)
+- from git link, `Major Updates` to adds build tag release, in the link `release` tab to add tag release of select the branch, name `<PROJECT_NAME> - <VERSION>`, `Major Updates` to adds, to release 
+- Send Mail to `DevOps`, of testing to adds; Note: `DevOps` takes care, of testing, production 
+
+Note:
+- `hot_fix_<DATE>` branch, of issue directly to add in `master`, of production to add; thinks the branch to create corrections to adds, to add in `master` from the branch, thinks 
+
+TODO:
+- `Resource Fix`, `DB Fix`, to add, steps to adds, 
+- to cehcking above adds 
+
+
+-- 2018-08-25
+
+- `Resource Fix`, `DB Fix` to add, to send for `DevOps`, below steps, thinks
+- Repository to create, `<PROJECT_NAME>-Commons`, folders to create, below thinks 
+	`<PROJECT_NAME>-Commons`
+		- Resource Fix
+			- <VERSION_NUMBER>
+				- <WORK_DESCRIPTION_NAME>
+					- resource_fix_<VERSION_NUMBER>.txt
+					>> in the file, content steps to add, say in computer `/mnt/<PROJECT_NAME>/resource/<PROJECT_NAME>_config.properites` in the file `URL=<VALUE>` to add, for the build; in the above file, respective `URL=<VALUE>` to add, respective `properties` file full path to add, steps, description instruction to add in the resource fix `txt` file 
+					>> of resource fix, files to add in the computer, for the build; in the folder, to add the file(s), in respective file to add full path, to add description, instructions of the above file (i.e. say report to download thinks iReport `jrxml` files, to download `tar.gz` files, in the folder respective file(s) to add, in resource fix `txt` file steps instructions to add, in respective folder to add) 
+		- DB Fix
+			- <VERSION_NUMBER>
+				- part_1
+					- dbfix_before_verification_<VERSION_NUMBER>_part_1.sql
+					- dbfix_<VERSION_NUMBER>_part_1.sql
+					- dbfix_after_verification_<VERSION_NUMBER>_part_1.sql
+				...
+				- part_n
+					- dbfix_before_verification_<VERSION_NUMBER>_part_n.sql
+					- dbfix_<VERSION_NUMBER>_part_n.sql
+					- dbfix_after_verification_<VERSION_NUMBER>_part_n.sql
+>> above folder files, like to add `Resource Fix`, `DB Fix`, thinks 
+
+Note:
+- `Resource Fix` (i.e. in the computer folder, `config.properties` OR files to add in computer, uses for the build, `Resource Fix`, thinks)
+- `DB Fix` (i.e. query to run in database, for the build, to add in the folder), below notes of `DB Fix` to add, remembrance thinks 
+	- the `DB Fix` query to runs, to verify the query executes, 
+		before `DB Fix` query runs, to verification the query to add in `dbfix_before_verification_<VERSION_NUMBER>_part_<NUMBER>.sql` file, 
+		the `DB Fix` query to runs, to add in `dbfix_<VERSION_NUMBER>_part_<NUMBER>.sql` file, 
+		after `DB Fix` query runs, the query executes to verify, the query to add in `dbfix_after_verification_<VERSION_NUMBER>_part_<NUMBER>.sql` file, 
+	>> of `part_<NUMBER>` to run, to execute of order `dbfix_before_verification`, `dbfix`, `dbfix_after_verification`, the query execute results to write in the log file  
+	- of `DB Fix` dependent with respective `Resource Fix`, to mention in mail `DB_Fix <VERSION_NUMBER> part_<NUMBER>; dependent Resource_Fix <VERSION_NUMBER>` 
+	- of `DB Fix` available of parts `part 1, 2, 3, 4, 5 and 6`; if order of execute changes, to mention in mail, (i.e. say after `part_3`, `part_1` to execute; the order to mention in mail, the `DB_Fix` of part 3, 1, 2, 4, 5 and 6 respective order to execute) 
+	
+	
+>> above, of git branch, build to add, `Resource_Fix`, `DB_Fix` steps, practices thinks 

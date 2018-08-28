@@ -1,0 +1,109 @@
+
+# su - postgres
+Password: postgres
+-bash-4.2$ cd bin/
+-bash-4.2$ ./psql
+Password: postgres
+postgres=# \c ss_profiler
+
+
+-- local 16
+To start PostgreSQL server:
+> /etc/rc.d/init.d/postgresql-9.3 start
+
+To stop PostgreSQL:
+> /etc/rc.d/init.d/postgresql-9.3 stop
+
+To restart PostgreSQL:
+> /etc/rc.d/init.d/postgresql-9.3 restart
+
+To status PostgreSQL:
+> /etc/init.d/postgresql-9.3 status
+
+
+postgres to list all database
+> \l
+
+postgres to table describe
+> \d <table_name>
+
+postgres to see fn content
+> \df+ <function name>
+> \df+ getsumtests
+
+
+
+
+## to run dump in background as the process may take much time, due to DB size 
+cd /opt/PostgreSQL/9.3/bin/
+export PGPASSWORD="postgres"
+nohup ./pg_dump -i -h localhost -p 5432 -U postgres -F c -b -v -f /mnt/appedo/db_files/ss_velocity_$(date +%Y%m%d_%H%M%S).sql ss_velocity > /mnt/appedo/db_files/ss_velocity_$(date +%Y%m%d_%H%M%S).log 2>&1 &
+
+## Started DB backup in ProdTest instance 
+## to know about the backup process
+ps -eaf | grep pg_dump
+tail -f /mnt/appedo/db_files/ss_velocity_20150615_190527.log
+
+## to view the log
+ls -lht /mnt/appedo/db_files/ss_velocity_20150615_190527.sql
+[15-06-2015 PM 07:47:19 | Edited PM 07:47:23] Ramkumar R: ## in UI instance, took backup of webapps & resource
+-rw-rw-r--. 1 fedora fedora 427263447 Jun 15 19:26 resource_bkup_20150615_192408.tar.gz
+-rw-r--r--. 1 root   root   497460746 Jun 15 19:21 webapps_bkup_20150615_192128.tar.gz
+[15-06-2015 PM 07:47:39] Ramkumar R: sent a mail on commands used.
+
+
+
+## DB_Restore database bkp
+cd /opt/PostgreSQL/9.3/bin
+./pg_restore -i -h localhost -p 5432 -U postgres -d ss_postgres -v /mnt/appedo_apm_20150503_00:45:44.sql
+
+
+## gets postgres functions, to check, parameter name has the data type  
+SELECT routines.routine_name, parameters.data_type, parameters.ordinal_position
+FROM information_schema.routines
+JOIN information_schema.parameters ON routines.specific_name=parameters.specific_name
+WHERE routines.routine_name ilike '%sum%'
+AND parameter_name ilike '%url%' AND parameters.data_type <> 'text' ;
+
+
+## to execute file
+ss_velocity=# \i /mnt/appedo/20150916/sep_16.sql
+CREATE FUNCTION
+
+
+## re-direct query output to a file
+ss_velocity=# \o /mnt/appedo/db_files/<file_name>.log
+ss_velocity=# SELCET <query>
+ss_velocity=# \o
+
+## postgres installation directory
+SHOW data_directory;
+
+## working, table mapped with sequence
+WITH fq_objects AS (
+  SELECT c.oid, c.relname AS obj_name, 
+    c.relkind, c.relname AS relation
+  FROM pg_class c 
+  JOIN pg_namespace n ON n.oid = c.relnamespace 
+), 
+sequences AS (SELECT oid, obj_name FROM fq_objects WHERE relkind = 'S'),  
+tables AS (SELECT oid, obj_name FROM fq_objects WHERE relkind = 'r')
+SELECT t.oid AS t_oid, t.obj_name, s_d.oid AS s_oid, s_d.obj_name AS serial, s_d.objid, s_d.deptype, s_d.refobjid
+FROM tables t
+LEFT JOIN (
+  SELECT s.oid, s.obj_name, d.objid, d.deptype, d.refobjid
+  FROM sequences s
+  INNER JOIN pg_depend d ON s.oid = d.objid AND d.deptype = 'a' 
+) s_d ON t.oid = s_d.refobjid 
+WHERE t.obj_name LIKE 'dotnet_profiler%' AND (t.obj_name NOT LIKE 'dotnet_profiler_method_%');
+
+## human readable each columns returns row wise
+ss_velocity=# \x
+ss_velocity=# SELECT * FROM <table_name>;
+
+## postgres connect different database, in select qry, install dblink
+http://www.dbrnd.com/2015/05/postgresql-cross-database-queries-using/
+
+1. thinks below step to follow, a different database to connect in SELECT qry, after postgres login 
+postgres=# \c im_master
+im_master=# CREATE EXTENSION dblink;

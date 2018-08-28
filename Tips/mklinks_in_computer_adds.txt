@@ -1,0 +1,35 @@
+
+
+-- 2018-08-19
+- In the computer, `mklink` to adds for folder OR files, the command to add in the file 
+- `mklink` adds folders, files (i.e. shortcut of folder OR files, to adds in other location, points same reference); 
+- in `windows_tips.txt` refer, of `mklink` tips notes adds, tried 
+
+# command 
+> mklink <OPTIONS> <TARGET> <SOURCE>
+Options are 
+- '' (i.e. `blank`) softlink file, 
+- `/d` softlink folder, 
+- `/h` hardlink file,
+- `/j` junction folder, 
+
+
+# below of `mklink`, git single repository multiple projects, to add in eclipse `.project` file, to configure, thinks; 
+the project file adds in git repository, from <REPOSITORY> the file reference adds in eclipse, tried, the file problem occurs, thinks; so the file, to `mklink` add in repository from `<PROJECT>` folder, to git sync, to try 
+
+> mklink /h "D:\Learn\workspace\Learn\Test_1_SingleRepository_ImportMultipleProjects\.project_reference" "D:\Learn\workspace\Test_1_SingleRepository_ImportMultipleProjects\.project"
+
+> mklink /h "D:\Learn\workspace\Learn\Test_2_SingleRepository_ImportMultipleProjects\.project_reference" "D:\Learn\workspace\Test_2_SingleRepository_ImportMultipleProjects\.project"
+
+-- 2018-08-20
+
+# below in single repository multiple projects adds, in eclipse from repository `src`, `WebRoot` `linkedResources`; of `.project` file, from project adds in repository, as the file from repository ads in project problem occurs, thinks, so from project adds in repository 
+> mklink /h "D:\Learn\workspace\Learn\LearnUI\.project_reference" "D:\Learn\workspace\LearnUI\.project"
+> mklink /h "D:\Learn\workspace\Learn\Test\.project_reference" "D:\Learn\workspace\Test\.project"
+
+
+-- 2018-08-28
+
+# `Tips` folder to add in git `D:\Learn\workspace\Learn` Repository, of folder shortcut to add 
+> mklink /j "D:\Learn\workspace\Learn\Tips" "D:\Learn\Tips"
+
