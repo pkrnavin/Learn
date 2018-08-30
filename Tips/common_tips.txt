@@ -1,0 +1,10 @@
+			Common general tips
+
+-- 2018-08-30
+
+## HDFC Netbanking from the link, to `Download Account Statement`, below path steps ##
+- `Enquire` Menu in left side -> Download Historical Statement, 
+in the screen Select Account, respective `Previous Financial Year` OR Date Period, Download Format Type and button download to click 
+
+
+

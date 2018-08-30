@@ -76,3 +76,22 @@ https://help.github.com/articles/resolving-merge-conflicts-after-a-git-rebase/
 - Smartgit is trial, thinks; from below path, to rename `settings.xml` in the folder path, of after trial, to run smartgit thinks; after the file rename, of smargit opens, to close and opens, thinks 
 `C:\Users\DELL\AppData\Roaming\syntevo\SmartGit\18.1\settings.xml` 
 >> Note: of smartgit installs, in above path to rename the file, thinks; of portable install, thinks in `settings` folder, the file to rename, 
+
+
+-- 2018-08-29
+
+## Github link, Default branch to set, 
+- In Repository link, in `Settings` tab -> `Branches` in left side menu to click, in the page to select default branch to `Update` clicks, in the `... Understand ...` to click to set default branch 
+>> Note: 2 `Settings` available, 
+	- Profile Icon -> `Settings`
+	- In Repository link -> `Settings` tab 
+
+-- below link, of `Learn` Repository to set default branch 
+https://github.com/pkrnavin/Learn/settings/branches
+
+-- git link 
+https://github.com/<USERNAME>/<REPOSITORY>/settings/branches
+
+
+## Note: `Branch protection rules` available, below link, thinks 
+https://help.github.com/articles/defining-the-mergeability-of-pull-requests/
