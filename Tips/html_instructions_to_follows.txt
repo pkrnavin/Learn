@@ -1,0 +1,46 @@
+
+
+-- 20181-09-0*
+- HTML instructions to follows 
+
+- naming convention 
+	- file name camelCase (i.e. `htmlInstructionsToFollows.html`), of underscore (i.e. `_`, not to adds) 
+	- `name`, `id` attribute value, tag name in short prefix to adds 
+		Tag																		Prefix 
+		<input type="text" name="<VALUE>" id="<VALUE>" class="<CLASS>" ... />	`txt`
+		button																	`btn`
+		form																	`form`
+		radio button															`radioBtn`
+		checkbox																`chk`
+		select																	`combo`
+		...
+- attribute to order, in `name`, `id`, `class` (i.e. above `input` tag)
+- Bootstrap grid columns `col-xl-* col-lg-* col-md-* col-sm-* col-*`, all to add, of based on screen size, to set 
+- WIP of screen does, screenshot to take before going OR coming day starting 
+
+
+Remembrance:
+- Position of below 
+	- `relative`, of div sets in normal place, of element order given, thinks 
+	- `absolute`, of from screen starting, to sets 
+	- `relative` child div `absolute`, of div element respective place order, from the div's starting `absolute` sets, thinks 
+>> `OpenMentor` slide show, `relative` child div `absolute`, thinks 
+- Spacing below 
+	- margin, element moves 
+	- padding, inside element content spacing 
+- `overflow: auto` scroll available shows thinks 
+- `z-index`, of overlap respective higher value shows, thinks, of `position` available the property works, thinks 
+- to hide `display: none`;
+- `vertical-align: middle` works, of `display: inline-block` OR `display: table`, thinks 
+- side by side, to set `float` OR `display: inline-block` 
+- float clear 
+- `visibility` space occupies, thinks 
+- `OpenMentor` of `feedback` window, background visibles of not clickable 	(modified on `2018-09-04`)
+- fullscreen height horizontal, vertical align middle, `LearnUI` login form tries 
+- logo image, text side by side, of before available, adds in `LearnUI`, of logo tried 
+
+
+-- 2018-09-13
+
+- Grid of numbers text to align right, thinks 
+- UI DONT of horizontal scroll bar not to sets 

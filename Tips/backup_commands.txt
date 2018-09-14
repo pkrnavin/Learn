@@ -74,16 +74,31 @@
 
 
 # to backup, from `Learn` REPOSITORY, multiple projects available to adds, 	(modified on `2018-08-23`)
+
 # to backup `.\workspace\Learn\LearnUI`
 > dir D:\Learn\workspace\Learn\LearnUI\WebRoot\WEB-INF\lib /b sortorder:N > E:\Backup\Learn\workspace\LearnRepository\LearnUI\libFiles_%BKP_FILES_DATE%.txt
+-- [ 2018-08-02; EITHER ONE OF BELOW 
+# below adds date
 > winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\LearnUI\LearnUI_.rar" "D:\Learn\workspace\Learn\LearnUI"
 > winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\LearnUI\LearnUI_.rar" -df  "E:\Backup\Learn\workspace\LearnRepository\LearnUI\libFiles_%BKP_FILES_DATE%.txt"
+		OR
+# below adds datetime
+> winrar a -r -ep1 -agYYYY-MM-DD-HHMM -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\LearnUI\LearnUI_.rar" "D:\Learn\workspace\Learn\LearnUI"
+> winrar a -r -ep1 -agYYYY-MM-DD-HHMM -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\LearnUI\LearnUI_.rar" -df  "E:\Backup\Learn\workspace\LearnRepository\LearnUI\libFiles_%BKP_FILES_DATE%.txt"
+-- ]
 
 
 # to backup `.\workspace\Learn\Test`
 > dir D:\Learn\workspace\Learn\Test\WebRoot\WEB-INF\lib /b sortorder:N > E:\Backup\Learn\workspace\LearnRepository\Test\libFiles_%BKP_FILES_DATE%.txt
+-- [ 2018-08-02; EITHER ONE OF BELOW 
+# below adds date
 > winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\Test\Test_.rar" "D:\Learn\workspace\Learn\Test"
 > winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\Test\Test_.rar" -df "E:\Backup\Learn\workspace\LearnRepository\Test\libFiles_%BKP_FILES_DATE%.txt"
+		OR
+# below adds datetime
+> winrar a -r -ep1 -agYYYY-MM-DD-HHMM -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\Test\Test_.rar" "D:\Learn\workspace\Learn\Test"
+> winrar a -r -ep1 -agYYYY-MM-DD-HHMM -idq -x"*\WebRoot\WEB-INF\lib" "E:\Backup\Learn\workspace\LearnRepository\Test\Test_.rar" -df "E:\Backup\Learn\workspace\LearnRepository\Test\libFiles_%BKP_FILES_DATE%.txt"
+-- ]
 
 # to backup from `.\workspace\Learn`, of `Test_1_SingleRepository_ImportMultipleProjects`, `Test_2_SingleRepository_ImportMultipleProjects` 
 > winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\workspace\LearnRepository\Test_1_SingleRepository_ImportMultipleProjects\Test_1_SingleRepository_ImportMultipleProjects_.rar" "D:\Learn\workspace\Learn\Test_1_SingleRepository_ImportMultipleProjects"

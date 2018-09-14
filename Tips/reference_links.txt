@@ -1,0 +1,15 @@
+				Reference Links
+
+-- 2018-08-02
+
+					CSS
+				
+			CSS fullscreen height vertical center 
+https://stackoverflow.com/questions/43748536/fullscreen-height-with-vertically-centered-content
+https://stackoverflow.com/questions/22196587/how-to-center-align-vertically-the-container-in-bootstrap
+https://medium.com/creative-technology-concepts-code/full-page-site-with-vertical-centering-using-css-only-7858ed6764c4
+
+			CSS image, text side by side; text align middle 
+https://stackoverflow.com/questions/35101813/vertical-middle-aligned-image-and-text-side-by-side-in-css/35101840
+
+

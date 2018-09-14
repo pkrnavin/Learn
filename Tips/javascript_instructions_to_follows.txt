@@ -5,6 +5,7 @@
 
 - Javascript, of error occurs to see place, in firefox firebug, to seeing, to add addon firebug in the browser firefox 
 - Javascript, of multiple ajax call loads, of all loads to call the function; 
+>> `OpenMentor` in `MyResume` screen, of multiple ajax call loads, of after all loads to show the Resume tabs, thinks; of below, thinks 	(in the place add on `2018-09-04`)
   of variable to add, in each ajax call, to increment of before ajax call goes, of  `- 1` in response, of the `variable === 0` to call the function, in each ajax call response to adds, below 
 	(i.e. following, 
 			var nLoading = 0;
@@ -71,4 +72,4 @@
 	decimal			`d` OR `f`
 >> of array variable name, must ends with `s` OR `ies` (i.e. must ends with plural) 
 - delete value from UI, alert to ask `Are you sure want to delete?` confirm box, to ask  
-
+- Pagination of data, grid, ... to add 

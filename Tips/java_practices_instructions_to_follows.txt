@@ -9,6 +9,7 @@
 	- `InitServlet.java`, servlet in `init` method to adds to loads one time of Config properties, Database properties, Mail properties, ..., are to adds; the java class in `web.xml`, `load-on-startup` to add, of Tomcat startup, the class servlet `init` method calls, loads sets in static variable 
 	- `Appedo`, of values `counter_types`, agent downloads file full path, to load from database, of application same values, are to loads one time, in `InitServlet` the method calls 
 	- `/reloadVocabularyCheckWords` `/reloadProperties`, `/reloadAgentDownloadsFilePath` servlet URL adds, of value change in the file, properties file, database, in application to set the change values, in the request, reloads calls of words to reloads, properties, database values, in `firefox` the URL to enters, in the application changes value sets 
+- DAILY BACKUPS, TO TAKE of before day closes OR morning before starting changes, 	(modified on `2018-09-04`)
 - in java, from UI values enters, to gets 
 	- in controller (i.e. servlet), from the request values to gets in `Bean` class to set, the values, to calls manager class function 
 	- manager class, to add; business logic to add in the class in method add; from manager DBI class method to calls 
@@ -76,6 +77,7 @@ PF, below above java instructions to practices, in brief to add in single line, 
 	- `InitServlet.java` to add to load functions to calls, of `Config`, `Database`, `Mail` properties, from the file to load, to add to call in class `init` method, of Tomcat start the class calls 
 	- `Appedo` of `counter_types`, agent downloads file path of same values, are to loads one time, 
 	- `./reload<VALUES>`, of value change in the file OR properties file OR database, in application the latest values to set, `reload` request to adds, to loads to call the respective function, of the request 
+- DAILY BACKUPS, TO TAKE 
 - from UI form values sends to request, of below 
 	- in controller (i.e. servlet), from request to get value to set `Bean`, manager calls to calls, 
 	- manager class, business logic to adds, to call DBI class 
@@ -91,3 +93,20 @@ PF, below above java instructions to practices, in brief to add in single line, 
 - in `finally` block, to call `clearCollectionHeirarchy` of variable, the variable to set to null, to adds 
 
 >> of above instructions, to follows, brief adds, tries 
+
+
+-- 2018-09-09
+
+- Method MUST declare `throws Exception`, try catch to add, in `catch` to add `throw e;` (i.e. multiple methods calling from the function, of one method `throws Exception`, to throw the Exception, below methods not to run), 
+- DAtabase Connection to CREATE and CLOSE the connection, in create place 
+- of servlet of REQUEST, must CREATE Connection in `Controller` of the request (i.e. servlet class), to pass the connection to manager, DBI class, in the `Controller` only MUST CLOSE the connection, 
+>> (i.e. of request in `Controller` one place to CREATE CONNECTION, in the CREATE place to CLOSE the Connection)	(added on `2018-09-15`)
+- of place to create the Connection, to pass the connection to methods manager, DBI class, must close the connection create place 
+- Note: in Manager, DBI class the `Connection` to pass as parameter to methods, in Controller to create, close the `Connection` 	(modified on `2018-09-10`)
+
+
+-- 2018-09-10
+
+- SELECT query of one ROW returns, in ResultSet `if` to add 
+	(i.e. if ( rst.next() ) { ... } )
+

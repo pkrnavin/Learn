@@ -1,0 +1,173 @@
+
+
+-- 2018-09-11
+- SQL instructions to follows to add 
+
+- CREATE TABLE, must add columns, below 
+    (id AUTO_INCREMENT PRIMARY KEY, (i.e. in postgres `SERIAL`)
+    created_by integer NOT NULL,
+    created_on timestamp without time zone NOT NULL,
+    modified_by integer,
+    modified_on timestamp without time zone)
+- Major available below 
+SELECT query 			CRUD		TABLE		MISC		(modified on `2018-9-14`)
+- INNER JOIN 			- CREATE	- CREATE	- VIEW
+- LEFT JOIN				- UPDATE	- ALTER		- PROCEDURE OR FUNCTIONS
+- GROUP BY 				- DELETE				- CURSOR (i.e. SELECT query data `ResultSet`, iterating ROWS)
+- UNION, UNION ALL 
+- HAVING
+- INDEX, required columns, thinks of TABLE `3` columns adds of INDEX, below columns to add INDEX 
+	- id
+	- UNIQUE column 
+	- WHERE clause adding column 
+	- JOIN columns 
+>> above columns respective, to add INDEXING 
+- While CREATE TABLE to add UNIQUE INDEX (OR) CONSTRAINT, of columns only known VALUES to INSERT to add respective CHECK CONSTRAINT 	(added on `2018-09-14`)
+- CREATE TABLE 1 OR 2 times, to review, below are 
+	- columns 
+	- column DATATYPE 
+	- UNIQUE columns to add  
+	- spelling of column names 
+	- INDEX to add respective column 
+	- CONSTRAINT, PRIMARY KEY, FOREIGN KEY 
+	>> Note: in Resileo Incident Management, `FOREIGN KEY`, adds thinks 
+	- known VALUES of the column CHECK CONSTRAINT to add 	(modified on `2018-09-12`)
+	- combined column INDEX, UNIQUE respective to add 	(added on `2018-09-14`)
+	
+- TODO: JOINs, GROUP BY, UNION, UNION ALL, ..., from notebook written to add 
+
+-- 2018-09-12
+
+- INNER JOIN (i.e. two OR more TABLEs JOIN of same values returns in JOIN specifies column)
+    SELECT <COLUMNS>
+    FROM <TABLE_1> t1 
+    INNER JOIN <TABLE_2> t2 ON t2.<COLUMN_NAME> = t1.<COLUMN_NAME> 
+        AND t2.<COLUMN_NAME> = t1.<COLUMN_NAME> 
+>> of INNER JOIN <CONDITION> of table columns, to add `ON` clause 
+- LEFT JOIN (i.e. of two TABLEs JOINs, of JOIN specify columns, 1st TABLE all ROWS to return, in 2nd TABLE values not available `null` sets), below LEFT JOINs query 
+1. 
+    SELECT <COLUMNS>
+    FROM <TABLE_1> t1 
+	LEFT JOIN <TABLE_2> t2 ON t2.<COLUMN_NAME> = t1.<COLUMN_NAME> 
+	WHERE t2.<COLUMN_NAME> IS NULL;
+>> (i.e. of JOIN table columns in condition, `<TABLE_1>` all ROWS to return, of value not available in `<TABLE_2>` null set returns for the column)
+>> of above `OpenMentor`, in userLoggedIn home page, of user not registered courses to return, below thinks 
+    SELECT oc.*, oucm.* 
+    FROM om_courses oc 
+    LEFT JOIN om_user_course_mapping oucm ON oucm.course_id = oc.course_id 
+        AND oucm.user_id = <USER_ID>
+    WHERE oucm.course_id IS NULL;
+>> (i.e. user not registered courses, to get, thinks) 
+2. 
+    SELECT 
+	FROM <TABLE_1> t1 
+	LEFT JOIN <TABLE_2> t2 ON t2.<COLUMN_NAME> = t1.<COLUMN_NAME> 
+	WHERE t2.<COLUMN_NAME> IS NOT NULL;
+>> above is same INNER JOIN (i.e. of table LEFT JOINs of `t2` value available to returns, same as INNER JOIN)
+>> NOTE: in LEFT JOIN, 1st table's column (i.e. of above `<TABLE_1> t1`) value condition to add in WHERE clause, in `ON` clause 1st table's column value condition adds not work which is logically not correct; so to add in `WHERE` clause of 1st table's column, Sir told 	(modified on `2018-09-14`)
+- `GROUP BY`, of columns in GROUP BY, aggregate function of other columns to add, count(), sum, avg, group_concat, ..., functions 
+	- `GROUP BY` adding columns, must add in SELECT query columns <GROUP_BY_COLUMNS>
+	- in `GROUP BY` of not specifies column adds, in SELECT query available, of error throws of DATABASEs, of MYSQL returns value of GROUP BY's column values, 1st ROW value of the column returns thinks, Sir told 
+	(i.e. of sample table data 
+		id	name
+		 1	A
+		 1	B
+		 1	C
+		 2	A
+		 2	D
+		 3	S
+		 3	R
+		 3	A
+		
+		SELECT id, count(id), name 
+		FROM <TABLE_NAME> 
+		GROUP BY id
+		>> of above query, `name` column in `GROUP BY` not available, error throws of DATABASE; of MYSQL below returns (i.e. 1st ROW's value of the column, of `GROUP BY` returns), thinks 	(modified on `2018-09-14`)
+		id	count	name
+		 1		3	A
+		 2		2	A
+		 3		3	S
+	)	(added on `2018-09-13`)
+	- SELECT query to get UNIQUE values `GROUP BY` to add 
+	-- [ added on `2018-09-13` 
+	- SELECT query GROUP BY aggregate function `DISTINCT`, `CASE WHEN`; 
+		- of count(DISTINCT <COLUMN_NAME>) counts UNIQUE value of the column, 
+		- of count(CASE WHEN <CONDITION> THEN 1 ELSE NULL END) (i.e. of given value in the column counts, of `NULL` in count not adds), 
+	- in `OpenMentor`, SELECT query `GROUP BY` aggregate function, of `total_jobs_applies`, `total_unique_users_applies`, below thinks 
+		SELECT count(*) AS total_jobs_applies, count(DISTINCT user_id) AS total_unique_users_applies 
+		FROM om_user_jobs_mapping 
+		>> above thinks, to verify 
+	-- ]
+	-- [ added on `2018-09-14`
+	- in `OpenMentor`, of first vocabulary check game, words from file INSERTS INTO TABLE, to get same words more than 2 OR 3 times, thinks, below query 
+        SELECT words, count(*) 
+        FROM vocabulary_words 
+        GROUP BY words 
+        HAVING count(*) > 3;
+	>> `HAVING` clause aggregate function condition adds 
+	-- ]
+TODO: 
+- UNION, UNION ALL, ..., from notebook written to add 
+
+
+-- 2018-09-13
+
+- in `OpenMentor`, of JobPortal job search `job_id` job's skills KEYWORDS are inserted in mapping table (i.e. user job searches, skills below table data searches, thinks 
+	job_id	job_skills_keywords
+		1	JAVA
+		1	Java
+		1	java
+		1	JAva
+		1	JAVa
+		1	JAVASCRIPT
+		1	Javascript
+		1	javascript
+		1	SQL
+		1	sql
+		1	MYSQL
+		1	mysql
+		1	Mysql
+		1	MySQL
+	>> of user job searches, above table gets `job_id`, respective job details to show thinks 
+	`om_job_postings`, from the table UI values to show, thinks 
+	job_id	skills	...,
+		1	Java, Javascript, SQL, MYSQL 
+)
+- `UNION`, `UNION ALL` combine results from query thinks 
+	- `UNION ALL`, all ROWS returns, thinks
+	- `UNION`, UNQIUE ROWS values returns, thinks 
+	- `UNION ALL` to usage, as `UNION` means each ROW same value would exists checks, so `UNION ALL` to usage, thinks 
+- DONT USAGE of DISTINCT in SELECT query 
+	of multiple rows same value UNIQUE values to get, in SELECT query `GROUP BY` to add 
+- Of TABLE JOIN, GROUP BY, UNION, SELECT query adds to visualize of data exists, of visualize query to add 
+- Of TABLE modifies old DATA to retain, INSERT, UPDATE WITH SELECT query respective to adds 
+copy DATA from one table to another table 
+- BACKUP TABLE to take, before UPDATE, DELETE, INSERT, INSERT with SELECT query 
+	(i.e. BACKUP TABLE query, `CREATE TABLE <TABLE_NAME>_20180913 AS SELECT * FROM <TABLE_NAME>`), 
+	
+TODO:
+- SQL instruction to follows notes written in notebook to add 
+
+
+-- 2018-09-14
+
+- SELECT query in WHERE `OR`, `AND` respective to add with bracket, respective to visualize to add 
+- SELECT query in WHERE (1 = 1 OR <COLUMN_NAME> = <VALUE>) (1 = <VALUE> OR <COLUMN_NAME> = <VALUE>) to add in WHERE, 
+	- of `<VALUE> = 1` all ROWS returns 
+	- of `<VALUE>` value available, respective value in the column ROWS returns 
+- Naming convention
+	TYPE					prefix to starts with
+	- `VIEW`				v_<VIEW_NAME>
+	- procedure variable	p_<PROCEDURE_VARIABLE_NAME>
+	- INDEX					idx_<TABLE_NAME>_<COLUMN_NAME>
+- INDENT of queries, `2` OR `4` spacing; `tab` not adds 
+- SELECT query must runs faster, respective INNER JOIN, LEFT JOIN, GROUP BY, UNION, UNION ALL adds 
+- SELECT query after INNER JOIN, LEFT JOIN to adds, thinks 
+- auto_increment number columns, must ends with `<COLUMN_NAME>_id` (i.e. number column must ends with `id`), of based on `auto_increment` `alphabets + numbers` in column must ends with `code` `<COLUMN_NAME>_code` (i.e. alphanumeric must ends with `code`) 
+>> (i.e. WinWinCRM `auto_increment` `id` INSERTS, prefix <ALPHABETS> + respective `id` `code` adds in the column; in `campaign` TABLE `campaign_id` numbers, `campaign_code` alphanumeric) 
+- Note: DATABASE carefull of query CREATE TABLE, INSERT, UPDATE, SELECT, INNER JOIN, LEFT JOIN, GROUP BY, UNION, UNION ALL, DELETE, (INSERT, UPDATE, DELETE) WITH SELECT, 
+- SELECT query to run faster 
+- EXPLAIN SELECT query 
+- DATABASE query tries, after corrections tries, to add DB-Fix for build, in `queryToSend.sql` the queries to add in the file, 
+
+

@@ -103,3 +103,19 @@ name - the project-relative path of the linked resource as it appears in the wor
 type - the resource type. Value values are: "1" for a file, or "2" for a folder.
 location - the local file system path of the target of the linked resource. Either an absolute path, or a relative path whose first segment is the name of a workspace path variable.
 locationURI - if the file is not in the local file system, this attribute contains the absolute URI of the resource in some backing file system.
+
+
+-- 2018-09-09
+
+# Shortcut:
+- open file - `Ctrl + Shift + R` 
+- to find next word - `Ctrl + K` move froward, `Ctrl + Shift + F6` move before 
+- Switch open editors - `Ctrl + F6` move froward, `Ctrl + Shift + F6` move before 
+- to lowercase: `Ctrl + Shift + Y`
+- to uppercase: `Ctrl + Shift + X`
+- to search method called places, select the name - `Ctrl + Shift + G` 
+>> thinks
+- to rename, Class, method, variable< in added places reflects - `Alt + Shift + R`
+- in java Bean class to generate - Right click -> Source -> `Generate Getters Setters` 
+>> of shortcut `Alt + Shift + S` -> `R`; thinks 
+- Eclipse shortcuts key - `Ctrl + Shift + L`
