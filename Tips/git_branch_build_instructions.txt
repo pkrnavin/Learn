@@ -19,6 +19,27 @@ of build to release, from `dev_master` to add merge in `test_mster` for testing;
 - in `web.xml`, change version, datetime, to adds 
 - in database, `build_upgrad_master` table, to INSERT `<PROJECT_NAME>`, `<VERSION>`, `<DATETIME>` 
 - build to add in `dev` environment, `Resource Fix`, `DB Fix` in `dev` available for the build to add, to checking 	(modified on `2018-08-25`)
+-- [ added on `2018-09-15`
+>> Builds `war`, `jar` files to add in `dev`, below steps 
+	- LINE NUMBER: 19
+	- Export war file to add in the folder `../Builds/<PROJECT_NAME>/<DEPLOY_WAR_FILE_NAME>.war` 
+	>> before build adds file, in the folder, to rename the file respective modified date in the file to add (i.e. the file `<DEPLOY_WAR_FILE_NAME>.war` has modified date `2018-08-24 <TIME>`, in the before build file, to rename `<DEPLOY_WAR_FILE_NAME>_20180824.war`)
+	- `lib` folder to delete in the war file, to deploy 
+	- WinSCP transfer files to `dev` computer, `../Builds/<DATE>/` in the folder to add deploy files (i.e. of `<DATE>` to add `20180910`, build adds), 
+	- in `dev` computer, the `lib` folder files must available to add, in the computer `../Projects/<PROJECT_NAME>/lib/` in the folder jar files to add 
+	>> Note: (i.e. one time jar files, to add in the computer, for builds; of new jar adds, in the folder to add, the jar file, before deploy)
+	- To deploy in dev, of Tomcat deploy path, below 
+		# war file to add, 
+		cp `../Builds/<PROJECT_NAME>/<DEPLOY_WAR_FILE_NAME>.war` <TOMCAT_DEPLOY_FOLDER_PATH> 
+		# `lib` folder jar files 
+		cp `../Projects/<PROJECT_NAME>/lib/*` <TOMCAT_DEPLOY_FOLDER_PATH>/<DEPLOY_WAR_FILE_NAME>/WebRoot/WEB-INF/lib/
+	- of turn off Tomcat thinks 
+	- Resource-Fix, DB-Fix to apply 
+	- Build upgrade master, to insert, above in LINE NUMBER: 20
+	- START Tomcat
+	- BVT (i.e. Build Verification Test), below steps
+>> Note: deploy from tomcat time takes; so above steps, build to adds in dev, practices, to follows, Sir told 
+-- ]
 - of issue occurs, fix, commit, build to add in `dev`, to checking 	(modified on `2018-08-25`)
 - of checking verification `OK`; commit `web.xml` message `Version deployed <VERSION>`, 	(modified on `2018-08-25`)
 - from git link, `Major Updates` to adds build tag release, in the link `release` tab to add tag release of select the branch, name `<PROJECT_NAME> - <VERSION>`, `Major Updates` to adds, to release 

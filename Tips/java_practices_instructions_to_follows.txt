@@ -110,3 +110,13 @@ PF, below above java instructions to practices, in brief to add in single line, 
 - SELECT query of one ROW returns, in ResultSet `if` to add 
 	(i.e. if ( rst.next() ) { ... } )
 
+
+-- 2018-09-15
+
+- Version number `1.0.001` in `web.xml`, jar file to add, for the build posting; the number from LEFT to RIGHT specifies below 
+	- `1`: Major release changes, the number to increase; UI OR major changes 
+	- `0`: 
+	- `001`: Build sends to testing to increase the number 
+>> Build instructions to follows, in `git_branch_build_instructions.txt` 
+
+	
