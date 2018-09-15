@@ -55,7 +55,7 @@ Note: in `Manager`, `DBI`, `Bean` classes, NOT TO ADD STATIC METHODS, VARIABLES;
 	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.utils - UtilsFactory.java
 	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.constants - Constants.java
 	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.resource - properties files to adds 
-	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.servlet - InitServlet, ImageCaptchSrvlet, ... to adds 
+	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.servlet - InitServlet, ImageCaptchServlet, ... to adds 	(modified on `2018-09-15`)
 	- com.<COMPANY_NAME>.<PROJECT_SHORT_NAME>.listeners - HttpSessionListener.java
 - in `Constants.java`, static variables, loadConfigProperties, load computer's ConfigProperties to adds 
 - in `finally` block to call `clearCollectionHierarchy` of variable, the variable to set to null, to adds 
@@ -87,7 +87,7 @@ PF, below above java instructions to practices, in brief to add in single line, 
 - `UtilsFactory.java` to adds, common functions, variable to adds, static variables, methods to adds 
 - `HashMap`, `LinkedHashMap`, `ArrayList`, `HashSet` of data to adds 
 - Close resources of `Database`, `File` in respective order, in `finally` block, to call close; of variable value sets, from bottom to top to close 
-- Singleton class, in RESTLet of same values in application of all users gets from database sets in variable, TimerClass to adds to reloads 
+- Singleton class, in RESTLet of same values in application for all users; gets from database sets in variable, TimerClass to adds to reloads 	(modified on `2018-09-15`)
 - java naming conventions, of package, class, method, variable names above to refer, 
 - in `Constants.java`, static variables, loadConfigProperties, load computer's ConfigProperties to adds, of Constant values to add in the variable 
 - in `finally` block, to call `clearCollectionHeirarchy` of variable, the variable to set to null, to adds 

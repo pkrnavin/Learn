@@ -14,8 +14,8 @@ SELECT query 			CRUD		TABLE		MISC		(modified on `2018-9-14`)
 - INNER JOIN 			- CREATE	- CREATE	- VIEW
 - LEFT JOIN				- UPDATE	- ALTER		- PROCEDURE OR FUNCTIONS
 - GROUP BY 				- DELETE				- CURSOR (i.e. SELECT query data `ResultSet`, iterating ROWS)
-- UNION, UNION ALL 
-- HAVING
+- UNION, UNION ALL 		- TRUNCATE							(modified on `2018-09-15`)
+- HAVING													(added on `2018-09-14`)
 - INDEX, required columns, thinks of TABLE `3` columns adds of INDEX, below columns to add INDEX 
 	- id
 	- UNIQUE column 
@@ -105,6 +105,41 @@ SELECT query 			CRUD		TABLE		MISC		(modified on `2018-9-14`)
         GROUP BY words 
         HAVING count(*) > 3;
 	>> `HAVING` clause aggregate function condition adds 
+	-- ]
+	-- [ added on `2018-09-15` 
+	- below example of count(DISTINCT <COLUMN_NAME>), 
+	- in `Appedo`, to get `sla` ROWs, of `sla` has mapping with multiple varies `uid`, below thinks 
+		(i.e. of TABLE data 
+			`module_master`
+		uid		user_id		module_type		module_name			counter_type
+			1			1	APPLICATION		Local LearnUI		TOMCAT
+			2			1	SERVER			Dev Fedora			Fedora
+			3			1	DATABASE		Local OpenLearning	Postgres
+			...
+			`so_sla`
+		sla_id	user_id		sla_name
+			1			1	SLA Tomcat LearnUI
+			2			1	SLA ASD
+			`so_sla_mapping`
+		sla_map_id	sla_id	uid		counter_id
+				1		1		1		100001
+				2		1		1		100002
+				3		1		1		100003
+				4		2		1		100001
+				5		2		1		100002
+				6		2		2		100001
+				7		2		2		100003
+				8		2		3		100001
+				9		2		3		100002
+				10		2		3		100003
+		>> of above TABLE data, below query thinks, of above given to get 
+            SELECT ss.sla_id, count(DISTINCT uid) AS count_unique_uid_mapping 
+            FROM so_sla ss 
+            INNER JOIN so_sla_mapping ssm ON ssm.sla_id = ss.sla_id 
+                AND ss.user_id = <USER_ID>
+            GROUP BY ss.sla_id 
+            HAVING count(DISTINCT uid) > 1;
+		)
 	-- ]
 TODO: 
 - UNION, UNION ALL, ..., from notebook written to add 
