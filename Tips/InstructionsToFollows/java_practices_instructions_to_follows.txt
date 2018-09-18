@@ -131,6 +131,7 @@ PF, below above java instructions to practices, in brief to add in single line, 
 
 - MUST SAVE UTC Timestamp in DATABASE, of `dev`, `test`, `production` (i.e. Application in Tomcat, DATABASE host computer(s) DateTime MUST in UTC, to sync BETWEEN the computers)
 >> Note: in Local of `dev` DATABASE accessing in the application; of Timestamp in local: GMT +5:30, dev: UTC; of tomcat start, from java save values OR in `WHERE <DATE_TIME> = now()` local Timestamp adds, thinks; so of respective to sync BETWEEN local AND DATABASE must in UTC, in local DATETIME change to UTC, to restart Tomcat, from java values in DATABASE for `now()` is UTC, thinks 
-- UserLoggedin details MUST TO GET from SESSION, to save in DATABASE OR respective purposes; in UI userLoggedIn details to showing purposes to add; DONT pass userLoggedIn `userId` for request; `USERLOGGEDIN` details `userId` MUST TO GET from java SESSION 	(modified on `2018-09-18`)
->> Note: from firebug, the value passing of the request, changeable; so UserLoggedin details `userId` MUST TO GET from session, in java for DATABASE OR requires usages 
-
+-- [ modified on `2018-09-18`
+- UserLoggedin details MUST TO GET from SESSION, to save in DATABASE OR respective purposes; in UI userLoggedIn details to showing purposes to add; DONT pass userLoggedIn `userId` for request; `USERLOGGEDIN` details `userId` MUST TO GET from java SESSION 
+>> Note: from firebug, the value passing of the request, changeable; so UserLoggedin details `userId` MUST TO GET from session, in java for DATABASE OR respective usages 
+-- ]
