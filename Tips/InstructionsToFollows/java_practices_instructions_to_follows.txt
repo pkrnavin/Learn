@@ -113,10 +113,24 @@ PF, below above java instructions to practices, in brief to add in single line, 
 
 -- 2018-09-15
 
-- Version number `1.0.001` in `web.xml`, jar file to add, for the build posting; the number from LEFT to RIGHT specifies below 
-	- `1`: Major release changes, the number to increase; UI OR major changes 
-	- `0`: 
-	- `001`: Build sends to testing to increase the number 
+-- [ modified on `2018-09-16` 
+- Version number `1.0.001` in `web.xml`, jar file to add, for the build posting; the number from LEFT to RIGHT, to increase the number for build, below specifies 
+	- `1`: Major release changes; UI OR major changes 
+	- `0`: Minor release;
+	- `001`: Build sends to testing 
+>> The version number, of above specifies, reference available in `RLIM`, in `LearnUI` `web.xml` adds 
 >> Build instructions to follows, in `git_branch_build_instructions.txt` 
+-- ]
 
-	
+-- 2018-09-16
+
+- Properties file OR DATABASE TABLE to add hardcode values of file path, URL, respective values for the application; DONT hardocde values add in the application; as the values configurable to add in properties files OR DATABASE, of to load once (i.e. Tomcat start), of values changes in the file OR TABLE UPDATEs, to reflect in application `/reload...` request to add to call the function, in browser to enter the respective `/reload` URL, the changed values sets in the application 
+- `enum` to add (i.e. user defined data type, thinks), respective hardcode values, for the application 
+
+-- 2018-09-17
+
+- MUST SAVE UTC Timestamp in DATABASE, of `dev`, `test`, `production` (i.e. Application in Tomcat, DATABASE host computer(s) DateTime MUST in UTC, to sync BETWEEN the computers)
+>> Note: in Local of `dev` DATABASE accessing in the application; of Timestamp in local: GMT +5:30, dev: UTC; of tomcat start, from java save values OR in `WHERE <DATE_TIME> = now()` local Timestamp adds, thinks; so of respective to sync BETWEEN local AND DATABASE must in UTC, in local DATETIME change to UTC, to restart Tomcat, from java values in DATABASE for `now()` is UTC, thinks 
+- UserLoggedin details MUST TO GET from SESSION, to save in DATABASE OR respective purposes; in UI userLoggedIn details to showing purposes to add; DONT pass userLoggedIn `userId` for request; `USERLOGGEDIN` details `userId` MUST TO GET from java SESSION 	(modified on `2018-09-18`)
+>> Note: from firebug, the value passing of the request, changeable; so UserLoggedin details `userId` MUST TO GET from session, in java for DATABASE OR requires usages 
+

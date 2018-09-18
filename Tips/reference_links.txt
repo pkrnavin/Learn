@@ -13,3 +13,17 @@ https://medium.com/creative-technology-concepts-code/full-page-site-with-vertica
 https://stackoverflow.com/questions/35101813/vertical-middle-aligned-image-and-text-side-by-side-in-css/35101840
 
 
+
+-- 2018-09-16
+
+				JAVA
+				
+			JSON, with dependencies jar files 
+https://jar-download.com/artifacts/com.hynnet/json-lib/2.4/source-code
+
+			java, postgres database get connection 
+https://www.codejava.net/java-se/jdbc/connect-to-postgresql-database-server-via-jdbc
+http://www.postgresqltutorial.com/postgresql-jdbc/connecting-to-postgresql-database/
+https://www.mkyong.com/jdbc/how-do-connect-to-postgresql-with-jdbc-driver-java/
+https://www.tutorialspoint.com/postgresql/postgresql_java.htm
+https://jdbc.postgresql.org/download.html
