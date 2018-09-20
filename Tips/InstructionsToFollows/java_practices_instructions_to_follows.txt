@@ -135,3 +135,10 @@ PF, below above java instructions to practices, in brief to add in single line, 
 - UserLoggedin details MUST TO GET from SESSION, to save in DATABASE OR respective purposes; in UI userLoggedIn details to showing purposes to add; DONT pass userLoggedIn `userId` for request; `USERLOGGEDIN` details `userId` MUST TO GET from java SESSION 
 >> Note: from firebug, the value passing of the request, changeable; so UserLoggedin details `userId` MUST TO GET from session, in java for DATABASE OR respective usages 
 -- ]
+
+-- 2018-09-19
+
+- To usage of symbol `::` (i.e. `<VALUE>::<VALUE>`), 
+>> Note: in Appedo, of mail `<COUNTER_TYPE>::<COUNTER_NAME>` the value to specifies symbol usage, thinks 
+- Exception of `e.printStackTrace();` must to add in `Controller` one place, as in methods of `throw e` would available adds, of adds in method throws + controller same error log increases, so to add in controller of print stack trace of exception 	(modified on `2018-09-20`)
+
