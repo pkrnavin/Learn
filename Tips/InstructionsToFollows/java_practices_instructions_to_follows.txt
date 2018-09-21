@@ -142,3 +142,13 @@ PF, below above java instructions to practices, in brief to add in single line, 
 >> Note: in Appedo, of mail `<COUNTER_TYPE>::<COUNTER_NAME>` the value to specifies symbol usage, thinks 
 - Exception of `e.printStackTrace();` must to add in `Controller` one place, as in methods of `throw e` would available adds, of adds in method throws + controller same error log increases, so to add in controller of print stack trace of exception 	(modified on `2018-09-20`)
 
+
+-- 2018-09-20
+
+-- [ modified, adds on `2018-09-21`
+
+- Note: `ByteArrayOutputStream` of to download file, of respective user, in the file `<USER'S_DETAILS>` to add, file reads user's details content to adds in `variable` sets (i.e.  `ByteArrayOutputStream` of memory, thinks), the variable in response to write to downloads, of finally must close the variable OutputStream, thinks 
+>> `Appedo` to download agent, of respective user's `GUID`, user contents to add in the downloads properties file, Sir told to do, adds, tried 
+
+-- ]
+
