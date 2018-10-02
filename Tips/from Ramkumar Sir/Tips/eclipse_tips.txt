@@ -119,3 +119,7 @@ locationURI - if the file is not in the local file system, this attribute contai
 - in java Bean class to generate - Right click -> Source -> `Generate Getters Setters` 
 >> of shortcut `Alt + Shift + S` -> `R`; thinks 
 - Eclipse shortcuts key - `Ctrl + Shift + L`
+-- [ 2018-09-25
+- to Run of main class: `F11`
+>> before runs main class, thinks 
+-- ]

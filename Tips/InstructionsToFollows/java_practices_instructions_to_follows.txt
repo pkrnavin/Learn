@@ -163,3 +163,22 @@ PF, below above java instructions to practices, in brief to add in single line, 
 	>> above point, in the line adds 
 	- `thatis` - `(i.e. )` of thatis to add, in the format 
 -- ]
+
+
+-- 2018-09-27
+
+-- [ 2018-09-28 
+- Bean class of respective table's to create, 
+  - of column is `NOT NULL` must has value, to set in primitive datatype `int`, `long`, `float`, `double`, `boolean` 
+  - of column has `NULL`, in wrapper class respective datatype to set `Integer`, `Long`, `Float`, `Double`, `Boolean`, so value `null` to set to add 
+-- ]
+
+- in message to show, DONT add successfully; to usage of in the message `... (added | updated | changed | modified). ` 
+
+
+-- 2018-10-01
+
+- Servlet's `request`, `response`, `session` DONT pass to manager, DBI class, values get from the object to pass; as `Controller` changes, the manager, DBI class same for web, standalone application 
+- Validation MUST to add in UI, java (i.e. respective user to show particular, user license, ...), 
+>> Note: in `Openmentor` respective user validation of normal User, Admin, Employee users; `Appedo` user's license validation 
+
