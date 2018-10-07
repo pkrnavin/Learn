@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
 	<display-name>LearnUI</display-name>
+	<!-- TODO: Version number, Date, to add of build release -->
+	
+	<!-- Init servlet for context parameters initialization  -->
+	<!-- ========================================================== -->
+	<!-- Context Parameters -->
+	<!-- ========================================================== -->
+	
+	<!-- Version, from `RLIM` adds; the below number, DateTime, is from git copy, paste added on -->
+	
+	<!-- Version number -->
+	<context-param>
+		<param-name>version</param-name>
+		<param-value>1.0.001 Beta</param-value>
+		<!--	Major.Minor.Build	-->
+	</context-param>
+	<context-param>
+		<param-name>VersionLastUpdate</param-name>
+		<param-value>2018-09-16 19:06</param-value>
+	</context-param>
+	<context-param>
+		<description>Constant file properties</description>
+		<param-name>CONSTANTS_PROPERTIES_FILE_PATH</param-name>
+		<param-value>/WEB-INF/classes/com/openlearning/learn/resource/Constants.properties</param-value>
+	</context-param>
+	
+	
+	<!-- ========================================================== -->
+	<!-- Servlets -->
+	<!-- ========================================================== -->
+	
+	<servlet>
+		<servlet-name>InitServlet</servlet-name>
+		<servlet-class>com.openlearning.learn.servlet.InitServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	
+	<servlet>
+		<servlet-name>LoginController</servlet-name>	<!-- //servlet name -->
+		<servlet-class>com.openlearning.learn.controller.LoginController</servlet-class>	<!-- //servlet class -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>	<!-- //servlet name -->
+		<url-pattern>/loginSession</url-pattern>	<!-- //how it should appear -->
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/logoutSession</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Controller</servlet-name>
+		<servlet-class>com.openlearning.learn.controller.Controller</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Controller</servlet-name>
+		<url-pattern>/reloadConfigProperties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Controller</servlet-name>
+		<url-pattern>/getLoginUserDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Controller</servlet-name>
+		<url-pattern>/isSessionExists</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<!-- ========================================================== -->
+	<!-- Welcome Files -->
+	<!-- ========================================================== -->
+	
+	<!-- start-up page -->
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>

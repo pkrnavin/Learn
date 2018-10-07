@@ -1,0 +1,46 @@
+<div ng-controller="headerController">
+	<!-- User loggedin header -->
+	<header class="header luHeader">
+		<!-- below `container-fluid` css adds tries, at first, last column spacing, to set, to adds tries -->
+		<div class="container-fluid">
+			<div class="row justify-content-between">
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+					<!-- below logo image, text, from directive to sets -->
+					<lu-logo-image-text custom-class='{"image": "imageHeader", "text": "textHeader"}'></lu-logo-image-text>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pt-2 text-right">
+					<div class="luWelcomUser pr-3">
+						<!-- commented, to add `loginUserDetails` 
+						Welcome<BR>Admin (admin)  -->
+						<!-- below user, of `<FULL_NAME> (<USER_NAME>)` adds, -->
+						Welcome,<BR>{{loginUser.fullName}} ({{loginUser.userName}})
+					</div>
+					<div class="luUserIcon pr-3">
+						<span class="fa-stack fa-xs pr-1">
+							<i class="far fa-circle clr1b639e fa-stack-2x"></i>
+							<i class="fas fa-user fa-stack-1x clrGreen"></i>
+						</span>
+						&nbsp;
+						<span>
+							<a ui-sref="/myHome" title="My Home">
+								<i class="fas fa-home clrGreen"></i>
+							</a>
+						</span>
+					</div>
+					<div class="luMenu menuAtRightSide">
+						<!-- TODO: Menu to open, to try  -->
+						<div class="btn-group" uib-dropdown >
+							<span id="menuButton" class="menuBtn hideToggleSymbol" uib-dropdown-toggle><i class="fas fa-ellipsis-v"></i></span>
+							
+							<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="menuButton">
+								<li role="menuitem"><a href="" ng-click="loadLoginUserDetails()"><i class="fas fa-redo-alt clrGreen" ></i> ReloadLoginUserDeatils</a></li>
+								<li role="menuitem"><a ui-sref="/userTest" >User Test</a></li>
+								<li role="menuitem"><a href="./logoutSession">Sign out</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>

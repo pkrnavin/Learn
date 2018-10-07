@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Div Message Box</title>
+	
+	<!-- base path, from `WebRoot` to adds -->
+	<base href="../../../">
+	
+	<!-- commented, not working thinks, 
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous"></script> -->
+		
+	<!-- thinks, below working, of jQuery library downloads adds in folder, 
+	<script type="text/javascript" src="./js_lib/jquery-3.3.1.js"></script> -->
+	
+	<!-- CSS file -->
+	<link href="css/index.css" rel="stylesheet" />
+	
+	<!-- messageBox, in js file adds tries -->
+	<script type="text/javascript" src="vendor/js/messageBox.js"></script>
+</head>
+<body onload="onBodyLoad()" >
+	<!-- sample text, -->
+	<div>
+		<button name="btnShowMessageBox" id="btnShowMessageBox" onclick="showMessageBoxFromBtnClick()" >Show message box</button>
+		<BR><BR>
+		<button name="btnLargeShowMessageBox" id="btnLargeShowMessageBox" onclick="showLargeMessageBoxFromBtnClick()" >Show large message box</button>
+	</div>
+	
+	<p>
+		Pythagoras property is a very useful tool in mathematics. It is formally proved as a
+		theorem in later classes. You should be clear about its meaning.
+		It says that for any right-angled triangle, the area of the square on the hypotenuse is
+		equal to the sum of the areas of the squares on the legs.
+		Draw a right triangle, preferably on
+		a square sheet, construct squares on
+		its sides, compute the area of these
+		squares and verify the theorem
+		practically (Fig 6.26).
+		If you have a right-angled triangle,
+		the Pythagoras property holds. If the
+		Pythagoras property holds for some
+		triangle, will the triangle be right-
+		angled? (Such problems are known as
+		converse problems). We will try to
+		answer this. Now, we will show that,
+		if there is a triangle such that sum of
+		the squares on two of its sides is equal
+		to the square of the third side, it must
+		be a right-angled triangle.If you have a right-angled triangle,
+		the Pythagoras property holds. If the
+		Pythagoras property holds for some
+		triangle, will the triangle be right-
+		angled? (Such problems are known as
+		converse problems). We will try to
+		answer this. Now, we will show that,
+		if there is a triangle such that sum of
+		the squares on two of its sides is equal
+		to the square of the third side, it must
+		be a right-angled triangle.
+	</p>
+	
+	<!-- message box, show right side, tries -->
+	<!-- commented, tries of messageBox adds, from javascript, 
+	<div class="messageBox" >
+		Details adds
+	</div> -->
+</body>
+</html>

@@ -1,0 +1,179 @@
+/* CSS of Learn UI */
+
+/* title image, text side by side, of text to vertically middle tried */
+.titleContent {
+	display: block;
+	text-align: center;
+}
+.titleContent .image {
+	display: inline-block;
+}
+.titleContent .text {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* below logo image, text, corrections to try, from before available */
+.logoImageText {
+}
+.logoImageText > .image {
+}
+.logoImageText > .text {
+	font-weight: 500;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.logoImageText.center {
+	text-align: center;
+	/* thinks, `margin: 0 auto;` to add */
+}
+.logoImageText > .image.imageLg {
+	width: 96px;
+	height: 80px;
+}
+.logoImageText > .text.textLg {
+	font-size: 35px;
+}
+
+/* below, of header logo image, text to sets */
+.logoImageText > .image.imageHeader {
+	width: 60px;
+	height: 50px;
+}
+.logoImageText > .text.textHeader {
+	font-size: 26px;
+}
+
+
+/* Login page table form, below adds tried */
+.tabelLoginForm {
+	/* below margin, to adds horizontal centers, tried */
+	margin: 0 auto;
+}
+.tabelLoginForm td {
+	padding: 3px 3px 3px 3px;
+}
+.tabelLoginForm .tabelLoginFormButtons {
+	/* commented, after title text starting, button to set, tries */
+	text-align: center;
+	padding-left: 60px;
+}
+
+
+/* below to adds, login form of full screen height vertical align middle, to try; 
+	Note: to vertically center, parent `element` to set `height`; to vertically center, of full screen height, `height: 100%;` to set, thinks; from link added, tried  
+*/
+html, body, .container-fluid, [ui-view] {
+	height: 100%;
+}
+.verticalCenter {
+	width: 100%;
+	height: 100%;
+	display: table;
+	/* below of available in another link, of `.section` from thinks, the link bookmarks, in `reference_links.txt` adds, thinks, 
+		for full screen height to vertical center;  
+	position: relative;*/
+}
+.verticalCenter > .tabelCell {
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+/* below adds, of `loginForm` from center to adjust above to sets, adds */
+.loginFormContent {
+	position: relative;
+	/*bottom: 80px;	/* commented, user loggedIN header corrections to tries */
+}
+
+/* header, styles */
+.luHeader {
+	padding: 3px;
+	min-height: 35px;
+	border-bottom: 1px solid #1b639e;
+}
+/* header welcome user text, below css to add styles */
+.luWelcomUser {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+} 
+/* css to add, for user icon */
+.luUserIcon {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 24px;
+	padding-left: 10px;
+	margin-top: -3px;
+}
+.luMenu {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 10px;
+}
+/* menu to show right side */
+.luMenu .dropdown-menu, .menuAtRightSide .dropdown-menu {
+	right: 0;
+	left: auto;
+}
+/* menu spacing of text, below adds tries */
+.menuitem, .dropdown-menu a {
+	padding: 3px 10px;
+	/* below adds, menu in line hover, clickable of link (i.e. text is short, in the line hover link clikable), to adds tries */
+	display: block;
+	line-height: 18px;
+}
+.menuBtn {
+	background-color: #fffeee;
+	padding: 5px 10px;
+	color: #4b0082;
+	cursor: pointer;
+}
+
+
+
+.clrGreen {
+	color: green;
+}
+.clr1b639e {
+	color: #1b639e;
+}
+
+/* adds from before */
+.open > .dropdown-menu {
+	display: block;
+}
+/* to hide toggle symbol, of menu, to adds tries */
+.hideToggleSymbol.dropdown-toggle::after {
+	display: none;
+}
+
+
+/* messagebox, to show mobile tried, adds */
+.messageBox {
+	position: absolute;
+	right: 8px;
+	/* Note: `bottom: 0`, sets thinks from screen height 
+	 * (i.e. after screen height content, displays of scrolling, div sets in screen bottom, thinks), 
+	 * `bottom: 10px`, thinks from screen height's bottom, above given value, thinks 
+	 */
+	/*bottom: 0;*/
+	/* commented, tries msg box, to show one below one (OR) one above one, tries, 
+	bottom: 10px;	/* commented, checking tries, after text exceeds bottom, message box showing, checking tries */
+	background-color: #F1E88E;
+	border: 1px solid #888;
+	padding: 8px;
+	border-radius: 5px;
+	max-width: 200px;
+	/*height: 45px;	/* height, adds to tries, messageBox to show one below one (OR) one above one, to tries */
+	/* commented, as height varies, of content tries, 
+	height: 60px;	/* height, adds `box-sizing` tries */
+	/*height: 55px;*/
+	min-height: 60px;
+	max-height: 120px;
+	/* TODO: Thinks add, `box-sizing` border box */
+	box-sizing: border-box;
+	/*box-sizing: content-box;*/
+}
+/* thinks, message box css, `right, bottom` property add in class, thinks */

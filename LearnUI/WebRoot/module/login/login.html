@@ -1,0 +1,75 @@
+<!-- TODO: below to horizontal, vertical align center -->
+<div class="verticalCenter">
+	<div class="tabelCell loginFormContent">
+		<!-- Image, text side by side; text to vertically align middle; in google search `html align image and text side by side center` -->
+		<!-- TODO: below to add in directive, as userLoggedIn `header` to add, image text -->
+		
+		<!-- below logo image, text, from directive to sets adds -->
+		<!-- below `custom-class` of single quote, of JSON double quote adds working, thinks; -->
+		<lu-logo-image-text custom-class='{"logoImageText": "center"}'></lu-logo-image-text><!-- commented `custom-class='{"logoImageText": "classTest_123", "image": "classTest_456", "text": "classTest_789"}'`, adds given value to set in respective element place, to checking tried, -->
+		
+				
+		<!-- TODO: Form to add -->
+		<div>
+			<form name="formLogin" action="./loginSession" method="post">
+				<div>
+					<!-- Before first table form, tried thinks, so below adds table form tried -->
+					<table class="tabelLoginForm"><!-- commented `align="center"`, of adds working, in css `margin` adds, tried -->
+						<tr>
+							<td>
+								<label for="txtUsername">Username: </label>
+							</td>
+							<td>
+								<input type="text" name="txtUsername" id="txtUsername" required="required" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="txtPassword">Password: </label>
+							</td>
+							<td>
+								<input type="password" name="txtPassword" id="txtPassword" required="required" />
+							</td>
+						</tr>
+						<!-- commented, for `<BR>` tried, not working 
+						<tr></tr>
+						<tr></tr>
+						<tr></tr> -->
+						<tr>
+							<td colspan="2" class="tabelLoginFormButtons">
+								<!-- commented `<BR>`, more spacing sets -->
+								<button type="submit" name="btnLogin" id="btnLogin">Login</button>
+								<button type="button" name="btnReset" id="btnReset">Reset</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+				
+				<!-- TODO: Bootstrap form design to try -->
+				<!-- commented, below Bootstrap form UI design tried -->
+				<div class="row" ng-if="false"><!-- Note: `ng-if="false"`, adds to show table form, as before first table form tried, thinks; `ng-if="true"`, to show bootstrap form -->
+					<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 offset-xl-4 offset-lg-4 offset-md-4 offset-sm-4 offset-4">
+						<div class="form-group row">
+							<label for="txtUsername" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 col-form-label">Username</label>
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+								<input type="text" name="txtUsername" id="txtUsername" class="form-control" required="required" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="txtPassword" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 col-form-label">Password</label>
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+								<input type="password" name="txtPassword" id="txtPassword" class="form-control" required="required" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 offset-xl-2 offset-lg-2 offset-md-2 offset-sm-2 offset-2 text-right pr-4">
+								<button type="submit" name="btnLogin" id="btnLogin" class="btn btn-light">Login</button>
+								<button type="button" name="btnReset" id="btnReset" class="btn btn-light">Reset</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
