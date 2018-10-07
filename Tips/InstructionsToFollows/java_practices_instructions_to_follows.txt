@@ -182,3 +182,12 @@ PF, below above java instructions to practices, in brief to add in single line, 
 - Validation MUST to add in UI, java (i.e. respective user to show particular, user license, ...), 
 >> Note: in `Openmentor` respective user validation of normal User, Admin, Employee users; `Appedo` user's license validation 
 
+
+-- 2018-10-05
+
+- To add, array modulus `%` usage, of below respective places 	(modified on `2018-10-08`)
+	- `Openmentor`, slideshow 
+	- `Appedo` square theme, of 10 charts, default 5 colors in array, of charts colors in same order (i.e. after 5th chart, of 6th chart in array's first color, to set), of for loop color to get `idx % aryColors.length`, 
+	- `Appedo` chart legend, thinks 
+	
+	

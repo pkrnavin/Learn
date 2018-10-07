@@ -27,3 +27,18 @@ http://www.postgresqltutorial.com/postgresql-jdbc/connecting-to-postgresql-datab
 https://www.mkyong.com/jdbc/how-do-connect-to-postgresql-with-jdbc-driver-java/
 https://www.tutorialspoint.com/postgresql/postgresql_java.htm
 https://jdbc.postgresql.org/download.html
+
+-- 2018-09-20
+			
+			`java jdbc tutorial`, in google searches 
+https://www.javatpoint.com/java-jdbc
+			
+			`java jdbc odbc tutorial`, in google searches 
+https://www.mundayweb.com/html/JDBC-ODBC%20Tutorial.html
+https://www.roseindia.net/jdbc/jdbc-odbc.shtml
+http://www.java2s.com/Tutorial/Java/0340__Database/0540__JDBC-ODBC.htm
+
+-- 2018-09-24
+			ms_access_create_tables
+https://www.tutorialspoint.com/ms_access/ms_access_create_tables.htm
+
