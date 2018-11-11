@@ -205,4 +205,24 @@ TODO:
 - EXPLAIN SELECT query 
 - DATABASE query tries, after corrections tries, to add DB-Fix for build, in `queryToSend.sql` the queries to add in the file, 
 
+-- 2018-11-04
 
+-- [ modified on `2018-11-05` 
+History table, of below notes 
+- History table (i.e. the records in the table, of each row operation INSERT, UPDATE, DELETE of the record history to maintain to refer to adds) 
+- History table of NEW TABLE to CREATE with replication LIKE original TABLE, with below 
+	- MUST to create columns without CONSTRAINTS, the following thinks PRIMARY KEY, FOREIGN KEY, INDEX for history table 
+	- MUST to add, the additional columns `operation` (i.e. string; values `INSERT` OR `UPDATE` OR `DELETE`) of respective operation the row inserts to add, `done_on` timestamp without time zone; of to add the additional columns at first, after original TABLE columns to following to adds 
+	- table name to create `<ORIGINAL_TABLE_NAME>_history` 
+- `Appedo` of `module_master` history table `module_master_history`, to refer in the file full path `D:\Learn\from Office\from Softsmith\LaptopAdds\AppedoOpenSource\db_backup.sql`; below syntax, of history table to create like original table, to try 
+    CREATE TABLE module_master_history AS SELECT '' AS operation, null::timestamp without time zone, * FROM module_master;
+>> (i.e. TABLE CREATEs, without CONSTRAINTS, PRIMARY KEY, FOREIGN KEY, INDEX creates, thinks, to verify)
+- TRIGGER FUNCTION to add, BEFORE OR AFTER `<OPERATION>` to add 
+- TRIGGER FUNCTION available of `NEW`, `OLD`, `TG_OP` 
+	- `NEW` (i.e. the new modified record of the column values available in the variable)
+	>> Operation `INSERT`, `UPDATE` available; `DELETE` not available as the row deletes 
+	- `OLD` (i.e. the old record with before values in the variable) 
+	>> Operation `UPDATE`, `DELETE` available; `INSERT` not available as the row new 
+	- `TG_OP` (i.e. trigger operation of `INSERT`, `UPDATE`, `DELETE`) 
+- TRIGGER to add for the function 	
+-- ]

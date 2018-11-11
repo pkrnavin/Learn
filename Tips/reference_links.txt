@@ -1,5 +1,5 @@
 				Reference Links
-
+Note: Respective languages below, to adds links, of above link the date to add 	(added on `2018-10-28`)
 -- 2018-08-02
 
 					CSS
@@ -12,7 +12,11 @@ https://medium.com/creative-technology-concepts-code/full-page-site-with-vertica
 			CSS image, text side by side; text align middle 
 https://stackoverflow.com/questions/35101813/vertical-middle-aligned-image-and-text-side-by-side-in-css/35101840
 
+-- [ 2018-10-14
+				glyphicons icons to include 
+https://github.com/Darkseal/bootstrap4-glyphicons
 
+-- ]
 
 -- 2018-09-16
 
@@ -41,4 +45,67 @@ http://www.java2s.com/Tutorial/Java/0340__Database/0540__JDBC-ODBC.htm
 -- 2018-09-24
 			ms_access_create_tables
 https://www.tutorialspoint.com/ms_access/ms_access_create_tables.htm
+
+
+-- 2018-10-13
+
+			angularjs, of URL `./LearnUI/view/html/#!/<TRANSITION_TO_URL>`, in `a` tag, `Ctrl + link` new tab to open, the page, 
+https://stackoverflow.com/questions/23516289/angularjs-state-open-link-in-new-tab
+https://blog.entelect.co.za/view/10042/extending-the-angular-1-x-ui-router-s-state-go
+>> google search `angularjs anchor tag stateprovider absolute path in ui-sref` 
+		of above below links 
+http://embed.plnkr.co/Q2FtQZ/
+https://github.com/angular-ui/ui-router/issues/2264
+https://stackoverflow.com/questions/24151760/get-the-absolute-url-of-a-state-in-angular-ui
+https://github.com/angular-ui/ui-router/wiki/Quick-Reference#statehrefstateorname--params--options
+https://stackoverflow.com/questions/40148770/way-to-provide-a-path-to-controller-file-using-ui-router
+https://stackoverflow.com/questions/39668371/base-href-adds-directory-path-in-routing-urls-using-ui-router
+https://stackoverflow.com/questions/31963682/configure-angular-ui-router-to-use-absolute-urls-by-default
+https://stackoverflow.com/questions/24502065/angularjs-ui-router-get-the-absolute-url-of-the-state-with-the-parameters
+
+-- [ 2018-10-14
+			angularjs, radio button ngRepeat
+https://stackoverflow.com/questions/14775981/angularjs-using-ng-repeat-to-create-sets-of-radio-inputs
+
+-- ]
+
+-- [ 2018-10-25
+			angularjs, loading 
+https://coderwall.com/p/jyfxkg/angularjs-loading-directive
+			
+			angularjs, html scope variable changes update; of loading value change to compile below link, 
+https://stackoverflow.com/questions/20068526/angularjs-directive-does-not-update-on-scope-variable-changes
+
+-- ]
+
+
+-- [ 2018-10-28
+			angularjs, pagination 
+https://stackoverflow.com/questions/10816073/how-to-do-paging-in-angularjs
+-- ]
+
+-- [ 2018-11-07
+			angularjs, form controller ngModel controller to get 
+https://steelkiwi.com/blog/validation-error-handling-angularjs-applicatios/
+https://stackoverflow.com/questions/20908096/getting-form-controls-from-formcontroller
+>> google search `angularjs directive form controller get field model controller`
+
+			angularjs, button click form field error message to show 
+http://code.realcrowd.com/on-the-bleeding-edge-advanced-angularjs-form-validation/
+https://github.com/realcrowd/angularjs-utilities
+https://medium.com/frontend-coach/when-and-how-to-validate-form-in-angularjs-95e83d6ad41c
+https://scotch.io/tutorials/angularjs-form-validation
+-- ]
+
+
+-- 2018-10-27
+				Javascript 
+			
+			javascript json this 
+https://stackoverflow.com/questions/19659117/invalid-how-to-use-the-this-keyword-in-json
+https://stackoverflow.com/questions/2787245/how-can-a-javascript-object-refer-to-values-in-itself
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
+
+			Javascript Value vs. Reference 
+https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0
 
