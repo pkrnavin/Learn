@@ -1,0 +1,10 @@
+<!-- Field error message to show, to add -->
+<div class="luMessages" ng-messages="formFieldCtrl.$error" ng-show="formFieldCtrl.showErrorMessage()"><!-- commented `class="invalid-feedback"`, of class adjacent to field message to show, so element attribute to add to try -->
+	<div ng-message="required">Must present value. </div>
+	<!-- Note: field `minlength`, `maxlength` message to add, of respective value of length from `element` OR `formFieldCtrl` passes, to get to adds, -->
+	
+	<!-- TODO: field custom messages, in directive to add, -->
+	<div ng-repeat="joErrorMessage in aryFieldCustomMessages">
+		<div ng-message-exp="joErrorMessage.code">{{joErrorMessage.message}}</div>
+	</div>
+</div>

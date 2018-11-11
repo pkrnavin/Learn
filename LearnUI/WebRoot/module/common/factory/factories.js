@@ -10,7 +10,10 @@ learnUIApp.factory('messageFactory', function() {
 			{code: 'INVALID_USER', message: 'Invalid User, more than one returns.'}, 
 			{code: 'PASSWORD_NOT_MATCHES', message: 'Password not macthes.'}, 
 			{code: 'USER_NOT_EXISTS', message: 'User not exists.'}, 
-			{code: 'SESSION_EXPIRED', message: 'Session not exists.'}], 
+			{code: 'SESSION_EXPIRED', message: 'Session not exists.'}, 
+			{code: 'MUST_FILL_MANDATORY_FIELDS', message: 'Must fill mandatory fields.'},
+			{code: 'MUST_VALID_FORM', message: 'Must be valid form fields.'}
+		], 
 		nMillisMessageDisplay = 1000 * 5;
 	
 	// TODO: below to checking, 
@@ -86,4 +89,139 @@ learnUIApp.factory('messageFactory', function() {
 			showMessage(msg, nMillisMessageDisplay);
 		}
 	};
+});
+
+// UtilsFactory functions to add 
+learnUIApp.factory('learnuiUtilsFactory', function() {
+	
+	return {
+		getSelectedDatumFromArrayInJSON: function(aryData, key, value) {
+			var joDatum, joRtnDatum;
+			
+			//console.info('getSelectedDatumFromArrayInJSON <> aryData: '+JSON.stringify(aryData)+' <> key: '+key+' <> value: '+value);
+			
+			for(var i = 0; i < aryData.length; i = i + 1) {
+				joDatum = aryData[i];
+				//console.info('i: '+i+' <> joDatum: '+JSON.stringify(joDatum));
+				
+				if ( joDatum[key] === value) {
+					//console.info('getSelectedDatumFromArrayInJSON <> found');
+					joRtnDatum = joDatum;
+					break;
+				}
+			}
+			
+			return joRtnDatum;
+		},
+		getPaginationSettings: function(nCountTotalResults, nLimit, nCurrentPage, nMaxSize) {
+			// to get pagination settings, to set uib bootstrap pagination tag 
+			var joPaginationModel = {};
+			
+			//console.info('11111111 <> getPaginationSettings');
+			//console.info('getPaginationSettings <> parameter <> nCountTotalResults: '+nCountTotalResults+' <> nLimit: '+nLimit+' <> nCurrentPage: '+nCurrentPage+' <> nMaxSize: '+nMaxSize);
+			
+			// TODO: limit to set default
+			
+			// default limit 
+			nLimit = nLimit || 10;
+			// default page number `1` 
+			nCurrentPage = nCurrentPage || 1;
+			// default page numbers size (i.e. of total `5` pages available, UI `3` page numbers of selectable, to show, thinks)
+			nMaxSize = nMaxSize || 3;
+			
+			//console.info('getPaginationSettings <> nCountTotalResults: '+nCountTotalResults+' <> nLimit: '+nLimit+' <> nCurrentPage: '+nCurrentPage+' <> nMaxSize: '+nMaxSize);
+			
+			/* Note: `Appedo` slider settings tried 
+			 * Pagination settings, manual tried, from below link, seeing; 
+			 * `https://stackoverflow.com/questions/10816073/how-to-do-paging-in-angularjs` 
+			 */
+			joPaginationSettings = {
+				countTotalResults: nCountTotalResults, 
+				numberOfPages: undefined,
+				/* Note: below of JSON creation time, `this` calls error occurs, of inside function working, thinks; below links given 
+				 * `https://stackoverflow.com/questions/19659117/invalid-how-to-use-the-this-keyword-in-json` 
+				 * `https://stackoverflow.com/questions/2787245/how-can-a-javascript-object-refer-to-values-in-itself`
+				//numberOfPages: 10,	// commented, library sets, thinks 
+				//numberOfPages: this.getNumberOfPages(),	// commented error occurs 
+				//numberOfPages: (function() { this.getNumberOfPages() })(),
+				//numberOfPages: (function(self) { self.getNumberOfPages() })(this),	// commented error occurs 
+				// TODO: to set number of pages, thinks 
+				//numberOfPages: (function() { this.getNumberOfPages() })(),*/
+				// Note: of `numberOfPages` key declares, in attribute given, library sets respective value in the key, thinks 
+				currentPage: nCurrentPage,
+				maxSize: nMaxSize,
+				limit: nLimit,	// number of rows to display 
+				// page's first, last row count to sets 
+				pageFromRowCount: undefined,
+				pageToRowCount: undefined,
+				getOffset: function() {	// from start index, grid rows to get of given limit count, 
+					var nOffset = (this.currentPage - 1) * this.limit;
+					//console.info('22222 <> getOffset <> this.currentPage: '+this.currentPage+' <> this.limit: '+this.limit+' <> nOffset: '+nOffset);
+					
+					// page number, starts with `1`, so below respective to adds, to set in SELECT query, tries 
+					return nOffset;
+				},
+				getNumberOfPages: function() {	// to get number of pages 
+					var nNumberOfPages;
+					
+			        // calculate total pages; `Math.ceil(2.3)` to return `3` (i.e. to round upwards to the nearest integer)
+					nNumberOfPages = Math.ceil(this.countTotalResults / this.limit);
+					
+					//console.info('3333 <> getNumberOfPages <> nNumberOfPages: '+nNumberOfPages);
+					
+					return nNumberOfPages;	// commented, below checking to try 
+					//return 10;	// Note: of value returns, library sets respective, thinks 
+				},
+				setTotalResultsAndNumberofPages: function(nCountTotalResults) {
+					// to set count total 
+					this.countTotalResults = nCountTotalResults;
+					this.numberOfPages = this.getNumberOfPages();
+					//console.info('44444 <> setTotalResultsAndNumberofPages <> this.countTotalResults: '+this.countTotalResults+' <> this.numberOfPages: '+this.numberOfPages);
+				},
+				setPaginationResultsPerPage: function(nNoOfResultsInPage) {
+					/* to set pagination results, of page's displaying rows count of first, last in the page; 
+					 *  to call in grid ajax call response, of total results to set, number of results returns for the page, to pass, to set the page's row count details 
+					 */
+					//console.info('555555 <> setPaginationResultsPerPage');
+					var nOffset = this.getOffset();
+					
+					// `Openmentor` job search adds, page's rows count of `from`, `to` adds, 
+					
+					// page's first from row count 
+					this.pageFromRowCount = nOffset + 1;
+					// page's last to row count 
+					this.pageToRowCount = (nNoOfResultsInPage + nOffset) || '';
+					
+					//console.info('setPaginationResultsPerPage <> this.pageFromRowCount: '+this.pageFromRowCount+' <> this.pageToRowCount: '+this.pageToRowCount);
+				},
+				setPage: function(nPageNumber) {
+					// to set page number 
+					//console.info('setPage <> 2222 <> nPageNumber: '+nPageNumber);
+					this.currentPage = nPageNumber;
+				}, 
+				resetToFirstPage: function() {
+					// to reset to first page, 
+					//console.info('resetToFirstPage <<<>>> 111111');
+					this.setPage(1);
+				}
+			};
+			
+			/* commented, as total numbers of results returns in page, to pass, in ajax call response to call 
+			// to set, current page's from, to row count 
+			joPaginationSettings.setPaginationResultsPerPage();*/
+			
+			return joPaginationSettings;
+		},
+		// to add form in fields, denote field 
+		denoteFieldValid: function(formFieldCtrl) {
+			return formFieldCtrl.$valid;
+		},
+		denoteFieldInvalid: function(formFieldCtrl) {
+			return formFieldCtrl.$invalid;
+		},
+		// to show error message in form field modify state OR form submitted state to adds, 
+		showErrorMessage: function(formCtrl, formFieldCtrl) {
+			return formFieldCtrl.$invalid && (formFieldCtrl.$dirty || formCtrl.$submitted);
+		}
+	}
 });

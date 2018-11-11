@@ -1,0 +1,571 @@
+<div>
+	<!-- commented, checking tries 
+	loginUser: {{loginUser}} -->
+	<!-- TODO: student details form to add -->
+	
+	<!-- TODO: UI form table, bootstrap form to add; 
+		table form, as before like to add, to try -->
+	<!-- TODO: fieldset legend border to add, form fields to add -->
+	<!-- form loading to show, hide to add  -->
+	<div learnui-loading="bLoadingFormStudentDetails"><!-- Note: of `ng-if="false"` to show bootstrap form adds, tried -->
+		<!-- below `novalidate`, to adds tries, as after insert, to set form pristine state, of form field error color to clears (i.e. browser adds validation), thinks -->
+		<!-- below `learnuiForm`, of form field control, the function to add to set formField model controller, -->
+		<form name="formLuStudentDetails" novalidate learnui-form><!-- commented `class="formLabels"`, to set in `label` adds tries --><!-- commented css `needs-validation`, after adds  -->
+			<fieldset class="luFieldSet">
+				<legend>Student Details:</legend>
+				<div>
+					<table class="w-100">
+						<tr>
+							<!-- Left side form fields, to try -->
+							<td class="w-50 align-top">
+								<!-- form fields -->
+								<table>
+									<tr>
+										<td>
+											<label for="txtFirstName">FirstName<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+										</td>
+										<td>
+											<!-- below default focus adds, tried, -->
+											<input type="text" name="txtFirstName" id="txtFirstName" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtFirstName.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtFirstName.denoteFieldInvalid()}" 
+												ng-model="formStudentDetails.firstName" required="required" autofocus="autofocus" ng-focus="true" />
+											<!-- commented `ng-class="{'is-valid': formLuStudentDetails.txtFirstName.$valid, 'is-invalid': formLuStudentDetails.txtFirstName.$invalid}"`, from function to add -->
+											<!-- 
+											formLuStudentDetails.firstName: {{formLuStudentDetails.txtFirstName}}<BR> -->
+											<!-- txtFirstName.$error: {{formLuStudentDetails.txtFirstName.$error}} -->
+											
+											<!-- Note: form error message shows, in above field css class available of `form-control (is-valid|is-invalid)`, thinks -->
+											
+											<!-- commented, attribute to add, of message to show css class `invalid-feedback` adjacent to field 
+											<lu-field-error-message form-field-ctrl="formLuStudentDetails.txtFirstName" ></lu-field-error-message> -->
+											
+											<!-- error message from directive to adds; to add in attribute, as css class `invalid-feedback` adjacent to field message shows, 
+												so attribute to add to try -->
+											<div class="invalid-feedback" lu-field-error-message 
+												form-field-ctrl="formLuStudentDetails.txtFirstName" ></div>
+											
+											<!-- to cheking tried 
+											txtFirstName modify: {{formLuStudentDetails.txtFirstName.$dirty}}<BR>
+											formLuStudentDetails.$submitted: {{formLuStudentDetails.$submitted}}<BR>
+											txtFirstName.$valid: {{formLuStudentDetails.txtFirstName.$valid}}<BR>
+											txtFirstName.denoteFieldValid: {{formLuStudentDetails.txtFirstName.denoteFieldValid()}}<BR>
+											txtFirstName.denoteFieldInvalid: {{formLuStudentDetails.txtFirstName.denoteFieldInvalid()}}<BR>
+											txtFirstName.showErrorMessage: {{formLuStudentDetails.txtFirstName.showErrorMessage()}} -->
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label for="txtLastName">LastName<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+										</td>
+										<td>
+											<input type="text" name="txtLastName" id="txtLastName" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtLastName.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtLastName.denoteFieldInvalid()}" 
+												ng-model="formStudentDetails.lastName" required="required" />
+											
+											<div class="invalid-feedback" lu-field-error-message 
+												form-field-ctrl="formLuStudentDetails.txtLastName" ></div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label for="txtFatherName">FatherName<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+										</td>
+										<td>
+											<input type="text" name="txtFatherName" id="txtFatherName" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtFatherName.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtFatherName.denoteFieldInvalid()}" 
+												ng-model="formStudentDetails.fatherName" required="required" />
+											
+											<div class="invalid-feedback" lu-field-error-message 
+												form-field-ctrl="formLuStudentDetails.txtFatherName" ></div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label for="txtMotherName">MotherName<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+										</td>
+										<td>
+											<input type="text" name="txtMotherName" id="txtMotherName" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtMotherName.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtMotherName.denoteFieldInvalid()}" 
+												ng-model="formStudentDetails.motherName" required="required" />
+											
+											<div class="invalid-feedback" lu-field-error-message 
+												form-field-ctrl="formLuStudentDetails.txtMotherName" ></div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label for="taAddress">Address<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+										</td>
+										<td>
+											<textarea name="taAddress" id="taAddress" rows="" cols="30" class="form-control" ng-class="{'is-valid': formLuStudentDetails.taAddress.denoteFieldValid(), 'is-invalid': formLuStudentDetails.taAddress.denoteFieldInvalid()}"
+												ng-model="formStudentDetails.address" required="required" ></textarea>
+											
+											<div class="invalid-feedback" lu-field-error-message 
+												form-field-ctrl="formLuStudentDetails.taAddress" ></div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label for="txtEmail">Email<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+										</td>
+										<td>
+											<input type="email" name="txtEmail" id="txtEmail" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtEmail.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtEmail.denoteFieldInvalid()}"
+												ng-model="formStudentDetails.email" required="required" />
+											
+											<!-- custom messages, of field to pass, to add -->
+											<div class="invalid-feedback" lu-field-error-message 
+												form-field-ctrl="formLuStudentDetails.txtEmail" custom-messages="aryEmailFieldErrorMessages"></div>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<!-- Right side form fields, to try  -->
+							<td class="w-50 align-top" align="left">
+								<table >
+									<tr>
+										<td>
+											<label for="txtPhoneNumber">PhoneNumber<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+										</td>
+										<td>
+											<input type="text" name="txtPhoneNumber" id="txtPhoneNumber" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtPhoneNumber.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtPhoneNumber.denoteFieldInvalid()}"
+												ng-model="formStudentDetails.phoneNumber" required="required" /><!-- commented `type="number"`, spinner -->
+											
+											<div class="invalid-feedback" lu-field-error-message 
+												form-field-ctrl="formLuStudentDetails.txtPhoneNumber"></div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label for="comboNationality">Nationality<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+										</td>
+										<td>
+											<select name="comboNationality" id="comboNationality" class="form-control" ng-class="{'is-valid': formLuStudentDetails.comboNationality.denoteFieldValid(), 'is-invalid': formLuStudentDetails.comboNationality.denoteFieldInvalid()}"
+												ng-model="formStudentDetails.selectedNationality" 
+												ng-options="nationality as nationality.text for nationality in aryNationalities track by nationality.id" 
+												required="required" >
+												<option value="">Select Nationality</option>
+											</select>
+											
+											<div class="invalid-feedback" lu-field-error-message 
+												form-field-ctrl="formLuStudentDetails.comboNationality"></div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label for="dtDateOfBirth">Date Of Birth<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+										</td>
+										<td>
+											<!-- commented, to format date to add, uib datepicker field to add, to try 
+											<input type="date" name="dtDateOfBirth" id="dtDateOfBirth" placeholder="yyyy-MM-dd" ng-model="formStudentDetails.dateOfBirth" /> -->
+											<div ng-controller="DatepickerPopupController">
+												<!-- TODO: value select same position to set, to add to try -->
+												<div class="input-group" ng-init="setOptions(dateOfBirthOptions)"><!-- commented `ng-init="getOptions()"`, function name, corrections -->
+													<input type="text" name="dtDateOfBirth" id="dtDateOfBirth" class="form-control" ng-class="{'is-valid': formLuStudentDetails.dtDateOfBirth.denoteFieldValid(), 'is-invalid': formLuStudentDetails.dtDateOfBirth.denoteFieldInvalid()}"
+														placeholder="{{datePickerPopup.format}}" uib-datepicker-popup="{{datePickerPopup.format}}" 
+														ng-model="formStudentDetails.dateOfBirth" is-open="datePickerPopup.menuOpen" 
+														ng-required="true" close-text="Close" datepicker-options="datePickerPopup.options" 
+														ng-focus="openPopup()" readonly="readonly"/>
+													<!-- commented `datepicker-options="dateOptions"`, default, custom options to add, to try  -->
+													<!-- commented `datepicker-options="getOptions()"`, error occurs -->
+													<!-- commented `alt-input-formats="altInputFormats"`,  -->
+													<div class="input-group-append">
+														<span class="input-group-text" ng-click="openPopup()"><i class="far fa-calendar-alt clr1b639e cursorHand"></i></span>
+													</div>
+													
+													<div class="invalid-feedback" lu-field-error-message 
+														form-field-ctrl="formLuStudentDetails.dtDateOfBirth"></div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label>Transport<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+										</td>
+										<td>
+											<div class="form-check form-check-inline" ng-repeat="joTransportMode in aryTransportModes">
+												<input type="radio" name="radioTransportMode" id="radioTransportMode_{{$index}}" class="form-check-input" 
+													ng-model="$parent.formStudentDetails.transportMode" ng-value="joTransportMode.code" />
+												<!-- commented `ng-class="{'is-valid': formLuStudentDetails.radioTransportMode.denoteFieldValid(), 'is-invalid': formLuStudentDetails.radioTransportMode.denoteFieldInvalid()}"`, to show message adds tried -->
+												<label for="radioTransportMode_{{$index}}" class="form-check-label">{{joTransportMode.text}}</label>
+											</div>
+											
+											<!-- commented manual message to show adds, tried 
+											<div class="invalid-feedback" lu-field-error-message ng-if="formStudentDetails.transportMode === undefined"
+												form-field-ctrl="formLuStudentDetails.radioTransportMode"></div>--><!-- commented `ng-if="$last"`, adds inside ngrepeat -->
+											
+											<!-- manual adds, of checkbox message, above comment adds, tried -->
+											<div class="invalid-feedback" ng-if="formStudentDetails.transportMode === undefined">Must present value. </div>
+											<!-- commented, checking tries 
+											aryTransportModes: {{aryTransportModes}} -->
+											<!-- formStudentDetails.transportMode: {{formStudentDetails.transportMode}} -->
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label>Interests<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+										</td>
+										<td>
+											<div class="form-check" ng-repeat="joInterest in aryInterestedIns"><!-- commented css `form-check-inline` class, to show line by line -->
+												<input type="checkbox" name="chkInterest_{{$index}}" id="chkInterest_{{$index}}" class="form-check-input" ng-model="joInterest.selected" />
+												<!-- commented `name="chkInterest_{{$index}}"`, to add to denote field valid, invalid -->
+												<!-- commented `ng-class="{'is-valid': formLuStudentDetails.chkInterests.denoteFieldValid(), 'is-invalid': formLuStudentDetails.chkInterests.denoteFieldInvalid()}"`, to show message adds tried -->
+												<label for="chkInterest_{{$index}}" class="form-check-label">{{joInterest.text}}</label>
+											</div>
+											<!-- commented manual message to show adds, tried 
+											<div class="invalid-feedback" lu-field-error-message ng-if="getSelectedInterestsFromModel()[0].length === 0"
+												form-field-ctrl="formLuStudentDetails.chkInterests"></div> --><!-- commented `ng-if="$last"`, adds inside ngrepeat -->
+												
+											<!-- Note: manual message adds, as respective field validity available `lu-field-error-message` message shows, tinks, so manual adds, tried -->
+											<div class="invalid-feedback" ng-if="getSelectedInterestsFromModel()[0].length === 0">Must present value. </div>
+											<!-- commented, checking tries, checkbox selected values to get 
+											getOrSetInterestSelectedValues(): {{getOrSetInterestSelectedValues()}} -->
+											<!-- 
+											aryInterestedIns: {{aryInterestedIns}}<BR>
+											getSelectedInterestsFromModel: {{getSelectedInterestsFromModel()}}<BR>
+											getOrSetSelectedInterestsFromCodes: {{getOrSetSelectedInterestsFromCodes('BOOKS,MUSIC')}} 
+											getSelectedInterestsFromModel()[0].length: {{getSelectedInterestsFromModel()[0].length === 0}}-->
+											<!-- formStudentDetails.selectedInterests: {{formStudentDetails.selectedInterests}} -->
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" colspan="2">
+								<!-- commented, 
+								studentId: {{formStudentDetails.studentId}} -->
+								<button type="button" name="btnAdd" id="btnAdd" lu-form-btn-click="saveStudentDetails()" >{{formStudentDetails.studentId === undefined ? 'Add' : 'Update'}}</button><!-- commented `class="btn btn-primary"`, default to adds tries -->
+								<!-- commented `ng-click="saveStudentDetails()"`, directive function to call to add -->
+								<!-- Note: below of `Reset` form, default values to set in form, of `type="button"` adds working,  -->
+								<button type="button" name="btnReset" id="btnReset" ng-click="resetForm()">Reset</button>
+								<!-- commented `class="btn btn-default"`, default to adds tries -->
+							</td>
+						</tr>
+					</table>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	
+	<!-- TODO: of above, to add in bootstrap form field, to checking  
+				- field denote color
+				- error message to show to add -->
+	<!-- below bootstrap form to add, to add to try -->
+	<div learnui-loading="bLoadingFormStudentDetails" ng-if="false"><!-- Note: `ng-if="false"`, adds to show table form, as before first table form tried, thinks; `ng-if="true"`, to show bootstrap form -->
+		<form name="formLuStudentDetails" novalidate learnui-form>
+			<fieldset class="luFieldSet">
+				<legend>Student Details:</legend>
+				<div class="container-fluid">
+					<div class="row">
+						<!-- Left side form, fields -->
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+							<div class="form-group row">
+								<label for="txtFirstName" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">FirstName<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+									<input type="text" name="txtFirstName" id="txtFirstName" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtFirstName.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtFirstName.denoteFieldInvalid()}" 
+										ng-model="formStudentDetails.firstName" required="required" />
+									
+									<div class="invalid-feedback" lu-field-error-message 
+										form-field-ctrl="formLuStudentDetails.txtFirstName" ></div>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="txtLastName" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">LastName<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+									<input type="text" name="txtLastName" id="txtLastName" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtLastName.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtLastName.denoteFieldInvalid()}"
+										ng-model="formStudentDetails.lastName" required="required" />
+									
+									<div class="invalid-feedback" lu-field-error-message 
+										form-field-ctrl="formLuStudentDetails.txtLastName" ></div>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="txtFatherName" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">FatherName<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+									<input type="text" name="txtFatherName" id="txtFatherName" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtFatherName.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtFatherName.denoteFieldInvalid()}" 
+										ng-model="formStudentDetails.fatherName" required="required" />
+									
+									<div class="invalid-feedback" lu-field-error-message 
+										form-field-ctrl="formLuStudentDetails.txtFatherName" ></div>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="txtMotherName" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">MotherName<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+									<input type="text" name="txtMotherName" id="txtMotherName" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtMotherName.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtMotherName.denoteFieldInvalid()}" 
+										ng-model="formStudentDetails.motherName" required="required" />
+									
+									<div class="invalid-feedback" lu-field-error-message 
+										form-field-ctrl="formLuStudentDetails.txtMotherName" ></div>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="taAddress" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Address<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+									<textarea name="taAddress" id="taAddress" class="form-control" rows="" cols="30" ng-class="{'is-valid': formLuStudentDetails.taAddress.denoteFieldValid(), 'is-invalid': formLuStudentDetails.taAddress.denoteFieldInvalid()}"
+										ng-model="formStudentDetails.address" required="required" ></textarea>
+									
+									<div class="invalid-feedback" lu-field-error-message 
+										form-field-ctrl="formLuStudentDetails.taAddress" ></div>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="txtEmail" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Email<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+									<input type="email" name="txtEmail" id="txtEmail" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtEmail.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtEmail.denoteFieldInvalid()}"
+										ng-model="formStudentDetails.email" required="required" />
+									
+									<!-- custom messages, of field to pass, to add -->
+									<div class="invalid-feedback" lu-field-error-message 
+										form-field-ctrl="formLuStudentDetails.txtEmail" custom-messages="aryEmailFieldErrorMessages"></div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Right side form, fields -->
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+							<div class="form-group row">
+								<label for="txtPhoneNumber" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">PhoneNumber<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+									<input type="text" name="txtPhoneNumber" id="txtPhoneNumber" class="form-control" ng-class="{'is-valid': formLuStudentDetails.txtPhoneNumber.denoteFieldValid(), 'is-invalid': formLuStudentDetails.txtPhoneNumber.denoteFieldInvalid()}"
+										ng-model="formStudentDetails.phoneNumber" required="required" />
+									
+									<div class="invalid-feedback" lu-field-error-message 
+										form-field-ctrl="formLuStudentDetails.txtPhoneNumber"></div>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="comboNationality" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Nationality<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+									<select name="comboNationality" id="comboNationality" class="form-control" ng-class="{'is-valid': formLuStudentDetails.comboNationality.denoteFieldValid(), 'is-invalid': formLuStudentDetails.comboNationality.denoteFieldInvalid()}"
+										ng-model="formStudentDetails.selectedNationality" 
+										ng-options="nationality as nationality.text for nationality in aryNationalities track by nationality.id" 
+										required="required" >
+										<option value="">Select Nationality</option>
+									</select>
+									
+									<div class="invalid-feedback" lu-field-error-message 
+										form-field-ctrl="formLuStudentDetails.comboNationality"></div>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="dtDateOfBirth" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Date Of Birth<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+									<div ng-controller="DatepickerPopupController">
+										<div class="input-group" ng-init="setOptions(dateOfBirthOptions)">
+											<input type="text" name="dtDateOfBirth" id="dtDateOfBirth" class="form-control" ng-class="{'is-valid': formLuStudentDetails.dtDateOfBirth.denoteFieldValid(), 'is-invalid': formLuStudentDetails.dtDateOfBirth.denoteFieldInvalid()}"
+												placeholder="{{datePickerPopup.format}}" uib-datepicker-popup="{{datePickerPopup.format}}" 
+												ng-model="formStudentDetails.dateOfBirth" is-open="datePickerPopup.menuOpen" 
+												ng-required="true" close-text="Close" datepicker-options="datePickerPopup.options" 
+												ng-focus="openPopup()" readonly="readonly"/>
+											<div class="input-group-append">
+												<span class="input-group-text" ng-click="openPopup()"><i class="far fa-calendar-alt clr1b639e cursorHand"></i></span>
+											</div>
+											
+											<div class="invalid-feedback" lu-field-error-message 
+												form-field-ctrl="formLuStudentDetails.dtDateOfBirth"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Transport<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+									<div class="form-check form-check-inline" ng-repeat="joTransportMode in aryTransportModes">
+										<input type="radio" class="form-check-input" name="radioTransportMode" id="radioTransportMode_{{$index}}" 
+											ng-model="$parent.formStudentDetails.transportMode" ng-value="joTransportMode.code" />
+										<label for="radioTransportMode_{{$index}}" class="form-check-label">{{joTransportMode.text}}</label>
+									</div>
+									
+									<div class="invalid-feedback" ng-if="formStudentDetails.transportMode === undefined">Must present value. </div>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Interests<font class="mandatoryFieldStar"><sup>*<sup></font>: </label>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+									<div class="form-check" ng-repeat="joInterest in aryInterestedIns">
+										<input type="checkbox" class="form-check-input" name="chkInterest_{{$index}}" id="chkInterest_{{$index}}" ng-model="joInterest.selected" />
+										<label for="chkInterest_{{$index}}" class="form-check-label">{{joInterest.text}}</label>
+									</div>
+									
+									<div class="invalid-feedback" ng-if="getSelectedInterestsFromModel()[0].length === 0">Must present value. </div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+							<!-- commented; <button type="button" name="btnAdd" id="btnAdd" class="btn btn-primary" >Add</button> -->
+							<button type="button" name="btnAdd" id="btnAdd" class="btn btn-primary" lu-form-btn-click="saveStudentDetails()" >{{formStudentDetails.studentId === undefined ? 'Add' : 'Update'}}</button>
+							<button type="button" name="btnReset" id="btnReset" class="btn btn-default" ng-click="resetForm()">Reset</button>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	
+	<BR>
+	
+	<div>
+		<div>
+			<!-- Pagination to sets  -->
+			<div class="d-inline-block">
+				<ul uib-pagination class="pagination-sm" boundary-links="true" 
+					total-items="gridStudentDetailsPagination.countTotalResults" items-per-page="gridStudentDetailsPagination.limit" ng-model="gridStudentDetailsPagination.currentPage"
+					max-size="gridStudentDetailsPagination.maxSize" num-pages="gridStudentDetailsPagination.numberOfPages"
+					ng-change="reloadUserStudentDetails(); " >
+				</ul>
+			</div>
+			<div class="d-inline-block pl-2">
+				<!-- Pagination results to display -->
+				<learnui-pagination-results pagination-settings="gridStudentDetailsPagination"></learnui-pagination-results>
+			</div>
+			
+			
+			<div class="d-inline-block float-right" ><!-- commented `class="text-right pb-1"`, of pagination to adds  -->
+				<button type="button" class="btn btn-success btn-sm fa-sm" name="btnReloadStudentDetails" id="btnReloadStudentDetails" ng-click="reloadUserStudentDetails()" title="Reload Student Details">
+					<i class="fas fa-redo-alt"></i>
+				</button>
+				<!-- 
+				idxSelectedRow: {{idxSelectedRow}} -->
+				<!-- commented, checking tries 
+				bLoadingGridStudentDetails: {{bLoadingGridStudentDetails}} -->
+			</div>
+		</div>
+		
+		<!-- TODO: loading from directive to add -->
+		<div class="container-fluid" learnui-loading="bLoadingGridStudentDetails"><!-- commented css class `loading`, to add, from directive -->
+			<!-- TODO: loading to add, center to add, horizontal, vertical center to try, background not clickable to add -->
+			
+			<div class="row gridHeading">
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 text-right">Id</div>
+				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">Full Name</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">FatherName</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">MotherName</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Address</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Contact Details</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">DateOfBirth</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Transport</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Interests</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Created Details</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Modified Details</div>
+			</div>
+			
+			<div class="row" ng-repeat="joStudent in aryUserStudentDetails" ng-class="{'gridHighlightSelectedRow': (joStudent.studentId === nStudentIdSelectedRow)}"><!-- commented `ng-class="{true: selectedRowClass}"` -->
+			<!-- commnetd `ng-click="setSelectedRowFromProperty()" ng-class="selectedRowClass"`, to highlight selected row in `ngRepeat`'s property to adds  -->
+			<!-- commented `ng-click="setSelectedRow($index)" ng-class="{'gridHighlightSelectedRow': ($index === idxSelectedRow)}"`, working, to add highlight select row from studentId -->
+			<!-- commented `ng-click="setSelectedRowFromStudentId(joStudent)"`, to higlight row, of edit, delete clck to add  -->
+				<!-- commented, checking tries 
+				selectedRowClass: {{selectedRowClass}} -->
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 text-right">
+					<!-- grid row edit, delete icon, of column padding left, right space adds, tries -->
+					<!-- Note: To highlight row Edit, Delete click, to add to try; 
+						- as free to user, of edit row selected, of after varies row edit click to set values in form, highlight to add to try 
+						- Below adds, tries, as row click in form values set, problem occurs, of delete click also values set in form thinks; also respective to try of row, edit button select, ajax call to set value in form, one to call, to try 
+							so below tries, of edit, delete select to highlight row -->
+					<div class="gridRowIcons"><!-- commented `ng-click="setSelectedRowFromStudentId(joStudent.studentId, joStudent)"`, in ngclick to add, after set highlight row, to set form form values, delete; as edit select, delete cancel to highlight before edit row, to add -->
+						<!-- Note: to highlight row of edit, delete select, after set selected row `student_id` (i.e. `setSelectedRowFromStudentId` function to calls), to call edit, delete function, so below adds tries, 
+								as edit selected, varies row delete `Cancel` from confirm box, to highlight edit selected row, to below adds tried; -->
+						<div class="edit" title="Edit" ng-click="setSelectedRowFromStudentId(joStudent.studentId, joStudent); getUserStudentDetails(joStudent);"><i class="fas fa-pencil-alt"></i></div>
+						<div class="delete" title="Delete" ng-click="setSelectedRowFromStudentId(joStudent.studentId, joStudent); deleteRow(joStudent);"><i class="far fa-trash-alt deleteIcon"></i></div>
+						<div class="history" title="History" ng-click="setSelectedRowFromStudentId(joStudent.studentId, joStudent); openStudentRecordHistoryDetails(joStudent);"><i class="fas fa-history"></i></div>
+					</div>
+					
+					<span>
+						{{joStudent.studentId}}
+					</span>
+				</div>
+				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">{{joStudent.firstName}} {{joStudent.lastName}}</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">{{joStudent.fatherName}}</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">{{joStudent.motherName}}</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 gridTruncateText" title="{{joStudent.address}}">
+					<span>
+						{{joStudent.address}}<BR>
+						<!-- below adds, to checking to try of more time calls; thinks, more time calls; of `ng-init` one time calls thinks 
+						{{getSelectedNationalityFromCode(joStudent.nationality)}}  -->
+						
+						<!-- below `ng-init` adds, of one time loads, to set in variable, to tries -->
+						<span ng-init="joNationality = getSelectedNationalityFromCode(joStudent.nationality)">
+							{{joNationality.text}}
+						</span>
+					</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 gridTruncateText font12">
+					<span>
+						<strong>Email:</strong><BR>
+						<span title="{{joStudent.emailId}}">{{joStudent.emailId}}</span>
+					</span><BR>
+					<span>
+						<strong>Phone:</strong><BR>
+						<span title="{{joStudent.phoneNumber}}">{{joStudent.phoneNumber}}</span>
+					</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 font12">{{joStudent.dateOfBirthMillis | date:'dd-MMM-yyyy HH:mm:ss'}}</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 overflowWrap">
+					<!-- below `ng-init` adds, of one time loads, to set in variable, to tries -->
+					<span ng-init="joTransport = getSelectedTransportFromCode(joStudent.transport)">
+						{{joTransport.text}}
+					</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 overflowWrap font12">
+					<!-- below `ng-init` adds, of one time loads, to set in variable, to tries -->
+					<span ng-init="aryAddedInterests = getOrSetSelectedInterestsFromCodes(joStudent.interests)[0]" >
+						<span ng-repeat="joInterest in aryAddedInterests">{{joInterest.text}}; </span>
+					</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 font12">
+					<span>
+						<strong>By</strong>: {{joStudent.createdByUserName}}<BR>
+						<strong>On</strong>: {{joStudent.createdOnMillis | date:'dd-MMM-yyyy HH:mm:ss'}}
+					</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 font12">
+					<span ng-if="joStudent.modifiedByUserName !== undefined">
+						<strong>By</strong>: {{joStudent.modifiedByUserName}}<BR>
+						<strong>On</strong>: {{joStudent.modifiedOnMillis | date:'dd-MMM-yyyy HH:mm:ss'}}
+					</span>
+				</div>
+			</div>
+		</div>
+		
+		<!-- TODO: Pagination manual to add, 
+			- with page numbers, to add 
+			- `Openmentor` jobs search pagination as gmail pagination, to add -->
+		<!-- pagination to add  -->
+		<div>
+			<div class="d-inline-block">
+				<!-- Pagination to sets  -->
+				<!-- Note: of total results `20`, limit `5` ROWS per page, of `max-size="3"` adds in pagination numbers of default following numbers shows, thinks; 
+				  of `max-size="2"` current page `2`, following `3` page number `3` not showing, thinks -->
+				<!-- Note: of `numberOfPages` key declares, in attribute given, library sets respective value in the key, thinks -->
+				<ul uib-pagination class="pagination-sm" boundary-links="true" 
+					total-items="gridStudentDetailsPagination.countTotalResults" items-per-page="gridStudentDetailsPagination.limit" ng-model="gridStudentDetailsPagination.currentPage"
+					max-size="gridStudentDetailsPagination.maxSize" num-pages="gridStudentDetailsPagination.numberOfPages"
+					ng-change="reloadUserStudentDetails(); " >
+				</ul>
+				<!-- commented `num-pages="numPages"`, to cehcking  -->
+				<!-- commented `max-size="gridStudentDetailsPagination.limit"`, `max-size` thinks number of page numbers, to add -->
+				<!-- commented `num-pages="10"`, error occurs -->
+				<!-- commented `max-size="3"`, number of page numbers -->
+				<!-- commented `ng-change="reloadUserStudentDetails(); callMultipleFunctions();"`, adds multiple function to call, to checking to try -->
+				<!-- commented `ng-change="reloadUserStudentDetails(); gridStudentDetailsPagination.setPaginationResultsPerPage();"`, of pagination results, total number of results in page, to pass, in grid ajax call response to call -->
+				<!-- commented `max-size="gridStudentDetailsPagination.maxSize"`, to add checking to checkcing tries  -->
+			</div>
+			
+			<div class="d-inline-block pl-2">
+				<!-- Pagination results to display -->
+				<learnui-pagination-results pagination-settings="gridStudentDetailsPagination"></learnui-pagination-results>
+			</div>
+		</div>
+		<!-- commented, error occurs 
+		gridStudentDetailsPagination: {{gridStudentDetailsPagination}}<BR>-->
+		<!-- commented, to cheking tries 
+		getNumberOfPages: {{gridStudentDetailsPagination.getNumberOfPages()}} -->
+	</div>
+</div>

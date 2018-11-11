@@ -8,7 +8,7 @@
 	<!-- Context Parameters -->
 	<!-- ========================================================== -->
 	
-	<!-- Version, from `RLIM` adds; the below number, DateTime, is from git copy, paste added on -->
+	<!-- Version, from `RLIM` adds (i.e. `ResileoLabs-Incident-Management`); the below number, DateTime, is from git copy, paste added on -->
 	
 	<!-- Version number -->
 	<context-param>
@@ -67,6 +67,35 @@
 	<servlet-mapping>
 		<servlet-name>Controller</servlet-name>
 		<url-pattern>/isSessionExists</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>StudentDetailsController</servlet-name>
+		<servlet-class>com.openlearning.learn.controller.StudentDetailsController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentDetailsController</servlet-name>
+		<url-pattern>/addStudentDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StudentDetailsController</servlet-name>
+		<url-pattern>/getUserStudentsDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StudentDetailsController</servlet-name>
+		<url-pattern>/getUserStudentDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StudentDetailsController</servlet-name>
+		<url-pattern>/updateStudentDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StudentDetailsController</servlet-name>
+		<url-pattern>/deleteRow</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StudentDetailsController</servlet-name>
+		<url-pattern>/getStudentRecordHistoryDetails</url-pattern>
 	</servlet-mapping>
 	
 	

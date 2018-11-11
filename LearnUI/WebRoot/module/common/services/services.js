@@ -79,6 +79,51 @@ learnUIApp.service('userServices', ['$http', '$q', '$state', 'messageFactory', f
 			this.transitionToHomeIfSessionExists();
 		}
 	};
+	
+}]);
+
+/* UtilsFactory functions, of injector nill, below to adds, tries 
+ * as from link in `$provide.decorator('$state' ...)` to add, for `Ctrl + link` to open in new tab URL path to append, to try, as inject error throws thinks, 
+ *   so inject nill below to adds, to tries 
+ */
+learnUIApp.service('utilsFactoryInjectNillServices', [function() {
+	
+	/* to get absolute URL path after root name, to returns, 
+	 * (i.e. of URL `http://localhost:8080/LearnUI/view/html/#!/myHome`, to return `/view/html/`) 
+	 * of `Ctrl + Link`, to open the link in new tab, URL path to append, to get URL path, below adds tries 
+	 */
+	this.getAbsoluteURLPathAfterRoot = function() {
+		var joLocation = window.location, 
+			// rootURL path name, `contextRoot` thinks, 
+			rootURLPathName = '/LearnUI', nRootURLPathLength = rootURLPathName.length, 
+			// from URL, to get path 
+			absoluteURLPathAfterRoot = joLocation.pathname.substring(rootURLPathName.length, joLocation.pathname.length);
+		
+		//console.info('getAbsoluteURLPathAfterRoot <> joLocation: '+JSON.stringify(joLocation));
+		//console.info('rootURLPathName: '+rootURLPathName+' <> nRootURLPathLength: '+nRootURLPathLength+' <> absoluteURLPathAfterRoot: '+absoluteURLPathAfterRoot);
+		
+		return absoluteURLPathAfterRoot;
+	};
+	
+	
+	/* to open link in new tab of `Ctrl + link`, URL after root path to appends, below adds, tries
+	 * params: `state` of `$state` to pass, as inject nill to adds 
+	 */
+	this.getTransitionToURLState = function(state, stateName, params) {
+		// returns transitionTo URL 
+		var hrefTransitionToState = state.href(stateName, params),
+			// to get URL path after root name, 
+			absoluteURLPathAfterRoot = this.getAbsoluteURLPathAfterRoot(), 
+			URI;
+		
+		// from URL path, to append transitionTo link, as new tab to open link, to add, to try 
+		URI = '.' + absoluteURLPathAfterRoot + hrefTransitionToState;
+		
+		//console.info('getTransitionToURLState <> hrefTransitionToState: '+hrefTransitionToState);
+		//console.info('getTransitionToURLState <> URI: '+URI);
+		
+		return URI;
+	};
 }]);
 
 /* in browser in tab, `sessionStorage` to set values, tab close value clears, thinks  

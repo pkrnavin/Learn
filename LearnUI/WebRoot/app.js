@@ -1,5 +1,5 @@
 // declares app; angularjs library module to include in the below array 
-var learnUIApp = angular.module('learnUIApp', ['ui.router', 'ui.bootstrap']);
+var learnUIApp = angular.module('learnUIApp', ['ui.router', 'ui.bootstrap', 'ngMessages']);
 
 learnUIApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 
 	function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
@@ -32,6 +32,12 @@ learnUIApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
 				templateUrl: 'module/myHome/myHome.html',
 				controller: 'myHomeController',
 				title: 'My Home'
+			})
+			.state('/studentDetails', {
+				url: '/studentDetails',
+				templateUrl: 'module/studentDetails/studentDetails.html',
+				controller: 'studentDetailsController',
+				title: 'Student Details'
 			})
 			// below adds, to cheking, `userLoggedInDetails` to load one time, of transition to page to checking 
 			.state('/userTest', {
@@ -89,10 +95,10 @@ learnUIApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
 
 
 // below after `config`, `run` phase runs thinks; in `config` providers adds; in `run` able to adds `factory`, `service`, thinks 
-learnUIApp.run(['$rootScope', '$state', '$stateParams', '$transitions', 'userServices', 'messageFactory', function ($rootScope, $state, $stateParams, $transitions, userServices, messageFactory) {
+learnUIApp.run(['$rootScope', '$state', '$stateParams', '$transitions', 'userServices', 'utilsFactoryInjectNillServices', 'messageFactory', function ($rootScope, $state, $stateParams, $transitions, userServices, utilsFactoryInjectNillServices, messageFactory) {
 	//console.info('------- learnUIApp <> run phase -------');
 	$rootScope.$state = $state;
-
+	
 	
 	// of transition one page to the page, of transition success, below calls 
 	$transitions.onSuccess({}, function(transition) {
@@ -126,6 +132,34 @@ learnUIApp.run(['$rootScope', '$state', '$stateParams', '$transitions', 'userSer
 		// below given state URLs, to verify session exists, to transition to home screen (i.e. of URL in `/login`, user's session available to transitionTo home screen), 
 		userServices.verifyStateSessionExistsTransitionToHome(joTransitionToDetails.name);
 	});
+	
+	
+	/* below to add, to return URL path with transitionTo `link`, as `Ctrl + link` new tab to open, from the path to add transitionTo link, to try 
+	 * Note: hover link, the transitionTo URL to display, below tries 
+	 */
+	$rootScope.getAbsoluteURLStateAfterRoot = function(stateURL, params) {
+		////console.info('------- $rootScope.getAbsoluteURLStateAfterRoot ------');
+		// to get transition to URL state, after root URL 
+		var transitionToURLState = utilsFactoryInjectNillServices.getTransitionToURLState($state, stateURL, params);
+		
+		////console.info('$rootScope.getAbsoluteURLStateAfterRoot <> transitionToURLState: '+transitionToURLState);
+		
+		return transitionToURLState;
+	};
+	// TODO: from link, to add, of absolute URL to append to add 
+	
+	// below link clicks, to open in new tab of `Ctrl + link` URL path to append, to try, from link adds, tries 
+	$rootScope.transitionToLink = function(event, stateName, params) {
+		//console.info('$rootScope.transitionTo <> 11111111111 <> stateName: '+stateName+' <> params: '+JSON.stringify(params));
+		
+		if ( event.ctrlKey ) {	// `Ctrl` key, to open link in new tab, 
+			//console.info('goToNewTab <> 2222222 <> event.ctrlKey: '+event.ctrlKey);
+			$state.goToNewTab(stateName, params);
+		} else {	// same to open link, 
+			//console.info('go link <> 333333 <> event.ctrlKey: '+event.ctrlKey);
+			$state.go(stateName, params);
+		}
+	};
 }]);
 
 /* of ajax call error session not exits, to transition to login screen, below adds tries, 
@@ -189,3 +223,38 @@ learnUIApp.factory('myInterceptor', function($q, $rootScope, $state) {
 	};
 	return interceptor;
 });
+
+/* of link `Ctrl + link`, to open in new tab, of from URL path to open transitionTo link 
+ *   (i.e. of URL `<URL>/LearnUI/view/html/#!/myHome`, of new tab to transitionTo `#!/studentDetails`, URL path `./view/html/` to append to try), 
+ * from below link adds, tries 
+ * `https://stackoverflow.com/questions/23516289/angularjs-state-open-link-in-new-tab`
+ * `https://blog.entelect.co.za/view/10042/extending-the-angular-1-x-ui-router-s-state-go`
+ * Note: 
+ * - hover link, below URL not displays of transitionTo URL,  
+ * - `utilsFactoryInjectNillServices` inject nill function adds, as error occurs of inject, so inject nill function to adds tries 
+ */
+learnUIApp.config(['$provide', function ($provide) {
+	$provide.decorator('$state', ['$delegate', '$window', 'utilsFactoryInjectNillServices',
+		function ($delegate, $window, utilsFactoryInjectNillServices) {
+			
+			var extended = {
+				goToNewTab: function(stateName, params){
+					// to get transition to URL state, after root URL 
+					var transitionToURLState = utilsFactoryInjectNillServices.getTransitionToURLState($delegate, stateName, params);
+					
+					/* commented, below not working, of URL path not appends, 
+ 					$window.open(
+ 						//$delegate.href(stateName, params, {absolute: true}), '_blank');	// opens link `http://localhost:8080/#!/userTest`, URL path not adds thinks 
+ 						$delegate.href(stateName, params, {absolute: false}), '_blank');	// opens link http://localhost:8080/LearnUI/#!/userTest
+ 					*/
+					
+					// to open link, in new tab 
+					//$window.open(URI, '_blank');
+					$window.open(transitionToURLState, '_blank');
+ 				}
+			};
+			
+			angular.extend($delegate, extended);
+			return $delegate;
+	}]);
+}]);

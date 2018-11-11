@@ -15,4 +15,17 @@ learnUIApp.controller('myHomeController', ['$scope', '$rootScope', '$state', 'se
 	console.info('myHomeController <> sessionServices.get <> ABC: '+sessionServices.get('ABC'));
 	//sessionServices.destroy('ABC');
 	//console.info('myHomeController <> after destroy <> sessionServices.get <> ABC: '+sessionServices.get('ABC'));*/
+	
+	// in grid, screens link to add; below grid of 3 columns to add, to checking of columns 
+	$scope.aryGridDataScreens = [
+		{ column_1: { link: '/studentDetails', text: 'Student Details' }, column_2: { link: '/userTest', text: 'User Test' }, column_3: { link: '/userTest', text: 'User Test' } },
+		{ column_1: { link: '/userTest', text: 'User Test' }, column_2: { link: '/userTest', text: 'User Test' }, column_3: { link: '/userTest', text: 'User Test' } },
+		{ column_1: { link: '/test', text: 'Test' }, column_2: { link: '/test', text: 'Test' }, column_3: { link: '/test', text: 'Test' } }
+	];
+	
+	/* commented above to add, as before respective to add 
+	// below in grid, of available screen to adds, 
+	$scope.aryScreens = [
+		{ column_1: { link: '/studentDetails', text: 'Student Details' } }
+	];*/
 }]);

@@ -102,6 +102,25 @@ public class DataBaseMaster {
 	}
 	
 	/**
+	 * to get connection, auto commit false 
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public static Connection getConnectionAutoCommitFalse() throws Exception {
+		Connection con = null;
+		
+		try {
+			con = getConnection();
+			con.setAutoCommit(false);
+		} catch(Exception e) {
+			throw e;
+		}
+		
+		return con;
+	}
+	
+	/**
 	 * get database now time, 
 	 * Note: from java gets, local time of `now()` returns, thinks 
 	 *   (i.e. Timestamp local: GMT+5:30, DATABASE: UTC, from java gets in `now()` local Timestamp returns OR adds, thinks, 
@@ -144,7 +163,6 @@ public class DataBaseMaster {
 		
 		return tsNow;
 	}
-	
 	
 	
 	/*********** from `RLIM`, below adds ***********/
@@ -270,6 +288,58 @@ public class DataBaseMaster {
 			return false;
 		}
 		return true;
+	}
+	
+	/**
+	 * Returns last insert key 
+	 * 
+	 * @param stmt
+	 * @return
+	 * @throws Exception
+	 */
+	public static long returnKey(Statement stmt, int nColumnIndex) throws Exception {
+		long lGeneratedKey = -1l;
+		ResultSet rstPrimaryKey = null;
+		
+		try{
+			rstPrimaryKey = stmt.getGeneratedKeys();
+			while( rstPrimaryKey.next() ){
+				lGeneratedKey = rstPrimaryKey.getLong(nColumnIndex);
+			}
+		} catch(Exception e){
+			throw e;
+		} finally {
+			close(rstPrimaryKey);
+			rstPrimaryKey = null;
+		}
+		
+		return lGeneratedKey;
+	}
+	
+	/**
+	 * Returns last inserted key 
+	 * 
+	 * @param pstmt
+	 * @return
+	 * @throws Exception
+	 */
+	public static long returnKey(PreparedStatement pstmt, int nColumnIndex) throws Exception {
+		long lGeneratedKey = -1l;
+		ResultSet rstPrimaryKey = null;
+		
+		try{
+			rstPrimaryKey = pstmt.getGeneratedKeys();
+			while( rstPrimaryKey.next() ){
+				lGeneratedKey = rstPrimaryKey.getLong(nColumnIndex);
+			}
+		} catch(Exception e){
+			throw e;
+		} finally {
+			close(rstPrimaryKey);
+			rstPrimaryKey = null;
+		}
+		
+		return lGeneratedKey;
 	}
 	
 	/*********** from `RLIM`, of above adds ***********/

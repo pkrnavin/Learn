@@ -1,3 +1,52 @@
-<div>
-	loginUser: {{loginUser}}
+<!-- below to horizontal, vertical align center -->
+<div class="verticalCenter">
+	<div class="tabelCell">
+		<!-- commented, cehcking tries 
+		loginUser: {{loginUser}} -->
+		
+		<!-- Grid to add; Note: grid must inside css class `container` OR `container-fluid` of bootstrap 4, thinks -->
+		<div class="container">
+			<!-- Grid heading, to add border of column -->
+			<div class="row justify-content-center gridHeading">
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">Screen(s)</div>
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">Column 2</div>
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">Column 3</div>
+			</div>
+			
+			<!-- TODO: from javascript to, set to add -->
+			<div class="row justify-content-center" ng-repeat="datumScreen in aryGridDataScreens">
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+					<!-- below in `href` to add tries, of URL path to append, as `Ctrl + link` new tab to open transitionTo link, tries -->
+					<a href="{{getAbsoluteURLStateAfterRoot(datumScreen.column_1.link)}}">{{datumScreen.column_1.text}}</a><!-- commented `href="./view/html"`, of new tab from URL path to add tries, state not appends, thinks -->
+					<!-- commented `href="view/html/#!{{datumScreen.column_1.link}}"`, of `Ctrl + Link`, new tab link opens, thinks, from function URL to return to try -->
+					<!-- commented `ui-sref="{{datumScreen.column_1.link}}"`, `Ctrl + link` to open in new tab to add -->
+					<!-- commented, checking tries 
+					getAbsoluteURLStateAfterRoot: {{getAbsoluteURLStateAfterRoot(datumScreen.column_1.link)}} -->
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+					<!-- of `Ctrl + link`, of new tab link to open, below from link adds, tries,  -->
+					<a href="" ng-click="transitionToLink($event, datumScreen.column_2.link)" >{{datumScreen.column_2.text}}</a>
+					<!-- commented, from link adds, to try 
+					<button type="button" ng-click="transitionToLink($event, datumScreen.column_2.link)">{{datumScreen.column_2.text}}</button> -->
+					<!-- commented `ui-sref="{{datumScreen.column_2.link}}"`, to open  -->
+					<!-- commented `href=""`, to open new tab to try  -->
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+					<a href="{{getAbsoluteURLStateAfterRoot(datumScreen.column_3.link)}}">{{datumScreen.column_3.text}}</a>
+					<!-- commented `ui-sref="{{datumScreen.column_3.link}}"`, `Ctrl + link` to open in new tab to try -->
+				</div>
+			</div>
+			
+			<!-- commented above to add, as before respective to add 
+			<!-- below grid available screen to add -- >
+			<div class="row justify-content-center gridHeading">
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">Screen(s)</div>
+			</div>
+			<div class="row justify-content-center" ng-repeat="datumScreen in aryScreens">
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+					<a ui-sref="{{datumScreen.column_1.link}}" >{{datumScreen.column_1.text}}</a>
+				</div>
+			</div> -->
+		</div>
+	</div>
 </div>

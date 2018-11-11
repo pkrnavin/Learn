@@ -1,4 +1,45 @@
-/* CSS of Learn UI */
+@charset "utf-8";
+/* CSS Document of Learn UI */
+
+/* `Openmentor` fonts `Lato` to adds, from firebug adds, tries */
+/* Google fonts Start */
+@font-face {
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Lato Regular"), local("Lato-Regular"), url("http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff") format("woff");
+}
+@font-face {
+	font-family: "Muli";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Muli"), url("http://themes.googleusercontent.com/static/fonts/muli/v4/kU4XYdV4jtS72BIidPtqyw.woff") format("woff");
+}
+@font-face {
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Open Sans"), local("OpenSans"), url("http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff") format("woff");
+}
+@font-face {
+	font-family: "Varela";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Varela"), url("http://themes.googleusercontent.com/static/fonts/varela/v4/_yYHMt_E4smqfVTA22m7TQ.woff") format("woff");
+}
+@font-face {
+	font-family: "Oxygen";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Oxygen"), local("Oxygen-Regular"), url("http://themes.googleusercontent.com/static/fonts/oxygen/v2/RzoNiRR1p2Mqyyz2RwqSMw.woff") format("woff");
+}
+/* Google Fonts End */
+
+body {
+	background-color: #85c1e9;
+	font-family: Lato, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
 
 /* title image, text side by side, of text to vertically middle tried */
 .titleContent {
@@ -22,6 +63,7 @@
 	font-weight: 500;
 	display: inline-block;
 	vertical-align: middle;
+	margin: 0;	/* to center, logo to set, adds tries */
 }
 
 .logoImageText.center {
@@ -96,7 +138,7 @@ html, body, .container-fluid, [ui-view] {
 .luWelcomUser {
 	display: inline-block;
 	font-size: 14px;
-	font-weight: 600;
+	/*font-weight: 600;	/* commented, */
 	line-height: 18px;
 } 
 /* css to add, for user icon */
@@ -177,3 +219,186 @@ html, body, .container-fluid, [ui-view] {
 	/*box-sizing: content-box;*/
 }
 /* thinks, message box css, `right, bottom` property add in class, thinks */
+
+
+/* grid column heading, to set; tries border top, bottom a color; `left`, `right` a color; 
+	Note: border `left`, `right` adds, of columns single border line to adds at sides, to tries */
+.gridHeading > div {
+	/* to sets border `top`, `bottom` */
+	border: 1px solid #ccc;
+	border-left: none;
+	/*border-right: none;*/
+	border-right: 1px solid #333;
+	background-color: #fffeee;
+}
+/* to set grid first column */
+.gridHeading > div:first-child {
+	border-left: 1px solid #333;
+}
+
+/* fieldset to add to try */
+.luFieldSet {
+	padding: 10px;
+	border: 1px solid #f4f4f4;
+	/* `position: relative` from link adds, of fidelset html default multiple border to adds, tries */
+	position: relative;
+}
+/* html fieldset default to add, multiple border to adds, tries 
+	from below link, tries  
+	`https://stackoverflow.com/questions/14735569/css-double-border-2-colors-without-using-outline`
+*/
+.luFieldSet:before {
+	border: 1px solid #898989;
+	display: block;
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	/* `border-top: none` adds tries, as below `legend` adds, below adds tries */
+	border-top: none;
+}
+/* fieldset border top to set to add, to try */
+.luFieldSet > legend {
+	width: auto;
+}
+
+/* to show `hand` cursor */
+.cursorHand {
+	cursor: pointer;
+}
+
+/* to set, in mandatory field, */
+.mandatoryFieldStar {
+	/*font-size: 4px;*/
+	font-size: 16px;
+	color: red;
+}
+
+/* to truncate, grid column text */
+.gridTruncateText {
+	width: inherit;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* grid to break word, of overflow */
+.overflowWrap {
+	overflow-wrap: break-word;
+}
+.wordBreak {
+	word-break: break-all;
+}
+
+.font12 {
+	font-size: 12px;
+}
+
+/* below tries, of in `form` tag css available of `formLabels` adds, in `label` given style to set, to adds */
+.formLabels label {
+	font-size: 16px;
+}
+
+/* to highlight grid selected row */
+.gridHighlightSelectedRow {
+	/* `Openmentor` slideshow, slider control buttons color, below color adds, */
+	background-color: #3472AC;
+}
+
+/* to set in grid, row edit, delete icon */
+.gridRowIcons {
+	/* as column padding left, right `15px` available, in padding space icon to add, below tries  */
+	width: 15px;
+	margin-left: -15px;
+	float: left;
+	cursor: pointer;
+}
+
+/* `Appedo` below colors in card layout adds */
+.clrff8100 {
+	/* orange */
+	color: #ff8100;
+}
+.clrd70000 {
+	/* red */
+	color: #d70000;
+}
+
+/* `Appedo` in card layout colors adds, of grid row `edit`, `delete` icon, to set; */
+.gridRowIcons > .edit {
+	/* orange */
+	color: #ff8100;
+}
+.gridRowIcons > .delete {
+	/* red */
+	color: #d70000;
+}
+
+.gridRowIcons > .history {
+	/* `Appedo` logo color */
+	color: #36b397;
+}
+
+
+/* loading inside respective div to show (i.e. to show loading of grid, form div), to add */
+/* parent div to sets */
+.loading {
+	position: relative;
+}
+/* Note: of `position: absolute`, `left`, `right` `0` parent div's width sets, of `top`, `bottom` `0` parent div's height sets, thinks, so `top: 50%` vertical centers, thinks */
+/* div background of not clickable, to add */
+.loading .loadingBackgroundMask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgb(204, 204, 204);
+	opacity: 0.4;
+	z-index: 100;
+	display: block;
+}
+/* loading icon to set */
+.loading .loadingIcon {
+	position: absolute;
+	/*top: 0;*/
+	/* to vertical centers */
+	top: 50%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	z-index: 2000;
+	display: block;
+}
+
+/* to hide element */
+.hideElement {
+	display: none;
+}
+
+/* Student details history grid modal, below width, to add */
+.luModalXl .modal-dialog {
+	max-width: 1000px;
+}
+
+/* of table form to adds, of error message to show adds in field, of valid field same position to set adds, below tries */
+table td .form-control {
+	margin-bottom: 5px;
+}
+/* of radio button, checkbox to add, to show message */
+.form-check ~ .invalid-feedback {
+	display: block;
+}
+
+/* field modify from invalid to valid same position to set, below adds tries, 
+  (i.e. of `messages` displays margin to add, tries; pf field invalid message to show of field modify OR form submitted, adds tries) */
+.invalid-feedback {
+	margin-top: 0;
+}
+.invalid-feedback .luMessages {
+	margin-top: 0.25rem;
+}

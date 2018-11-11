@@ -2942,6 +2942,10 @@ input[type="button"].btn-block {
 .fade:not(.show) {
   opacity: 0;
 }
+/* uibBootstrap modal, window to show, below adds, tried */
+.fade.in {
+	opacity: 1;
+}
 
 .collapse:not(.show) {
   display: none;
@@ -4675,7 +4679,7 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
-.page-link {
+.page-link, .pagination > li > a {
   position: relative;
   display: block;
   padding: 0.5rem 0.75rem;
@@ -4686,7 +4690,7 @@ input[type="button"].btn-block {
   border: 1px solid #dee2e6;
 }
 
-.page-link:hover {
+.page-link:hover, .pagination > li > a:hover {
   z-index: 2;
   color: #0056b3;
   text-decoration: none;
@@ -4694,35 +4698,35 @@ input[type="button"].btn-block {
   border-color: #dee2e6;
 }
 
-.page-link:focus {
+.page-link:focus, .pagination > li > a:focus {
   z-index: 2;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-.page-link:not(:disabled):not(.disabled) {
+.page-link:not(:disabled):not(.disabled), .pagination > li > a:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
 
-.page-item:first-child .page-link {
+.page-item:first-child .page-link, .pagination > li:first-child > a {
   margin-left: 0;
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 }
 
-.page-item:last-child .page-link {
+.page-item:last-child .page-link, .pagination > li:last-child > a {
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
 }
-
-.page-item.active .page-link {
+/* hover active button, below color, to show adds */
+.page-item.active .page-link, .pagination > .active > a, .pagination > .active > a:hover /*, .pagination > .active > a:active */{
   z-index: 1;
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
 }
 
-.page-item.disabled .page-link {
+.page-item.disabled .page-link, .pagination > .disabled > a {
   color: #6c757d;
   pointer-events: none;
   cursor: auto;
@@ -4730,34 +4734,34 @@ input[type="button"].btn-block {
   border-color: #dee2e6;
 }
 
-.pagination-lg .page-link {
+.pagination-lg .page-link, .pagination-lg > li > a {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
   line-height: 1.5;
 }
 
-.pagination-lg .page-item:first-child .page-link {
+.pagination-lg .page-item:first-child .page-link, .pagination-lg > li:first-child > a {
   border-top-left-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
 }
 
-.pagination-lg .page-item:last-child .page-link {
+.pagination-lg .page-item:last-child .page-link, .pagination-lg > li:last-child > a  {
   border-top-right-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
 }
 
-.pagination-sm .page-link {
+.pagination-sm .page-link, .pagination-sm > li > a {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
 }
 
-.pagination-sm .page-item:first-child .page-link {
+.pagination-sm .page-item:first-child .page-link, .pagination-sm > li:first-child > a {
   border-top-left-radius: 0.2rem;
   border-bottom-left-radius: 0.2rem;
 }
 
-.pagination-sm .page-item:last-child .page-link {
+.pagination-sm .page-item:last-child .page-link, .pagination-sm > li:last-child > a {
   border-top-right-radius: 0.2rem;
   border-bottom-right-radius: 0.2rem;
 }
@@ -5380,7 +5384,8 @@ button.close {
   }
 }
 
-.modal.show .modal-dialog {
+/* uibBootstrap modal, student history grid, modal title to show, below selector adds, tried */
+.modal.show .modal-dialog, .modal.fade.in .modal-dialog {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
@@ -5427,8 +5432,8 @@ button.close {
 .modal-backdrop.fade {
   opacity: 0;
 }
-
-.modal-backdrop.show {
+/* uibBootstrap modal, background to apply below selector adds tries; */
+.modal-backdrop.show, .modal-backdrop.fade.in {
   opacity: 0.5;
 }
 
