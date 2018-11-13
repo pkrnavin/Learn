@@ -107,3 +107,14 @@ http://www.dbrnd.com/2015/05/postgresql-cross-database-queries-using/
 1. thinks below step to follow, a different database to connect in SELECT qry, after postgres login 
 postgres=# \c im_master
 im_master=# CREATE EXTENSION dblink;
+
+-- 2018-11-13
+
+-- postgres trigger verification to add 
+-- below verification to add, of trigger available, mapping table name, to get to add, from link `https://stackoverflow.com/questions/6898453/how-to-display-the-function-procedure-triggers-source-code-in-postgresql`
+SELECT pt.tgrelid, pt.tgname AS trigger_name, 
+  pc.oid, pc.relname AS mapping_table_name 
+FROM pg_trigger pt 
+INNER JOIN pg_class pc ON pc.oid = pt.tgrelid 
+  AND pt.tgname = 'lu_student_details_trigger' /* (i.e. `<TRIGGER_NAME>`)*/;
+  

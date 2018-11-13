@@ -109,3 +109,11 @@ https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
 			Javascript Value vs. Reference 
 https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0
 
+
+-- 2018-11-13
+			
+				SQL Query 
+				
+			postgres trigger verification to get 
+https://stackoverflow.com/questions/6898453/how-to-display-the-function-procedure-triggers-source-code-in-postgresql
+
