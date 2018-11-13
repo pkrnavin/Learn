@@ -1,0 +1,6 @@
+
+
+-- 2018-11-13
+
+## Resource Fix; LearnUI config properties of file `learnui_config.properties` in the folder, to add in computer folder, of below path 
+`C:/LearnUI/resources` 
