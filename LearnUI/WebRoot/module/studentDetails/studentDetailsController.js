@@ -384,7 +384,8 @@ learnUIApp.controller('studentDetailsController', ['$scope', '$rootScope', '$tim
 	 *   - of edit select values in form, varies row delete clcik below, 
 	 *   	- `Ok`, the row to delete form values to clear, grid selection to clear thinks 
 	 *   	- `Cancel`, edit selected row to highlight; of page change to checking 
-	 *   - of edit in form values available, the selected row highlight not to clears, not available in form of edit values, to clear highlight 
+	 *   - of edit in form values available, the selected row highlight not to clears; not available in form of edit values, to clear highlight 
+	 *   - of edit in form values available, varies row `History` selects, to clear values in form 
 	 */
 	// to highlight selected row from student id; Note: from UI button click edit, delete the row to highlight, below function to call, before edit, delete function to call, in UI adds tries, thinks, of the row to highlight, adds, in html comment adds available, thinks 
 	$scope.setSelectedRowFromStudentId = function(nStudentId, joStudentDetails) {
@@ -521,8 +522,24 @@ learnUIApp.controller('studentDetailsController', ['$scope', '$rootScope', '$tim
 			getOrSetSelectedInterestsFromCodes: getOrSetSelectedInterestsFromCodes
 		};
 		
+		//console.info('$scope.openStudentRecordHistoryDetails <> 1111 <> $scope.formStudentDetails.studentId: '+$scope.formStudentDetails.studentId+' <> $scope.nStudentIdSelectedRow: '+$scope.nStudentIdSelectedRow);
+		/* of edit selected row, values in form available, of varies row history selects, to clear values in form, 
+		 * Note: to reset edit selected row, after model window closes, to set row selection of edit row as from delete cancel row, of respective changes value set function to add, in callback fn to pass of on closes to set 
+		 */
+		clearEditFormValuesGridVariesRowSelect();
+		
+		
 		studentDetailsService.openStudentRecordHistoryDetails(joStudent, joStudentValueSelectFunctions);
 	};
+	
+	// of edit selected row, varies row select, to clear form values, below adds 
+	function clearEditFormValuesGridVariesRowSelect() {
+		//console.info('clearEditFormValuesGridVariesRowSelect() <> 11111 <> $scope.formStudentDetails.studentId: '+$scope.formStudentDetails.studentId+' <> $scope.nStudentIdSelectedRow: '+$scope.nStudentIdSelectedRow);
+		if ( $scope.formStudentDetails.studentId !== undefined && $scope.formStudentDetails.studentId !== $scope.nStudentIdSelectedRow) {
+			//console.info('22222 <> $scope.formStudentDetails.studentId: '+$scope.formStudentDetails.studentId);
+			$scope.resetForm();
+		}
+	}
 	
 	
 	// grid loading, to show, hide to add 

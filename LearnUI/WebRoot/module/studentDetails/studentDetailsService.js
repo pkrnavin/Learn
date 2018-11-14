@@ -194,9 +194,9 @@ learnUIApp.service('studentDetailsService', ['$http', '$q', '$uibModal', functio
 		
 		// below adds error occurs 
 		modalInstance.result.then(function() {	// Success
-			console.info('modalInstance <> 1111111111');
+			//console.info('modalInstance <> 1111111111');
 		}, function() {	// Cancel
-			console.info('modalInstance <> 2222222222');
+			//console.info('modalInstance <> 2222222222');
 		});
 	};
 }]);
