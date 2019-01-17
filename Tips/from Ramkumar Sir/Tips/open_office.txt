@@ -22,4 +22,98 @@
 
 -- 2018-07-20
 
-# Note: BEWTWEEN paragraphs lines spacing, size varies based on font selected, `font-size`, thinks; so same font to sets in BETWEEN lines spacing (i.e. blank line), thinks, tries thinks 
+# Note: BETWEEN paragraphs lines spacing, size varies based on font selected, `font-size`, thinks; so same font to sets in BETWEEN lines spacing (i.e. blank line), thinks, tries thinks 
+
+
+-- 2018-12-22
+
+## Openoffice to open to edit PDF document, `plugin|extension` to install in the openoffice, from below link 
+https://pdf.wondershare.com/pdf-software-comparison/openoffice-pdf-editor.html
+Tried:
+- Opens Openoffice Writer, from menu `Tool -> Extension Manager`, clicks `Get more extensions online`, in the link search for `Oracle PDF Import Extension` 
+- below link of `Oracle PDF Import Extension`; Note: in the link given of Openoffice > 4.0, to add another version `PDF Import for Apache OpenOffice` respective link clicks 
+https://extensions.openoffice.org/en/project/oracle-pdf-import-extension-openoffice-3x
+- below link of Openoffcie > 4.0, PDF extension `PDF Import for Apache OpenOffice` to add, downloads, 
+https://extensions.openoffice.org/en/node/17351
+https://www.arielch.org/aoo/aoo-pdf-import/
+>> the downloaded file full path `D:\Learn\Softwares\aoo-pdf-import-0.1.0-windows-x86.oxt` 
+- of in the extension window, the above file adds installs 
+- Opens openoffice writer open file PDF selects, the file opens in `Openoffice Draw` able to edit the file, thinks 
+
+## Openoffice PDF export
+> `File -> Export as PDF`, file name, path to given 
+
+
+-- 2018-12-23
+
+#### Openoffice to insert a new page BETWEEN pages, below link's answer, tried, working ####
+https://ask.libreoffice.org/en/question/39188/how-can-i-insert-a-new-blank-page-in-writer/
+Tried:
+- Place the cursor end of the page 
+- Menu `Insert -> Manual Break`, in the window selects Type: `Page Break`, Style: `None`, click `Ok`
+>> Note: of new page to add BETWEEN the pages, above action to perform twice, in the above link given 
+
+
+## Note: Bullets adds in the document, the size is minimum with already available bullets; after the document closes, opens of the bullet adds same size sets, thinks 
+
+
+-- 2018-12-24
+
+## Bullets of a point has multiple lines (i.e. single point has more than one line), to adjust spacing BETWEEN the lines (i.e. `Line Spacing`) respective to set ##
+Tried:
+- Select a bullet point OR all the points for the title, Right click, below 
+- `Line Spacing -> Single OR <SELECT_RESPECTIVE_REQUIRE_SPACING>` 
+- Click `Paragraph`, in the window, `Indents & Spacing` tab `Line Spacing` fieldset section select `Single` OR `<RESPECTIVE_REQUIRE_SPACING>` 
+
+
+-- 2018-12-25
+
+TODO: 
+- Openoffice Page Section, Column to add, Tips to add 
+
+-- page columns to add below links 
+https://wiki.openoffice.org/wiki/Documentation/OOoAuthors_User_Manual/Writer_Guide/Using_columns_to_define_the_page_layout#Using_sections_for_page_layout
+https://openoffice.blogs.com/openoffice/2006/09/columns_in_open.html
+>> google search `openoffice writer how to add page two columns`
+
+-- page section to add, below link 
+https://wiki.openoffice.org/wiki/Documentation/OOoAuthors_User_Manual/Writer_Guide/Using_sections_for_page_layout
+>> google search `openoffice writer sections`
+
+
+-- 2018-12-26
+
+## Page Section (i.e. part of page single column normal, part of page in two columns) to add `Section`, below ##
+Tried:
+- Menu `Insert -> Section`, in the window 
+	- in the `Columns` tab, part of page in 
+		- single column (i.e. normal), number of columns `1` to add 
+		- two OR more columns, number of columns `2 OR <RESPECTIVE_NUMBER>`, Spacing Auto OR respective, line BETWEEN columns to add 
+	- in other tabs of `Indents`, `Background`, `Footnotes` respective to add  
+	- to format section added `Footer -> Sections`, select the `Section` in `Options` button 
+	
+## Page Columns ##
+- Menu `Format -> Columns` of full page to add columns, respective to add 
+>> above links Page Section, Columns to add 
+
+
+## Openoffice writer inside rectangle to add text ##
+https://forum.openoffice.org/en/forum/viewtopic.php?f=7&t=22497
+>> from above link, tried
+https://forum.openoffice.org/en/forum/viewtopic.php?f=9&t=56369
+https://forum.openoffice.org/en/forum/viewtopic.php?f=11&t=82173
+>> google search `open office writer rectangle inside text`
+Tried:
+- `Insert -> Frame`, Border tab of styles `Size`, `Color`, `Spacing` configures; Note: of `Frame` adds, Rectangle Border length size adjustable 
+>> Above adds 
+- from link tried, Selects text Right click `Paragraph -> Border` tab above respective adds; Note: border length size fits page full width, so `Frame` Border adds tried, 
+
+
+-- 2018-12-27
+
+## Openoffice writer `Frame`, `Drawing` adds in the document, of after the document close and opens `shows|appears|displays`, of the file saves in format `Microsoft word 97/2000/XP (.doc) (*.doc)`, working ##
+>> Note: of the document saves in file types `Microsoft word `<95|6.0>` (.doc) (*.doc)`, the Frame OR Drawing, not appears after document close and opens 
+>> above checking tried in `D:\Learn\Tried\2018\December\Dec 27` 
+
+## BETWEEN text AND column line, spacing to add, working of select the text, normal indent `Right` value adds, working ##
+
