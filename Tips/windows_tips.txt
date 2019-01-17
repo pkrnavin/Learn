@@ -352,3 +352,9 @@ https://superuser.com/questions/66825/what-is-the-difference-between-size-and-si
 https://www.groovypost.com/howto/protect-mac-os-x-against-adobe-flash-vulnerabilities/
 https://support.microsoft.com/en-in/help/4028633/windows-10-change-the-location-of-your-onedrive-folder
 
+
+-- 2018-12-08
+
+# Dictionary `Wordweb`, to find meaning of word in the computer, of below shortcut key to click on the word to get meaning 
+- Ctrl + Right click (OR)
+- Ctrl + Alt + W 

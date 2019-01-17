@@ -117,3 +117,10 @@ https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0
 			postgres trigger verification to get 
 https://stackoverflow.com/questions/6898453/how-to-display-the-function-procedure-triggers-source-code-in-postgresql
 
+
+-- 2018-11-18
+				
+				Books
+				
+				Proverb stories
+https://books.google.co.in/books?id=d1QiBQAAQBAJ&printsec=frontcover&dq=unposted+letter&hl=en&sa=X&ved=0ahUKEwidmb3e9d3eAhVEiXAKHb_YAuEQ6AEIMTAC#v=onepage&q&f=false

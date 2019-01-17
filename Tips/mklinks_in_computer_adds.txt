@@ -33,3 +33,11 @@ the project file adds in git repository, from <REPOSITORY> the file reference ad
 # `Tips` folder to add in git `D:\Learn\workspace\Learn` Repository, of folder shortcut to add 
 > mklink /j "D:\Learn\workspace\Learn\Tips" "D:\Learn\Tips"
 
+
+-- 2018-12-20
+
+# Resume Raghul, Pravin, mklink to add in folder 
+> mklink /h "D:\Learn\Curriculum Vitae (CV)\ResumeReferences\CousinsCV\raghul orignal.docx" "D:\Learn\Curriculum Vitae (CV)\from Home tried\CV\raghul orignal.docx" 
+>> above file 
+> mklink /j "D:\Learn\Curriculum Vitae (CV)\ResumeReferences\CousinsCV\Pravin Resume" "D:\Learn\Curriculum Vitae (CV)\from Softsmith tried\pers_CV\Pravin Resume" 
+>> above folder 
