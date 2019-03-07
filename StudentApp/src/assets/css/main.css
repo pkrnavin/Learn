@@ -1,0 +1,297 @@
+/* below logo image, text, corrections to try, from before available */
+.logoImageText {
+}
+.logoImageText > .image {
+    padding-right: 5px;
+}
+.logoImageText > .text {
+	font-weight: 500;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;	/* to center, logo to set, adds tries */
+}
+
+.logoImageText.center {
+	text-align: center;
+	/* thinks, `margin: 0 auto;` to add */
+}
+.logoImageText > .image.imageLg {
+	width: 96px;
+	height: 80px;
+}
+.logoImageText > .text.textLg {
+	font-size: 35px;
+}
+
+/* below, of header logo image, text to sets */
+.logoImageText > .image.imageHeader {
+	width: 60px;
+	height: 50px;
+}
+.logoImageText > .text.textHeader {
+	font-size: 26px;
+}
+
+/* below to adds, login form of full screen height vertical align middle, to try; 
+	Note: to vertically center, parent `element` to set `height`; to vertically center, of full screen height, `height: 100%;` to set, thinks; from link added, tried  
+*/
+html, body, .container-fluid, [ui-view] {
+	height: 100%;
+}
+.verticalCenter {
+	width: 100%;
+	height: 100%;
+	display: table;
+	/* below of available in another link, of `.section` from thinks, the link bookmarks, in `reference_links.txt` adds, thinks, 
+		for full screen height to vertical center;  
+	position: relative;*/
+}
+.verticalCenter > .tabelCell {
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+/* below adds, of `loginForm` from center to adjust above to sets, adds */
+.loginFormContent {
+	position: relative;
+	/*bottom: 80px;	/* commented, user loggedIN header corrections to tries */
+}
+
+/* active route link, below css to apply, of the class given in `routerLinkActive` attribute */
+.rlActive {
+	color: brown;
+}
+
+
+/* header, styles */
+.luHeader {
+	padding: 3px;
+	min-height: 35px;
+	border-bottom: 1px solid #1b639e;
+}
+/* header welcome user text, below css to add styles */
+.luWelcomUser {
+	display: inline-block;
+	font-size: 14px;
+	/*font-weight: 600;	/* commented, */
+	line-height: 18px;
+} 
+/* css to add, for user icon */
+.luUserIcon {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 24px;
+	padding-left: 10px;
+	margin-top: -3px;
+}
+.luMenu {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 10px;
+}
+/* menu to show right side */
+.luMenu .dropdown-menu, .menuAtRightSide .dropdown-menu {
+	right: 0;
+	left: auto;
+}
+/* menu spacing of text, below adds tries */
+.menuitem, .dropdown-menu a {
+	padding: 3px 10px;
+	/* below adds, menu in line hover, clickable of link (i.e. text is short, in the line hover link clikable), to adds tries */
+	display: block;
+	line-height: 18px;
+}
+.menuBtn {
+	background-color: #fffeee;
+	padding: 5px 10px;
+	color: #4b0082;
+	cursor: pointer;
+}
+
+
+.clrGreen {
+	color: green;
+}
+.clr1b639e {
+	color: #1b639e;
+}
+
+/* adds from before */
+.open > .dropdown-menu {
+	display: block;
+}
+/* to hide toggle symbol, of menu, to adds tries */
+.hideToggleSymbol.dropdown-toggle::after {
+	display: none;
+}
+
+a {
+	cursor: pointer;
+}
+
+/* grid column heading, to set; tries border top, bottom a color; `left`, `right` a color; 
+	Note: border `left`, `right` adds, of columns single border line to adds at sides, to tries */
+.gridHeading > div {
+	/* to sets border `top`, `bottom` */
+	border: 1px solid #ccc;
+	border-left: none;
+	/*border-right: none;*/
+	border-right: 1px solid #333;
+	background-color: #fffeee;
+}
+/* to set grid first column */
+.gridHeading > div:first-child {
+	border-left: 1px solid #333;
+}
+
+.height100Percent {
+	height: 100%;
+}
+
+/* to set, in mandatory field, */
+.mandatoryFieldStar {
+	/*font-size: 4px;*/
+	font-size: 16px;
+	color: red;
+}
+
+/* to truncate, grid column text */
+.gridTruncateText {
+	width: inherit;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* grid to break word, of overflow */
+.overflowWrap {
+	overflow-wrap: break-word;
+}
+.wordBreak {
+	word-break: break-all;
+}
+
+.font12 {
+	font-size: 12px;
+}
+
+/* below tries, of in `form` tag css available of `formLabels` adds, in `label` given style to set, to adds */
+.formLabels label {
+	font-size: 16px;
+}
+
+/* to highlight grid selected row */
+.gridHighlightSelectedRow {
+	/* `Openmentor` slideshow, slider control buttons color, below color adds, */
+	background-color: #3472AC;
+}
+
+/* fieldset to add to try */
+.luFieldSet {
+	padding: 10px;
+	border: 1px solid #f4f4f4;
+	/* `position: relative` from link adds, of fidelset html default multiple border to adds, tries */
+	position: relative;
+}
+/* html fieldset default to add, multiple border to adds, tries 
+	from below link, tries  
+	`https://stackoverflow.com/questions/14735569/css-double-border-2-colors-without-using-outline`
+*/
+.luFieldSet:before {
+	border: 1px solid #898989;
+	display: block;
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	/* `border-top: none` adds tries, as below `legend` adds, below adds tries */
+	border-top: none;
+}
+/* fieldset border top to set to add, to try */
+.luFieldSet > legend {
+	width: auto;
+}
+
+/* of radio button, checkbox to add, to show message */
+.form-check ~ .invalid-feedback {
+	display: block;
+}
+/* field modify from invalid to valid same position to set, below adds tries, 
+  (i.e. of `messages` displays margin to add, tries; pf field invalid message to show of field modify OR form submitted, adds tries) */
+.invalid-feedback {
+	margin-top: 0;
+}
+.invalid-feedback .luMessages {
+	margin-top: 0.25rem;
+}
+
+
+/* to set in grid, row edit, delete icon */
+.gridRowIcons {
+	/* as column padding left, right `15px` available, in padding space icon to add, below tries  */
+	width: 15px;
+	margin-left: -15px;
+	float: left;
+	cursor: pointer;
+}
+.clrff8100 {
+	/* orange */
+	color: #ff8100;
+}
+.clrd70000 {
+	/* red */
+	color: #d70000;
+}
+
+.gridRowIcons > .edit {
+	/* orange */
+	color: #ff8100;
+}
+.gridRowIcons > .delete {
+	/* red */
+	color: #d70000;
+}
+
+.gridRowIcons > .history {
+	color: #36b397;
+}
+
+.luModalXl .modal-dialog, .luModalXl.modal-dialog {
+	max-width: 1000px;
+}
+
+
+/* loading inside respective div to show (i.e. to show loading of grid, form div), to add */
+/* parent div to sets */
+.loading {
+	position: relative;
+}
+/* Note: of `position: absolute`, `left`, `right` `0` parent div's width sets, of `top`, `bottom` `0` parent div's height sets, thinks, so `top: 50%` vertical centers, thinks */
+/* div background of not clickable, to add */
+.loading .loadingBackgroundMask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgb(204, 204, 204);
+	opacity: 0.4;
+	z-index: 100;
+	display: block;
+}
+/* loading icon to set */
+.loading .loadingIcon {
+	position: absolute;
+	/*top: 0;*/
+	/* to vertical centers */
+	top: 50%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	z-index: 2000;
+	display: block;
+}

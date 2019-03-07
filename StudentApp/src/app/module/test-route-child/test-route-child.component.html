@@ -1,0 +1,20 @@
+<div>
+  <p>
+    test-route-child works!
+  </p>
+
+  <BR>
+  ParamId: {{nStrParamId}}
+  
+  <BR>
+  <div>
+    <a [routerLink]="['/user/home']" routerLinkActive="rlActive" class="">Home</a><BR>
+    <a [routerLink]="['./overview']" routerLinkActive="rlActive" class="">Overview</a>
+    <a [routerLink]="['./specs']" routerLinkActive="rlActive" class="ml-2">Specs</a>
+  </div>
+</div>
+
+<BR>
+<div>
+  <router-outlet></router-outlet>
+</div>

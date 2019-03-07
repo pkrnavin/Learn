@@ -1,0 +1,114 @@
+<div>
+  <!--<p>
+    student-grid works!
+  </p>-->
+  <div>
+    <div class="d-inline-block">
+      <app-pagination (loadGridData)="getUserStudentsDetails($event)"></app-pagination>
+    </div>
+    
+    <div class="d-inline-block float-right">
+      <button type="button" class="btn btn-success btn-sm fa-sm" name="btnReloadStudentDetails" id="btnReloadStudentDetails" (click)="reloadUserStudentDetails()" title="Reload Student Details">
+        <i class="fas fa-redo-alt"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="container-fluid loading" >
+    <!-- Note: `app-loading` component, parent `div` to add `class="loading"` -->
+    <app-loading [loading]="bLoadingGridStudentDetails"></app-loading>
+
+    <div class="row gridHeading">
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 text-right">Id</div>
+      <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">Full Name</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">FatherName</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">MotherName</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Address</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Contact Details</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">DateOfBirth</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Transport</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Interests</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Created Details</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Modified Details</div>
+    </div>
+    
+    <div class="row" *ngFor="let joStudent of aryUserStudentDetails" [ngClass]="{'gridHighlightSelectedRow': (joStudent.studentId === nStudentIdSelectedRow)}">
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 text-right">
+        <div class="gridRowIcons">
+          <div class="edit" title="Edit" (click)="setSelectedRowFromStudentId(joStudent.studentId); sendMsgLoadStudentFormDetails(joStudent);"><i class="fas fa-pencil-alt"></i></div>
+          <div class="delete" title="Delete" (click)="setSelectedRowFromStudentId(joStudent.studentId); deleteRow(joStudent);"><i class="far fa-trash-alt deleteIcon"></i></div>
+          <div class="history" title="History" (click)="setSelectedRowFromStudentId(joStudent.studentId); openModalStudentHistoryDetails(joStudent);"><i class="fas fa-history"></i></div>
+        </div>
+            
+        <span>
+          {{joStudent.studentId}}
+        </span>
+      </div>
+          
+      <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">{{joStudent.firstName}} {{joStudent.lastName}}</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">{{joStudent.fatherName}}</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">{{joStudent.motherName}}</div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 gridTruncateText" title="{{joStudent.address}}">
+        <span>
+          {{joStudent.address}}<BR>
+
+          <!-- commetned, not working variable value sets -->
+          <span *appNgInit="getSelectedNationalityFromCode(joStudent.nationality) as joNationality">
+            {{joNationality.text}}
+          </span>
+          <!-- 
+          <span [ngInit]="getSelectedNationalityFromCode(joStudent.nationality) as joNationality">
+            {{joNationality}}
+          </span>-->
+        </span>
+      </div>
+      
+      <!--  -->
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 gridTruncateText font12">
+        <span>
+          <strong>Email:</strong><BR>
+          <span title="{{joStudent.emailId}}">{{joStudent.emailId}}</span>
+        </span><BR>
+        <span>
+          <strong>Phone:</strong><BR>
+          <span title="{{joStudent.phoneNumber}}">{{joStudent.phoneNumber}}</span>
+        </span>
+      </div>
+      
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 font12">{{joStudent.dateOfBirthMillis | date:'dd-MMM-yyyy HH:mm:ss'}}</div>
+      
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 overflowWrap">
+        <!-- below `ng-init` adds, of one time loads, to set in variable, to tries -->
+        <span *appNgInit="getSelectedTransportFromCode(joStudent.transport) as joTransport">
+          {{joTransport.text}}
+        </span>
+      </div>
+      
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 overflowWrap font12">
+        <!-- below `ng-init` adds, of one time loads, to set in variable, to tries -->
+        <span *appNgInit="compStudentForm.getSelectedInterestDetails(joStudent.interests)[0] as aryAddedInterests" >
+          <span *ngFor="let joInterest of aryAddedInterests">{{joInterest.text}}; </span>
+        </span>
+        <!-- {{joStudent.interests}}-->
+      </div>
+      
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 font12">
+        <span>
+          <strong>By</strong>: {{joStudent.createdByUserName}}<BR>
+          <strong>On</strong>: {{joStudent.createdOnMillis | date:'dd-MMM-yyyy HH:mm:ss'}}
+        </span>
+      </div>
+      
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 font12">
+        <span *ngIf="joStudent.modifiedByUserName !== undefined">
+          <strong>By</strong>: {{joStudent.modifiedByUserName}}<BR>
+          <strong>On</strong>: {{joStudent.modifiedOnMillis | date:'dd-MMM-yyyy HH:mm:ss'}}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <app-pagination (loadGridData)="getUserStudentsDetails($event)"></app-pagination>
+  </div>
+</div>

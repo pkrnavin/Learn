@@ -1,0 +1,46 @@
+<header class="header luHeader">
+  <!-- below `container-fluid` css adds tries, at first, last column spacing, to set, to adds tries -->
+  <div class="container-fluid">
+    <div class="row justify-content-between">
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+        <!-- below logo image, text, from directive to sets -->
+        <app-logo-image-text [customClass]='{"image": "imageHeader", "text": "textHeader"}'></app-logo-image-text>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pt-2 text-right">
+        <div class="luWelcomUser pr-3">
+          <!-- TODO: respective to add  -->
+          Welcome,<BR>{{joLoginUserDetails.fullName}} ({{joLoginUserDetails.userName}})
+        </div>
+        <div class="luUserIcon pr-3">
+          <span class="fa-stack fa-xs pr-1">
+            <i class="far fa-circle clr1b639e fa-stack-2x"></i>
+            <i class="fas fa-user fa-stack-1x clrGreen"></i>
+          </span>
+          &nbsp;
+          <span>
+            <!-- commented, to checking adds tries 
+            <button type="button" name="btnGetUserDetails" id="btnGetUserDetails" class="btn btn-primary btn-sm">Get UserDetails</button>-->
+            
+            <!-- TODO: respective to add -->
+            <a routerLink="/user/home" routerLinkActive="rlActive" title="Home">
+              <i class="fas fa-home clrGreen"></i>
+            </a><!-- commented `ui-sref="/myHome"`, `Ctrl + link` to open in new tab tries -->
+          </span>
+        </div>
+        <div class="luMenu menuAtRightSide">
+          <!-- TODO: Menu to open, to try  -->
+          <div class="btn-group" dropdown>
+            <span id="menuButton" class="menuBtn hideToggleSymbol" dropdownToggle ><i class="fas fa-ellipsis-v"></i></span>
+            
+            <!-- TODO: respective to add  -->
+            <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu role="menu" aria-labelledby="menuButton">
+              <li role="menuitem"><a class="dropdown-item" (click)="loadLoginUserDetails()"><i class="fas fa-redo-alt clrGreen" ></i> ReloadLoginUserDeatils</a></li>
+              <li role="menuitem"><a class="dropdown-item" routerLink="/test" routerLinkActive="rlActive">Test</a></li><!-- commented `ui-sref="/userTest"`, `Ctrl + link` to open in new tab tries  -->
+              <li role="menuitem"><a class="dropdown-item" (click)="logout()">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

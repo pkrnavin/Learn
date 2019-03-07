@@ -1,0 +1,21 @@
+<div>
+  <div class="d-inline-block">
+    <pagination [totalItems]="paginationService.nTotalResults" 
+      [(ngModel)]="paginationService.nModelCurrentPage" [maxSize]="paginationService.nMaxSize"
+      [itemsPerPage]="paginationService.nLimit" (pageChanged)="pageChanged($event)">
+    </pagination>
+  </div>
+  <div class="d-inline-block ml-2">
+    <span>{{paginationService.pageFromRowCount}}-{{paginationService.pageToRowCount}} of {{paginationService.nTotalResults}};</span>&nbsp;
+    <span>{{paginationService.nModelCurrentPage}}/{{paginationService.nNumberOfPages}} pages(s)</span>
+    <!--
+    pageFromRowCount: {{paginationService.pageFromRowCount}}; pageToRowCount: {{paginationService.pageToRowCount}};<BR>
+    nModelCurrentPage: {{paginationService.nModelCurrentPage}}; nNumberOfPages: {{paginationService.nNumberOfPages}};<BR>
+    getOffset: {{paginationService.getOffset()}}; nTotalResults: {{paginationService.nTotalResults}}-->
+  </div>
+</div>
+<!--
+<pagination [totalItems]="12" 
+  [(ngModel)]="nModelCurrentPage" [maxSize]="3"
+  [itemsPerPage]="5">
+</pagination>-->

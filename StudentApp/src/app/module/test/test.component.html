@@ -1,0 +1,12 @@
+<div>
+  <p>
+    Test works!
+  </p>
+
+  <a routerLink="/test" routerLinkActive="rlActive">Test</a><!-- commented `routerLinkActive="rlActive"`,  -->
+  <BR>
+  <button type="button" name="btnParentValueSet" id="btnParentValueSet" (click)="inputChildValue = 'SET VALUE IN PARENT'">Set value in parent</button>
+  parent: {{inputChildValue}}
+  <BR>
+  <app-child [chkInput]="inputChildValue"></app-child>
+</div>

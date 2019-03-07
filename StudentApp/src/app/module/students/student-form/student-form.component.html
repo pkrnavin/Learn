@@ -1,0 +1,277 @@
+<div class="loading">
+  <!-- Note: `app-loading` component, parent `div` to add `class="loading"` -->
+  <app-loading [loading]="bLoadingFormStudentDetails"></app-loading>
+  
+  <form name="formLuStudentDetails" [formGroup]="studentForm" novalidate>
+    <fieldset class="luFieldSet">
+      <legend>Student Details:</legend>
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Left side form, fields -->
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+            <div class="form-group row">
+              <label for="txtFirstName" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">FirstName<font class="mandatoryFieldStar"><sup>*</sup></font>: </label>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                <input type="text" name="txtFirstName" id="txtFirstName" class="form-control" formControlName="firstName"
+                  [ngClass]="{'is-invalid': studentForm.get('firstName').denoteFieldInvalid()}"
+                  required="required" />
+                
+                <!-- 
+                denoteFieldValid: {{studentForm.get('firstName').denoteFieldValid()}}<BR>
+                denoteFieldInvalid: {{studentForm.get('firstName').denoteFieldInvalid()}}<BR>
+                showErrorMessageInField: {{studentForm.get('firstName').showErrorMessageInField()}}<BR> -->
+                
+                <!--
+                <div *ngIf="studentForm.get('firstName').showErrorMessageInField()" class="invalid-feedback">
+                  <div *ngIf="studentForm.controls.firstName.errors.required">Must enter value.</div>
+                </div> -->
+                
+                <div class="invalid-feedback">
+                  <app-error-message [aemFormControl]="studentForm.get('firstName')"></app-error-message>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="txtLastName" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">LastName<font class="mandatoryFieldStar"><sup>*</sup></font>: </label>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                <input type="text" name="txtLastName" id="txtLastName" class="form-control" formControlName="lastName"
+                  [ngClass]="{'is-invalid': studentForm.get('lastName').denoteFieldInvalid()}"
+                  required="required" />
+                
+                <!-- 
+                <div *ngIf="studentForm.get('lastName').showErrorMessageInField()" class="invalid-feedback">
+                  <div *ngIf="studentForm.controls.lastName.errors.required">Must enter value.</div>
+                </div>-->
+                
+                <div class="invalid-feedback">
+                  <app-error-message [aemFormControl]="studentForm.get('lastName')"></app-error-message>
+                </div>
+                <!-- 
+                <div class="invalid-feedback" lu-field-error-message 
+                  form-field-ctrl="formLuStudentDetails.txtLastName" ></div> -->
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="txtFatherName" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">FatherName<font class="mandatoryFieldStar"><sup>*</sup></font>: </label>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                <input type="text" name="txtFatherName" id="txtFatherName" class="form-control" formControlName="fatherName"
+                  [ngClass]="{'is-invalid': studentForm.get('fatherName').denoteFieldInvalid()}"
+                  required="required" />
+                
+                <!-- 
+                <div *ngIf="studentForm.get('fatherName').showErrorMessageInField()" class="invalid-feedback">
+                  <div *ngIf="studentForm.controls.fatherName.errors.required">Must enter value.</div>
+                </div> -->
+                
+                <div class="invalid-feedback">
+                  <app-error-message [aemFormControl]="studentForm.get('fatherName')"></app-error-message>
+                </div>
+
+                <!-- 
+                <div class="invalid-feedback" lu-field-error-message 
+                  form-field-ctrl="formLuStudentDetails.txtFatherName" ></div>-->
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="txtMotherName" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">MotherName<font class="mandatoryFieldStar"><sup>*</sup></font>: </label>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                <input type="text" name="txtMotherName" id="txtMotherName" class="form-control" formControlName="motherName"
+                  [ngClass]="{'is-invalid': studentForm.get('motherName').denoteFieldInvalid()}"
+                  required="required" />
+                
+                <!-- 
+                <div *ngIf="studentForm.get('motherName').showErrorMessageInField()" class="invalid-feedback">
+                  <div *ngIf="studentForm.controls.motherName.errors.required">Must enter value.</div>
+                </div> -->
+                
+                <div class="invalid-feedback">
+                  <app-error-message [aemFormControl]="studentForm.get('motherName')"></app-error-message>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="taAddress" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Address<font class="mandatoryFieldStar"><sup>*</sup></font>: </label>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                <textarea name="taAddress" id="taAddress" class="form-control" rows="" cols="30" formControlName="address"
+                  [ngClass]="{'is-invalid': studentForm.get('address').denoteFieldInvalid()}"
+                  required="required" ></textarea>
+                
+                <!-- 
+                <div *ngIf="studentForm.get('address').showErrorMessageInField()" class="invalid-feedback">
+                  <div *ngIf="studentForm.controls.address.errors.required">Must enter value.</div>
+                </div> -->
+                
+                <div class="invalid-feedback">
+                  <app-error-message [aemFormControl]="studentForm.get('address')"></app-error-message>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="txtEmail" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Email<font class="mandatoryFieldStar"><sup>*</sup></font>: </label>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                <input type="email" name="txtEmail" id="txtEmail" class="form-control" formControlName="email"
+                  [ngClass]="{'is-invalid': studentForm.get('email').denoteFieldInvalid()}"
+                  required="required" />
+                
+                <!--
+                <div *ngIf="studentForm.get('email').showErrorMessageInField()" class="invalid-feedback">
+                  <div *ngIf="studentForm.controls.email.errors.required">Must enter value.</div>
+                </div>-->
+                
+                <div class="invalid-feedback">
+                  <app-error-message [aemFormControl]="studentForm.get('email')"></app-error-message>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right side form, fields -->
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+            <div class="form-group row">
+              <label for="txtPhoneNumber" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">PhoneNumber<font class="mandatoryFieldStar"><sup>*</sup></font>: </label>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                <input type="text" name="txtPhoneNumber" id="txtPhoneNumber" class="form-control" formControlName="phoneNumber"
+                  [ngClass]="{'is-invalid': studentForm.get('phoneNumber').denoteFieldInvalid()}"
+                  required="required" />
+                
+                <!--
+                <div *ngIf="studentForm.get('phoneNumber').showErrorMessageInField()" class="invalid-feedback">
+                  <div *ngIf="studentForm.controls.phoneNumber.errors.required">Must enter value.</div>
+                </div>-->
+                
+                <div class="invalid-feedback">
+                  <app-error-message [aemFormControl]="studentForm.get('phoneNumber')"></app-error-message>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="comboNationality" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Nationality<font class="mandatoryFieldStar"><sup>*</sup></font>: </label>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                <select name="comboNationality" id="comboNationality" class="form-control" formControlName="nationality" 
+                  [ngClass]="{'is-invalid': studentForm.get('nationality').denoteFieldInvalid()}"
+                  required="required" >
+                  <option [ngValue]="null">Select Nationality</option>
+                  <option *ngFor="let nationality of aryNationalities" [ngValue]="nationality">{{nationality.text}}</option>
+                </select>
+                
+                <!-- 
+                <div *ngIf="studentForm.get('nationality').showErrorMessageInField()" class="invalid-feedback">
+                  <div *ngIf="studentForm.controls.nationality.errors.required">Must enter value.</div>
+                </div> -->
+                
+                <div class="invalid-feedback">
+                  <app-error-message [aemFormControl]="studentForm.get('nationality')"></app-error-message>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="dtDateOfBirth" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Date Of Birth<font class="mandatoryFieldStar"><sup>*</sup></font>: </label>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                <div ng-controller="DatepickerPopupController">
+                  <div class="input-group" ng-init="setOptions(dateOfBirthOptions)">
+                    <!-- TODO: to add -->
+                    <input type="text" name="dtDateOfBirth" id="dtDateOfBirth" class="form-control" formControlName="dateOfBirth"
+                      #dp="bsDatepicker" bsDatepicker triggers="click" [bsConfig]="utilsService.getDatepickerOptions(datepickerDOBFieldOptions)" 
+                      [ngClass]="{'is-invalid': studentForm.get('dateOfBirth').denoteFieldInvalid()}" 
+                      [placeholder]="dp.bsConfig.dateInputFormat" readonly="readonly" />
+                    <!-- commented datepicker field 
+                      `placeholder="{{datePickerPopup.format}}" uib-datepicker-popup="{{datePickerPopup.format}}" 
+                      ng-model="formStudentDetails.dateOfBirth" is-open="datePickerPopup.menuOpen" 
+                      ng-required="true" close-text="Close" datepicker-options="datePickerPopup.options" 
+                      ng-focus="openPopup()" readonly="readonly"` -->
+                    <!-- commented `[bsConfig]="datepickerFieldDefaultOptions"`,  -->
+                    <!-- coommented `[bsConfig]="utilsService.getDatepickerOptions({dateInputFormat: 'YYYY-MMM-DD', minMode: 'month'})"`, checking tries -->
+                    <!-- commented `[placeholder]="datepickerFieldDefaultOptions.dateInputFormat"`,  -->
+                    <!-- commetned `[bsValue]="(new Date(1991, 00, 01))"` -->
+                    <!-- commented `[bsValue]="dobInitValue"`, date init value sets -->
+                    <div class="input-group-append">
+                      <span class="input-group-text" (click)="dp.toggle()"><i class="far fa-calendar-alt clr1b639e cursorHand"></i></span>
+                    </div>
+                    <!-- 
+                    <div *ngIf="studentForm.get('dateOfBirth').showErrorMessageInField()" class="invalid-feedback">
+                      <div *ngIf="studentForm.controls.dateOfBirth.errors.required">Must enter value.</div>
+                    </div> -->
+                    
+                    <div class="invalid-feedback">
+                      <app-error-message [aemFormControl]="studentForm.get('dateOfBirth')"></app-error-message>
+                    </div>
+                    <!-- 
+                    dobInitValue: {{dobInitValue}}
+                    dateInputFormat: {{dp.bsConfig.dateInputFormat}} -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Transport<font class="mandatoryFieldStar"><sup>*</sup></font>: </label>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                <!-- TODO: to add -->
+                <div class="form-check form-check-inline" *ngFor="let joTransportMode of aryTransportModes; index as index">
+                  <input type="radio" class="form-check-input" name="transport" id="radioTransportMode_{{index}}" 
+                    formControlName="transport" [value]="joTransportMode.code" />
+                  <label for="radioTransportMode_{{index}}" class="form-check-label">{{joTransportMode.text}}</label>
+                </div>
+                <!-- commented `ng-model="$parent.formStudentDetails.transportMode" ng-value="joTransportMode.code"`, -->
+                
+                <div class="invalid-feedback" *ngIf="this.studentForm.get('transport').value | isValueEmpty">Must present value. </div>
+                <!-- 
+                transport value: {{this.studentForm.get('transport').value}} -->
+                <!-- 
+                isValueEmpty undefined: {{undefined | isValueEmpty}}; '': {{'' | isValueEmpty}}; '123': {{'123' | isValueEmpty}}-->
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 col-form-label">Interests<font class="mandatoryFieldStar"><sup>*</sup></font>: </label>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                <!-- TODO: to add -->
+                <div formArrayName="interests">
+                  <!-- interests.controls: {{interests.controls}} -->
+                  <div class="form-check" *ngFor="let joInterest of interests.controls; let i = index" [formGroupName]="i" >
+                    <!--
+                    joInterest.controls: {{joInterest.controls}}-->
+                    <div *ngFor="let joDatum of joInterest.controls | keyvalue" >
+                      <input type="checkbox" class="form-check-input" name="chkInterest_{{i}}" id="chkInterest_{{i}}" 
+                        formControlName="{{joDatum.key}}" />
+                      <label for="chkInterest_{{i}}" class="form-check-label">{{joDatum.key}}</label>
+                    </div>
+                  </div>
+                  
+                  <div class="invalid-feedback" *ngIf="getSelectedInterestDetails()[0].length === 0">Must present value. </div>
+                </div>
+                
+                <!-- getSelectedInterestDetails()[0].length: {{getSelectedInterestDetails()[0].length}} -->
+                <!-- commented checking tries 
+                <button type="button" name="btnGetSelectedInterests" id="btnGetSelectedInterests" (click)="getSelectedInterestsFromFormArray()">GetSelectedInterests</button>
+                <button type="button" name="btnGetSelectedInterests" id="btnGetSelectedInterests" (click)="getSelectedInterestDetails('BOOKS,MARTIAL_ARTS')">GetSelectedInterestDetails</button>
+                <button type="button" name="btnSetSelectedInterests" id="btnSetSelectedInterests" (click)="setSelectedInterests('BOOKS,MARTIAL_ARTS')">SetSelectedInterests</button> -->
+                <!-- commented `(click)="getSelectedInterestDetails('BOOKS,MARTIAL_ARTS')"`, from selected codes to get details to checking to try -->
+                <!-- commented `ng-model="joInterest.selected"` -->
+              </div>
+            </div>
+          </div>
+          <!-- 
+          studentId: {{this.studentForm.get('studentId').value}} -->
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+            <!-- {{this.studentForm.value | json}} -->
+            <!-- commented; <button type="button" name="btnAdd" id="btnAdd" class="btn btn-primary" >Add</button> -->
+            <button type="button" name="btnAdd" id="btnAdd" class="btn btn-primary" (click)="saveStudentDetails()" [disabled]="bLoadingFormStudentDetails">{{(this.studentForm.get('studentId').value | isValueEmpty)? 'Add' : 'Update'}}</button>&nbsp;&nbsp;<!-- commented `{{formStudentDetails.studentId === undefined ? 'Add' : 'Update'}}`, to add -->
+            <button type="button" name="btnReset" id="btnReset" class="btn btn-default" (click)="resetForm()" [disabled]="bLoadingFormStudentDetails">Reset</button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<!-- commented, pagination to checking adds, grid pagination select, reflects in form pagination component to checking to try 
+<div>
+  <app-pagination></app-pagination>
+</div> -->

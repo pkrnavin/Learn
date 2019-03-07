@@ -1,0 +1,5 @@
+<div class="luMessages" *ngIf="formControl.showErrorMessageInField()" >
+  <div *ngIf="formControl.errors.required">Must enter value.</div>
+  <div *ngIf="formControl.errors.email">Must in email format.</div>
+  
+</div>

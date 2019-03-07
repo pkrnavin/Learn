@@ -1,0 +1,27 @@
+/* messagebox, to show mobile tried, adds */
+.messageBox {
+	position: absolute;
+	right: 8px;
+	/* Note: `bottom: 0`, sets thinks from screen height 
+	 * (i.e. after screen height content, displays of scrolling, div sets in screen bottom, thinks), 
+	 * `bottom: 10px`, thinks from screen height's bottom, above given value, thinks 
+	 */
+	/*bottom: 0;*/
+	/* commented, tries msg box, to show one below one (OR) one above one, tries, 
+	bottom: 10px;	/* commented, checking tries, after text exceeds bottom, message box showing, checking tries */
+	background-color: #F1E88E;
+	border: 1px solid #888;
+	padding: 8px;
+	border-radius: 5px;
+	max-width: 200px;
+	/*height: 45px;	/* height, adds to tries, messageBox to show one below one (OR) one above one, to tries */
+	/* commented, as height varies, of content tries, 
+	height: 60px;	/* height, adds `box-sizing` tries */
+	/*height: 55px;*/
+	min-height: 60px;
+	max-height: 120px;
+	/* TODO: Thinks add, `box-sizing` border box */
+	box-sizing: border-box;
+	/*box-sizing: content-box;*/
+}
+/* thinks, message box css, `right, bottom` property add in class, thinks */

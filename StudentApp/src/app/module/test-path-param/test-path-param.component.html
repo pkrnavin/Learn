@@ -1,0 +1,18 @@
+<div>
+  <p>
+    test-path-param works!
+    <BR>
+    ParamId: {{nStrParamId}}
+  </p>
+
+  <!-- below same page pathParam value changes, `ngOnInit` calls to checking; 
+      Note: URL in same route, pathParam value changes in URL from below clicking, `ngOnInit` NOT CALLS of pathParam value changes -->
+  <div>
+    <a [routerLink]="['/login']" routerLinkActive="rlActive" class="">Login</a>&nbsp;&nbsp;
+    <a [routerLink]="['/user/home']" routerLinkActive="rlActive" class="">Home</a>&nbsp;&nbsp;
+    <a [routerLink]="['/testPathParam', '123']" routerLinkActive="rlActive" class="ml-2">TestPathParam123</a>&nbsp;&nbsp;
+    <!-- commented, from Component route to add 
+    <a [routerLink]="['/testPathParam', '456']" routerLinkActive="rlActive" class="ml-2">TestPathParam456</a> -->
+    <button type="button" name="btnRouteFromComponent" id="btnRouteFromComponent" class="btn btn-light btn-sm ml-2" (click)="routeFromComponent('456')">TestPathParam456 RouteFromComponent</button>
+  </div>
+</div>

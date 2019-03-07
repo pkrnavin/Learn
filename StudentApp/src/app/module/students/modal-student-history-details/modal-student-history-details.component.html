@@ -1,0 +1,118 @@
+<div>
+	<div class="modal-header">
+		<h5 class="modal-title" id="modal-title">Student Record History Details</h5>
+	</div>
+	<div class="modal-body" id="modal-body">
+    <!-- `bsModalRef` 
+    <p>
+      titleModalRef: {{titleModalRef}}
+    </p> -->
+    <div>
+      <div class="d-inline-block">
+        <app-pagination (loadGridData)="getStudentRecordHistoryDetails($event)"></app-pagination>
+      </div>
+
+      <div class="d-inline-block float-right">
+        <button type="button" class="btn btn-success btn-sm fa-sm" name="btnReloadStudentDetails" id="btnReloadStudentDetails" (click)="reloadStudentRecordHistoryDetails()" title="Reload Student History Details">
+          <i class="fas fa-redo-alt"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div class="container-fluid font12 loading" learnui-loading="bLoadingGridStudentDetails">
+      <!-- Note: `app-loading` component, parent `div` to add `class="loading"` -->
+      <app-loading [loading]="bLoadingGridStudentDetails"></app-loading>
+
+      <div class="row gridHeading">
+        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Operation On</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 text-right">Id</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Full Name</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">FatherName</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">MotherName</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Address</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Contact Details</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">DateOfBirth</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Transport</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Interests</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Created Details</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">Modified Details</div>
+      </div>
+
+			<div class="row" *ngFor="let joStudent of aryUserStudentDetails">
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+					<span>{{joStudent.operation}}</span><BR>
+					<span><strong>On:</strong> {{joStudent.doneOnMillis | date:'dd-MMM-yyyy HH:mm:ss'}}</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 text-right">
+					<span>
+						{{joStudent.studentId}}
+					</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">{{joStudent.firstName}} {{joStudent.lastName}}</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">{{joStudent.fatherName}}</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">{{joStudent.motherName}}</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 gridTruncateText" title="{{joStudent.address}}">
+					<span>
+						{{joStudent.address}}<BR>
+						<!-- commented, to add displaying value 
+						<strong>{{joStudent.nationality}}</strong> -->
+						<!-- below adds, to checking to try of more time calls; thinks, more time calls; of `ng-init` one time calls thinks 
+						{{getSelectedNationalityFromCode(joStudent.nationality)}}  -->
+						
+						<!-- below `ng-init` adds, of one time loads, to set in variable, to tries -->
+						<span *appNgInit="getSelectedNationalityFromCode(joStudent.nationality) as joNationality">
+							{{joNationality.text}}
+						</span>
+					</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 gridTruncateText font12">
+					<span>
+						<strong>Email:</strong><BR>
+						<span title="{{joStudent.emailId}}">{{joStudent.emailId}}</span>
+					</span><BR>
+					<span>
+						<strong>Phone:</strong><BR>
+						<span title="{{joStudent.phoneNumber}}">{{joStudent.phoneNumber}}</span>
+					</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 font12">{{joStudent.dateOfBirthMillis | date:'dd-MMM-yyyy HH:mm:ss'}}</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 overflowWrap">
+          <!-- below `ng-init` adds, of one time loads, to set in variable, to tries -->
+          <!-- TODO: to add -->
+					<span *appNgInit="getSelectedTransportFromCode(joStudent.transport) as joTransport">
+						{{joTransport.text}}
+					</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 overflowWrap font12">
+          <!-- below `ng-init` adds, of one time loads, to set in variable, to tries -->
+          <!-- {{joStudent.interests}} -->
+
+          <!-- TODO: to add -->
+					<span *appNgInit="getSelectedInterestDetails(joStudent.interests)[0] as aryAddedInterests" >
+						<span *ngFor="let joInterest of aryAddedInterests">{{joInterest.text}}; </span>
+					</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 font12">
+					<span>
+						<strong>By</strong>: {{joStudent.createdByUserName}}<BR>
+						<strong>On</strong>: {{joStudent.createdOnMillis | date:'dd-MMM-yyyy HH:mm:ss'}}
+					</span>
+				</div>
+				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 font12">
+					<span ng-if="joStudent.modifiedByUserName !== undefined">
+						<strong>By</strong>: {{joStudent.modifiedByUserName}}<BR>
+						<strong>On</strong>: {{joStudent.modifiedOnMillis | date:'dd-MMM-yyyy HH:mm:ss'}}
+					</span>
+				</div>
+			</div>
+    </div>
+
+    <div>
+      <app-pagination (loadGridData)="getStudentRecordHistoryDetails($event)"></app-pagination>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-warning" (click)="bsModalRef.hide()">Close</button>
+  </div>
+</div>
