@@ -17,7 +17,7 @@ learnUIApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
 		$stateProvider
 			.state('/login', {
 				url: '/login',
-				templateUrl: 'module/login/login.html',
+				templateUrl: 'AngularJS/module/login/login.html',
 				controller: 'loginController',
 				title: 'Login'
 			})
@@ -29,20 +29,20 @@ learnUIApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
 			})
 			.state('/myHome', {
 				url: '/myHome',
-				templateUrl: 'module/myHome/myHome.html',
+				templateUrl: 'AngularJS/module/myHome/myHome.html',
 				controller: 'myHomeController',
 				title: 'My Home'
 			})
 			.state('/studentDetails', {
 				url: '/studentDetails',
-				templateUrl: 'module/studentDetails/studentDetails.html',
+				templateUrl: 'AngularJS/module/studentDetails/studentDetails.html',
 				controller: 'studentDetailsController',
 				title: 'Student Details'
 			})
 			// below adds, to cheking, `userLoggedInDetails` to load one time, of transition to page to checking 
 			.state('/userTest', {
 				url: '/userTest',
-				templateUrl: 'module/userTest/userTest.html',
+				templateUrl: 'AngularJS/module/userTest/userTest.html',
 				controller: 'userTestController',
 				title: 'User Test'
 			})
@@ -51,7 +51,7 @@ learnUIApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
 			 */
 			.state('/test', {
 				url: '/test',
-				templateUrl: 'module/test/test.html',
+				templateUrl: 'AngularJS/module/test/test.html',
 				controller: 'testController',
 				title: 'Test'
 			});
@@ -212,7 +212,7 @@ learnUIApp.factory('myInterceptor', function($q, $rootScope, $state) {
 				//console.info('44444444 <> myInterceptor <> responseError <<<<<>>>>>> SESSION_EXPIRED <> 111111');
 				// from `Appedo` adds; URL query string doesn't works with state params, tried `window.location.href` 
 				// as error message to show, session not exists, below adds tries; 
-				window.location.href = './view/html/#!/loginResponse?_err=SESSION_EXPIRED';
+				window.location.href = 'AngularJS/view/html/#!/loginResponse?_err=SESSION_EXPIRED';
 				//console.info('44444444 <> myInterceptor <> responseError <<<<<>>>>>> SESSION_EXPIRED <> 22222');
 			}
 			

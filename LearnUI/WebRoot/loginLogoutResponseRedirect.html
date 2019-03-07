@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>LoginRedirect</title>
+	
+	<!-- 
+		TODO: `LearnUI` AngularJS folder files to add, of ExtJS to add in same project, below to add to try  
+		- `loginSession` parameter `from=ANGULARJS` to pass, redirect to this html, 
+			URL parameter values `from=<LIBRARY_CODE>`, `resp=(_smsg|_err);<MESSAGE>` OR from queryStrings to get to pass, 
+		- js redirect to add, based on from, queryString to pass -->
+	
+	<script type="text/javascript">
+		/* redirect home page to add, based on from library 
+		*/
+		function redirectHomePage() {
+			console.info('redirectHomePage() <> 1111111');
+			
+			var queryString = window.location.search, 
+				urlParams = new URLSearchParams(window.location.search), 
+				fromLibraryCode = urlParams.get('fromLibCode');
+			
+			console.info('queryString: '+queryString);
+			//console.info('urlParams: '+JSON.stringify(urlParams));
+			console.info(urlParams);
+			console.info(urlParams.get('fromLibCode'));
+			
+			if ( fromLibraryCode === 'ANGULARJS' ) {
+				window.location.href = 'AngularJS/view/html/#!/loginResponse'+queryString;
+			}
+		}
+		redirectHomePage();
+	</script>
+</head>
+<body>
+</body>
+</html>

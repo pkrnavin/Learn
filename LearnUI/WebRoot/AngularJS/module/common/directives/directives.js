@@ -4,7 +4,7 @@
 learnUIApp.directive('luLogoImageText', [function() {
 	return {
 		restrict: 'E',
-		templateUrl: 'module/common/view/html/logoImageText.html',
+		templateUrl: 'AngularJS/module/common/view/html/logoImageText.html',
 		link: function(scope, element, attr) {
 			//console.info('attr.customClass: '+attr.customClass);
 			scope.logoClass = {};
@@ -231,7 +231,7 @@ learnUIApp.directive('luFieldErrorMessage', [function() {
 		//restrict: 'AE',	// commented, attribute to add, as error message to show, of css class `invalid-feedback` in adjacent to field, so attribute to add to try
 		restrict: 'A',
 		require: '^form',
-		templateUrl: 'module/common/view/html/luErrorMessage.html',
+		templateUrl: 'AngularJS/module/common/view/html/luErrorMessage.html',
 		scope: {
 			formFieldCtrl: '=',	// form field model controller to pass (i.e. `<FORM_NAME>.<FIELD_NAME>`; value in the `name` attribute of form tag for `<FORM_NAME>`, of field for `<FIELD_NAME>` to pass) 
 			aryFieldCustomMessages: '=customMessages'	// array to pass of `[{code: '<ERROR_MESSAGE_CODE>', message: '<ERROR_MESSAGE>'}]` 

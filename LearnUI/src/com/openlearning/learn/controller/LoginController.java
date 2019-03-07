@@ -1,4 +1,4 @@
-package com.openlearning.learn.controller;
+ package com.openlearning.learn.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.openlearning.learn.bean.LoginUserBean;
 import com.openlearning.learn.connect.DataBaseMaster;
 import com.openlearning.learn.manager.LoginManager;
+import com.openlearning.learn.utils.UtilsFactory;
 
 import net.sf.json.JSONObject;
 
@@ -60,20 +61,23 @@ public class LoginController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		//System.out.println("LoginController <> 11111 <> session: "+session);
 		
-		// User login request 
+		/* User login request 
+		 * - (1) `Angular` login from ajax call, response message return 
+		 * - (2) form submit, redirect page 
+		 */
 		if ( strAction.equals("/loginSession") ) {
 			//System.out.println("txtUsername: "+request.getParameter("txtUsername"));
 			//System.out.println("txtPassword: "+request.getParameter("txtPassword"));
 			
 			Connection con = null;
 			
-			String strUsername = "", strPassword = "", strJoLoginUser = "", strRespQueryString = "";
+			String strUsername = "", strPassword = "", strJoLoginUser = "", strRespQueryString = "", strFromLibraryCode = "";
 			
 			LoginManager loginManager = null;
 			
 			LoginUserBean loginUserBean = null, loginUserBeanFromJSON = null;
 			
-			JSONObject joLoginUser = null;
+			JSONObject joLoginUser = null, joResp = null;
 			
 			try {
 				loginManager = new LoginManager();
@@ -83,8 +87,12 @@ public class LoginController extends HttpServlet {
 				
 				strUsername = request.getParameter("txtUsername");
 				strPassword = request.getParameter("txtPassword");
+				strFromLibraryCode = request.getParameter("fromLibCode");
 				
-				//System.out.println("LoginController <> loginSession");
+				/*System.out.println("LoginController <> loginSession");
+				System.out.println("strUsername: "+strUsername);
+				System.out.println("strPassword: "+strPassword);
+				System.out.println("strFromLibrary: "+strFromLibraryCode);*/
 				
 				// user to login, to validate user credentials 
 				loginUserBean = loginManager.loginUser(con, strUsername, strPassword);
@@ -96,6 +104,8 @@ public class LoginController extends HttpServlet {
 				
 				// user logged in details, to set session 
 				session.setAttribute("loginUser", loginUserBean);
+				
+				//System.out.println("LoginController <> loginUserBean: "+loginUserBean);
 				
 				/* commented, below checking, tried of `LoginUserBean` 
 				System.out.println("----------- LoginUserBean toJSON, fromJSON, toString ------------");
@@ -122,6 +132,9 @@ public class LoginController extends HttpServlet {
 				
 				//strRespQueryString = "_smsg=USER_LOGGED_IN";
 				
+				
+				joResp = UtilsFactory.getJSONSuccessReturn("LOGIN_SUCCESS");
+				
 				loginManager = null;
 			} catch(Exception e) {
 				System.out.println("Exception in /loginSession: "+e.getMessage());
@@ -130,6 +143,7 @@ public class LoginController extends HttpServlet {
 				 *   of known errorCode to show respective message in UI, else `Problem with services` to show to add 
 				 */
 				strRespQueryString = "_err="+e.getMessage();
+				joResp = UtilsFactory.getJSONFailureReturn(e.getMessage());
 			} finally {
 				// TODO: to close `Connection` 
 				DataBaseMaster.close(con);
@@ -140,21 +154,39 @@ public class LoginController extends HttpServlet {
 				
 				loginManager = null;
 				
-				response.sendRedirect("./view/html/#!/loginResponse?"+strRespQueryString);
+				/* commented, response redirect html to add 
+				response.sendRedirect("./view/html/#!/loginResponse?"+strRespQueryString);*/
+				
+				//System.out.println("Login <> 111222333");
+				if ( strFromLibraryCode.equals("ANGULAR") ) {	// (1) 
+					response.getWriter().write(joResp.toString());
+				} else {	// (2) 
+					response.sendRedirect("./loginLogoutResponseRedirect.html?fromLibCode="+strFromLibraryCode+"&"+strRespQueryString);	
+				}
 			}
 		} else if( strAction.equals("/logoutSession") ) {
 			// to logout user 
 			
-			String strRedirectURI = "";
+			String strRedirectURI = "", strFromLibraryCode = "", strRespQueryString = "";
+			
+			JSONObject joResp = null;
 			
 			try {
 				//System.out.println("/logoutSession <> 111111");
+
+				strFromLibraryCode = request.getParameter("fromLibCode");
 				
 				session = request.getSession(false);
 				//System.out.println("/logoutSession <> session: "+session);
 				if ( session == null || session.getAttribute("loginUser") == null ) {
 					//System.out.println("/logoutSession <> 2222222 <> user not login");
-					strRedirectURI = "#!/login";
+					
+					/* commented, response redirect html to add 
+					strRedirectURI = "#!/login";*/
+					
+					strRespQueryString = "_err=SESSION_EXPIRED";
+					
+					joResp = UtilsFactory.getJSONSuccessReturn("SESSION_EXPIRED");	// `StudentApp`, success return redirect to `/login` page, 
 				} else {
 					//System.out.println("/logoutSession <> 3333 <> logout");
 					
@@ -165,14 +197,29 @@ public class LoginController extends HttpServlet {
 					// Note: after logout, login sysout `session` value changes, thinks 
 					//System.out.println("/logoutSession <> after session invalidate <> session: "+session);
 					
-					strRedirectURI = "#!/loginResponse?_smsg=LOGOUT_SUCCESS";
+					/* commented, response redirect html to add 
+					strRedirectURI = "#!/loginResponse?_smsg=LOGOUT_SUCCESS";*/
+					
+					strRespQueryString = "_smsg=LOGOUT_SUCCESS";
+					
+					joResp = UtilsFactory.getJSONSuccessReturn("LOGOUT_SUCCESS");
 				}
 			} catch (Exception e) {
 				System.out.println("Exception in /logoutSession: "+e.getMessage());
 				e.printStackTrace();
+				joResp = UtilsFactory.getJSONFailureReturn(e.getMessage());
 			} finally {
 				//System.out.println("strRedirectURI: "+strRedirectURI);
-				response.sendRedirect("./view/html/"+strRedirectURI);
+				
+				/* commented, response redirect html to add 
+				//response.sendRedirect("./view/html/"+strRedirectURI);	// commented, to adds inside folder
+				response.sendRedirect("AngularJS/view/html/"+strRedirectURI);*/
+				
+				if ( strFromLibraryCode.equals("ANGULAR") ) {
+					response.getWriter().write(joResp.toString());
+				} else {
+					response.sendRedirect("./loginLogoutResponseRedirect.html?fromLibCode="+strFromLibraryCode+"&"+strRespQueryString);
+				}
 				
 				strAction = null;
 				strRedirectURI = null;

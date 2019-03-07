@@ -177,7 +177,7 @@ learnUIApp.service('studentDetailsService', ['$http', '$q', '$uibModal', functio
 	this.openStudentRecordHistoryDetails = function(joStudentDetails, joStudentValueSelectFunctions) {
 		
 		var modalInstance = $uibModal.open({
-			templateUrl: 'module/studentDetails/studentRecordHistoryDetails.html',
+			templateUrl: 'AngularJS/module/studentDetails/studentRecordHistoryDetails.html',
 			controller: 'studentRecordHistoryDetailsController',
 			//controllerAs: '$ctrl',
 			size: 'lg',

@@ -42,7 +42,7 @@ learnUIApp.factory('messageFactory', function() {
 	}
 	
 	
-	return { 
+	return {
 		// gets success message 
 		getSuccessMessage: function(successMsgCode) {
 			var successMessage;
