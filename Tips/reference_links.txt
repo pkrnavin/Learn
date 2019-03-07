@@ -290,3 +290,7 @@ https://www.technouz.com/4772/angular-6-app-structure-with-multiple-modules/
 		Angular forRoot forChild 
 https://stackoverflow.com/questions/40498081/routermodule-forrootroutes-vs-routermodule-forchildroutes
 
+		Angular lazy module include common component shared module 
+https://stackoverflow.com/questions/51780143/two-lazy-loading-modules-with-common-component-in-angular-6
+https://stackoverflow.com/questions/43081634/how-to-share-components-between-modules-with-lazy-loading
+https://stackoverflow.com/questions/40989729/angular-2-how-to-export-a-component-of-lazy-loaded-module
