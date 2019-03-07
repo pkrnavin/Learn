@@ -107,6 +107,13 @@
 
 -- ]
 
+# Angular StudentApp
+# below adds date
+> winrar a -r -ep1 -agYYYY-MM-DD -idq -x"*\node_modules" "E:\Backup\Learn\workspace\StudentApp\StudentApp_.rar" "D:\Learn\workspace\StudentApp"
+		OR
+# below adds datetime
+> winrar a -r -ep1 -agYYYY-MM-DD-HHMM -idq -x"*\node_modules" "E:\Backup\Learn\workspace\StudentApp\StudentApp_.rar" "D:\Learn\workspace\StudentApp"
+
 
 ---------- weekly ----------
 
@@ -126,7 +133,7 @@
 > winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\Tips\Tips_.rar" "D:\Learn\Tips"
 > winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\Tried\Tried_.rar" "D:\Learn\Tried"
 > winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\Tried Programms\Tried Programms_.rar" "D:\Learn\Tried Programms"
-> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\Preparations\Preparations_.rar" "D:\Learn\Preparations"
+> winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\Studies\Studies_.rar" "D:\Learn\Studies"
 > winrar a -r -ep1 -agYYYY-MM-DD -idq "E:\Backup\Learn\OfficeWorkInLaptopTried\OfficeWorkInLaptopTried_.rar" "D:\Learn\OfficeWorkInLaptopTried"
 
 ---------- rarely ----------
@@ -193,6 +200,9 @@
 
 -- ]
 
+> mklink /h "%OneDrive%\Backup\Learn\workspace\StudentApp\StudentApp_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\workspace\StudentApp\StudentApp_%BKP_FILES_DATE%.rar"
+
+
 ---------- weekly ----------
 
 > mklink /h "%OneDrive%\Backup\Learn\Daily Works\Daily Works_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Daily Works\Daily Works_%BKP_FILES_DATE%.rar"
@@ -204,7 +214,7 @@
 > mklink /h "%OneDrive%\Backup\Learn\Tips\Tips_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Tips\Tips_%BKP_FILES_DATE%.rar"
 > mklink /h "%OneDrive%\Backup\Learn\Tried\Tried_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Tried\Tried_%BKP_FILES_DATE%.rar"
 > mklink /h "%OneDrive%\Backup\Learn\Tried Programms\Tried Programms_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Tried Programms\Tried Programms_%BKP_FILES_DATE%.rar"
-> mklink /h "%OneDrive%\Backup\Learn\Preparations\Preparations_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Preparations\Preparations_%BKP_FILES_DATE%.rar"
+> mklink /h "%OneDrive%\Backup\Learn\Studies\Studies_%BKP_FILES_DATE%.rar" "E:\Backup\Learn\Studies\Studies_%BKP_FILES_DATE%.rar"
 > mklink /h "%OneDrive%\Backup\Learn\OfficeWorkInLaptopTried\OfficeWorkInLaptopTried_%BKP_FILES_DATE%.rar"  "E:\Backup\Learn\OfficeWorkInLaptopTried\OfficeWorkInLaptopTried_%BKP_FILES_DATE%.rar" 
 
 ---------- rarely ----------
@@ -246,6 +256,7 @@ Note:
 
 -- ]
 
+> copy /Y "E:\Backup\Learn\workspace\StudentApp\StudentApp_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\workspace\StudentApp\" 
 
 ---------- weekly ----------
 
@@ -258,7 +269,7 @@ Note:
 > copy /Y "E:\Backup\Learn\Tips\Tips_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\Tips\"
 > copy /Y "E:\Backup\Learn\Tried\Tried_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\Tried\"
 > copy /Y "E:\Backup\Learn\Tried Programms\Tried Programms_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\Tried Programms\"
-> copy /Y "E:\Backup\Learn\Preparations\Preparations_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\Preparations\"
+> copy /Y "E:\Backup\Learn\Studies\Studies_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\Studies\"
 > copy /Y "E:\Backup\Learn\OfficeWorkInLaptopTried\OfficeWorkInLaptopTried_%BKP_FILES_DATE%.rar" "%OneDrive%\Backup\Learn\OfficeWorkInLaptopTried\"
 
 ---------- rarely ----------

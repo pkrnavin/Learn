@@ -46,6 +46,18 @@ http://www.java2s.com/Tutorial/Java/0340__Database/0540__JDBC-ODBC.htm
 			ms_access_create_tables
 https://www.tutorialspoint.com/ms_access/ms_access_create_tables.htm
 
+			ArrayList sort 
+https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/
+
+			Java comparable comparator
+https://www.geeksforgeeks.org/collections-sort-java-examples/
+https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/
+https://stackoverflow.com/questions/1440134/when-should-a-class-be-comparable-and-or-comparator
+
+			java servlet CORS
+https://stackoverflow.com/questions/16351849/origin-is-not-allowed-by-access-control-allow-origin-how-to-enable-cors-using
+https://howtodoinjava.com/servlets/java-cors-filter-example/
+
 
 -- 2018-10-13
 
@@ -109,6 +121,9 @@ https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
 			Javascript Value vs. Reference 
 https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0
 
+			Javascript array sort compare function 
+https://www.geeksforgeeks.org/javascript-array-sort/
+
 
 -- 2018-11-13
 			
@@ -124,3 +139,154 @@ https://stackoverflow.com/questions/6898453/how-to-display-the-function-procedur
 				
 				Proverb stories
 https://books.google.co.in/books?id=d1QiBQAAQBAJ&printsec=frontcover&dq=unposted+letter&hl=en&sa=X&ved=0ahUKEwidmb3e9d3eAhVEiXAKHb_YAuEQ6AEIMTAC#v=onepage&q&f=false
+
+
+-- 2019-02-06
+
+				Angular 
+				
+		why angular need nodejs 
+https://stackoverflow.com/questions/37267510/why-do-we-have-install-node-js-for-angular-2-0
+
+		angular developer javascript to typescript
+https://dzone.com/articles/angular-developer-javascript-to-typescript
+
+		angularjs vs angular2 vs angular4
+https://www.simplilearn.com/angularjs-vs-angular-2-vs-angular-4-differences-article
+
+		angular which file runs first 
+https://stackoverflow.com/questions/51691628/which-file-runs-first-in-an-angular-4-app-when-i-run-the-app
+
+		login observable 
+https://stackoverflow.com/questions/47594175/how-to-handle-user-login-service-to-get-user-info-and-logout-state
+
+		Observable 
+https://stackoverflow.com/questions/52471489/angular-6-observable-explanation-in-plain-english
+https://www.techiediaries.com/angular-rxjs-tutorial/
+https://gist.github.com/staltz/868e7e9bc2a7b8c1f754
+https://stackoverflow.com/questions/51785779/rxjs-angular-6-observables-subjects-and-basic-get-and-add-operations-on-arr
+https://blog.angularindepth.com/rxjs-understanding-subjects-5c585188c3e1
+
+		Observable Subject 
+http://jasonwatmore.com/post/2018/06/25/angular-6-communicating-between-components-with-observable-subject
+https://blog.angulartraining.com/rxjs-subjects-a-tutorial-4dcce0e9637f
+https://alligator.io/rxjs/subjects/
+
+		Component communication observable subject
+http://jasonwatmore.com/post/2018/06/25/angular-6-communicating-between-components-with-observable-subject
+
+		Angular communication between component Observable 
+https://stackoverflow.com/questions/35884451/angular-2-sibling-component-communication
+http://musttoknow.com/angular-4-angular-5-communicate-two-components-using-observable-subject/
+https://angular.io/guide/component-interaction#!#bidirectional-service
+
+		Angular provider lazy module 
+https://itnext.io/understanding-provider-scope-in-angular-4c2589de5bc
+
+		Typescript type checking
+https://aliolicode.com/2016/04/23/type-checking-typescript/
+		
+		Observable Pipe
+https://www.concretepage.com/angular/angular-observable-pipe
+
+		RouteGuard Observable 
+https://stackoverflow.com/questions/37948068/angular-2-routing-canactivate-work-with-observable
+
+		Angular environment URL 
+https://medium.com/@balramchavan/separating-production-and-development-http-urls-using-environment-ts-file-in-angular-4c2dd0c5a8b0
+
+		Angular multiple environment URL configure 
+https://blog.angulartraining.com/how-to-manage-different-environments-with-angular-cli-883c26e99d15
+https://stackoverflow.com/questions/50313296/how-to-add-set-environment-angular-6-angular-json-file
+https://stackoverflow.com/questions/50174584/how-to-set-environment-via-ng-serve-in-angular-6
+
+		Angular Login 
+https://medium.com/@ozgurgul/angular-6-login-and-router-tutorial-ac5fc5d3027f
+http://jasonwatmore.com/post/2018/05/16/angular-6-user-registration-and-login-example-tutorial
+
+		Angular ReactiveForm
+https://www.techiediaries.com/angular-forms/
+https://blog.grossman.io/real-world-angular-reactive-forms/
+
+		Angular ReactiveForm get value 
+https://stackoverflow.com/questions/43713558/how-to-get-a-single-value-from-formgroup
+https://stackoverflow.com/questions/53660585/how-to-get-values-of-reactive-form-inputs-in-angular
+
+		Angular HttpClient POST 
+https://www.concretepage.com/angular/angular-httpclient-post
+
+		Angular Observable pipe catchError 
+https://www.concretepage.com/angular/angular-catcherror
+
+		Angular login getUserDetails Observables 
+https://stackoverflow.com/questions/47594175/how-to-handle-user-login-service-to-get-user-info-and-logout-state
+
+		Angular CLI proxy, (ie. Angular in `http://localhost:4200`, to call backed server tomcat `http://localhost:8080/LearnUI/`), proxy setup below links 
+https://stackoverflow.com/questions/48731933/how-to-handle-user-session-in-angular-5
+https://juristr.com/blog/2016/11/configure-proxy-api-angular-cli/
+https://www.codeproject.com/Tips/1259121/Angular-Proxy-Configuration-for-API-Calls
+https://medium.com/@spencerfeng/setup-a-proxy-for-api-calls-for-your-angular-cli-app-6566c02a8c4d
+https://medium.com/@spencerfeng/setup-reverse-proxy-for-api-calls-for-your-angular-application-with-node-js-62321f0defb5
+>> Note: proxy setup production 
+https://itnext.io/angular-cli-proxy-configuration-4311acec9d6f
+https://github.com/rars/demo-angularcli-proxy/
+https://medium.freecodecamp.org/the-best-ways-to-connect-to-the-server-using-angular-cli-b0c6b699716c
+https://dzone.com/articles/configure-a-proxy-for-your-api-calls-with-angular
+		
+		Angular backend communication 
+http://www.gistia.com/talk-backend-services-angular-2s-http-client/
+		
+		Angular JWT authentication
+https://www.techiediaries.com/angular-jwt/
+https://medium.com/@ryanchenkie_40935/angular-authentication-using-the-http-client-and-http-interceptors-2f9d1540eb8
+		
+		Angular javascript file include s
+https://stackoverflow.com/questions/52776717/using-external-js-file-in-angular-6-component
+https://stackoverflow.com/questions/54142874/angular-6-module-not-found-error-cant-resolve-http-in
+https://weblog.west-wind.com/posts/2016/sep/12/external-javascript-dependencies-in-typescript-and-angular-2
+https://stackoverflow.com/questions/37081943/angular2-import-external-js-file-into-component
+
+		Angular Observable Subject
+https://medium.com/@luukgruijs/understanding-rxjs-subjects-339428a1815b
+https://medium.com/@luukgruijs/understanding-rxjs-behaviorsubject-replaysubject-and-asyncsubject-8cc061f1cfc0
+https://thinkster.io/tutorials/learn-rxjs-observables/using-behaviorsubject-for-values-that-change-over-time
+
+		Angular reactive form checkbox 
+https://stackoverflow.com/questions/40927167/angular-reactiveforms-producing-an-array-of-checkbox-values
+
+		Angular directive template ref 
+https://medium.com/@adrianfaciu/creating-structural-directives-in-angular-ff17211c7b28
+http://blog.avenuecode.com/how-to-customize-your-angular-app-using-directives
+https://netbasal.com/the-power-of-structural-directives-in-angular-bfe4d8c44fb1
+
+		Angular basics 
+http://blog.avenuecode.com/angular-2-should-i-learn-it
+
+		Angular sibling component function call from another component 
+https://stackoverflow.com/questions/37587732/how-to-call-another-components-function-in-angular2
+
+		Angular call parent method with returning value
+https://stackoverflow.com/questions/50727385/how-to-call-parent-method-angular-2-with-returning-value
+
+		Angular modal component include 
+https://stackoverflow.com/questions/46990389/angular-4-no-component-factory-found-did-you-add-it-to-ngmodule-entrycomponent
+
+		Angular module 
+https://medium.com/@cyrilletuzi/understanding-angular-modules-ngmodule-and-their-scopes-81e4ed6f7407
+		
+		Angular multiple module
+https://www.technouz.com/4772/angular-6-app-structure-with-multiple-modules/
+https://angular.io/guide/sharing-ngmodules
+
+		Angular loading; directive dynamic add component 
+https://stackoverflow.com/questions/48410996/dynamically-append-component-to-div-in-angular-5
+	
+		Angular routing strategies 
+https://codecraft.tv/courses/angular/routing/routing-strategies/
+
+		Angular multiple module 
+https://www.technouz.com/4772/angular-6-app-structure-with-multiple-modules/
+		
+		Angular forRoot forChild 
+https://stackoverflow.com/questions/40498081/routermodule-forrootroutes-vs-routermodule-forchildroutes
+

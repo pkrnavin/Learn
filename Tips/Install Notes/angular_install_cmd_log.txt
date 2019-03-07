@@ -1,0 +1,158 @@
+-- 2019-02-07
+-- Angular Install, node, npm, AngularCLI
+Microsoft Windows [Version 10.0.17134.523]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\DELL>node -v
+v10.15.1
+
+C:\Users\DELL>npm -v
+6.4.1
+
+C:\Users\DELL>npm install -g @angular/cli
+C:\Users\DELL\AppData\Roaming\npm\ng -> C:\Users\DELL\AppData\Roaming\npm\node_modules\@angular\cli\bin\ng
+npm WARN rollback Rolling back readable-stream@2.3.6 failed (this is probably harmless): EPERM: operation not permitted, lstat 'C:\Users\DELL\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\fsevents\node_modules'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.7 (node_modules\@angular\cli\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.7: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ @angular/cli@7.3.0
+added 296 packages from 179 contributors in 118.625s
+
+C:\Users\DELL>ng --v
+Available Commands:
+  add Adds support for an external library to your project.
+  build (b) Compiles an Angular app into an output directory named dist/ at the given output path. Must be executed from within a workspace directory.
+  config Retrieves or sets Angular configuration values in the angular.json file for the workspace.
+  doc (d) Opens the official Angular documentation (angular.io) in a browser, and searches for a given keyword.
+  e2e (e) Builds and serves an Angular app, then runs end-to-end tests using Protractor.
+  generate (g) Generates and/or modifies files based on a schematic.
+  help Lists available commands and their short descriptions.
+  lint (l) Runs linting tools on Angular app code in a given project folder.
+  new (n) Creates a new workspace and an initial Angular app.
+  run Runs an Architect target with an optional custom builder configuration defined in your project.
+  serve (s) Builds and serves your app, rebuilding on file changes.
+  test (t) Runs unit tests in a project.
+  update Updates your application and its dependencies. See https://update.angular.io/
+  version (v) Outputs Angular CLI version.
+  xi18n Extracts i18n messages from source code.
+
+For more detailed help run "ng [command name] --help"
+
+C:\Users\DELL>ng -v
+Available Commands:
+  add Adds support for an external library to your project.
+  build (b) Compiles an Angular app into an output directory named dist/ at the given output path. Must be executed from within a workspace directory.
+  config Retrieves or sets Angular configuration values in the angular.json file for the workspace.
+  doc (d) Opens the official Angular documentation (angular.io) in a browser, and searches for a given keyword.
+  e2e (e) Builds and serves an Angular app, then runs end-to-end tests using Protractor.
+  generate (g) Generates and/or modifies files based on a schematic.
+  help Lists available commands and their short descriptions.
+  lint (l) Runs linting tools on Angular app code in a given project folder.
+  new (n) Creates a new workspace and an initial Angular app.
+  run Runs an Architect target with an optional custom builder configuration defined in your project.
+  serve (s) Builds and serves your app, rebuilding on file changes.
+  test (t) Runs unit tests in a project.
+  update Updates your application and its dependencies. See https://update.angular.io/
+  version (v) Outputs Angular CLI version.
+  xi18n Extracts i18n messages from source code.
+
+For more detailed help run "ng [command name] --help"
+
+C:\Users\DELL>ng --version
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+
+
+Angular CLI: 7.3.0
+Node: 10.15.1
+OS: win32 x64
+Angular:
+...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.13.0
+@angular-devkit/core         7.3.0
+@angular-devkit/schematics   7.3.0
+@schematics/angular          7.3.0
+@schematics/update           0.13.0
+rxjs                         6.3.3
+typescript                   3.2.2
+
+
+C:\Users\DELL>
+
+
+-- Project adds 
+
+Microsoft Windows [Version 10.0.17134.523]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+D:\Learn\workspace>ng new StudentApp
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? CSS
+CREATE StudentApp/angular.json (3843 bytes)
+CREATE StudentApp/package.json (1310 bytes)
+CREATE StudentApp/README.md (1027 bytes)
+CREATE StudentApp/tsconfig.json (435 bytes)
+CREATE StudentApp/tslint.json (1621 bytes)
+CREATE StudentApp/.editorconfig (246 bytes)
+CREATE StudentApp/.gitignore (587 bytes)
+CREATE StudentApp/src/favicon.ico (5430 bytes)
+CREATE StudentApp/src/index.html (297 bytes)
+CREATE StudentApp/src/main.ts (372 bytes)
+CREATE StudentApp/src/polyfills.ts (2841 bytes)
+CREATE StudentApp/src/styles.css (80 bytes)
+CREATE StudentApp/src/test.ts (642 bytes)
+CREATE StudentApp/src/browserslist (388 bytes)
+CREATE StudentApp/src/karma.conf.js (992 bytes)
+CREATE StudentApp/src/tsconfig.app.json (166 bytes)
+CREATE StudentApp/src/tsconfig.spec.json (256 bytes)
+CREATE StudentApp/src/tslint.json (314 bytes)
+CREATE StudentApp/src/assets/.gitkeep (0 bytes)
+CREATE StudentApp/src/environments/environment.prod.ts (51 bytes)
+CREATE StudentApp/src/environments/environment.ts (662 bytes)
+CREATE StudentApp/src/app/app-routing.module.ts (245 bytes)
+CREATE StudentApp/src/app/app.module.ts (393 bytes)
+CREATE StudentApp/src/app/app.component.html (1152 bytes)
+CREATE StudentApp/src/app/app.component.spec.ts (1107 bytes)
+CREATE StudentApp/src/app/app.component.ts (214 bytes)
+CREATE StudentApp/src/app/app.component.css (0 bytes)
+CREATE StudentApp/e2e/protractor.conf.js (752 bytes)
+CREATE StudentApp/e2e/tsconfig.e2e.json (213 bytes)
+CREATE StudentApp/e2e/src/app.e2e-spec.ts (622 bytes)
+CREATE StudentApp/e2e/src/app.po.ts (251 bytes)
+npm WARN deprecated istanbul@0.4.5: This module is no longer maintained, try this instead:
+npm WARN deprecated   npm i nyc
+npm WARN deprecated Visit https://istanbul.js.org/integrations for other alternatives.
+npm WARN deprecated circular-json@0.5.9: CircularJSON is in maintenance only, flatted is its successor.
+
+> node-sass@4.11.0 install D:\Learn\workspace\StudentApp\node_modules\node-sass
+> node scripts/install.js
+
+Downloading binary from https://github.com/sass/node-sass/releases/download/v4.11.0/win32-x64-64_binding.node
+Download complete  ] - :
+Binary saved to D:\Learn\workspace\StudentApp\node_modules\node-sass\vendor\win32-x64-64\binding.node
+Caching binary to C:\Users\DELL\AppData\Roaming\npm-cache\node-sass\4.11.0\win32-x64-64_binding.node
+
+> node-sass@4.11.0 postinstall D:\Learn\workspace\StudentApp\node_modules\node-sass
+> node scripts/build.js
+
+Binary found at D:\Learn\workspace\StudentApp\node_modules\node-sass\vendor\win32-x64-64\binding.node
+Testing binary
+Binary is fine
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.7 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.7: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 1135 packages from 1105 contributors and audited 41384 packages in 156.439s
+found 0 vulnerabilities
+
+'git' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Learn\workspace>

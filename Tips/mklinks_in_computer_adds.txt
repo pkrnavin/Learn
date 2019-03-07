@@ -41,3 +41,15 @@ the project file adds in git repository, from <REPOSITORY> the file reference ad
 >> above file 
 > mklink /j "D:\Learn\Curriculum Vitae (CV)\ResumeReferences\CousinsCV\Pravin Resume" "D:\Learn\Curriculum Vitae (CV)\from Softsmith tried\pers_CV\Pravin Resume" 
 >> above folder 
+
+-- 2019-02-07
+
+# from VLS, angular commands 
+> mklink /h "D:\Learn\Tips\angularjs_latest_commands.txt" "D:\Learn\from Office\from VLS\angularjs_latest_commands.txt" 
+
+
+-- 2019-02-09
+
+# Angular student app to add in git repository 
+> mklink /j "D:\Learn\workspace\Learn\StudentApp" "D:\Learn\workspace\StudentApp"
+

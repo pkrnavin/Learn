@@ -1,0 +1,156 @@
+
+
+-- 2018-03-27
+# theirs angularjs new version command, from command prompt 
+
+# version of node, npm
+> node -v
+> npm -v
+
+# install angular/cli 
+> npm install -g @angular/cli
+
+
+# Create a new project; thinks below working in local, thinks from link given thinks, to add file path environment variable 
+> ng new <PROJECT_NAME> 
+>> Note: thinks, goes to respective workspace folder, to run above command to create project thinks 	(noted on `2018-03-29`)
+
+# Create a new project; of `ng` to work, thinks prefix command, to add thinks; (i.e. say `PROJECT_NAME = FirstApp`) 
+> npm run ng new <PROJECT_NAME> 
+>> thinks above not working, of project create thinks 	(noted on `2018-03-29`)
+
+-- 2018-03-28
+
+# uninstall angular/cli
+> npm uninstall -g @angular/cli
+> npm cache clean
+
+
+-- 2018-03-29
+
+# go to project folder, run below command, URL `http://localhost:4200/` runs in browser coming, thinks; `--open` opens in browser 
+> cd ./FirstApp
+> ng serve --open
+-- [ 2019-02-24
+# respective `environment` file, of build serve, to configures 
+> ng serve --configuration=<PROPERTY_NAME_IN_ANGULAR_JSON_FILE>
+> ng serve --configuration=dev
+> ng serve --configuration=test
+> ng serve --configuration=production
+-- ]
+# From below command runs, working of local to connect backend service, login with session, working of proxy config file adding, the file to map in `package.json` below command; 
+> ng serve --proxy-config proxy.config.json
+	OR
+> npm start
+
+
+-- 2018-04-02
+
+# version angular/cli; to check project version, command prompt goto respective project folder, below command to enter 
+> ng version
+	OR
+> ng -v
+
+
+-- 2018-04-03
+
+# build thinks, after navigate to respective folder, of theirs angularjs creates, below command to runs; below `--base-href=.` optional thinks; thinks build creates files in `dist` folder, respective files adds to add inside `WebRoot` in folder, of deployment thinks, `--base-href=.` added thinks 
+> ng build --base-href=.
+-- [ 2019-02-24
+# to Build project, of respective environment, below commands 
+> ng build --prod --configuration=<PROPERTY_NAME_IN_ANGULAR_JSON_FILE>
+> ng build --prod --configuration=dev
+> ng build --prod --configuration=test
+> ng build --prod --configuration=production
+-- ]
+
+-- 2018-04-05
+
+# to create html page files, thinks below create folder, files generates inside the folder thinks; Note: below command to run, go inside respective folder, theirs angularjs project created, folder available of `node_modules` thinks 
+> ng generate component <FOLDER_NAME>
+
+
+-- 2018-04-06
+
+# to rename component, install in command prompt terminal; Note: thinks below command to run in the folder, theirs angularjs project created, folder available of `node_modules` thinks 
+> npm i -g ng-rn
+
+# navigate to respective component folder available, (i.e. thinks `cd ./angularjsNewTheirs/src/app`, thinks inside `app` available of respective component folder to renames thinks)
+> ng-rn <OLD_NAME> <NEW_NAME>
+
+
+-- 2018-05-31
+
+# thinks theirs angularjs UI, eclipse not working, of ng build command, below from link `https://github.com/angular/angular-cli/issues/7604`, `https://stackoverflow.com/questions/45207900/how-to-generate-angular-cli-json-file-in-angular-cli/45705204#45705204`, tries thinks 
+(> (added on `2018-06-01`))npm install --save-dev @angular/cli@latest
+
+
+-- 2018-06-04
+
+# URL to open from given port <VALUE>; go to project folder, run below command, URL `http://localhost:4201/` runs in browser coming, thinks; 
+> ng serve --open --port 4201
+
+
+-- 2018-06-14
+
+Note:
+- Angularjs6 from other library adds, in the system `node_module` library adds; of pulls not working in local system, error occurs of module not found, respective library module, to include in local `node_module`, the module's install command to run in project folder path 
+>> (i.e. of other commits, of added install library `angular2-moment` in the system, library files adds in system's `node_module`; of local pulls error occurs, of module not found, so respective library command to run in local opens in command prompt `D:\Navin\workspace_maven\adesso-ui`, to run `> npm i angular2-moment` command, so respective library files adds in local `node_module`, after error not occurs, thinks)
+
+-- 2018-06-21
+
+# to create service thinks, go to folder, below command to runs, `EmployeeService` creates thinks 
+> ng generate service employee
+
+
+-- 2018-07-03
+
+# to start, node, below command available
+> npm start
+
+-- 2018-07-10
+
+# to create directive, to go inside respective folder below command to runs, thinks 
+> ng generate directive <DIRECTIVE_NAME>
+
+
+-- 2018-08-16
+
+# thinks, below command, of project setup, below to runs, thinks; of `package-lock.json` file rename tried, of module install error occurs, after the file rename, below to runs, thinks, in `angularjs_latest_tips.txt` marks thinks; 
+> npm install
+
+
+-- 2018-12-26
+
+# after computer change, node latest 10.x installs of before node 8.x, so error occurs of command runs to start, in the error message given below command to run `to build the binding for your current environment` 
+> npm rebuild node-sass --force
+
+
+-- 2019-01-03
+
+# angularjs latest, 6 to 7 update, below link 
+https://stackoverflow.com/questions/52936664/migrating-from-angular-6-to-angular-7
+https://medium.com/@jeroenouw/upgrade-to-angular-7-beta-within-10-minutes-c14fc380edd
+
+
+# typescript respective version, to install 
+> npm i typescript@3.1.6 --save-dev --save-exact
+> npm install typescript@">=3.1.1 <3.2.0"
+
+
+-- 2019-01-14
+
+# To run all the tests in our application we simply type ng test in our project root 
+> ng test
+
+-- 2019-02-07
+
+# To create project, go to respective workspace folder path, below command to run 
+> ng new <PROJECT_NAME>
+
+-- 2019-03-07
+
+# to create module, goto respective folder below command to run, with the module folder creates two files adds inside the folder 
+> ng generate module <MODULE_NAME> --routing
+> ng generate module customers --routing
+

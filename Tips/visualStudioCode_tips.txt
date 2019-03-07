@@ -1,0 +1,7 @@
+			Visual Studio Code Tips
+
+-- 2019-02-10
+# To show, hide below bar `Output`, `Terminal`, below key 
+Output tab: Ctrl + Shift + U
+OR
+Terminal tab: Ctrl + `
